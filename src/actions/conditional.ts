@@ -36,8 +36,8 @@ type ConditionalOptions = {
 /**
  * If Action. Tests if any item passed as input matches the specified condition, and if so, runs the actions inside. Otherwise, the actions under "Otherwise" are run.
  * @param {Object} [options]
- * @param {WFWorkflowAction[]} [options.ifTrue=[]]
- * @param {WFWorkflowAction[]} [options.ifFalse=[]]
+ * @param {Action[]} [options.ifTrue=[]]
+ * @param {Action[]} [options.ifFalse=[]]
  * @param {Condition} [options.input]
  * @param {string|number} [options.value]
  */

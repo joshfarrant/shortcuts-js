@@ -15,6 +15,7 @@ coverage
 docs
 scripts
 shortcuts
+src
 .gitignore
 .jsdoc.json
 .nvmrc

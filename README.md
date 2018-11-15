@@ -9,18 +9,18 @@ A Node.js iOS 12 Shortcuts creator.
 ## Minimal example
 
 ```js
-import fs from 'fs';
+const fs = require('fs');
 
-import {
+const {
   buildShortcut,
   withVariables,
-} from '@joshfarrant/shortcuts-js';
-import {
+} = require('@joshfarrant/shortcuts-js');
+const {
   calculate,
   comment,
   number,
   showResult
-} from '@joshfarrant/shortcuts-js/actions';
+} = require('@joshfarrant/shortcuts-js/actions');
 
 // We'll use this later to reference the output of a calculation
 let calcId;

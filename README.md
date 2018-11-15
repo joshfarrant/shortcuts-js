@@ -14,13 +14,13 @@ import fs from 'fs';
 import {
   buildShortcut,
   withVariables,
-} from 'shortcuts-js';
+} from '@joshfarrant/shortcuts-js';
 import {
   calculate,
   comment,
   number,
   showResult
-} from 'shortcuts-js/actions';
+} from '@joshfarrant/shortcuts-js/actions';
 
 // We'll use this later to reference the output of a calculation
 let calcId;

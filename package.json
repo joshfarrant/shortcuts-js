@@ -1,5 +1,5 @@
 {
-  "name": "shortcuts-js",
+  "name": "@joshfarrant/shortcuts-js",
   "version": "0.1.0",
   "description": "An iOS 12 Shortcuts creator",
   "engineStrict": true,
@@ -49,7 +49,7 @@
     "docs": "jsdoc -c .jsdoc.json",
     "preversion": "npm run clean && npm test",
     "version": "npm run build",
-    "postversion": "git push && git push --tags && npm run clean"
+    "postversion": "git push && git push --tags"
   },
   "author": {
     "name": "Josh Farrant",

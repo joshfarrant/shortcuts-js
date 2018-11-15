@@ -46,7 +46,10 @@
     "lint": "tslint -t stylish --project \"tsconfig.json\"",
     "test": "jest --coverage",
     "test:watch": "jest --watch",
-    "docs": "jsdoc -c .jsdoc.json"
+    "docs": "jsdoc -c .jsdoc.json",
+    "preversion": "npm run clean && npm test",
+    "version": "npm run build",
+    "postversion": "git push && git push --tags && npm run clean"
   },
   "author": {
     "name": "Josh Farrant",

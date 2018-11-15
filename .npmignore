@@ -1,0 +1,25 @@
+*.log
+npm-debug.log*
+
+# Dependency directories
+node_modules
+
+# npm package lock
+package-lock.json
+yarn.lock
+
+# project files
+__tests__
+assets
+coverage
+docs
+scripts
+shortcuts
+.gitignore
+.jsdoc.json
+.nvmrc
+CONTRIBUTING.md
+jest.config.js
+tsconfig.json
+tsconfig.release.json
+tslint.json

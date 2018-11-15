@@ -1,7 +1,7 @@
 {
   "name": "shortcuts-js",
   "version": "0.0.0",
-  "description": "A JavaScript iOS 12 Shortcuts creator",
+  "description": "An iOS 12 Shortcuts creator",
   "engineStrict": true,
   "engines": {
     "node": ">= 8.9.0"
@@ -13,26 +13,28 @@
   "keywords": [
     "iOS",
     "iOS 12",
-    "Shortcuts"
+    "Shortcuts",
+    "Apple",
+    "Apple Shortcuts"
   ],
   "devDependencies": {
-    "@types/jest": "~23.3.7",
+    "@types/jest": "~23.3.9",
     "@types/mkdirp": "^0.5.2",
-    "@types/node": "^10.12.0",
+    "@types/node": "^10.12.8",
     "@types/uuid": "^3.4.4",
     "command-line-args": "^5.0.2",
-    "husky": "^1.1.3",
+    "husky": "^1.1.4",
     "inquirer": "^6.2.0",
     "jest": "~23.6.0",
     "jsdoc": "^3.5.5",
     "rimraf": "~2.6.2",
     "ts-jest": "~23.10.4",
     "tslint": "^5.11.0",
-    "tslint-config-airbnb": "^5.11.0",
+    "tslint-config-airbnb": "^5.11.1",
     "tslint-microsoft-contrib": "~5.2.1",
-    "tsutils": "~3.2.0",
+    "tsutils": "~3.5.0",
     "tui-jsdoc-template": "^1.2.2",
-    "typescript": "~3.1.3"
+    "typescript": "~3.1.6"
   },
   "main": "build/index.js",
   "types": "build/index.d.ts",

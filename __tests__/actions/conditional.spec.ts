@@ -172,6 +172,31 @@ describe('conditional function', () => {
     compareObjectsWithGroupingIdentifier(actual, expected);
   });
 
+  it('builds a conditional action when a built-in input property is passed', () => {
+    const actual = conditional({
+      input: 'Is Greater Than',
+      value: 22,
+    });
+    const expected: WFWorkflowAction[] = [
+      {
+        WFWorkflowActionIdentifier: 'is.workflow.actions.conditional',
+        WFWorkflowActionParameters: {
+          WFControlFlowMode: 0,
+          WFCondition: 'Is Greater Than',
+          WFNumberValue: 22,
+        },
+      },
+      {
+        WFWorkflowActionIdentifier: 'is.workflow.actions.conditional',
+        WFWorkflowActionParameters: {
+          WFControlFlowMode: 2,
+        },
+      },
+    ];
+
+    compareObjectsWithGroupingIdentifier(actual, expected);
+  });
+
   it('builds a conditional action when \'<\' input property is passed', () => {
     const actual = conditional({
       input: '<',

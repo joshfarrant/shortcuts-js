@@ -49,7 +49,7 @@ const actions = [
   }),
 ];
 
-const shortcut = buildShortcut(actions, 'My Fancy Shortcut');
+const shortcut = buildShortcut(actions);
 
 fs.writeFile('My Fancy Shortcut.shortcut', shortcut, (err) => {
   if (err) {

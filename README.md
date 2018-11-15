@@ -1,4 +1,4 @@
-# Shortcuts
+# Shortcuts JS
 
 ![Shortcuts JS Logo](./assets/logo.png)
 
@@ -49,8 +49,10 @@ const actions = [
   }),
 ];
 
+// Generate the Shortcut data
 const shortcut = buildShortcut(actions);
 
+// Write the Shortcut to a file in the current directory
 fs.writeFile('My Fancy Shortcut.shortcut', shortcut, (err) => {
   if (err) {
     console.error('Something went wrong :(', err);

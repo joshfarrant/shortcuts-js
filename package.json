@@ -4,7 +4,7 @@
   "description": "An iOS 12 Shortcuts creator",
   "engineStrict": true,
   "engines": {
-    "node": ">= 8.9.0"
+    "node": ">= 10"
   },
   "repository": {
     "type": "git",

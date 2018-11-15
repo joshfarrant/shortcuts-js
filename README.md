@@ -9,6 +9,7 @@ A Node.js iOS 12 Shortcuts creator.
 ## Minimal example
 
 ```js
+// Only used to create the .shortcut file
 const fs = require('fs');
 
 const {
@@ -42,7 +43,7 @@ const actions = [
   }),
   showResult({
     /**
-     * We can use the result of the calculation in this shortcuts's input
+     * We can use the result of the calculation in this Shortcuts's input
      * by passing the string to the 'withVariables' tag function
      */
     text: withVariables`Total is ${calcId}!`,

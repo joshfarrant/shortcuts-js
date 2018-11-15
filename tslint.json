@@ -1,0 +1,23 @@
+{
+  "extends": [
+    "tslint-config-airbnb"
+  ],
+  "rules": {
+    "import-name": false,
+    "max-line-length": [
+      true,
+      {
+        "limit": 100,
+        "ignore-pattern": "^\\s\\*"
+      }
+    ],
+    "no-any": true,
+    "ordered-imports": true,
+    "typedef": [
+      true,
+      "call-signature",
+      "parameter",
+      "property-declaration"
+    ]
+  }
+}

@@ -1,0 +1,66 @@
+{
+  "name": "shortcuts-js",
+  "version": "0.0.0",
+  "description": "A JavaScript iOS 12 Shortcuts creator",
+  "engineStrict": true,
+  "engines": {
+    "node": ">= 8.9.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/joshfarrant/shortcuts-js.git"
+  },
+  "keywords": [
+    "iOS",
+    "iOS 12",
+    "Shortcuts"
+  ],
+  "devDependencies": {
+    "@types/jest": "~23.3.7",
+    "@types/mkdirp": "^0.5.2",
+    "@types/node": "^10.12.0",
+    "@types/uuid": "^3.4.4",
+    "command-line-args": "^5.0.2",
+    "husky": "^1.1.3",
+    "inquirer": "^6.2.0",
+    "jest": "~23.6.0",
+    "jsdoc": "^3.5.5",
+    "rimraf": "~2.6.2",
+    "ts-jest": "~23.10.4",
+    "tslint": "^5.11.0",
+    "tslint-config-airbnb": "^5.11.0",
+    "tslint-microsoft-contrib": "~5.2.1",
+    "tsutils": "~3.2.0",
+    "tui-jsdoc-template": "^1.2.2",
+    "typescript": "~3.1.3"
+  },
+  "main": "build/index.js",
+  "types": "build/index.d.ts",
+  "scripts": {
+    "start": "node build/index.js",
+    "clean": "rimraf coverage build tmp",
+    "build": "tsc -p tsconfig.release.json",
+    "build:watch": "tsc -w -p tsconfig.release.json",
+    "lint": "tslint -t stylish --project \"tsconfig.json\"",
+    "test": "jest --coverage",
+    "test:watch": "jest --watch",
+    "docs": "jsdoc -c .jsdoc.json"
+  },
+  "author": {
+    "name": "Josh Farrant",
+    "email": "josh@farrant.me",
+    "url": "https://farrant.me"
+  },
+  "license": "GPL-3.0",
+  "dependencies": {
+    "bplist-creator": "0.0.7",
+    "bplist-parser": "^0.1.1",
+    "tslib": "~1.9.3",
+    "uuid": "^3.3.2"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run build && npm run lint && npm test"
+    }
+  }
+}

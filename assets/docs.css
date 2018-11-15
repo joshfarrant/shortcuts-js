@@ -1,0 +1,11 @@
+footer img {
+  display: none !important;
+}
+
+.title h1 {
+  display: none !important;
+}
+
+.title {
+  margin-top: 12px;
+}

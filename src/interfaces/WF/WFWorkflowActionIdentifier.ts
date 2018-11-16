@@ -1,5 +1,6 @@
 type WFWorkflowActionIdentifier = (
   'is.workflow.actions.ask'
+  | 'is.workflow.actions.airplanemode.set'
   | 'is.workflow.actions.choosefrommenu'
   | 'is.workflow.actions.comment'
   | 'is.workflow.actions.conditional'

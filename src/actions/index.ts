@@ -5,6 +5,7 @@ import conditional from './conditional';
 import count from './count';
 import getBatteryLevel from './getBatteryLevel';
 import getContentsOfUrl from './getContentsOfUrl';
+import getDictionaryValue from './getDictionaryValue';
 import nothing from './nothing';
 import number from './number';
 import runShortcut from './runShortcut';
@@ -25,6 +26,7 @@ export {
   count,
   getBatteryLevel,
   getContentsOfUrl,
+  getDictionaryValue,
   nothing,
   number,
   runShortcut,

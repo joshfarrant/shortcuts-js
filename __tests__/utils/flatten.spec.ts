@@ -22,4 +22,12 @@ describe('flatten function', () => {
     expect(actual).toEqual(expected);
   });
 
+  it('flattens a 4 level deep array', () => {
+    const input = [1, [2, [3, 4, [5, 6, 7], 8]], 9];
+    const expected = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+    const actual = flatten(input);
+
+    expect(actual).toEqual(expected);
+  });
+
 });

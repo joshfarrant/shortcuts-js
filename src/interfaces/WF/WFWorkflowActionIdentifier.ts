@@ -8,6 +8,7 @@ type WFWorkflowActionIdentifier = (
   | 'is.workflow.actions.flashlight'
   | 'is.workflow.actions.gettext'
   | 'is.workflow.actions.getbatterylevel'
+  | 'is.workflow.actions.lowpowermode.set'
   | 'is.workflow.actions.math'
   | 'is.workflow.actions.number'
   | 'is.workflow.actions.nothing'

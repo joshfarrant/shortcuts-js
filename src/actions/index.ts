@@ -9,6 +9,7 @@ import nothing from './nothing';
 import number from './number';
 import runShortcut from './runShortcut';
 import setBrightness from './setBrightness';
+import setLowPowerMode from './setLowPowerMode';
 import setTorch from './setTorch';
 import setVariable from './setVariable';
 import showResult from './showResult';
@@ -28,6 +29,7 @@ export {
   number,
   runShortcut,
   setBrightness,
+  setLowPowerMode,
   setTorch,
   setVariable,
   showResult,

@@ -11,6 +11,7 @@ import WFSerialization from './WFSerialization';
 interface WFWorkflowActionParameters {
   Advanced?: boolean;
   GroupingIdentifier?: string;
+  OnValue?: boolean;
   ShowHeaders?: boolean;
   Text?: WFSerialization | string;
   UUID?: string;

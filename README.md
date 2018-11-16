@@ -4,9 +4,15 @@
 
 A Node.js iOS 12 Shortcuts creator.
 
-[Documentation](https://shortcuts.fun/module-actions.html) | [Contributing](https://github.com/joshfarrant/shortcuts-js/blob/master/CONTRIBUTING.md) | [Medium](https://medium.com/@JoshFarrant/creating-ios-12-shortcuts-with-javascript-and-shortcuts-js-942420ca9904)
+[@joshfarrant/shortcuts-js](https://www.npmjs.com/package/@joshfarrant/shortcuts-js) on npm.
 
-## Minimal example
+[NPM](https://www.npmjs.com/package/@joshfarrant/shortcuts-js) | [Documentation](https://shortcuts.fun/module-actions.html) | [Contributing](https://github.com/joshfarrant/shortcuts-js/blob/master/CONTRIBUTING.md) | [Medium](https://medium.com/@JoshFarrant/creating-ios-12-shortcuts-with-javascript-and-shortcuts-js-942420ca9904)
+
+## Minimal Example
+
+```sh
+npm install @joshfarrant/shortcuts-js
+```
 
 ```js
 // Only used to create the .shortcut file
@@ -63,7 +69,7 @@ fs.writeFile('My Fancy Shortcut.shortcut', shortcut, (err) => {
 });
 ```
 
-Running this code will build a shortcut named 'My Fancy Shortcut' in the current directory.
+Running this code will build a Shortcut named '_My Fancy Shortcut.shortcut_' in the current directory.
 
 This can be AirDropped to an iPhone or iPad running iOS 12, at which point it will be automatically opened and imported into Shortcuts.
 

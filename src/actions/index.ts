@@ -10,6 +10,7 @@ import getDictionaryValue from './getDictionaryValue';
 import nothing from './nothing';
 import number from './number';
 import runShortcut from './runShortcut';
+import setAirplaneMode from './setAirplaneMode';
 import setBrightness from './setBrightness';
 import setLowPowerMode from './setLowPowerMode';
 import setTorch from './setTorch';
@@ -32,6 +33,7 @@ export {
   nothing,
   number,
   runShortcut,
+  setAirplaneMode,
   setBrightness,
   setLowPowerMode,
   setTorch,

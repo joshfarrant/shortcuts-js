@@ -123,3 +123,85 @@ const shortcut = buildShortcut(actions);
 ```
 
 ![Battery Checker Shortcut Image](./assets/battery-checker-shortcut.jpeg)
+
+### Shortcut folder creator
+
+This example creates folders and subfolders of Shortcuts so they can be easily run from one 'Folder' Shortcut.
+
+This Shortcut could be tedious to set up using the drag-and-drop interface of the Shortcuts app, however we can simplify the generation of this Shortcut by using a function to build our actions from a predefined array of strings.
+
+```js
+const {
+  buildShortcut,
+  withVariables,
+} = require('@joshfarrant/shortcuts-js');
+const {
+  conditional,
+  getBatteryLevel,
+  setLowPowerMode,
+  showResult,
+} = require('@joshfarrant/shortcuts-js/actions');
+
+const foldersArr = [
+  ['Health', [ // The name of the folder
+    'Log Sleep', // The names of Shortcuts to contain in that folder
+    'Log Run',
+    'Log Cycle',
+  ]],
+  ['Home', [
+    ['Lights', [
+      'Lights On', // We can go as many levels deep as we like
+      'Lights Off',
+    ]],
+    ['Heating', [
+      'Heating On',
+      'Heating Off',
+    ]],
+    ['Cameras', [
+      'Cameras On',
+      'Cameras Off',
+    ]],
+    ['Door', [
+      'Lock Door',
+      'Unlock Door',
+    ]],
+  ]],
+  ['Audio', [
+    'Play Playlist',
+    'Resume Podcast'
+  ]],
+];
+
+const buildFolders = (arr) => (
+  arr.map(shortcut => (
+    Array.isArray(shortcut) ? ({
+      label: shortcut[0],
+      actions: [
+        chooseFromMenu({
+          prompt: shortcut[0],
+          items: buildFolders(shortcut[1]),
+        }),
+      ],
+    }
+    ) : ({
+      label: shortcut,
+      actions: [
+        runShortcut({
+          name: shortcut,
+        }),
+      ],
+    })
+  ))
+);
+
+const actions = [
+  chooseFromMenu({
+    prompt: 'Open',
+    items: buildFolders(foldersArr),
+  }),
+];
+
+const shortcut = buildShortcut(actions);
+```
+
+![Folder Shortcut Gif](https://thumbs.gfycat.com/TangibleRemorsefulAmericancrayfish-small.gif)

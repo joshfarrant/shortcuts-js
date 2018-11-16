@@ -1,5 +1,6 @@
 import ask from './ask';
 import calculate from './calculate';
+import chooseFromMenu from './chooseFromMenu';
 import comment from './comment';
 import conditional from './conditional';
 import count from './count';
@@ -21,6 +22,7 @@ import wait from './wait';
 export {
   ask,
   calculate,
+  chooseFromMenu,
   comment,
   conditional,
   count,

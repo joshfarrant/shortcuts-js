@@ -37,6 +37,9 @@ interface WFWorkflowActionParameters {
   WFJSONValues?: WFSerialization;
   WFMathOperand?: number;
   WFMathOperation?: WFMathOperation;
+  WFMenuItems?: string[];
+  WFMenuItemTitle?: string;
+  WFMenuPrompt?: string;
   WFNumberActionNumber?: number;
   WFNumberValue?: number;
   WFShowWorkflow?: boolean;

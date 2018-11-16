@@ -11,7 +11,7 @@ type SetAirplaneModeOptions = {
  * @param {Object} options
  * @param {boolean} [options.value=true]
  */
-const setLowPowerMode = (
+const setAirplaneMode = (
   {
     value = true,
   }: SetAirplaneModeOptions,
@@ -22,4 +22,4 @@ const setLowPowerMode = (
   },
 });
 
-export default setLowPowerMode;
+export default setAirplaneMode;

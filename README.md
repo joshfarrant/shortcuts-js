@@ -74,3 +74,52 @@ Running this code will build a Shortcut named '_My Fancy Shortcut.shortcut_' in 
 This can be AirDropped to an iPhone or iPad running iOS 12, at which point it will be automatically opened and imported into Shortcuts.
 
 ![Shortcut Image](./assets/demo-shortcut.jpeg)
+
+## Further Examples
+
+For brevity, these examples omit the code for writing the file to disk and just focus on building the Shortcut. See the [Minimal Example](#Minimal-Example) above for an example of how to create the .shortcut file.
+
+
+### Battery level checker, with conditional action
+
+```js
+const {
+  buildShortcut,
+  withVariables,
+} = require('@joshfarrant/shortcuts-js');
+const {
+  conditional,
+  getBatteryLevel,
+  setLowPowerMode,
+  showResult,
+} = require('@joshfarrant/shortcuts-js/actions');
+
+let batteryLevel;
+
+const actions = [
+  getBatteryLevel({}, (id) => {
+    batteryLevel = id;
+  }),
+  conditional({
+    input: '<',
+    value: 20,
+    ifTrue: [
+      setLowPowerMode({
+        value: true,
+      }),
+      showResult({
+        text: withVariables`Your battery is at ${batteryLevel}%, you might want to charge it.`,
+      }),
+    ],
+    ifFalse: [
+      showResult({
+        text: withVariables`Your battery is at ${batteryLevel}%, you're probably fine for now.`,
+      }),
+    ],
+  })
+];
+
+const shortcut = buildShortcut(actions);
+```
+
+![Battery Checker Shortcut Image](./assets/battery-checker-shortcut.jpeg)

@@ -1,3 +1,5 @@
+import { flatten } from './flatten';
+
 import WFWorkflow from '../interfaces/WF/WFWorkflow';
 import WFWorkflowActionsInterface from '../interfaces/WF/WFWorkflowAction';
 
@@ -34,5 +36,5 @@ export const buildShortcutTemplate = (
     'WFStringContentItem',
     'WFURLContentItem',
   ],
-  WFWorkflowActions: [...actions],
+  WFWorkflowActions: flatten(actions),
 });

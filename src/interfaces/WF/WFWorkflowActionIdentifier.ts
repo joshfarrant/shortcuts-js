@@ -8,6 +8,8 @@ type WFWorkflowActionIdentifier = (
   | 'is.workflow.actions.delay'
   | 'is.workflow.actions.downloadurl'
   | 'is.workflow.actions.flashlight'
+  | 'is.workflow.actions.getitemname'
+  | 'is.workflow.actions.getitemtype'
   | 'is.workflow.actions.gettext'
   | 'is.workflow.actions.getbatterylevel'
   | 'is.workflow.actions.getvalueforkey'
@@ -20,7 +22,7 @@ type WFWorkflowActionIdentifier = (
   | 'is.workflow.actions.setvariable'
   | 'is.workflow.actions.showresult'
   | 'is.workflow.actions.url'
-
+  | 'is.workflow.actions.viewresult'
 );
 
 export default WFWorkflowActionIdentifier;

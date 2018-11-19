@@ -8,6 +8,14 @@ A Node.js iOS 12 Shortcuts creator.
 
 [NPM](https://www.npmjs.com/package/@joshfarrant/shortcuts-js) | [Documentation](https://shortcuts.fun/module-actions.html) | [Contributing](https://github.com/joshfarrant/shortcuts-js/blob/master/CONTRIBUTING.md) | [Medium](https://medium.com/@JoshFarrant/creating-ios-12-shortcuts-with-javascript-and-shortcuts-js-942420ca9904)
 
+See [this issue](https://github.com/joshfarrant/shortcuts-js/issues/6) for a complete list of all Actions implemented so far.
+
+**Is the Action you want not available?**
+
+We're still working our way through the long list of built-in Shortcut Actions, if there's one you need sooner rather than later then [Open an Issue](https://github.com/joshfarrant/shortcuts-js/issues/new/choose) and let us know; we might be able to prioritise it.
+
+Alternatively, it's super easy to add an Action yourself! A simple Action should only take about 15 minutes to implement. Check out the [Contributing Guide](https://github.com/joshfarrant/shortcuts-js/blob/master/CONTRIBUTING.md) for more info on where to start. If for any reason you get stuck just [Open an Issue](https://github.com/joshfarrant/shortcuts-js/issues/new/choose). We're happy to help!
+
 ## Minimal Example
 
 ```sh
@@ -205,3 +213,7 @@ const shortcut = buildShortcut(actions);
 ```
 
 ![Folder Shortcut Gif](https://thumbs.gfycat.com/TangibleRemorsefulAmericancrayfish-small.gif)
+
+## Anything Else
+
+If you're having any issues getting started, or you'd just like some advice, then please don't be afraid to [Open an Issue](https://github.com/joshfarrant/shortcuts-js/issues/new/choose), we're here to help!

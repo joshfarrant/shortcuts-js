@@ -15,6 +15,7 @@ import runShortcut from './runShortcut';
 import setAirplaneMode from './setAirplaneMode';
 import setBrightness from './setBrightness';
 import setLowPowerMode from './setLowPowerMode';
+import setName from './setName';
 import setTorch from './setTorch';
 import setVariable from './setVariable';
 import showResult from './showResult';
@@ -41,6 +42,7 @@ export {
   setAirplaneMode,
   setBrightness,
   setLowPowerMode,
+  setName,
   setTorch,
   setVariable,
   showResult,

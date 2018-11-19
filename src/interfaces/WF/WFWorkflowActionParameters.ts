@@ -27,6 +27,7 @@ interface WFWorkflowActionParameters {
   WFCountType?: WFCountType;
   WFDelayTime?: number;
   WFDictionaryKey?: string;
+  WFDontIncludeFileExtension?: boolean;
   WFFlashlightSetting?: WFFlashlightSetting;
   WFFormValues?: WFSerialization;
   WFGetDictionaryValueType?: WFGetDictionaryValueType;
@@ -40,6 +41,7 @@ interface WFWorkflowActionParameters {
   WFMenuItems?: string[];
   WFMenuItemTitle?: string;
   WFMenuPrompt?: string;
+  WFName?: string;
   WFNumberActionNumber?: number;
   WFNumberValue?: number;
   WFShowWorkflow?: boolean;

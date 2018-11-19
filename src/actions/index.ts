@@ -3,7 +3,9 @@ import calculate from './calculate';
 import chooseFromMenu from './chooseFromMenu';
 import comment from './comment';
 import conditional from './conditional';
+import continueShortcutInApp from './continueShortcutInApp';
 import count from './count';
+import exitShortcut from './exitShortcut';
 import getBatteryLevel from './getBatteryLevel';
 import getContentsOfUrl from './getContentsOfUrl';
 import getDictionaryValue from './getDictionaryValue';
@@ -30,7 +32,9 @@ export {
   chooseFromMenu,
   comment,
   conditional,
+  continueShortcutInApp,
   count,
+  exitShortcut,
   getBatteryLevel,
   getContentsOfUrl,
   getDictionaryValue,

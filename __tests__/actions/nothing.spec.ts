@@ -6,7 +6,7 @@ describe('nothing function', () => {
     expect(typeof nothing).toBe('function');
   });
 
-  it('builds a nothing action when no text is passed', () => {
+  it('builds a nothing action', () => {
     const expected = {
       WFWorkflowActionIdentifier: 'is.workflow.actions.nothing',
       WFWorkflowActionParameters: {},

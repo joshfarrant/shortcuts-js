@@ -1,6 +1,6 @@
 
 /**
- * Tests wether the passed string is a UUID
+ * Tests whether the passed string is a UUID
  * @param {string} uuid
  */
 export const testUUID = (uuid: string): boolean => {

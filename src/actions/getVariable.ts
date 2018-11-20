@@ -11,7 +11,7 @@ type GetVariableOptions = {
 
 const formatSerialization = (variable: WFSerialization | string): WFSerialization => {
   //  Already serialized
-  if (typeof(variable) !== 'string') {
+  if (typeof variable !== 'string') {
     return variable;
   }
 

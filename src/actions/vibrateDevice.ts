@@ -2,17 +2,17 @@
 
 import WFWorkflowAction from '../interfaces/WF/WFWorkflowAction';
 
-type VibrateOptions = {};
+type VibrateDeviceOptions = {};
 
 /**
- * Vibrate Action. Vibrates the device for a short amount of time.
+ * Vibrate Device Action. Vibrates the device for a short amount of time.
  * @param {Object} [options]
  */
-const vibrate = (
-  {}: VibrateOptions,
+const vibrateDevice = (
+  {}: VibrateDeviceOptions,
 ): WFWorkflowAction => ({
   WFWorkflowActionIdentifier: 'is.workflow.actions.vibrate',
   WFWorkflowActionParameters: {},
 });
 
-export default vibrate;
+export default vibrateDevice;

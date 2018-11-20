@@ -2,7 +2,7 @@
 
 import WFWorkflowAction from '../interfaces/WF/WFWorkflowAction';
 
-type AppendVariableOptions = {
+type AddToVariableOptions = {
   name: string;
 };
 
@@ -11,10 +11,10 @@ type AppendVariableOptions = {
  * @param {Object} options
  * @param {string} options.name
  */
-const appendVariable = (
+const addToVariable = (
   {
     name,
-  }: AppendVariableOptions,
+  }: AddToVariableOptions,
 ): WFWorkflowAction => ({
   WFWorkflowActionIdentifier: 'is.workflow.actions.appendvariable',
   WFWorkflowActionParameters: {
@@ -22,4 +22,4 @@ const appendVariable = (
   },
 });
 
-export default appendVariable;
+export default addToVariable;

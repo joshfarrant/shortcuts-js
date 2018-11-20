@@ -1,4 +1,4 @@
-import appendVariable from './appendVariable';
+import addToVariable from './addToVariable';
 import ask from './ask';
 import calculate from './calculate';
 import chooseFromMenu from './chooseFromMenu';
@@ -15,8 +15,8 @@ import getType from './getType';
 import getVariable from './getVariable';
 import nothing from './nothing';
 import number from './number';
+import runScriptOverSsh from './runScriptOverSsh';
 import runShortcut from './runShortcut';
-import runSshScript from './runSshScript';
 import setAirplaneMode from './setAirplaneMode';
 import setBrightness from './setBrightness';
 import setLowPowerMode from './setLowPowerMode';
@@ -26,13 +26,13 @@ import setVariable from './setVariable';
 import showResult from './showResult';
 import text from './text';
 import url from './url';
-import vibrate from './vibrate';
+import vibrateDevice from './vibrateDevice';
 import viewContentGraph from './viewContentGraph';
 import wait from './wait';
 import waitToReturn from './waitToReturn';
 
 export {
-  appendVariable,
+  addToVariable,
   ask,
   calculate,
   chooseFromMenu,
@@ -50,7 +50,7 @@ export {
   nothing,
   number,
   runShortcut,
-  runSshScript,
+  runScriptOverSsh,
   setAirplaneMode,
   setBrightness,
   setLowPowerMode,
@@ -60,7 +60,7 @@ export {
   showResult,
   text,
   url,
-  vibrate,
+  vibrateDevice,
   viewContentGraph,
   wait,
   waitToReturn,

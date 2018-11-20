@@ -31,7 +31,7 @@ export const withVariables = (
             } : {
               // Named Variable
               VariableName: vars[i],
-              Type: 'Variable'
+              Type: 'Variable',
             }
           ),
         };

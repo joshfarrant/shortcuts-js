@@ -8,16 +8,6 @@ describe('getVariable function', () => {
     expect(typeof getVariable).toBe('function');
   });
 
-  it('builds a getVariable action when no variable is passed', () => {
-    const expected = {
-      WFWorkflowActionIdentifier: 'is.workflow.actions.getvariable',
-      WFWorkflowActionParameters: {},
-    };
-    const actual = getVariable({});
-
-    expect(actual).toEqual(expected);
-  });
-
   it('builds a getVariable action when a variable name is passed', () => {
     const name = 'variable';
 

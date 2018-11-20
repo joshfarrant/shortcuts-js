@@ -3,7 +3,6 @@ import { withVariables } from '../../src/utils';
 import WFSerialization from '../../src/interfaces/WF/WFSerialization';
 
 describe('withVariables function', () => {
-
   it('is a function', () => {
     expect(typeof withVariables).toBe('function');
   });
@@ -171,29 +170,31 @@ describe('withVariables function', () => {
     expect(actual).toEqual(expected);
   });
 
-  it('returns an attachment object when passed a named variable and a magic variable in a string', () => {
-    const uuid = 'b74c81a8-192a-463f-a0a6-2d327963714f';
-    const name = 'Test Variable';
+  it(
+    'returns an attachment object when passed a named variable and a magic variable in a string',
+    () => {
+      const uuid = 'b74c81a8-192a-463f-a0a6-2d327963714f';
+      const name = 'Test Variable';
 
-    const actual = withVariables`${uuid} Going ${name} to the blacksmith`;
-    const expected: WFSerialization = {
-      WFSerializationType: 'WFTextTokenString',
-      Value: {
-        string: '￼ Going ￼ to the blacksmith', // Contains object replacement character
-        attachmentsByRange: {
-          '{0, 1}': {
-            OutputUUID: 'b74c81a8-192a-463f-a0a6-2d327963714f',
-            Type: 'ActionOutput',
-          },
-          '{8, 1}': {
-            Type: 'Variable',
-            VariableName: 'Test Variable',
+      const actual = withVariables`${uuid} Going ${name} to the blacksmith`;
+      const expected: WFSerialization = {
+        WFSerializationType: 'WFTextTokenString',
+        Value: {
+          string: '￼ Going ￼ to the blacksmith', // Contains object replacement character
+          attachmentsByRange: {
+            '{0, 1}': {
+              OutputUUID: 'b74c81a8-192a-463f-a0a6-2d327963714f',
+              Type: 'ActionOutput',
+            },
+            '{8, 1}': {
+              Type: 'Variable',
+              VariableName: 'Test Variable',
+            },
           },
         },
-      },
-    };
+      };
 
-    expect(actual).toEqual(expected);
-  });
-
+      expect(actual).toEqual(expected);
+    },
+  );
 });

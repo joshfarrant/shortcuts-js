@@ -1,7 +1,7 @@
 /** @module actions */
 
-import WFWorkflowAction from '../interfaces/WF/WFWorkflowAction';
 import WFSerialization from '../interfaces/WF/WFSerialization';
+import WFWorkflowAction from '../interfaces/WF/WFWorkflowAction';
 
 import { testUUID } from '../utils';
 
@@ -12,7 +12,7 @@ type GetVariableOptions = {
 const formatSerialization = (variable: WFSerialization | string): WFSerialization => {
   //  Already serialized
   if (typeof(variable) !== 'string') {
-      return variable;
+    return variable;
   }
 
   // Magic variable
@@ -23,17 +23,17 @@ const formatSerialization = (variable: WFSerialization | string): WFSerializatio
         Type: 'ActionOutput',
       },
       WFSerializationType: 'WFTextTokenAttachment',
-    }
-  // Static variable
-  } else {
-    return {
-      Value: {
-        Type: 'Variable',
-        VariableName: variable,
-      },
-      WFSerializationType: 'WFTextTokenAttachment'
-    }
+    };
   }
+
+  // Static variable
+  return {
+    Value: {
+      Type: 'Variable',
+      VariableName: variable,
+    },
+    WFSerializationType: 'WFTextTokenAttachment',
+  };
 };
 
 /**
@@ -48,8 +48,8 @@ const getVariable = (
 ): WFWorkflowAction => ({
   WFWorkflowActionIdentifier: 'is.workflow.actions.getvariable',
   WFWorkflowActionParameters: {
-    WFVariable: formatSerialization(variable)
-  }
+    WFVariable: formatSerialization(variable),
+  },
 });
 
 export default getVariable;

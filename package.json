@@ -44,7 +44,7 @@
     "build": "tsc -p tsconfig.release.json",
     "build:watch": "tsc -w -p tsconfig.release.json",
     "lint": "tslint -t stylish --project \"tsconfig.json\"",
-    "test": "jest --coverage",
+    "test": "npm run lint && jest --coverage",
     "test:watch": "jest --watch",
     "docs": "jsdoc -c .jsdoc.json",
     "preversion": "npm run clean && npm test",
@@ -65,7 +65,7 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "npm run build && npm run lint && npm test"
+      "pre-commit": "npm run build && npm test"
     }
   }
 }

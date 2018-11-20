@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 language: node_js
 node_js:
 - "10"
@@ -10,3 +11,6 @@ jobs:
     - stage: Produce Coverage
       node_js: node
       script: jest --coverage --coverageReporters=text-lcov | coveralls
+=======
+language: node_js
+>>>>>>> 103829c2abb48cb0dbc759c0402007b9223a8c51

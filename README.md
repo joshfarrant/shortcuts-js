@@ -2,7 +2,11 @@
 
 ![Shortcuts JS Logo](./assets/logo.png)
 
-[![Build Status](https://travis-ci.org/joshfarrant/shortcuts-js.svg?branch=master)](https://travis-ci.org/joshfarrant/shortcuts-js)
+[![GitHub license](https://img.shields.io/badge/license-GPL-blue.svg)](https://github.com/joshfarrant/shortcuts-js/blob/master/LICENSE)
+[![npm version](https://img.shields.io/npm/v/@joshfarrant/shortcuts-js.svg?colorB=blue)](https://www.npmjs.com/package/@joshfarrant/shortcuts-js)
+[![Build Status](https://img.shields.io/travis/joshfarrant/shortcuts-js/master.svg)](https://travis-ci.org/joshfarrant/shortcuts-js)
+[![Coverage Status](https://coveralls.io/repos/github/joshfarrant/shortcuts-js/badge.svg?branch=master)](https://coveralls.io/github/joshfarrant/shortcuts-js?branch=master)
+[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-blue.svg)](https://github.com/joshfarrant/shortcuts-js/blob/master/CONTRIBUTING.md)
 
 A Node.js iOS 12 Shortcuts creator.
 

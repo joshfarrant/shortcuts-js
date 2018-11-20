@@ -2,6 +2,8 @@
 
 ![Shortcuts JS Logo](./assets/logo.png)
 
+[![Build Status](https://travis-ci.org/joshfarrant/shortcuts-js.svg?branch=master)](https://travis-ci.org/joshfarrant/shortcuts-js)
+
 A Node.js iOS 12 Shortcuts creator.
 
 [@joshfarrant/shortcuts-js](https://www.npmjs.com/package/@joshfarrant/shortcuts-js) on npm.

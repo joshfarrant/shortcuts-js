@@ -45,8 +45,14 @@ interface WFWorkflowActionParameters {
   WFNumberActionNumber?: number;
   WFNumberValue?: number;
   WFShowWorkflow?: boolean;
+  WFSSHHost?: WFSerialization | string;
+  WFSSHPassword?: WFSerialization | string;
+  WFSSHPort?: WFSerialization | string;
+  WFSSHScript?: WFSerialization | string;
+  WFSSHUser?: WFSerialization | string;
   WFTextActionText?: WFSerialization | string;
   WFURLActionURL?: string;
+  WFVariable?: WFSerialization | string;
   WFVariableName?: string;
   WFWorkflowName?: string;
 }

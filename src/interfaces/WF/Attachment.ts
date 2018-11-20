@@ -1,8 +1,10 @@
-import AttachmentType from './AttachmentType';
+import Type from './Type';
 
 interface Attachment {
-  OutputUUID: string;
-  Type: AttachmentType;
+  OutputName?: string;
+  OutputUUID?: string;
+  Type: Type;
+  VariableName?: string;
 }
 
 export default Attachment;

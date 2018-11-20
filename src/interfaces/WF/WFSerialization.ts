@@ -4,12 +4,15 @@ import WFDictionaryFieldValueItem from './WFDictionaryFieldValueItem';
 import WFSerializationType from './WFSerializationType';
 
 interface SerializationValue {
-  Type?: Type;
-  string?: string;
   attachmentsByRange?: {
     [key: string]: Attachment;
   };
+  OutputUUID?: string;
+  OutputName?: string;
+  string?: string;
+  Type?: Type;
   Value?: WFSerialization | boolean;
+  VariableName?: string;
   WFDictionaryFieldValueItems?: WFDictionaryFieldValueItem[];
 }
 

@@ -1,3 +1,4 @@
+import { testUUID } from '.';
 import WFSerialization from '../interfaces/WF/WFSerialization';
 
 export const withVariables = (
@@ -22,10 +23,17 @@ export const withVariables = (
 
         return {
           ...a,
-          [`{${lengthSoFar}, 1}`]: {
-            OutputUUID: vars[i],
-            Type: 'ActionOutput',
-          },
+          [`{${lengthSoFar}, 1}`]: (
+            testUUID(vars[i]) ? {
+              // Magic Variable
+              OutputUUID: vars[i],
+              Type: 'ActionOutput',
+            } : {
+              // Named Variable
+              VariableName: vars[i],
+              Type: 'Variable'
+            }
+          ),
         };
       },
       {},

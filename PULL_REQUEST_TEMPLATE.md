@@ -15,3 +15,5 @@ _Yes_ / _No_
 
 
 **Any other information / comments**
+
+_If this is your first time contributing, I'd love to hear what you thought about the process. Was it easy/hard to find the information you were looking for? Did the Contributing Guide make sense? What were your stumbling blocks? Basically, any and all feedback is encouraged!_

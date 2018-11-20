@@ -3,7 +3,7 @@
 import WFSerialization from '../interfaces/WF/WFSerialization';
 import WFWorkflowAction from '../interfaces/WF/WFWorkflowAction';
 
-type RunScriptOverSshOptions = {
+type RunScriptOverSSHOptions = {
   host: WFSerialization | string;
   password: WFSerialization | string;
   port: WFSerialization | string;
@@ -20,14 +20,14 @@ type RunScriptOverSshOptions = {
  * @param {string} options.script
  * @param {string} options.user
  */
-const runScriptOverSsh = (
+const runScriptOverSSH = (
   {
     host,
     password,
     port,
     script,
     user,
-  }: RunScriptOverSshOptions,
+  }: RunScriptOverSSHOptions,
 ): WFWorkflowAction => ({
   WFWorkflowActionIdentifier: 'is.workflow.actions.runsshscript',
   WFWorkflowActionParameters: {
@@ -39,4 +39,4 @@ const runScriptOverSsh = (
   },
 });
 
-export default runScriptOverSsh;
+export default runScriptOverSSH;

@@ -15,7 +15,7 @@ import getType from './getType';
 import getVariable from './getVariable';
 import nothing from './nothing';
 import number from './number';
-import runScriptOverSsh from './runScriptOverSsh';
+import runScriptOverSSH from './runScriptOverSSH';
 import runShortcut from './runShortcut';
 import setAirplaneMode from './setAirplaneMode';
 import setBrightness from './setBrightness';
@@ -50,7 +50,7 @@ export {
   nothing,
   number,
   runShortcut,
-  runScriptOverSsh,
+  runScriptOverSSH,
   setAirplaneMode,
   setBrightness,
   setLowPowerMode,

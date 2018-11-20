@@ -1,12 +1,12 @@
-import { runScriptOverSsh } from '../../src/actions';
+import { runScriptOverSSH } from '../../src/actions';
 
-describe('runScriptOverSsh function', () => {
+describe('runScriptOverSSH function', () => {
 
   it('is a function', () => {
-    expect(typeof runScriptOverSsh).toBe('function');
+    expect(typeof runScriptOverSSH).toBe('function');
   });
 
-  it('builds a runScriptOverSsh action when options are passed', () => {
+  it('builds a runScriptOverSSH action when options are passed', () => {
     const host = '192.168.1.1';
     const password = 'root';
     const port = '22';
@@ -23,7 +23,7 @@ describe('runScriptOverSsh function', () => {
         WFSSHUser: user,
       },
     };
-    const actual = runScriptOverSsh({
+    const actual = runScriptOverSSH({
       host,
       password,
       port,

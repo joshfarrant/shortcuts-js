@@ -16,7 +16,7 @@ A Node.js iOS 12 Shortcuts creator.
 
 See [this issue](https://github.com/joshfarrant/shortcuts-js/issues/6) for a complete list of all Actions implemented so far.
 
-**Is the Action you want not available?**
+#### Is the Action you want not available?
 
 We're still working our way through the long list of built-in Shortcut Actions, if there's one you need sooner rather than later then [Open an Issue](https://github.com/joshfarrant/shortcuts-js/issues/new/choose) and let us know; we might be able to prioritise it.
 

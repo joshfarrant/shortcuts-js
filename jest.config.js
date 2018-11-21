@@ -14,6 +14,7 @@ module.exports = {
   testRegex: '(/__tests__/.*|(\\.|/)(test|spec))\\.(ts|js)x?$',
   testPathIgnorePatterns: [
     '/node_modules/',
+    '/shortcuts/',
     '/__tests__/_fixtures/',
   ],
   coverageDirectory: 'coverage',

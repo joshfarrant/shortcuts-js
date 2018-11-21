@@ -1,5 +1,6 @@
 type WFWorkflowType = (
-  'NCWidget'
+  'ActionExtension'
+  | 'NCWidget'
   | 'WatchKit'
 );
 

@@ -2,6 +2,7 @@ import {
   buildShortcut,
   buildShortcutTemplate,
   encodeShortcut,
+  testUUID,
   withUUID,
   withVariables,
 } from '../../src/utils';
@@ -15,6 +16,9 @@ import {
 import {
   encodeShortcut as encodeShortcutDirect,
 } from '../../src/utils/encodeShortcut';
+import {
+  testUUID as testUUIDDirect,
+} from '../../src/utils/testUUID';
 import {
   withUUID as withUUIDDirect,
 } from '../../src/utils/withUUID';
@@ -44,6 +48,14 @@ describe('util index.ts file', () => {
 
     const actual = encodeShortcut.toString();
     const expected = encodeShortcutDirect.toString();
+
+    expect(actual).toEqual(expected);
+  });
+
+  it('exports testUUID as a named function', () => {
+
+    const actual = testUUID.toString();
+    const expected = testUUIDDirect.toString();
 
     expect(actual).toEqual(expected);
   });

@@ -13,9 +13,13 @@ type ChooseFromMenuOptions = {
 };
 
 /**
+ * @typedef {{label: string, action: Action}} ActionObj
+ */
+
+/**
  * Choose From Menu Action. Presents a menu and runs different actions based on which menu was chosen.
  * @param {Object} [options]
- * @param {{label: string, actions: Action[]}[]} [options.items=[]]
+ * @param {ActionObj[]} [options.items=[]]
  * @param {string} [options.prompt='']
  */
 const chooseFromMenu = (

@@ -18,6 +18,7 @@ type Condition = (
   | '>'
 );
 
+/** @ignore */
 const conditionMap = new Map([
   ['', undefined],
   ['Contains', undefined],

@@ -35,6 +35,7 @@
     "tslint-microsoft-contrib": "~5.2.1",
     "tsutils": "~3.5.0",
     "tui-jsdoc-template": "^1.2.2",
+    "typedoc": "^0.13.0",
     "typescript": "~3.1.6"
   },
   "main": "build/index.js",
@@ -48,6 +49,7 @@
     "test": "npm run lint && jest --coverage",
     "test:watch": "jest --watch",
     "docs": "jsdoc -c .jsdoc.json",
+    "typedoc": "typedoc src/actions --out typedoc --mode file --target es6 --theme default",
     "preversion": "npm run clean && npm test",
     "version": "npm run build",
     "postversion": "git push && git push --tags"

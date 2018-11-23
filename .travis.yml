@@ -5,6 +5,8 @@ node_js:
 
 script: echo "Running tests against $(node -v)..."
 
+install: npm install
+
 jobs:
   include:
     - stage: Produce Coverage

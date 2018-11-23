@@ -11,6 +11,7 @@ import WFSerialization from './WFSerialization';
 
 interface WFWorkflowActionParameters {
   Advanced?: boolean;
+  CustomOutputName?: string;
   GroupingIdentifier?: string;
   OnValue?: boolean;
   ShowHeaders?: boolean;

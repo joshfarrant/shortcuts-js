@@ -4,8 +4,7 @@ import { buildShortcutTemplate } from './buildShortcutTemplate';
 import { encodeShortcut } from './encodeShortcut';
 import { flatten } from './flatten';
 import { getItemType } from './getItemType';
-import { testUUID } from './testUUID';
-import { withUUID } from './withUUID';
+import { withActionOutput } from './withActionOutput';
 import { withVariables } from './withVariables';
 
 export {
@@ -15,7 +14,6 @@ export {
   encodeShortcut,
   flatten,
   getItemType,
-  testUUID,
-  withUUID,
+  withActionOutput,
   withVariables,
 };

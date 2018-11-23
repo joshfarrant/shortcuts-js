@@ -1,4 +1,5 @@
 import { addToVariable } from '../../src/actions';
+import { variable } from '../../src/utils/variables';
 
 describe('addToVariable function', () => {
 
@@ -6,15 +7,19 @@ describe('addToVariable function', () => {
     expect(typeof addToVariable).toBe('function');
   });
 
-  it('builds a addToVariable action when a name is passed', () => {
-    const name = 'Test Variable';
+  it('builds a addToVariable action when a variable is passed', () => {
+    const name = variable('Test Variable');
+
     const expected = {
       WFWorkflowActionIdentifier: 'is.workflow.actions.appendvariable',
       WFWorkflowActionParameters: {
-        WFVariableName: name,
+        WFVariableName: name.VariableName,
       },
     };
-    const actual = addToVariable({ name });
+
+    const actual = addToVariable({
+      variable: name,
+    });
 
     expect(actual).toEqual(expected);
   });

@@ -13,7 +13,9 @@ type ChooseFromMenuOptions = {
 };
 
 /**
- * @typedef {{label: string, action: Action}} ActionObj
+ * @typedef {Object} ActionObj
+ * @property {string} label
+ * @property {Action} action
  */
 
 /**

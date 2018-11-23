@@ -2,7 +2,7 @@
 
 import WFWorkflowAction from '../interfaces/WF/WFWorkflowAction';
 
-import { withUUID } from '../utils';
+import { withActionOutput } from '../utils';
 
 type GetBatteryLevelOptions = {};
 
@@ -17,4 +17,4 @@ const getBatteryLevel = (
   WFWorkflowActionParameters: {},
 });
 
-export default withUUID(getBatteryLevel);
+export default withActionOutput(getBatteryLevel);

@@ -1,24 +1,25 @@
 /** @module actions */
 
+import Attachment from '../interfaces/WF/Attachment';
 import WFWorkflowAction from '../interfaces/WF/WFWorkflowAction';
 
 type AddToVariableOptions = {
-  name: string;
+  variable: Attachment;
 };
 
 /**
  * Add to Variable Action. Appends this action's input to the specified variable, creating the variable if it does not exist.
  * @param {Object} options
- * @param {string} options.name
+ * @param {Variable} options.variable
  */
 const addToVariable = (
   {
-    name,
+    variable,
   }: AddToVariableOptions,
 ): WFWorkflowAction => ({
   WFWorkflowActionIdentifier: 'is.workflow.actions.appendvariable',
   WFWorkflowActionParameters: {
-    WFVariableName: name,
+    WFVariableName: variable.VariableName,
   },
 });
 

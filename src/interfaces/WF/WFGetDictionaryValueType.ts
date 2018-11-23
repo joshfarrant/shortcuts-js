@@ -1,9 +1,9 @@
 /**
- * @typedef {('Value' | 'All Keys'|'All Values')} WFGetDictionaryValueType
+ * @typedef {('Value'|'All Keys'|'All Values')} WFGetDictionaryValueType
  */
 type WFGetDictionaryValueType = (
   'Value'
-  |  'All Keys'
+  | 'All Keys'
   | 'All Values'
 );
 

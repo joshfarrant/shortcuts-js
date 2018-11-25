@@ -16,7 +16,7 @@ import {
   encodeShortcut as encodeShortcutDirect,
 } from '../../src/utils/encodeShortcut';
 import {
-  withActionOutput as withUUIDDirect,
+  withActionOutput as withActionOutputDirect,
 } from '../../src/utils/withActionOutput';
 import {
   withVariables as withVariablesDirect,
@@ -51,7 +51,7 @@ describe('util index.ts file', () => {
   it('exports withActionOutput as a named function', () => {
 
     const actual = withActionOutput.toString();
-    const expected = withUUIDDirect.toString();
+    const expected = withActionOutputDirect.toString();
 
     expect(actual).toEqual(expected);
   });

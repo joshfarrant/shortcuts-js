@@ -45,7 +45,7 @@ const {
 } = require('@joshfarrant/shortcuts-js/actions');
 
 // We'll use this later to reference the output of a calculation
-let calcVar = actionOutput();
+const calcVar = actionOutput();
 
 // Define our list of actions
 const actions = [

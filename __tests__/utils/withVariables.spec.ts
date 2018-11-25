@@ -30,7 +30,6 @@ describe('withVariables function', () => {
 
   it('returns an attachment object when passed a single magic variable', () => {
     const magic = actionOutput();
-    magic.OutputUUID = 'b74c81a8-192a-463f-a0a6-2d327963714f';
 
     const actual = withVariables`${magic}`;
     const expected: WFSerialization = {
@@ -39,7 +38,7 @@ describe('withVariables function', () => {
         string: '￼', // Object replacement character
         attachmentsByRange: {
           '{0, 1}': {
-            OutputUUID: 'b74c81a8-192a-463f-a0a6-2d327963714f',
+            OutputUUID: magic.OutputUUID,
             Type: 'ActionOutput',
           },
         },
@@ -51,7 +50,6 @@ describe('withVariables function', () => {
 
   it('returns an attachment object when passed a single custom named magic variable', () => {
     const magic = actionOutput('My Custom Output');
-    magic.OutputUUID = 'b74c81a8-192a-463f-a0a6-2d327963714f';
 
     const actual = withVariables`${magic}`;
     const expected: WFSerialization = {
@@ -60,7 +58,7 @@ describe('withVariables function', () => {
         string: '￼', // Object replacement character
         attachmentsByRange: {
           '{0, 1}': {
-            OutputUUID: 'b74c81a8-192a-463f-a0a6-2d327963714f',
+            OutputUUID: magic.OutputUUID,
             OutputName: 'My Custom Output',
             Type: 'ActionOutput',
           },
@@ -73,7 +71,6 @@ describe('withVariables function', () => {
 
   it('returns an attachment object when passed a magic variable in the middle of a string', () => {
     const magic = actionOutput();
-    magic.OutputUUID = 'b74c81a8-192a-463f-a0a6-2d327963714f';
 
     const actual = withVariables`Hello, ${magic} world!`;
     const expected: WFSerialization = {
@@ -82,7 +79,7 @@ describe('withVariables function', () => {
         string: 'Hello, ￼ world!', // Contains object replacement character
         attachmentsByRange: {
           '{7, 1}': {
-            OutputUUID: 'b74c81a8-192a-463f-a0a6-2d327963714f',
+            OutputUUID: magic.OutputUUID,
             Type: 'ActionOutput',
           },
         },
@@ -134,13 +131,9 @@ describe('withVariables function', () => {
 
   it('returns an attachment object when passed multiple magic variables in a string', () => {
     const magic1 = actionOutput();
-    magic1.OutputUUID = 'b74c81a8-192a-463f-a0a6-2d327963714f';
     const magic2 = actionOutput();
-    magic2.OutputUUID = '4e8b6858-cf85-4ffe-9019-efb421248510';
     const magic3 = actionOutput();
-    magic3.OutputUUID = 'af9c2e97-8af2-4029-8664-18fb158dbd16';
     const magic4 = actionOutput();
-    magic4.OutputUUID = '10407a89-ef91-4eb0-a3ac-2ea62a8c25b6';
 
     const actual = withVariables`${magic1} Going ${magic2}${magic3} to the ${magic4} blacksmith`;
     const expected: WFSerialization = {
@@ -149,19 +142,19 @@ describe('withVariables function', () => {
         string: '￼ Going ￼￼ to the ￼ blacksmith', // Contains object replacement character
         attachmentsByRange: {
           '{0, 1}': {
-            OutputUUID: 'b74c81a8-192a-463f-a0a6-2d327963714f',
+            OutputUUID: magic1.OutputUUID,
             Type: 'ActionOutput',
           },
           '{8, 1}': {
-            OutputUUID: '4e8b6858-cf85-4ffe-9019-efb421248510',
+            OutputUUID: magic2.OutputUUID,
             Type: 'ActionOutput',
           },
           '{9, 1}': {
-            OutputUUID: 'af9c2e97-8af2-4029-8664-18fb158dbd16',
+            OutputUUID: magic3.OutputUUID,
             Type: 'ActionOutput',
           },
           '{18, 1}': {
-            OutputUUID: '10407a89-ef91-4eb0-a3ac-2ea62a8c25b6',
+            OutputUUID: magic4.OutputUUID,
             Type: 'ActionOutput',
           },
         },
@@ -208,7 +201,6 @@ describe('withVariables function', () => {
 
   it('returns an attachment object when passed a named and magic variables in a string', () => {
     const magic = actionOutput();
-    magic.OutputUUID = 'b74c81a8-192a-463f-a0a6-2d327963714f';
     const name = variable('Test Variable');
 
     const actual = withVariables`${magic} Going ${name} to the blacksmith`;
@@ -218,7 +210,7 @@ describe('withVariables function', () => {
         string: '￼ Going ￼ to the blacksmith', // Contains object replacement character
         attachmentsByRange: {
           '{0, 1}': {
-            OutputUUID: 'b74c81a8-192a-463f-a0a6-2d327963714f',
+            OutputUUID: magic.OutputUUID,
             Type: 'ActionOutput',
           },
           '{8, 1}': {

@@ -1,8 +1,11 @@
 /** @module utils */
 
-import { buildShortcutTemplate, encodeShortcut } from "./";
+import {
+  buildShortcutTemplate,
+  encodeShortcut,
+} from './';
 
-import WFWorkflowActionsInterface from "../interfaces/WF/WFWorkflowAction";
+import WFWorkflowActionsInterface from '../interfaces/WF/WFWorkflowAction';
 
 /**
  * Builds a shortcut from an array of actions.

@@ -40,7 +40,7 @@ export const buildShortcutTemplate = (
     'WFRichTextContentItem',
     'WFSafariWebPageContentItem',
     'WFStringContentItem',
-    'WFURLContentItem'
+    'WFURLContentItem',
   ],
   WFWorkflowActions: flatten(actions),
 });

@@ -1,16 +1,19 @@
-import { withVariables } from '../../src/utils';
 import {
   actionOutput,
+  variable,
+  withVariables,
+} from '../../src/utils';
+import {
   askWhenRun,
   clipboard,
   currentDate,
   shortcutInput,
-  variable,
-} from '../../src/utils/variables';
+} from '../../src/variables';
 
 import WFSerialization from '../../src/interfaces/WF/WFSerialization';
 
 describe('withVariables function', () => {
+
   it('is a function', () => {
     expect(typeof withVariables).toBe('function');
   });
@@ -242,4 +245,5 @@ describe('withVariables function', () => {
 
     expect(actual).toEqual(expected);
   });
+
 });

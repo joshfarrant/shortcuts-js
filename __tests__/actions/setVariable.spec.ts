@@ -1,5 +1,5 @@
 import { setVariable } from '../../src/actions';
-import { variable } from '../../src/utils/variables';
+import { variable } from '../../src/utils';
 
 describe('setVariable function', () => {
 

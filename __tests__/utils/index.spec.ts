@@ -1,11 +1,16 @@
 import {
+  actionOutput,
   buildShortcut,
   buildShortcutTemplate,
   encodeShortcut,
+  variable,
   withActionOutput,
   withVariables,
 } from '../../src/utils';
 
+import {
+  actionOutput as actionOutputDirect,
+} from '../../src/utils/actionOutput';
 import {
   buildShortcut as buildShortcutDirect,
 } from '../../src/utils/buildShortcut';
@@ -16,6 +21,9 @@ import {
   encodeShortcut as encodeShortcutDirect,
 } from '../../src/utils/encodeShortcut';
 import {
+  variable as variableDirect,
+} from '../../src/utils/variable';
+import {
   withActionOutput as withActionOutputDirect,
 } from '../../src/utils/withActionOutput';
 import {
@@ -23,6 +31,14 @@ import {
 } from '../../src/utils/withVariables';
 
 describe('util index.ts file', () => {
+
+  it('exports actionOutput as a named function', () => {
+
+    const actual = actionOutput.toString();
+    const expected = actionOutputDirect.toString();
+
+    expect(actual).toEqual(expected);
+  });
 
   it('exports buildShortcut as a named function', () => {
 
@@ -48,6 +64,14 @@ describe('util index.ts file', () => {
     expect(actual).toEqual(expected);
   });
 
+  it('exports variable as a named function', () => {
+
+    const actual = variable.toString();
+    const expected = variableDirect.toString();
+
+    expect(actual).toEqual(expected);
+  });
+
   it('exports withActionOutput as a named function', () => {
 
     const actual = withActionOutput.toString();
@@ -63,4 +87,5 @@ describe('util index.ts file', () => {
 
     expect(actual).toEqual(expected);
   });
+
 });

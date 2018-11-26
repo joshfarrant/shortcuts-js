@@ -2,7 +2,7 @@ import { getVariable } from '../../src/actions';
 import {
   actionOutput,
   variable,
-} from '../../src/utils/variables';
+} from '../../src/utils';
 
 describe('getVariable function', () => {
 
@@ -49,4 +49,5 @@ describe('getVariable function', () => {
 
     expect(actual).toEqual(expected);
   });
+
 });

@@ -1,5 +1,7 @@
-import { withActionOutput } from '../../src/utils';
-import { actionOutput } from '../../src/utils/variables';
+import {
+  actionOutput,
+  withActionOutput,
+} from '../../src/utils';
 
 import { number } from '../../src/actions';
 

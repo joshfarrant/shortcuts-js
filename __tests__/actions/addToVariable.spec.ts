@@ -1,5 +1,5 @@
 import { addToVariable } from '../../src/actions';
-import { variable } from '../../src/utils/variables';
+import { variable } from '../../src/utils';
 
 describe('addToVariable function', () => {
 
@@ -23,4 +23,5 @@ describe('addToVariable function', () => {
 
     expect(actual).toEqual(expected);
   });
+
 });

@@ -1,23 +1,13 @@
 import {
-  buildShortcut as buildShortcutImported,
-  withVariables as withVariablesImported,
-} from './utils';
-import {
   actionOutput,
-  askWhenRun,
-  clipboard,
-  currentDate,
-  shortcutInput,
+  buildShortcut,
   variable,
-} from './utils/variables';
+  withVariables,
+} from './utils';
 
-export const buildShortcut = buildShortcutImported;
-export const withVariables = withVariablesImported;
 export {
   actionOutput,
-  askWhenRun,
-  clipboard,
-  currentDate,
-  shortcutInput,
+  buildShortcut,
   variable,
+  withVariables,
 };

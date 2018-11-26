@@ -19,7 +19,10 @@ export const buildShortcutTemplate = (
     WFWorkflowIconGlyphNumber: options.icon.glyph
   },
   WFWorkflowImportQuestions: [],
-  WFWorkflowTypes: ['NCWidget', 'WatchKit'],
+  WFWorkflowTypes: [
+    'NCWidget',
+    'WatchKit',
+  ],
   WFWorkflowInputContentItemClasses: [
     'WFAppStoreAppContentItem',
     'WFArticleContentItem',
@@ -39,5 +42,5 @@ export const buildShortcutTemplate = (
     'WFStringContentItem',
     'WFURLContentItem'
   ],
-  WFWorkflowActions: flatten(actions)
+  WFWorkflowActions: flatten(actions),
 });

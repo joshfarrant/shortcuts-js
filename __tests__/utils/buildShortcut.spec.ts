@@ -1,12 +1,12 @@
-import * as fs from 'fs';
-
-import { buildShortcut } from '../../src/utils';
+import {
+  buildShortcut,
+  buildShortcutTemplate,
+  encodeShortcut,
+} from '../../src/utils';
 
 import {
   testActions,
 } from '../_fixtures/actions';
-
-const fsp = fs.promises;
 
 describe('buildShortcut function', () => {
 
@@ -14,21 +14,60 @@ describe('buildShortcut function', () => {
     expect(typeof buildShortcut).toBe('function');
   });
 
-  it('builds an encoded shortcut object when no params are passed', async () => {
-    expect.assertions(1);
-
-    const expected = await fsp.readFile('./__tests__/_fixtures/Empty.shortcut');
+  it('builds an encoded shortcut object when no params are passed', () => {
+    const template = buildShortcutTemplate([], {
+      icon: {
+        color: 4274264319,
+        glyph: 59446,
+      },
+    });
+    const expected = encodeShortcut(template);
 
     const actual = buildShortcut();
     expect(actual).toEqual(expected);
   });
 
-  it('builds an encoded shortcut object when an actions array is passed', async () => {
-    expect.assertions(1);
-
-    const expected = await fsp.readFile('./__tests__/_fixtures/Actions.shortcut');
+  it('builds an encoded shortcut object when an actions array is passed', () => {
+    const template = buildShortcutTemplate(testActions, {
+      icon: {
+        color: 4274264319,
+        glyph: 59446,
+      },
+    });
+    const expected = encodeShortcut(template);
 
     const actual = buildShortcut(testActions);
+    expect(actual).toEqual(expected);
+  });
+
+  it('builds an encoded shortcut object when an options object is passed', () => {
+    const options = {
+      icon: {
+        color: 1440408063,
+        glyph: 59784,
+      },
+    };
+    const template = buildShortcutTemplate(testActions, options);
+    const expected = encodeShortcut(template);
+
+    const actual = buildShortcut(testActions, options);
+    expect(actual).toEqual(expected);
+  });
+
+  it('builds an encoded shortcut object when an incomplete options object is passed', () => {
+    const template = buildShortcutTemplate(testActions, {
+      icon: {
+        color: 1440408063,
+        glyph: 59446,
+      },
+    });
+    const expected = encodeShortcut(template);
+
+    const actual = buildShortcut(testActions, {
+      icon: {
+        color: 1440408063,
+      },
+    });
     expect(actual).toEqual(expected);
   });
 

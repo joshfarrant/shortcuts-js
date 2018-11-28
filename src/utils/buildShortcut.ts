@@ -1,8 +1,11 @@
 /** @module utils */
 
-import { buildShortcutTemplate, encodeShortcut } from "./";
+import {
+  buildShortcutTemplate,
+  encodeShortcut,
+} from './';
 
-import WFWorkflowActionsInterface from "../interfaces/WF/WFWorkflowAction";
+import WFWorkflowActionsInterface from '../interfaces/WF/WFWorkflowAction';
 
 /**
  * Builds a shortcut from an array of actions.
@@ -11,14 +14,28 @@ import WFWorkflowActionsInterface from "../interfaces/WF/WFWorkflowAction";
  */
 export const buildShortcut = (
   actions: WFWorkflowActionsInterface[] = [],
-  options: {
+  options?: {
+    icon?: {
+      color?: number,
+      glyph?: number,
+    },
+  },
+): string => {
+  const completeOptions = {
     icon: {
-      color: number;
-      glyph: number;
+      color: 4274264319, // Yellow
+      glyph: 59446, // Keyboard
+    },
+  };
+
+  if (options && options.icon) {
+    completeOptions.icon = {
+      ...completeOptions.icon,
+      ...options.icon,
     };
   }
-): string => {
-  const template = buildShortcutTemplate(actions, options);
+
+  const template = buildShortcutTemplate(actions, completeOptions);
   const shortcut = encodeShortcut(template);
   return shortcut;
 };

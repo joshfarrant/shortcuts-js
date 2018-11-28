@@ -1,4 +1,7 @@
-import shortcutColors from "./shortcutColors";
-import shortcutGlyphs from "./shortcutGlyphs";
+import { COLORS } from './colors';
+import { GLYPHS } from './glyphs';
 
-export { shortcutColors, shortcutGlyphs };
+export const ICON = {
+  COLORS,
+  GLYPHS,
+};

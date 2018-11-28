@@ -1,6 +1,6 @@
 {
   "name": "@joshfarrant/shortcuts-js",
-  "version": "0.1.7",
+  "version": "0.2.0",
   "description": "An iOS 12 Shortcuts creator",
   "engineStrict": true,
   "engines": {

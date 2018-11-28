@@ -1,9 +1,9 @@
-import { testUUID } from '.';
+import Attachment from '../interfaces/WF/Attachment';
 import WFSerialization from '../interfaces/WF/WFSerialization';
 
 export const withVariables = (
   strings: TemplateStringsArray,
-  ...vars: string[]
+  ...vars: Attachment[]
 ): WFSerialization => ({
   WFSerializationType: 'WFTextTokenString',
   Value: {
@@ -23,17 +23,7 @@ export const withVariables = (
 
         return {
           ...a,
-          [`{${lengthSoFar}, 1}`]: (
-            testUUID(vars[i]) ? {
-              // Magic Variable
-              OutputUUID: vars[i],
-              Type: 'ActionOutput',
-            } : {
-              // Named Variable
-              VariableName: vars[i],
-              Type: 'Variable',
-            }
-          ),
+          [`{${lengthSoFar}, 1}`]: vars[i],
         };
       },
       {},

@@ -1,6 +1,6 @@
 /** @module actions */
 
-import { withUUID } from '../utils';
+import { withActionOutput } from '../utils';
 
 import WFWorkflowAction from '../interfaces/WF/WFWorkflowAction';
 
@@ -28,4 +28,4 @@ const runShortcut = (
   },
 });
 
-export default withUUID(runShortcut);
+export default withActionOutput(runShortcut);

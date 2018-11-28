@@ -1,12 +1,16 @@
 import {
+  actionOutput,
   buildShortcut,
   buildShortcutTemplate,
   encodeShortcut,
-  testUUID,
-  withUUID,
+  variable,
+  withActionOutput,
   withVariables,
 } from '../../src/utils';
 
+import {
+  actionOutput as actionOutputDirect,
+} from '../../src/utils/actionOutput';
 import {
   buildShortcut as buildShortcutDirect,
 } from '../../src/utils/buildShortcut';
@@ -17,16 +21,24 @@ import {
   encodeShortcut as encodeShortcutDirect,
 } from '../../src/utils/encodeShortcut';
 import {
-  testUUID as testUUIDDirect,
-} from '../../src/utils/testUUID';
+  variable as variableDirect,
+} from '../../src/utils/variable';
 import {
-  withUUID as withUUIDDirect,
-} from '../../src/utils/withUUID';
+  withActionOutput as withActionOutputDirect,
+} from '../../src/utils/withActionOutput';
 import {
   withVariables as withVariablesDirect,
 } from '../../src/utils/withVariables';
 
 describe('util index.ts file', () => {
+
+  it('exports actionOutput as a named function', () => {
+
+    const actual = actionOutput.toString();
+    const expected = actionOutputDirect.toString();
+
+    expect(actual).toEqual(expected);
+  });
 
   it('exports buildShortcut as a named function', () => {
 
@@ -52,18 +64,18 @@ describe('util index.ts file', () => {
     expect(actual).toEqual(expected);
   });
 
-  it('exports testUUID as a named function', () => {
+  it('exports variable as a named function', () => {
 
-    const actual = testUUID.toString();
-    const expected = testUUIDDirect.toString();
+    const actual = variable.toString();
+    const expected = variableDirect.toString();
 
     expect(actual).toEqual(expected);
   });
 
-  it('exports withUUID as a named function', () => {
+  it('exports withActionOutput as a named function', () => {
 
-    const actual = withUUID.toString();
-    const expected = withUUIDDirect.toString();
+    const actual = withActionOutput.toString();
+    const expected = withActionOutputDirect.toString();
 
     expect(actual).toEqual(expected);
   });
@@ -75,4 +87,5 @@ describe('util index.ts file', () => {
 
     expect(actual).toEqual(expected);
   });
+
 });

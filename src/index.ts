@@ -1,7 +1,13 @@
 import {
-  buildShortcut as buildShortcutImported,
-  withVariables as withVariablesImported,
+  actionOutput,
+  buildShortcut,
+  variable,
+  withVariables,
 } from './utils';
 
-export const buildShortcut = buildShortcutImported;
-export const withVariables = withVariablesImported;
+export {
+  actionOutput,
+  buildShortcut,
+  variable,
+  withVariables,
+};

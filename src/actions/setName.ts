@@ -1,6 +1,6 @@
 /** @module actions */
 
-import { withUUID } from '../utils';
+import { withActionOutput } from '../utils';
 
 import WFWorkflowAction from '../interfaces/WF/WFWorkflowAction';
 
@@ -29,4 +29,4 @@ const setName = (
   },
 });
 
-export default withUUID(setName);
+export default withActionOutput(setName);

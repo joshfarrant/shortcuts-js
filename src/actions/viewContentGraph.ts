@@ -1,6 +1,6 @@
 /** @module actions */
 
-import { withUUID } from '../utils';
+import { withActionOutput } from '../utils';
 
 import WFWorkflowAction from '../interfaces/WF/WFWorkflowAction';
 
@@ -17,4 +17,4 @@ const viewContentGraph = (
   WFWorkflowActionParameters: {},
 });
 
-export default withUUID(viewContentGraph);
+export default withActionOutput(viewContentGraph);

@@ -1,5 +1,6 @@
 import WFItemType from '../interfaces/WF/WFItemType';
 
+/** @ignore */
 type itemType = (
   string
   | number

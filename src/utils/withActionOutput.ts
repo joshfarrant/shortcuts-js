@@ -1,6 +1,7 @@
 import Attachment from '../interfaces/WF/Attachment';
 import WFWorkflowAction from '../interfaces/WF/WFWorkflowAction';
 
+/** @ignore */
 export const withActionOutput = <OptionsType>(
   actionBuilder: (options: OptionsType) => WFWorkflowAction,
 ) => (

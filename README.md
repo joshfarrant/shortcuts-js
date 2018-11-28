@@ -10,9 +10,11 @@
 
 A Node.js iOS 12 Shortcuts creator.
 
+Find out more at [Shortcuts.fun](https://shortcuts.fun).
+
 [@joshfarrant/shortcuts-js](https://www.npmjs.com/package/@joshfarrant/shortcuts-js) on npm.
 
-[NPM](https://www.npmjs.com/package/@joshfarrant/shortcuts-js) | [Documentation](https://docs.shortcuts.fun) | [Contributing](https://github.com/joshfarrant/shortcuts-js/blob/master/CONTRIBUTING.md) | [Medium](https://medium.com/@JoshFarrant/creating-ios-12-shortcuts-with-javascript-and-shortcuts-js-942420ca9904)
+[NPM](https://www.npmjs.com/package/@joshfarrant/shortcuts-js) | [Documentation](https://docs.shortcuts.fun/globals.html) | [Contributing](https://github.com/joshfarrant/shortcuts-js/blob/master/CONTRIBUTING.md) | [Medium](https://medium.com/@JoshFarrant/creating-ios-12-shortcuts-with-javascript-and-shortcuts-js-942420ca9904)
 
 See [this issue](https://github.com/joshfarrant/shortcuts-js/issues/6) for a complete list of all Actions implemented so far.
 

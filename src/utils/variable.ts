@@ -2,7 +2,7 @@ import Attachment from '../interfaces/WF/Attachment';
 
 /**
  * Creates a Variable.
- * @param {string} name
+ * @ignore
  */
 export const variable = (name: string): Attachment => ({
   VariableName: name,

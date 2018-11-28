@@ -4,7 +4,7 @@ import Attachment from '../interfaces/WF/Attachment';
 
 /**
  * Creates a Magic Variable to be used as action output.
- * @param {string} [name]
+ * @ignore
  */
 export const actionOutput = (name?: string): Attachment => ({
   ...(name && { OutputName: name }),

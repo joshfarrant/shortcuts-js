@@ -1,5 +1,3 @@
-/** @module actions */
-
 import {
   buildSerialization,
   withUUID,
@@ -9,6 +7,7 @@ import WFHTTPBodyType from '../interfaces/WF/WFHTTPBodyType';
 import WFHttpMethod from '../interfaces/WF/WFHTTPMethod';
 import WFWorkflowAction from '../interfaces/WF/WFWorkflowAction';
 
+/** @ignore */
 type Value = (
   string
   | number
@@ -17,32 +16,50 @@ type Value = (
   | {}
 );
 
-type GetContentsOfUrlOptions = {
-  headers?: {
-    [x: string]: Value,
-  };
-  method?: WFHttpMethod;
-  requestBodyType?: WFHTTPBodyType;
-  requestBody?: {
-    [x: string]: Value,
-  };
-};
-
 /**
  * Get Content of URL Action. Gets the contents of URLs passed into the action. Useful for downloading files and web content, or for making API requests.
- * @param {Object} options
- * @param {WFHttpMethod} [options.method='GET']
- * @param {WFHTTPBodyType} [options.requestBodyType='']
- * @param {requestBody} [options.requestBody={}]
+ *
+ * ```js
+ * getContentsOfUrl({
+ *   headers: {
+ *     'Authorization': 'Pretty please',
+ *     'X-Some-Header': 'Badger',
+ *   },
+ *   method: 'POST',
+ *   requestBodyType: 'JSON',
+ *   requestBody: {
+ *     myObj: {
+ *       things: [1, 2, 3],
+ *       someString: 'Hello',
+ *     },
+ *     someOtherString: 'World!',
+ *   },
+ * });
+ * ```
  */
 const getContentsOfUrl = (
-  {
+  options: {
+    /** The headers to attach to the request */
+    headers?: {
+      [x: string]: Value,
+    };
+    /** The HTTP method to use */
+    method?: WFHttpMethod;
+    /** The request body type */
+    requestBodyType?: WFHTTPBodyType;
+    /** The request body */
+    requestBody?: {
+      [x: string]: Value,
+    };
+  },
+): WFWorkflowAction => {
+  const {
     headers = {},
     method = 'GET',
     requestBodyType = 'JSON',
     requestBody = {},
-  }: GetContentsOfUrlOptions,
-): WFWorkflowAction => {
+  } = options;
+
   const action: WFWorkflowAction = {
     WFWorkflowActionIdentifier: 'is.workflow.actions.downloadurl',
     WFWorkflowActionParameters: {

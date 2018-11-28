@@ -1,25 +1,30 @@
-/** @module actions */
-
 import WFWorkflowAction from '../interfaces/WF/WFWorkflowAction';
-
-type UrlOptions = {
-  url?: string;
-};
 
 /**
  * URL Action. Passes the specified URL to the next action.
- * @param {Object} options
- * @param {string} [options.url='']
+ *
+ * ```js
+ * url({
+ *   url: 'https://shortcuts.fun',
+ * });
+ * ```
  */
 const url = (
-  {
-    url = '',
-  }: UrlOptions,
-): WFWorkflowAction => ({
-  WFWorkflowActionIdentifier: 'is.workflow.actions.url',
-  WFWorkflowActionParameters: {
-    WFURLActionURL: url,
+  options: {
+    /** The URL to set */
+    url?: string,
   },
-});
+): WFWorkflowAction => {
+  const {
+    url = '',
+  } = options;
+
+  return {
+    WFWorkflowActionIdentifier: 'is.workflow.actions.url',
+    WFWorkflowActionParameters: {
+      WFURLActionURL: url,
+    },
+  };
+};
 
 export default url;

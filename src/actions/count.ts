@@ -1,28 +1,34 @@
-/** @module actions */
-
 import { withUUID } from '../utils';
 
 import WFCountType from '../interfaces/WF/WFCountType';
 import WFWorkflowAction from '../interfaces/WF/WFWorkflowAction';
 
-type CountOptions = {
-  type?: WFCountType;
-};
-
 /**
  * Count Action. Counts the number of items, characters, words, sentences, or lines passed as input.
- * @param {Object} options
- * @param {WFCountType} [options.type='Items']
+ *
+ * ```js
+ * count({
+ *   // Count the number of lines in the input
+ *   type: 'Lines',
+ * });
+ * ```
  */
 const count = (
-  {
-    type = 'Items',
-  }: CountOptions,
-): WFWorkflowAction => ({
-  WFWorkflowActionIdentifier: 'is.workflow.actions.count',
-  WFWorkflowActionParameters: {
-    WFCountType: type,
+  options: {
+    /** The thing to count */
+    type?: WFCountType;
   },
-});
+): WFWorkflowAction => {
+  const {
+    type = 'Items',
+  } = options;
+
+  return {
+    WFWorkflowActionIdentifier: 'is.workflow.actions.count',
+    WFWorkflowActionParameters: {
+      WFCountType: type,
+    },
+  };
+};
 
 export default withUUID(count);

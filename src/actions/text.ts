@@ -1,28 +1,33 @@
-/** @module actions */
-
 import { withUUID } from '../utils';
 
 import WFSerialization from '../interfaces/WF/WFSerialization';
 import WFWorkflowAction from '../interfaces/WF/WFWorkflowAction';
 
-type TextOptions = {
-  text?: WFSerialization | string;
-};
-
 /**
  * Text Action. Passes the specified text to the next action.
- * @param {Object} options
- * @param {string} [options.text='']
+ *
+ * ```js
+ * text({
+ *   text: 'Some lovely text!',
+ * });
+ * ```
  */
 const text = (
-  {
-    text = '',
-  }: TextOptions,
-): WFWorkflowAction => ({
-  WFWorkflowActionIdentifier: 'is.workflow.actions.gettext',
-  WFWorkflowActionParameters: {
-    WFTextActionText: text,
+  options: {
+    /** The text to set */
+    text?: WFSerialization | string,
   },
-});
+): WFWorkflowAction => {
+  const {
+    text = '',
+  } = options;
+
+  return {
+    WFWorkflowActionIdentifier: 'is.workflow.actions.gettext',
+    WFWorkflowActionParameters: {
+      WFTextActionText: text,
+    },
+  };
+};
 
 export default withUUID(text);

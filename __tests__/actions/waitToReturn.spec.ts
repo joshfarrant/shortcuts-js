@@ -11,7 +11,7 @@ describe('waitToReturn function', () => {
       WFWorkflowActionIdentifier: 'is.workflow.actions.waittoreturn',
       WFWorkflowActionParameters: {},
     };
-    const actual = waitToReturn({});
+    const actual = waitToReturn();
 
     expect(actual).toEqual(expected);
   });

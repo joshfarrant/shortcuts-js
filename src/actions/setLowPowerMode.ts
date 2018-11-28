@@ -1,25 +1,30 @@
-/** @module actions */
-
 import WFWorkflowAction from '../interfaces/WF/WFWorkflowAction';
-
-type SetLowPowerModeOptions = {
-  value?: boolean;
-};
 
 /**
  * Set Low Power Mode Action. Sets the device's Low Power Mode to on or off.
- * @param {Object} options
- * @param {boolean} [options.value=true]
+ *
+ * ```js
+ * setLowPowerMode({
+ *   value: false,
+ * });
+ * ```
  */
 const setLowPowerMode = (
-  {
-    value = true,
-  }: SetLowPowerModeOptions,
-): WFWorkflowAction => ({
-  WFWorkflowActionIdentifier: 'is.workflow.actions.lowpowermode.set',
-  WFWorkflowActionParameters: {
-    OnValue: value,
+  options: {
+    /** Enable or disable low power mode */
+    value?: boolean,
   },
-});
+): WFWorkflowAction => {
+  const {
+    value = true,
+  } = options;
+
+  return {
+    WFWorkflowActionIdentifier: 'is.workflow.actions.lowpowermode.set',
+    WFWorkflowActionParameters: {
+      OnValue: value,
+    },
+  };
+};
 
 export default setLowPowerMode;

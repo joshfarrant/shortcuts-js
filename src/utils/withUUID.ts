@@ -2,6 +2,7 @@ import * as uuidv4 from 'uuid/v4';
 
 import WFWorkflowAction from '../interfaces/WF/WFWorkflowAction';
 
+/** @ignore */
 export const withUUID = <OptionsType>(
   actionBuilder: (options: OptionsType) => WFWorkflowAction,
 ) => (

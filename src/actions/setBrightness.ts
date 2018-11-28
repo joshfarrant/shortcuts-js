@@ -1,25 +1,30 @@
-/** @module actions */
-
 import WFWorkflowAction from '../interfaces/WF/WFWorkflowAction';
-
-type SetBrightnessOptions = {
-  brightness?: number,
-};
 
 /**
  * Set Brightness Action. Sets the device brightness.
- * @param {Object} [options]
- * @param {number} [options.brightness=100]
+ *
+ * ```js
+ * setBrightness({
+ *   brightness: 75,
+ * });
+ * ```
  */
 const setBrightness = (
-  {
-    brightness = 100,
-  }: SetBrightnessOptions,
-): WFWorkflowAction => ({
-  WFWorkflowActionIdentifier: 'is.workflow.actions.setbrightness',
-  WFWorkflowActionParameters: {
-    WFBrightness: brightness,
+  options: {
+    /** The brightness value from 1-100 */
+    brightness?: number,
   },
-});
+): WFWorkflowAction => {
+  const {
+    brightness = 100,
+  } = options;
+
+  return {
+    WFWorkflowActionIdentifier: 'is.workflow.actions.setbrightness',
+    WFWorkflowActionParameters: {
+      WFBrightness: brightness,
+    },
+  };
+};
 
 export default setBrightness;

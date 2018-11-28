@@ -1,5 +1,3 @@
-/** @module utils */
-
 import {
   buildShortcutTemplate,
   encodeShortcut,
@@ -9,8 +7,7 @@ import WFWorkflowActionsInterface from '../interfaces/WF/WFWorkflowAction';
 
 /**
  * Builds a shortcut from an array of actions.
- * @param {Array} [actions=[]] An array of actions
- * @return {string} The built shortcut
+ * @ignore
  */
 export const buildShortcut = (
   actions: WFWorkflowActionsInterface[] = [],

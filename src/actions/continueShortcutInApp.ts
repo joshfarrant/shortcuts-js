@@ -1,16 +1,13 @@
-/** @module actions */
-
 import WFWorkflowAction from '../interfaces/WF/WFWorkflowAction';
-
-type ContinueShortcutInAppOptions = {};
 
 /**
  * Continue Shortcut in App Action. Switches into the Shortcuts app and continues to the next action.
- * @param {Object} [options]
+ *
+ * ```js
+ * continueShortcutInApp();
+ * ```
  */
-const continueShortcutInApp = (
-  {}: ContinueShortcutInAppOptions,
-): WFWorkflowAction => ({
+const continueShortcutInApp = (): WFWorkflowAction => ({
   WFWorkflowActionIdentifier: 'is.workflow.actions.handoff',
   WFWorkflowActionParameters: {},
 });

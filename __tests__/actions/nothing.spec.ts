@@ -11,7 +11,7 @@ describe('nothing function', () => {
       WFWorkflowActionIdentifier: 'is.workflow.actions.nothing',
       WFWorkflowActionParameters: {},
     };
-    const actual = nothing({});
+    const actual = nothing();
 
     expect(actual).toEqual(expected);
   });

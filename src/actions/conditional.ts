@@ -1,23 +1,9 @@
-/** @module actions */
-
 import * as uuidv4 from 'uuid/v4';
 
 import WFCondition from '../interfaces/WF/WFCondition';
 import WFWorkflowAction from '../interfaces/WF/WFWorkflowAction';
 
-/**
- * @typedef {(Condition|''|'Contains'|'='|'<'|'>')} Operation
- */
-
-type Condition = (
-  WFCondition
-  | ''
-  | 'Contains'
-  | '='
-  | '<'
-  | '>'
-);
-
+/** @ignore */
 const conditionMap = new Map([
   ['', undefined],
   ['Contains', undefined],
@@ -26,29 +12,52 @@ const conditionMap = new Map([
   ['>', 'Is Greater Than'],
 ]);
 
-type ConditionalOptions = {
-  ifTrue?: WFWorkflowAction[],
-  ifFalse?: WFWorkflowAction[],
-  input?: Condition,
-  value?: string | number,
-};
-
 /**
  * If Action. Tests if any item passed as input matches the specified condition, and if so, runs the actions inside. Otherwise, the actions under "Otherwise" are run.
- * @param {Object} [options]
- * @param {Action[]} [options.ifTrue=[]]
- * @param {Action[]} [options.ifFalse=[]]
- * @param {Condition} [options.input]
- * @param {string|number} [options.value]
+ *
+ * ```js
+ * conditional({
+ *   ifTrue: [
+ *     comment({
+ *       text: 'Do something when true',
+ *     }),
+ *   ],
+ *   ifFalse: [
+ *     comment({
+ *       text: 'Do something different when false',
+ *     }),
+ *   ],
+ *   input: '<',
+ *   value: 27,
+ * });
+ * ```
  */
 const conditional = (
-  {
+  options: {
+    /** An array of actions to perform if condition is true */
+    ifTrue?: WFWorkflowAction[],
+    /** An array of actions to perform if condition is false */
+    ifFalse?: WFWorkflowAction[],
+    /** The test to perform on the input */
+    input?: (
+      WFCondition
+      | ''
+      | 'Contains'
+      | '='
+      | '<'
+      | '>'
+    ),
+    /** The value to test the input against */
+    value?: string | number,
+  },
+): WFWorkflowAction[] => {
+  const {
     ifTrue = [],
     ifFalse = [],
     input,
     value,
-  }: ConditionalOptions,
-): WFWorkflowAction[] => {
+  } = options;
+
   const groupingIdentifier = uuidv4();
 
   const ifAction: WFWorkflowAction = {

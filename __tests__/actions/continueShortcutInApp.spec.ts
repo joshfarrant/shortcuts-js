@@ -11,7 +11,7 @@ describe('continueShortcutInApp function', () => {
       WFWorkflowActionIdentifier: 'is.workflow.actions.handoff',
       WFWorkflowActionParameters: {},
     };
-    const actual = continueShortcutInApp({});
+    const actual = continueShortcutInApp();
 
     expect(actual).toEqual(expected);
   });

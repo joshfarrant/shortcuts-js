@@ -1,16 +1,13 @@
-/** @module actions */
-
 import WFWorkflowAction from '../interfaces/WF/WFWorkflowAction';
-
-type WaitToReturnOptions = {};
 
 /**
  * Wait to Return Action. Pauses execution until you leave the Shortcuts app and return to it.
- * @param {Object} [options]
+ *
+ * ```js
+ * waitToReturn();
+ * ```
  */
-const waitToReturn = (
-  {}: WaitToReturnOptions,
-): WFWorkflowAction => ({
+const waitToReturn = (): WFWorkflowAction => ({
   WFWorkflowActionIdentifier: 'is.workflow.actions.waittoreturn',
   WFWorkflowActionParameters: {},
 });

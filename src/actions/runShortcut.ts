@@ -1,31 +1,37 @@
-/** @module actions */
-
 import { withUUID } from '../utils';
 
 import WFWorkflowAction from '../interfaces/WF/WFWorkflowAction';
 
-type RunShortcutOptions = {
-  name: string;
-  show?: boolean;
-};
-
 /**
  * Run Shortcut Action. Run a shortcut from your shortcut.
- * @param {Object} options
- * @param {string} options.name
- * @param {boolean} [options.show=false]
+ *
+ * ```js
+ * runShortcut({
+ *   name: 'My Great Shortcut',
+ *   show: true,
+ * });
+ * ```
  */
 const runShortcut = (
-  {
+  options: {
+    /** The name of the shortcut to run */
+    name: string,
+    /** Whether to show the shortcut while it runs */
+    show?: boolean,
+  },
+): WFWorkflowAction => {
+  const {
     name,
     show = false,
-  }: RunShortcutOptions,
-): WFWorkflowAction => ({
-  WFWorkflowActionIdentifier: 'is.workflow.actions.runworkflow',
-  WFWorkflowActionParameters: {
-    WFWorkflowName: name,
-    WFShowWorkflow: show,
-  },
-});
+  } = options;
+
+  return {
+    WFWorkflowActionIdentifier: 'is.workflow.actions.runworkflow',
+    WFWorkflowActionParameters: {
+      WFWorkflowName: name,
+      WFShowWorkflow: show,
+    },
+  };
+};
 
 export default withUUID(runShortcut);

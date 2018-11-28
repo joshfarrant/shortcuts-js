@@ -3,6 +3,7 @@ import { flatten } from './flatten';
 import WFWorkflow from '../interfaces/WF/WFWorkflow';
 import WFWorkflowActionsInterface from '../interfaces/WF/WFWorkflowAction';
 
+/** @ignore */
 export const buildShortcutTemplate = (
   actions: WFWorkflowActionsInterface[] = [],
 ): WFWorkflow => ({

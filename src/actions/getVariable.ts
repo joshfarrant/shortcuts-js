@@ -1,16 +1,11 @@
-/** @module actions */
-
 import WFSerialization from '../interfaces/WF/WFSerialization';
 import WFWorkflowAction from '../interfaces/WF/WFWorkflowAction';
 
 import { testUUID } from '../utils';
 
-type GetVariableOptions = {
-  variable: WFSerialization | string;
-};
-
+/** @ignore */
 const formatSerialization = (variable: WFSerialization | string): WFSerialization => {
-  //  Already serialized
+  // Already serialized
   if (typeof variable !== 'string') {
     return variable;
   }
@@ -38,18 +33,29 @@ const formatSerialization = (variable: WFSerialization | string): WFSerializatio
 
 /**
  * Get Variable Action. Gets the value of the specified variable and passes it to the next action.
- * @param {Object} options
- * @param {string} options.variable
+ *
+ * ```js
+ * getVariable({
+ *   variable: 'My Variable',
+ * });
+ * ```
  */
 const getVariable = (
-  {
-    variable,
-  }: GetVariableOptions,
-): WFWorkflowAction => ({
-  WFWorkflowActionIdentifier: 'is.workflow.actions.getvariable',
-  WFWorkflowActionParameters: {
-    WFVariable: formatSerialization(variable),
+  options: {
+    /** The name of the variable to get */
+    variable: WFSerialization | string,
   },
-});
+): WFWorkflowAction => {
+  const {
+    variable,
+  } = options;
+
+  return {
+    WFWorkflowActionIdentifier: 'is.workflow.actions.getvariable',
+    WFWorkflowActionParameters: {
+      WFVariable: formatSerialization(variable),
+    },
+  };
+};
 
 export default getVariable;

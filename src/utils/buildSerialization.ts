@@ -11,6 +11,7 @@ interface ValueObject {
 
 interface ValueArray extends Array<Value> {}
 
+/** @ignore */
 const valueMap = [{
   // String
   builder: (val: string, key?: string): WFDictionaryFieldValueItem => {
@@ -149,6 +150,7 @@ const valueMap = [{
   ),
 }];
 
+/** @ignore */
 export const getMatch = (
   val: Value,
   key?: string,
@@ -173,6 +175,7 @@ export const getMatch = (
   return builder(val, key);
 };
 
+/** @ignore */
 export const buildSerialization = (
   data: ValueObject = {},
 ): WFSerialization => ({

@@ -1,33 +1,43 @@
-/** @module actions */
-
 import * as uuidv4 from 'uuid/v4';
 
 import WFWorkflowAction from '../interfaces/WF/WFWorkflowAction';
 
-type ChooseFromMenuOptions = {
-  items?: {
-    label: string,
-    actions: WFWorkflowAction[],
-  }[],
-  prompt?: string,
+type ChooseFromMenuItem = {
+  label: string;
+  actions: WFWorkflowAction[];
 };
 
 /**
- * @typedef {{label: string, action: Action}} ActionObj
- */
-
-/**
  * Choose From Menu Action. Presents a menu and runs different actions based on which menu was chosen.
- * @param {Object} [options]
- * @param {ActionObj[]} [options.items=[]]
- * @param {string} [options.prompt='']
+ *
+ * ```js
+ * chooseFromMenu({
+ *   items: [{
+ *     label: 'Blue',
+ *     // An array of actions to perform if 'blue' is selected
+ *     actions: [],
+ *   }, {
+ *     label: 'Green',
+ *     // An array of actions to perform if 'green' is selected
+ *     actions: [],
+ *   }],
+ *   prompt: 'Which of these is your favourite colour?'
+ * });
+ * ```
  */
 const chooseFromMenu = (
-  {
+  options: {
+    /** An array of menu items */
+    items?: ChooseFromMenuItem[],
+    /** The title of the menu */
+    prompt?: string,
+  },
+): WFWorkflowAction[] => {
+  const {
     items = [],
     prompt = '',
-  }: ChooseFromMenuOptions,
-): WFWorkflowAction[] => {
+  } = options;
+
   const groupingIdentifier = uuidv4();
 
   return [

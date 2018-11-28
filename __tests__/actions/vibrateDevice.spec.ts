@@ -11,7 +11,7 @@ describe('vibrateDevice function', () => {
       WFWorkflowActionIdentifier: 'is.workflow.actions.vibrate',
       WFWorkflowActionParameters: {},
     };
-    const actual = vibrateDevice({});
+    const actual = vibrateDevice();
 
     expect(actual).toEqual(expected);
   });

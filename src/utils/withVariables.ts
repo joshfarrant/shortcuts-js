@@ -1,6 +1,7 @@
 import { testUUID } from '.';
 import WFSerialization from '../interfaces/WF/WFSerialization';
 
+/** @ignore */
 export const withVariables = (
   strings: TemplateStringsArray,
   ...vars: string[]

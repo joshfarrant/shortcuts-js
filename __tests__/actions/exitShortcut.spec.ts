@@ -11,7 +11,7 @@ describe('exitShortcut function', () => {
       WFWorkflowActionIdentifier: 'is.workflow.actions.exit',
       WFWorkflowActionParameters: {},
     };
-    const actual = exitShortcut({});
+    const actual = exitShortcut();
 
     expect(actual).toEqual(expected);
   });

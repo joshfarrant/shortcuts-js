@@ -1,25 +1,31 @@
-/** @module actions */
-
 import WFWorkflowAction from '../interfaces/WF/WFWorkflowAction';
-
-type CommentOptions = {
-  text?: string;
-};
 
 /**
  * Comment Action. This action lets you explain how part of a shortcut works. When run, this action does nothing.
- * @param {Object} options
- * @param {string} [options.text='']
+ *
+ * ```js
+ * // Create a comment
+ * comment({
+ *   text: 'A very important comment',
+ * });
+ * ```
  */
 const comment = (
-  {
-    text = '',
-  }: CommentOptions,
-): WFWorkflowAction => ({
-  WFWorkflowActionIdentifier: 'is.workflow.actions.comment',
-  WFWorkflowActionParameters: {
-    WFCommentActionText: text,
+  options: {
+    /** The body of the comment */
+    text?: string,
   },
-});
+): WFWorkflowAction => {
+  const {
+    text = '',
+  } = options;
+
+  return {
+    WFWorkflowActionIdentifier: 'is.workflow.actions.comment',
+    WFWorkflowActionParameters: {
+      WFCommentActionText: text,
+    },
+  };
+};
 
 export default comment;

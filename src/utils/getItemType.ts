@@ -7,6 +7,7 @@ type itemType = (
   | {}
 );
 
+/** @ignore */
 const itemTypeMap = [{
   itemType: 0 as WFItemType, // String
   validator: (item: itemType): boolean => (
@@ -34,6 +35,7 @@ const itemTypeMap = [{
   ),
 }];
 
+/** @ignore */
 export const getItemType = (
   item: itemType,
 ): WFItemType => {

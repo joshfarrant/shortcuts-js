@@ -1,4 +1,5 @@
 import { setVariable } from '../../src/actions';
+import { variable } from '../../src/utils';
 
 describe('setVariable function', () => {
 
@@ -6,15 +7,19 @@ describe('setVariable function', () => {
     expect(typeof setVariable).toBe('function');
   });
 
-  it('builds a setVariable action when a name is passed', () => {
-    const name = 'Test Variable';
+  it('builds a setVariable action when a variable is passed', () => {
+    const name = variable('Test Variable');
+
     const expected = {
       WFWorkflowActionIdentifier: 'is.workflow.actions.setvariable',
       WFWorkflowActionParameters: {
-        WFVariableName: name,
+        WFVariableName: name.VariableName,
       },
     };
-    const actual = setVariable({ name });
+
+    const actual = setVariable({
+      variable: name,
+    });
 
     expect(actual).toEqual(expected);
   });

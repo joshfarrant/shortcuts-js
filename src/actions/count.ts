@@ -1,4 +1,4 @@
-import { withUUID } from '../utils';
+import { withActionOutput } from '../utils';
 
 import WFCountType from '../interfaces/WF/WFCountType';
 import WFWorkflowAction from '../interfaces/WF/WFWorkflowAction';
@@ -31,4 +31,4 @@ const count = (
   };
 };
 
-export default withUUID(count);
+export default withActionOutput(count);

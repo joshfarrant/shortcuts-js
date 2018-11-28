@@ -1,4 +1,4 @@
-import { withUUID } from '../utils';
+import { withActionOutput } from '../utils';
 
 import WFWorkflowAction from '../interfaces/WF/WFWorkflowAction';
 
@@ -14,4 +14,4 @@ const getType = (): WFWorkflowAction => ({
   WFWorkflowActionParameters: {},
 });
 
-export default withUUID(getType);
+export default withActionOutput(getType);

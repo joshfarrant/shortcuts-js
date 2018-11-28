@@ -1,6 +1,6 @@
 import WFWorkflowAction from '../interfaces/WF/WFWorkflowAction';
 
-import { withUUID } from '../utils';
+import { withActionOutput } from '../utils';
 
 /**
  * Get Battery Level Action. Outputs the percentage of battery remaining as a number from 0 to 100.
@@ -14,4 +14,4 @@ const getBatteryLevel = (): WFWorkflowAction => ({
   WFWorkflowActionParameters: {},
 });
 
-export default withUUID(getBatteryLevel);
+export default withActionOutput(getBatteryLevel);

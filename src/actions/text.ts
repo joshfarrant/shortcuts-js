@@ -1,4 +1,4 @@
-import { withUUID } from '../utils';
+import { withActionOutput } from '../utils';
 
 import WFSerialization from '../interfaces/WF/WFSerialization';
 import WFWorkflowAction from '../interfaces/WF/WFWorkflowAction';
@@ -30,4 +30,4 @@ const text = (
   };
 };
 
-export default withUUID(text);
+export default withActionOutput(text);

@@ -41,4 +41,5 @@ describe('getItemType function', () => {
     const actual = () => getItemType(null as any);
     expect(actual).toThrow('Invalid itemType');
   });
+
 });

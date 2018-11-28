@@ -12,7 +12,7 @@ A Node.js iOS 12 Shortcuts creator.
 
 [@joshfarrant/shortcuts-js](https://www.npmjs.com/package/@joshfarrant/shortcuts-js) on npm.
 
-[NPM](https://www.npmjs.com/package/@joshfarrant/shortcuts-js) | [Documentation](https://shortcuts.fun/module-actions.html) | [Contributing](https://github.com/joshfarrant/shortcuts-js/blob/master/CONTRIBUTING.md) | [Medium](https://medium.com/@JoshFarrant/creating-ios-12-shortcuts-with-javascript-and-shortcuts-js-942420ca9904)
+[NPM](https://www.npmjs.com/package/@joshfarrant/shortcuts-js) | [Documentation](https://docs.shortcuts.fun) | [Contributing](https://github.com/joshfarrant/shortcuts-js/blob/master/CONTRIBUTING.md) | [Medium](https://medium.com/@JoshFarrant/creating-ios-12-shortcuts-with-javascript-and-shortcuts-js-942420ca9904)
 
 See [this issue](https://github.com/joshfarrant/shortcuts-js/issues/6) for a complete list of all Actions implemented so far.
 
@@ -33,6 +33,7 @@ npm install @joshfarrant/shortcuts-js
 const fs = require('fs');
 
 const {
+  actionOutput,
   buildShortcut,
   withVariables,
 } = require('@joshfarrant/shortcuts-js');
@@ -44,7 +45,7 @@ const {
 } = require('@joshfarrant/shortcuts-js/actions');
 
 // We'll use this later to reference the output of a calculation
-let calcId;
+const calcVar = actionOutput();
 
 // Define our list of actions
 const actions = [
@@ -57,16 +58,13 @@ const actions = [
   calculate({
     operand: 3,
     operation: '/',
-  }, (id) => {
-    // We'll use this again in a moment
-    calcId = id;
-  }),
+  }, calcVar),
   showResult({
     /**
      * We can use the result of the calculation in this Shortcuts's input
      * by passing the string to the 'withVariables' tag function
      */
-    text: withVariables`Total is ${calcId}!`,
+    text: withVariables`Total is ${calcVar}!`,
   }),
 ];
 
@@ -98,6 +96,7 @@ For brevity, these examples omit the code for writing the file to disk and just 
 
 ```js
 const {
+  actionOutput,
   buildShortcut,
   withVariables,
 } = require('@joshfarrant/shortcuts-js');
@@ -108,12 +107,10 @@ const {
   showResult,
 } = require('@joshfarrant/shortcuts-js/actions');
 
-let batteryLevel;
+const batteryLevel = actionOutput();
 
 const actions = [
-  getBatteryLevel({}, (id) => {
-    batteryLevel = id;
-  }),
+  getBatteryLevel({}, batteryLevel),
   conditional({
     input: '<',
     value: 20,

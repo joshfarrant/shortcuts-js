@@ -1,4 +1,4 @@
-import { withUUID } from '../utils';
+import { withActionOutput } from '../utils';
 
 import WFInputType from '../interfaces/WF/WFInputType';
 import WFSerialization from '../interfaces/WF/WFSerialization';
@@ -41,4 +41,4 @@ const ask = (
   };
 };
 
-export default withUUID(ask);
+export default withActionOutput(ask);

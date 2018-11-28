@@ -3,7 +3,11 @@ node_js:
   - "10"
   - node
 
-script: echo "Running tests against $(node -v)..."
+script:
+  - echo "Running tests against $(node -v)..."
+  - npm test
+
+install: npm install
 
 jobs:
   include:

@@ -1,4 +1,4 @@
-import { withUUID } from '../utils';
+import { withActionOutput } from '../utils';
 
 import WFMathOperation from '../interfaces/WF/WFMathOperation';
 import WFWorkflowAction from '../interfaces/WF/WFWorkflowAction';
@@ -50,4 +50,4 @@ const calculate = (
   };
 };
 
-export default withUUID(calculate);
+export default withActionOutput(calculate);

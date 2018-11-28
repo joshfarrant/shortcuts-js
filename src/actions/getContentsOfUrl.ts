@@ -1,6 +1,6 @@
 import {
   buildSerialization,
-  withUUID,
+  withActionOutput,
 } from '../utils';
 
 import WFHTTPBodyType from '../interfaces/WF/WFHTTPBodyType';
@@ -84,4 +84,4 @@ const getContentsOfUrl = (
   return action;
 };
 
-export default withUUID(getContentsOfUrl);
+export default withActionOutput(getContentsOfUrl);

@@ -16,11 +16,15 @@ docs
 scripts
 shortcuts
 src
+.github
 .gitignore
 .jsdoc.json
 .nvmrc
 CONTRIBUTING.md
+CODE_OF_CONDUCT.md
+PULL_REQUEST_TEMPLATE.md
 jest.config.js
 tsconfig.json
 tsconfig.release.json
 tslint.json
+playground.js

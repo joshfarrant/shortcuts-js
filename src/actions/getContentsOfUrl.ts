@@ -4,7 +4,7 @@ import {
 } from '../utils';
 
 import WFHTTPBodyType from '../interfaces/WF/WFHTTPBodyType';
-import WFHttpMethod from '../interfaces/WF/WFHTTPMethod';
+import WFHTTPMethod from '../interfaces/WF/WFHTTPMethod';
 import WFWorkflowAction from '../interfaces/WF/WFWorkflowAction';
 
 /** @ignore */
@@ -44,7 +44,7 @@ const getContentsOfUrl = (
       [x: string]: Value,
     };
     /** The HTTP method to use */
-    method?: WFHttpMethod;
+    method?: WFHTTPMethod;
     /** The request body type */
     requestBodyType?: WFHTTPBodyType;
     /** The request body */

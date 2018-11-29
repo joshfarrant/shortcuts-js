@@ -1,3 +1,5 @@
+_Please delete all sections in italics before submitting this PR._
+
 **Checks**
 
 - [ ] I've checked there are no linting errors.
@@ -9,7 +11,7 @@
 - _List added actions here..._
 
 
-**Are you happy to be listed as a contributor in the actions list [here](https://github.com/joshfarrant/shortcuts-js/issues/6)?**
+**Are you happy to be listed as a contributor on [Shortcuts.fun](https://shortcuts.fun)?**
 
 _Yes_ / _No_
 

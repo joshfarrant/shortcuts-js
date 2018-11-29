@@ -18,6 +18,7 @@ import number from './number';
 import runScriptOverSSH from './runScriptOverSSH';
 import runShortcut from './runShortcut';
 import setAirplaneMode from './setAirplaneMode';
+import setBluetooth from './setBluetooth';
 import setBrightness from './setBrightness';
 import setLowPowerMode from './setLowPowerMode';
 import setName from './setName';
@@ -52,6 +53,7 @@ export {
   runScriptOverSSH,
   runShortcut,
   setAirplaneMode,
+  setBluetooth,
   setBrightness,
   setLowPowerMode,
   setName,

@@ -11,7 +11,7 @@ import WFWorkflowAction from '../interfaces/WF/WFWorkflowAction';
  */
 const setBrightness = (
   options: {
-    /** The brightness value from 1-100 */
+    /** The brightness percentage value from 0 to 100 */
     brightness?: number,
   },
 ): WFWorkflowAction => {
@@ -22,7 +22,7 @@ const setBrightness = (
   return {
     WFWorkflowActionIdentifier: 'is.workflow.actions.setbrightness',
     WFWorkflowActionParameters: {
-      WFBrightness: brightness,
+      WFBrightness: brightness / 100,
     },
   };
 };

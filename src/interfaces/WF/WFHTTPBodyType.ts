@@ -3,8 +3,8 @@
  */
 type WFHTTPBodyType = (
   'JSON'
-| 'Form'
-| 'File'
+  | 'Form'
+  | 'File'
 );
 
 export default WFHTTPBodyType;

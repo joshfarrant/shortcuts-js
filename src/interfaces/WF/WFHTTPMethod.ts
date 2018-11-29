@@ -1,12 +1,12 @@
 /**
- * @typedef {('GET'|'POST'|'PUT'|'DELETE'|'PATCH')} WFHttpMethod
+ * @typedef {('GET'|'POST'|'PUT'|'DELETE'|'PATCH')} WFHTTPMethod
  */
-type WFHttpMethod = (
+type WFHTTPMethod = (
   'GET'
-| 'POST'
-| 'PUT'
-| 'DELETE'
-| 'PATCH'
+  | 'POST'
+  | 'PUT'
+  | 'DELETE'
+  | 'PATCH'
 );
 
-export default WFHttpMethod;
+export default WFHTTPMethod;

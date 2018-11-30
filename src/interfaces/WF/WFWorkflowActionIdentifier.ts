@@ -3,6 +3,7 @@ type WFWorkflowActionIdentifier = (
   | 'is.workflow.actions.airplanemode.set'
   | 'is.workflow.actions.ask'
   | 'is.workflow.actions.bluetooth.set'
+  | 'is.workflow.actions.cellulardata.set'
   | 'is.workflow.actions.choosefrommenu'
   | 'is.workflow.actions.comment'
   | 'is.workflow.actions.conditional'
@@ -32,6 +33,7 @@ type WFWorkflowActionIdentifier = (
   | 'is.workflow.actions.vibrate'
   | 'is.workflow.actions.viewresult'
   | 'is.workflow.actions.waittoreturn'
+  | 'is.workflow.actions.wifi.set'
 );
 
 export default WFWorkflowActionIdentifier;

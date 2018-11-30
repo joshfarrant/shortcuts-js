@@ -1,6 +1,7 @@
 import WFAskActionDateGranularity from './WFAskActionDateGranularity';
 import WFCondition from './WFCondition';
 import WFCountType from './WFCountType';
+import WFDeviceDetail from './WFDeviceDetail';
 import WFFlashlightSetting from './WFFlashlightSetting';
 import WFGetDictionaryValueType from './WFGetDictionaryValueType';
 import WFHTTPBodyType from './WFHTTPBodyType';
@@ -29,6 +30,7 @@ interface WFWorkflowActionParameters {
   WFControlFlowMode?: number;
   WFCountType?: WFCountType;
   WFDelayTime?: number;
+  WFDeviceDetail?: WFDeviceDetail;
   WFDictionaryKey?: string;
   WFDontIncludeFileExtension?: boolean;
   WFFlashlightSetting?: WFFlashlightSetting;

@@ -10,6 +10,7 @@ import exitShortcut from './exitShortcut';
 import getBatteryLevel from './getBatteryLevel';
 import getContentsOfUrl from './getContentsOfUrl';
 import getCurrentIpAddress from './getCurrentIpAddress';
+import getDeviceDetails from './getDeviceDetails';
 import getDictionaryValue from './getDictionaryValue';
 import getName from './getName';
 import getType from './getType';
@@ -48,6 +49,7 @@ export {
   getBatteryLevel,
   getContentsOfUrl,
   getCurrentIpAddress,
+  getDeviceDetails,
   getDictionaryValue,
   getName,
   getType,

@@ -14,6 +14,7 @@ type WFWorkflowActionIdentifier = (
   | 'is.workflow.actions.flashlight'
   | 'is.workflow.actions.getbatterylevel'
   | 'is.workflow.actions.getipaddress'
+  | 'is.workflow.actions.getdevicedetails'
   | 'is.workflow.actions.getitemname'
   | 'is.workflow.actions.getitemtype'
   | 'is.workflow.actions.gettext'

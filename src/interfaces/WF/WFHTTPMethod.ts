@@ -1,6 +1,3 @@
-/**
- * @typedef {('GET'|'POST'|'PUT'|'DELETE'|'PATCH')} WFHTTPMethod
- */
 type WFHTTPMethod = (
   'GET'
   | 'POST'

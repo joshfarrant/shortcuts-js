@@ -1,6 +1,3 @@
-/**
- * @typedef {('Value'|'All Keys'|'All Values')} WFGetDictionaryValueType
- */
 type WFGetDictionaryValueType = (
   'Value'
   | 'All Keys'

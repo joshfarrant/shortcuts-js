@@ -1,6 +1,3 @@
-/**
- * @typedef {('Items'|'Characters'|'Words'|'Sentences'|'Lines')} WFCountType
- */
 type WFCountType = (
   'Items'
   | 'Characters'

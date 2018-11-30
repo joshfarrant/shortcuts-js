@@ -1,6 +1,3 @@
-/**
- * @typedef {('JSON'|'Form'|'File')} WFHTTPBodyType
- */
 type WFHTTPBodyType = (
   'JSON'
   | 'Form'

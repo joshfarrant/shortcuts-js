@@ -20,10 +20,12 @@ import runShortcut from './runShortcut';
 import setAirplaneMode from './setAirplaneMode';
 import setBluetooth from './setBluetooth';
 import setBrightness from './setBrightness';
+import setCellularData from './setCellularData';
 import setLowPowerMode from './setLowPowerMode';
 import setName from './setName';
 import setTorch from './setTorch';
 import setVariable from './setVariable';
+import setWiFi from './setWiFi';
 import showResult from './showResult';
 import text from './text';
 import url from './url';
@@ -55,10 +57,12 @@ export {
   setAirplaneMode,
   setBluetooth,
   setBrightness,
+  setCellularData,
   setLowPowerMode,
   setName,
   setTorch,
   setVariable,
+  setWiFi,
   showResult,
   text,
   url,

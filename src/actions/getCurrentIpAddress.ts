@@ -1,7 +1,7 @@
 import { withActionOutput } from '../utils';
 
-import WFIPAddressSourceOption from '../interfaces/WF/WFIPAddressAddress';
-import WFIPAddressTypeOption from '../interfaces/WF/WFIPAddressType';
+import WFIPAddressSourceOption from '../interfaces/WF/WFIPAddressSourceOption';
+import WFIPAddressTypeOption from '../interfaces/WF/WFIPAddressTypeOption';
 import WFWorkflowAction from '../interfaces/WF/WFWorkflowAction';
 
 /**

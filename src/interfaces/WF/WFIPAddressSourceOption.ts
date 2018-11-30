@@ -1,6 +1,3 @@
-/**
- * @typedef {('External'|'Local')} WFIPAddressSourceOption
- */
 type WFIPAddressSourceOption = (
   'External'
   | 'Local'

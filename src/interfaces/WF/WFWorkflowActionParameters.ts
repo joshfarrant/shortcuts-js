@@ -6,8 +6,8 @@ import WFGetDictionaryValueType from './WFGetDictionaryValueType';
 import WFHTTPBodyType from './WFHTTPBodyType';
 import WFHTTPMethod from './WFHTTPMethod';
 import WFInputType from './WFInputType';
-import WFIPAddressSourceOption from './WFIPAddressAddress';
-import WFIPAddressTypeOption from './WFIPAddressType';
+import WFIPAddressSourceOption from './WFIPAddressSourceOption';
+import WFIPAddressTypeOption from './WFIPAddressTypeOption';
 import WFMathOperation from './WFMathOperation';
 import WFSerialization from './WFSerialization';
 

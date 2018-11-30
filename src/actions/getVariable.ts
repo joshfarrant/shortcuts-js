@@ -6,7 +6,7 @@ import WFWorkflowAction from '../interfaces/WF/WFWorkflowAction';
  *
  * ```js
  * getVariable({
- *   variable: 'My Variable',
+ *   variable: variable('My Variable'),
  * });
  * ```
  */

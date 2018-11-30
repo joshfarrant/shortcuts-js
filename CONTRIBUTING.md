@@ -15,7 +15,7 @@ Adding a new Shortcut action is relatively straightforward.
 7. Export the new file from `src/actions/index.ts`.
 8. Add tests for the new action to `__tests__/actions`. Again, try to be as thorough as possible and use another action's tests as a starting point.
 9. Make sure all tests pass, and that the new action is documented with JSDoc in the same way all other actions are.
-10. Build a test Shortcut and Airdrop it to your phone to make sure that the new action works as expected.
+10. Build a test Shortcut (you can find info on how to do that locally [here](https://github.com/joshfarrant/shortcuts-js/issues/22#issuecomment-443121866)) and Airdrop it to your phone to make sure that the new action works as expected.
 11. Open a Pull Request!
 
 If any of this doesn't make sense _please let me know_! I want to make this process as simple as possible, so any and all feedback is appreciated. Open an issue with any comments. 🙂

@@ -6,13 +6,13 @@ import WFWorkflowAction from '../interfaces/WF/WFWorkflowAction';
  *
  * ```js
  * setVariable({
- *   name: 'My Variable',
+ *   variable: variable('My Variable'),
  * });
  * ```
  */
 const setVariable = (
   options: {
-    /** The name of the variable to set */
+    /** The variable to set */
     variable: Attachment,
   },
 ): WFWorkflowAction => {

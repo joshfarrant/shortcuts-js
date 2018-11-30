@@ -14,7 +14,7 @@ Adding a new Shortcut action is relatively straightforward.
 6. Connect up all Shortcut options to the function parameters. Try to be as thorough as possible and make sure you cover all possible options. You'll likely need to add some new types to `src/interfaces/WF` and `src/interfaces/WF/WFWorkflowActionParameters.ts`. You'll also want to check whether or not the action can be used as a 'Magic Variable'. If it can, don't forget to wrap the exported function with the `withActionOutput` function (see `src/actions/number.ts` as an example).
 7. Export the new file from `src/actions/index.ts`.
 8. Add tests for the new action to `__tests__/actions`. Again, try to be as thorough as possible and use another action's tests as a starting point.
-9. Make sure all tests pass, and that the new action is documented with JSDoc in the same way all other actions are.
+9. Make sure all tests pass, and that the new action is documented with TypeDoc in the same way all other actions are.
 10. Build a test Shortcut (you can find info on how to do that locally [here](https://github.com/joshfarrant/shortcuts-js/issues/22#issuecomment-443121866)) and Airdrop it to your phone to make sure that the new action works as expected.
 11. Open a Pull Request!
 

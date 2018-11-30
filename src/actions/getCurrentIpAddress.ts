@@ -5,8 +5,8 @@ import WFIPAddressTypeOption from '../interfaces/WF/WFIPAddressTypeOption';
 import WFWorkflowAction from '../interfaces/WF/WFWorkflowAction';
 
 /**
- * Get Current IP Address Action. Returns the current public IP address of the
- * device.
+ * Get Current IP Address Action. Returns the public/private IPv4 or IPv6
+ * address of the device.
  *
  * ```js
  * getCurrentIpAddress({

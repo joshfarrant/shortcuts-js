@@ -18,4 +18,16 @@ describe('getDeviceDetails function', () => {
     expect(actual).toEqual(expected);
   });
 
+  it('builds a getDeviceDetails action when a detail is passed', () => {
+    const expected = {
+      WFWorkflowActionIdentifier: 'is.workflow.actions.getdevicedetails',
+      WFWorkflowActionParameters: {
+        WFDeviceDetail: 'System Version',
+      },
+    };
+    const actual = getDeviceDetails({ detail: 'System Version' });
+
+    expect(actual).toEqual(expected);
+  });
+
 });

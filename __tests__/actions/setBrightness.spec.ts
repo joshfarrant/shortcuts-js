@@ -10,7 +10,7 @@ describe('setBrightness function', () => {
     const expected = {
       WFWorkflowActionIdentifier: 'is.workflow.actions.setbrightness',
       WFWorkflowActionParameters: {
-        WFBrightness: 100,
+        WFBrightness: 1,
       },
     };
     const actual = setBrightness({});
@@ -22,7 +22,7 @@ describe('setBrightness function', () => {
     const expected = {
       WFWorkflowActionIdentifier: 'is.workflow.actions.setbrightness',
       WFWorkflowActionParameters: {
-        WFBrightness: 50,
+        WFBrightness: 0.5,
       },
     };
     const actual = setBrightness({

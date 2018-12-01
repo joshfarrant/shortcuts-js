@@ -26,6 +26,7 @@ import setName from './setName';
 import setTorch from './setTorch';
 import setVariable from './setVariable';
 import setWiFi from './setWiFi';
+import showNotification from './showNotification';
 import showResult from './showResult';
 import text from './text';
 import url from './url';
@@ -60,6 +61,7 @@ export {
   setCellularData,
   setLowPowerMode,
   setName,
+  showNotification,
   setTorch,
   setVariable,
   setWiFi,

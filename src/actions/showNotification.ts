@@ -1,10 +1,12 @@
 import WFWorkflowAction from '../interfaces/WF/WFWorkflowAction';
 /*
 {
-    "WFWorkflowActionIdentifier": "is.workflow.actions.notification",
-    "WFWorkflowActionParameters": {
-        "WFNotificationActionTitle": "Hi"
-    }
+  "WFWorkflowActionIdentifier": "is.workflow.actions.notification",
+  "WFWorkflowActionParameters": {
+    "WFNotificationActionSound": false,
+    "WFNotificationActionBody": "Test test hello!!",
+    "WFNotificationActionTitle": "Hi"
+  }
 }
 */
 

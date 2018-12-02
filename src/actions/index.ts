@@ -27,6 +27,7 @@ import setName from './setName';
 import setTorch from './setTorch';
 import setVariable from './setVariable';
 import setWiFi from './setWiFi';
+import showAlert from './showAlert';
 import showResult from './showResult';
 import text from './text';
 import url from './url';
@@ -65,6 +66,7 @@ export {
   setTorch,
   setVariable,
   setWiFi,
+  showAlert,
   showResult,
   text,
   url,

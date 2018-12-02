@@ -1,46 +1,39 @@
-import { getCurrentIpAddress } from '../../src/actions';
+import { showAlert } from '../../src/actions';
 
-describe('getCurrentIpAddress function', () => {
+describe('showAlert function', () => {
 
   it('is a function', () => {
-    expect(typeof getCurrentIpAddress).toBe('function');
+    expect(typeof showAlert).toBe('function');
   });
 
-  it('builds a getCurrentIpAddress action', () => {
+  it('builds a showAlert action (default)', () => {
     const expected = {
-      WFWorkflowActionIdentifier: 'is.workflow.actions.getipaddress',
+      WFWorkflowActionIdentifier: 'is.workflow.actions.alert',
       WFWorkflowActionParameters: {
-        WFIPAddressSourceOption: 'External',
-        WFIPAddressTypeOption: 'IPv4',
+        WFAlertActionTitle: 'Alert',
+        WFAlertActionMessage: 'Do you want to continue?',
+        WFAlertActionCancelButtonShown: true,
       },
     };
-    const actual = getCurrentIpAddress({});
+    const actual = showAlert({});
 
     expect(actual).toEqual(expected);
   });
 
-  it('builds a getCurrentIpAddress action when an address is passed', () => {
+  it('builds a showAlert action (custom)', () => {
     const expected = {
-      WFWorkflowActionIdentifier: 'is.workflow.actions.getipaddress',
+      WFWorkflowActionIdentifier: 'is.workflow.actions.alert',
       WFWorkflowActionParameters: {
-        WFIPAddressSourceOption: 'Local',
-        WFIPAddressTypeOption: 'IPv4',
+        WFAlertActionTitle: 'This is a title',
+        WFAlertActionMessage: 'This is a message',
+        WFAlertActionCancelButtonShown: false,
       },
     };
-    const actual = getCurrentIpAddress({ address: 'Local' });
-
-    expect(actual).toEqual(expected);
-  });
-
-  it('builds a getCurrentIpAddress action when a type is passed', () => {
-    const expected = {
-      WFWorkflowActionIdentifier: 'is.workflow.actions.getipaddress',
-      WFWorkflowActionParameters: {
-        WFIPAddressSourceOption: 'External',
-        WFIPAddressTypeOption: 'IPv6',
-      },
-    };
-    const actual = getCurrentIpAddress({ type: 'IPv6' });
+    const actual = showAlert({
+      title: 'This is a title',
+      message: 'This is a message',
+      showCancelButton: false,
+    });
 
     expect(actual).toEqual(expected);
   });

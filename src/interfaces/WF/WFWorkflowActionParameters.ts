@@ -19,6 +19,9 @@ interface WFWorkflowActionParameters {
   ShowHeaders?: boolean;
   Text?: WFSerialization | string;
   UUID?: string;
+  WFAlertActionCancelButtonShown?: boolean;
+  WFAlertActionMessage?: WFSerialization | string;
+  WFAlertActionTitle?: WFSerialization | string;
   WFAskActionDateGranularity?: WFAskActionDateGranularity;
   WFAskActionDefaultAnswer?: WFSerialization | string;
   WFAskActionPrompt?: WFSerialization | string;

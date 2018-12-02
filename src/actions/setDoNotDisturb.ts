@@ -8,6 +8,9 @@ import WFWorkflowAction from '../interfaces/WF/WFWorkflowAction';
  * ```js
  * setDoNotDisturb({
  *   value: true,
+ *   until: 'Time',
+ *   tile: '08:00',
+ *   event: '',
  * });
  * ```
  */

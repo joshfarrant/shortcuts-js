@@ -6,6 +6,19 @@ describe('base64Encode function', () => {
     expect(typeof base64Encode).toBe('function');
   });
 
+  it('builds a base64Encode action', () => {
+    const expected = {
+      WFWorkflowActionIdentifier: 'is.workflow.actions.base64encode',
+      WFWorkflowActionParameters: {
+        WFEncodeMode: 'Encode',
+        WFBase64LineBreakMode: 'Every 76 Characters',
+      },
+    };
+    const actual = base64Encode({});
+
+    expect(actual).toEqual(expected);
+  });
+
   it('builds a base64Encode action (encode with no line break)', () => {
     const expected = {
       WFWorkflowActionIdentifier: 'is.workflow.actions.base64encode',

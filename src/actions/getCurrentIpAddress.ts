@@ -10,8 +10,8 @@ import WFWorkflowAction from '../interfaces/WF/WFWorkflowAction';
  *
  * ```js
  * getCurrentIpAddress({
- *   'address': 'External',
- *   'type': 'IPv4',
+ *   address: 'External',
+ *   type: 'IPv4',
  * });
  * ```
  */

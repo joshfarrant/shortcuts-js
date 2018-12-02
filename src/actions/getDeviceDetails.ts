@@ -1,6 +1,7 @@
 import { withActionOutput } from '../utils';
 
 import WFDeviceDetail from '../interfaces/WF/WFDeviceDetail';
+import WFSerialization from '../interfaces/WF/WFSerialization';
 import WFWorkflowAction from '../interfaces/WF/WFWorkflowAction';
 
 /**
@@ -15,7 +16,7 @@ import WFWorkflowAction from '../interfaces/WF/WFWorkflowAction';
 const getDeviceDetails = (
   options: {
     /** The particular detail to retrieve */
-    detail?: WFDeviceDetail,
+    detail?: WFSerialization | WFDeviceDetail,
   },
 ): WFWorkflowAction => {
   const {

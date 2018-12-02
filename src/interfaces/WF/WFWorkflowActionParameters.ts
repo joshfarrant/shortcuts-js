@@ -30,7 +30,7 @@ interface WFWorkflowActionParameters {
   WFControlFlowMode?: number;
   WFCountType?: WFCountType;
   WFDelayTime?: number;
-  WFDeviceDetail?: WFDeviceDetail;
+  WFDeviceDetail?: WFSerialization | WFDeviceDetail;
   WFDictionaryKey?: string;
   WFDontIncludeFileExtension?: boolean;
   WFFlashlightSetting?: WFFlashlightSetting;

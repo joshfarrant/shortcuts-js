@@ -3,6 +3,7 @@ import WFCondition from './WFCondition';
 import WFCountType from './WFCountType';
 import WFFlashlightSetting from './WFFlashlightSetting';
 import WFGetDictionaryValueType from './WFGetDictionaryValueType';
+import WFHashType from './WFHashType';
 import WFHTTPBodyType from './WFHTTPBodyType';
 import WFHTTPMethod from './WFHTTPMethod';
 import WFInputType from './WFInputType';
@@ -34,6 +35,7 @@ interface WFWorkflowActionParameters {
   WFFlashlightSetting?: WFFlashlightSetting;
   WFFormValues?: WFSerialization;
   WFGetDictionaryValueType?: WFGetDictionaryValueType;
+  WFHashType?: WFHashType;
   WFHTTPBodyType?: WFHTTPBodyType;
   WFHTTPHeaders?: WFSerialization;
   WFHTTPMethod?: WFHTTPMethod;

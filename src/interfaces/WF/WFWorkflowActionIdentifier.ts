@@ -1,5 +1,7 @@
 type WFWorkflowActionIdentifier = (
-  'is.workflow.actions.appendvariable'
+  'com.omz-software.Pythonista.editscript'
+  | 'com.omz-software.Pythonista.runscript'
+  | 'is.workflow.actions.appendvariable'
   | 'is.workflow.actions.airplanemode.set'
   | 'is.workflow.actions.ask'
   | 'is.workflow.actions.bluetooth.set'

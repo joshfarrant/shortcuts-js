@@ -16,6 +16,7 @@ interface WFWorkflowActionParameters {
   CustomOutputName?: string;
   GroupingIdentifier?: string;
   OnValue?: boolean;
+  PythonistaScript?: WFSerialization | string;
   ShowHeaders?: boolean;
   Text?: WFSerialization | string;
   UUID?: string;

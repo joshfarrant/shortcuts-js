@@ -6,6 +6,7 @@ import comment from './comment';
 import conditional from './conditional';
 import continueShortcutInApp from './continueShortcutInApp';
 import count from './count';
+import editPythonistaScript from './editPythonistaScript';
 import exitShortcut from './exitShortcut';
 import getBatteryLevel from './getBatteryLevel';
 import getContentsOfUrl from './getContentsOfUrl';
@@ -16,6 +17,7 @@ import getType from './getType';
 import getVariable from './getVariable';
 import nothing from './nothing';
 import number from './number';
+import runPythonistaScript from './runPythonistaScript';
 import runScriptOverSSH from './runScriptOverSSH';
 import runShortcut from './runShortcut';
 import setAirplaneMode from './setAirplaneMode';
@@ -44,6 +46,7 @@ export {
   conditional,
   continueShortcutInApp,
   count,
+  editPythonistaScript,
   exitShortcut,
   getBatteryLevel,
   getContentsOfUrl,
@@ -54,6 +57,7 @@ export {
   getVariable,
   nothing,
   number,
+  runPythonistaScript,
   runScriptOverSSH,
   runShortcut,
   setAirplaneMode,

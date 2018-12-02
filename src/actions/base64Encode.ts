@@ -10,8 +10,8 @@ import WFWorkflowAction from '../interfaces/WF/WFWorkflowAction';
  *
  * ```js
  * base64Encode({
- *   'address': 'External',
- *   'type': 'IPv4',
+ *   encodeMode: 'Encode',
+ *   lineBreakMode: 'Every 76 Characters',
  * });
  * ```
  */

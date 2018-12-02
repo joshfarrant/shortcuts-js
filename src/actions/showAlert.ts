@@ -1,5 +1,3 @@
-import { withActionOutput } from '../utils';
-
 import WFSerialization from '../interfaces/WF/WFSerialization';
 import WFWorkflowAction from '../interfaces/WF/WFWorkflowAction';
 
@@ -42,4 +40,4 @@ const showAlert = (
   };
 };
 
-export default withActionOutput(showAlert);
+export default showAlert;

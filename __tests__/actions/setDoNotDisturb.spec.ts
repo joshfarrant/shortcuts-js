@@ -74,7 +74,7 @@ describe('setDoNotDisturb function', () => {
     expect(actual).toEqual(expected);
   });
 
-  it('builds a setDoNotDisturb action that is active until the event ends', () => {
+  it('builds a setDoNotDisturb action that is active for an event', () => {
     const expected = {
       WFWorkflowActionIdentifier: 'is.workflow.actions.dnd.set',
       WFWorkflowActionParameters: {

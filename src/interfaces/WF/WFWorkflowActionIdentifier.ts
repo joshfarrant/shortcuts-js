@@ -10,6 +10,7 @@ type WFWorkflowActionIdentifier = (
   | 'is.workflow.actions.conditional'
   | 'is.workflow.actions.count'
   | 'is.workflow.actions.delay'
+  | 'is.workflow.actions.dnd.set'
   | 'is.workflow.actions.downloadurl'
   | 'is.workflow.actions.exit'
   | 'is.workflow.actions.flashlight'

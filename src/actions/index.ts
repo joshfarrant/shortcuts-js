@@ -16,6 +16,7 @@ import getType from './getType';
 import getVariable from './getVariable';
 import nothing from './nothing';
 import number from './number';
+import randomNumber from './randomNumber';
 import runScriptOverSSH from './runScriptOverSSH';
 import runShortcut from './runShortcut';
 import setAirplaneMode from './setAirplaneMode';
@@ -54,6 +55,7 @@ export {
   getVariable,
   nothing,
   number,
+  randomNumber,
   runScriptOverSSH,
   runShortcut,
   setAirplaneMode,

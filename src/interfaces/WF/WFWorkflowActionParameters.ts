@@ -49,6 +49,8 @@ interface WFWorkflowActionParameters {
   WFName?: string;
   WFNumberActionNumber?: number;
   WFNumberValue?: number;
+  WFRandomNumberMinimum?: WFSerialization | number;
+  WFRandomNumberMaximum?: WFSerialization | number;
   WFShowWorkflow?: boolean;
   WFSSHHost?: WFSerialization | string;
   WFSSHPassword?: WFSerialization | string;

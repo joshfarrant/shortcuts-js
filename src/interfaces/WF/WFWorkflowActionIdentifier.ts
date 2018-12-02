@@ -24,6 +24,7 @@ type WFWorkflowActionIdentifier = (
   | 'is.workflow.actions.math'
   | 'is.workflow.actions.nothing'
   | 'is.workflow.actions.number'
+  | 'is.workflow.actions.number.random'
   | 'is.workflow.actions.runsshscript'
   | 'is.workflow.actions.runworkflow'
   | 'is.workflow.actions.setbrightness'

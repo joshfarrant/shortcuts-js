@@ -1,5 +1,6 @@
 import addToVariable from './addToVariable';
 import ask from './ask';
+import base64Encode from './base64Encode';
 import calculate from './calculate';
 import chooseFromMenu from './chooseFromMenu';
 import comment from './comment';
@@ -38,6 +39,7 @@ import waitToReturn from './waitToReturn';
 export {
   addToVariable,
   ask,
+  base64Encode,
   calculate,
   chooseFromMenu,
   comment,

@@ -2,6 +2,7 @@ type WFWorkflowActionIdentifier = (
   'is.workflow.actions.appendvariable'
   | 'is.workflow.actions.airplanemode.set'
   | 'is.workflow.actions.ask'
+  | 'is.workflow.actions.base64encode'
   | 'is.workflow.actions.bluetooth.set'
   | 'is.workflow.actions.cellulardata.set'
   | 'is.workflow.actions.choosefrommenu'

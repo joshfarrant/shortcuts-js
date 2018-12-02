@@ -1,4 +1,4 @@
-import Attachment from '../interfaces/WF/Attachment';
+import Variable from '../interfaces/Variable';
 import WFWorkflowAction from '../interfaces/WF/WFWorkflowAction';
 
 /** @ignore */
@@ -7,14 +7,14 @@ export const withActionOutput = <OptionsType>(
 ) => (
   (
     options: OptionsType,
-    output?: Attachment,
+    output?: Variable,
   ): WFWorkflowAction => {
     const action = actionBuilder(options);
 
     if (output) {
-      action.WFWorkflowActionParameters.UUID = output.OutputUUID;
-      if (output.OutputName) {
-        action.WFWorkflowActionParameters.CustomOutputName = output.OutputName;
+      action.WFWorkflowActionParameters.UUID = output.Value.OutputUUID;
+      if (output.Value.OutputName) {
+        action.WFWorkflowActionParameters.CustomOutputName = output.Value.OutputName;
       }
     }
     return action;

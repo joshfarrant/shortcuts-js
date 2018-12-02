@@ -1,0 +1,28 @@
+type AggrandizementCoercionItemClass = (
+  'WFEmailAddressContentItem'
+  | 'WFAppStoreAppContentItem'
+  | 'WFArticleContentItem'
+  | 'WFAVAssetContentItem'
+  | 'WFBooleanContentItem'
+  | 'WFContactContentItem'
+  | 'WFContentItem'
+  | 'WFDateContentItem'
+  | 'WFDCMapsLinkContentItem'
+  | 'WFDictionaryContentItem'
+  | 'WFGenericFileContentItem'
+  | 'WFImageContentItem'
+  | 'WFiTunesProductContentItem'
+  | 'WFLocationContentItem'
+  | 'WFMKMapItemContentItem'
+  | 'WFMPMediaContentItem'
+  | 'WFNumberContentItem'
+  | 'WFPDFContentItem'
+  | 'WFPhoneNumberContentItem'
+  | 'WFPhotoMediaContentItem'
+  | 'WFRichTextContentItem'
+  | 'WFSafariWebPageContentItem'
+  | 'WFURLContentItem'
+  | 'WFVCardContentItem'
+);
+
+export default AggrandizementCoercionItemClass;

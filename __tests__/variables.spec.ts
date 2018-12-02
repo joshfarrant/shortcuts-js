@@ -1,4 +1,4 @@
-import Attachment from '../src/interfaces/WF/Attachment';
+import WFSerialization from '../src/interfaces/WF/WFSerialization';
 import {
   askWhenRun,
   clipboard,
@@ -8,10 +8,13 @@ import {
 
 describe('askWhenRun global variable', () => {
 
-  it('is an Ask attachment', () => {
+  it('has Ask type', () => {
     const actual = askWhenRun;
-    const expected: Attachment = {
-      Type: 'Ask',
+    const expected: WFSerialization = {
+      Value: {
+        Type: 'Ask',
+      },
+      WFSerializationType: 'WFTextTokenAttachment',
     };
 
     expect(actual).toEqual(expected);
@@ -21,10 +24,13 @@ describe('askWhenRun global variable', () => {
 
 describe('clipboard global variable', () => {
 
-  it('is an Ask attachment', () => {
+  it('has Clipboard type', () => {
     const actual = clipboard;
-    const expected: Attachment = {
-      Type: 'Clipboard',
+    const expected: WFSerialization = {
+      Value: {
+        Type: 'Clipboard',
+      },
+      WFSerializationType: 'WFTextTokenAttachment',
     };
 
     expect(actual).toEqual(expected);
@@ -34,10 +40,13 @@ describe('clipboard global variable', () => {
 
 describe('currentDate global variable', () => {
 
-  it('is an Ask attachment', () => {
+  it('has CurrentDate type', () => {
     const actual = currentDate;
-    const expected: Attachment = {
-      Type: 'CurrentDate',
+    const expected: WFSerialization = {
+      Value: {
+        Type: 'CurrentDate',
+      },
+      WFSerializationType: 'WFTextTokenAttachment',
     };
 
     expect(actual).toEqual(expected);
@@ -47,10 +56,13 @@ describe('currentDate global variable', () => {
 
 describe('shortcutInput global variable', () => {
 
-  it('is an Ask attachment', () => {
+  it('has ExtensionInput type', () => {
     const actual = shortcutInput;
-    const expected: Attachment = {
-      Type: 'ExtensionInput',
+    const expected: WFSerialization = {
+      Value: {
+        Type: 'ExtensionInput',
+      },
+      WFSerializationType: 'WFTextTokenAttachment',
     };
 
     expect(actual).toEqual(expected);

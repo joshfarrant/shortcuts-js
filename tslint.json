@@ -13,6 +13,7 @@
     ],
     "no-any": true,
     "ordered-imports": true,
+    "variable-name": [true, "allow-pascal-case"],
     "typedef": [
       true,
       "call-signature",

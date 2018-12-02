@@ -9,7 +9,7 @@ import WFWorkflowAction from '../interfaces/WF/WFWorkflowAction';
  *
  * ```js
  * getDeviceDetails({
- *   'detail': 'Device Name',
+ *   detail: 'Device Name',
  * });
  * ```
  */

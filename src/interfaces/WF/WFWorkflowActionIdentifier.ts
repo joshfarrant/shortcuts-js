@@ -20,7 +20,6 @@ type WFWorkflowActionIdentifier = (
   | 'is.workflow.actions.gettext'
   | 'is.workflow.actions.getvalueforkey'
   | 'is.workflow.actions.getvariable'
-  | 'is.workflow.actions.getwifi'
   | 'is.workflow.actions.handoff'
   | 'is.workflow.actions.lowpowermode.set'
   | 'is.workflow.actions.math'

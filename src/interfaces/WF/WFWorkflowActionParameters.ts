@@ -10,6 +10,7 @@ import WFInputType from './WFInputType';
 import WFIPAddressSourceOption from './WFIPAddressSourceOption';
 import WFIPAddressTypeOption from './WFIPAddressTypeOption';
 import WFMathOperation from './WFMathOperation';
+import WFNetworkDetailsNetwork from './WFNetworkDetailsNetwork';
 import WFSerialization from './WFSerialization';
 
 interface WFWorkflowActionParameters {
@@ -39,24 +40,25 @@ interface WFWorkflowActionParameters {
   WFHTTPBodyType?: WFHTTPBodyType;
   WFHTTPHeaders?: WFSerialization;
   WFHTTPMethod?: WFHTTPMethod;
-  WFInputType?: WFInputType;
   WFIPAddressSourceOption?: WFIPAddressSourceOption;
   WFIPAddressTypeOption?: WFIPAddressTypeOption;
+  WFInputType?: WFInputType;
   WFJSONValues?: WFSerialization;
   WFMathOperand?: number;
   WFMathOperation?: WFMathOperation;
-  WFMenuItems?: string[];
   WFMenuItemTitle?: string;
+  WFMenuItems?: string[];
   WFMenuPrompt?: string;
   WFName?: string;
+  WFNetworkDetailsNetwork?: WFNetworkDetailsNetwork;
   WFNumberActionNumber?: number;
   WFNumberValue?: number;
-  WFShowWorkflow?: boolean;
   WFSSHHost?: WFSerialization | string;
   WFSSHPassword?: WFSerialization | string;
   WFSSHPort?: WFSerialization | string;
   WFSSHScript?: WFSerialization | string;
   WFSSHUser?: WFSerialization | string;
+  WFShowWorkflow?: boolean;
   WFTextActionText?: WFSerialization | string;
   WFURLActionURL?: string;
   WFVariable?: WFSerialization | string;

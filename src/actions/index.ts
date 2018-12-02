@@ -13,6 +13,7 @@ import getCurrentIpAddress from './getCurrentIpAddress';
 import getDeviceDetails from './getDeviceDetails';
 import getDictionaryValue from './getDictionaryValue';
 import getName from './getName';
+import getNetworkDetails from './getNetworkDetails';
 import getType from './getType';
 import getVariable from './getVariable';
 import nothing from './nothing';
@@ -52,6 +53,7 @@ export {
   getDeviceDetails,
   getDictionaryValue,
   getName,
+  getNetworkDetails,
   getType,
   getVariable,
   nothing,

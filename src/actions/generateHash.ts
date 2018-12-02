@@ -1,6 +1,7 @@
 import { withActionOutput } from '../utils';
 
 import WFHashType from '../interfaces/WF/WFHashType';
+import WFSerialization from '../interfaces/WF/WFSerialization';
 import WFWorkflowAction from '../interfaces/WF/WFWorkflowAction';
 
 /**
@@ -15,7 +16,7 @@ import WFWorkflowAction from '../interfaces/WF/WFWorkflowAction';
 const generateHash = (
   options: {
     /** The type of hash to use */
-    type?: WFHashType,
+    type?: WFSerialization | WFHashType,
   },
 ): WFWorkflowAction => {
   const {

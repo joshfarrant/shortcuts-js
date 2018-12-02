@@ -35,7 +35,7 @@ interface WFWorkflowActionParameters {
   WFFlashlightSetting?: WFFlashlightSetting;
   WFFormValues?: WFSerialization;
   WFGetDictionaryValueType?: WFGetDictionaryValueType;
-  WFHashType?: WFHashType;
+  WFHashType?: WFSerialization | WFHashType;
   WFHTTPBodyType?: WFHTTPBodyType;
   WFHTTPHeaders?: WFSerialization;
   WFHTTPMethod?: WFHTTPMethod;

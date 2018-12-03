@@ -3,7 +3,7 @@ import WFSerialization from '../interfaces/WF/WFSerialization';
 import WFWorkflowAction from '../interfaces/WF/WFWorkflowAction';
 
 /**
- * Set Do Not Disturb Action. Sets DND on and off.
+ * Set Do Not Disturb Action. Sets the device's Do Not Disturb to on or off.
  *
  * ```js
  * setDoNotDisturb({

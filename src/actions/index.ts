@@ -22,6 +22,7 @@ import getVariable from './getVariable';
 import nothing from './nothing';
 import number from './number';
 import openInBooks from './openInBooks';
+import pauseMusic from './pauseMusic';
 import print from './print';
 import quickLook from './quickLook';
 import randomNumber from './randomNumber';
@@ -72,6 +73,7 @@ export {
   nothing,
   number,
   openInBooks,
+  pauseMusic,
   print,
   quickLook,
   randomNumber,

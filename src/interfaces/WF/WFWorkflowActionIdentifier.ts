@@ -35,6 +35,7 @@ type WFWorkflowActionIdentifier = (
   | 'is.workflow.actions.number.random'
   | 'is.workflow.actions.previewdocument'
   | 'is.workflow.actions.print'
+  | 'is.workflow.actions.pausemusic'
   | 'is.workflow.actions.runsshscript'
   | 'is.workflow.actions.runworkflow'
   | 'is.workflow.actions.setbrightness'

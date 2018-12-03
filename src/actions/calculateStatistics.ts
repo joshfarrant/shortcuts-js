@@ -5,8 +5,8 @@ import WFStatisticsOperation from '../interfaces/WF/WFStatisticsOperation';
 import WFWorkflowAction from '../interfaces/WF/WFWorkflowAction';
 
 /**
- * Calculate Statistics Action. Perform a statistical operation on incoming
- * content.
+ * Calculate Statistics Action. Calculates statistics on the numbers that are
+ * provided as input.
  *
  * ```js
  * calculateStatistics({

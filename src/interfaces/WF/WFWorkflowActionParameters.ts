@@ -2,6 +2,7 @@ import WFAskActionDateGranularity from './WFAskActionDateGranularity';
 import WFBase64LineBreakMode from './WFBase64LineBreakMode';
 import WFCondition from './WFCondition';
 import WFCountType from './WFCountType';
+import WFDeviceDetail from './WFDeviceDetail';
 import WFEncodeMode from './WFEncodeMode';
 import WFFlashlightSetting from './WFFlashlightSetting';
 import WFGetDictionaryValueType from './WFGetDictionaryValueType';
@@ -11,6 +12,7 @@ import WFInputType from './WFInputType';
 import WFIPAddressSourceOption from './WFIPAddressSourceOption';
 import WFIPAddressTypeOption from './WFIPAddressTypeOption';
 import WFMathOperation from './WFMathOperation';
+import WFNetworkDetailsNetwork from './WFNetworkDetailsNetwork';
 import WFSerialization from './WFSerialization';
 
 interface WFWorkflowActionParameters {
@@ -32,6 +34,7 @@ interface WFWorkflowActionParameters {
   WFControlFlowMode?: number;
   WFCountType?: WFCountType;
   WFDelayTime?: number;
+  WFDeviceDetail?: WFSerialization | WFDeviceDetail;
   WFDictionaryKey?: string;
   WFDontIncludeFileExtension?: boolean;
   WFEncodeMode?: WFEncodeMode;
@@ -51,6 +54,7 @@ interface WFWorkflowActionParameters {
   WFMenuItemTitle?: string;
   WFMenuPrompt?: string;
   WFName?: string;
+  WFNetworkDetailsNetwork?: WFNetworkDetailsNetwork;
   WFNumberActionNumber?: number;
   WFNumberValue?: number;
   WFShowWorkflow?: boolean;

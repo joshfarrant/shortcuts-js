@@ -2,7 +2,9 @@ import WFSerialization from '../interfaces/WF/WFSerialization';
 import WFWorkflowAction from '../interfaces/WF/WFWorkflowAction';
 
 /**
- * Show Alert Action. Shows an alert with an optional cancel button.
+ * Show Alert Action. Displays an alert with a title, a message, and two
+ * buttons. If the user selects the OK button, the shortcut continues. The
+ * cancel button stops the shortcut.
  *
  * ```js
  * showAlert({

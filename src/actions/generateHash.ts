@@ -5,7 +5,7 @@ import WFSerialization from '../interfaces/WF/WFSerialization';
 import WFWorkflowAction from '../interfaces/WF/WFWorkflowAction';
 
 /**
- * Generate Hash Action. Create a hash (MD5, etc) of incoming content.
+ * Generate Hash Action. Generates a MD5/SHA1 hash from the input.
  *
  * ```js
  * generateHash({

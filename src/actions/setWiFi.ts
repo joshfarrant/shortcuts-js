@@ -1,7 +1,7 @@
 import WFWorkflowAction from '../interfaces/WF/WFWorkflowAction';
 
 /**
- * Set setWiFi Action. Sets the device's Wi-Fi to on or off.
+ * Set Wi-Fi Action. Sets the device's Wi-Fi to on or off.
  *
  * ```js
  * setWiFi({

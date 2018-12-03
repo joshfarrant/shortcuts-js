@@ -3,7 +3,7 @@ import { withActionOutput } from '../utils';
 import WFWorkflowAction from '../interfaces/WF/WFWorkflowAction';
 
 /**
- * Set quickLook Action. Displays a preview of the input.
+ * Quick Look Action. Displays a preview of the input.
  *
  * ```js
  * quickLook();

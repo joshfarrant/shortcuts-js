@@ -10,6 +10,7 @@ import WFInputType from './WFInputType';
 import WFIPAddressSourceOption from './WFIPAddressSourceOption';
 import WFIPAddressTypeOption from './WFIPAddressTypeOption';
 import WFMathOperation from './WFMathOperation';
+import WFNetworkDetailsNetwork from './WFNetworkDetailsNetwork';
 import WFSerialization from './WFSerialization';
 
 interface WFWorkflowActionParameters {
@@ -49,6 +50,7 @@ interface WFWorkflowActionParameters {
   WFMenuItemTitle?: string;
   WFMenuPrompt?: string;
   WFName?: string;
+  WFNetworkDetailsNetwork?: WFNetworkDetailsNetwork;
   WFNumberActionNumber?: number;
   WFNumberValue?: number;
   WFShowWorkflow?: boolean;

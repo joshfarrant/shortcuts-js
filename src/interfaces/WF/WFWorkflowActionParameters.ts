@@ -1,3 +1,4 @@
+import AssertionType from './AssertionType';
 import WFAskActionDateGranularity from './WFAskActionDateGranularity';
 import WFBase64LineBreakMode from './WFBase64LineBreakMode';
 import WFCondition from './WFCondition';
@@ -19,11 +20,15 @@ import WFStatisticsOperation from './WFStatisticsOperation';
 
 interface WFWorkflowActionParameters {
   Advanced?: boolean;
+  AssertionType?: AssertionType;
   CustomOutputName?: string;
+  Enabled?: boolean;
+  Event?: WFSerialization | string;
   GroupingIdentifier?: string;
   OnValue?: boolean;
   ShowHeaders?: boolean;
   Text?: WFSerialization | string;
+  Time?: string;
   UUID?: string;
   WFAskActionDateGranularity?: WFAskActionDateGranularity;
   WFAskActionDefaultAnswer?: WFSerialization | string;

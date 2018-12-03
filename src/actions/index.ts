@@ -30,6 +30,7 @@ import setAirplaneMode from './setAirplaneMode';
 import setBluetooth from './setBluetooth';
 import setBrightness from './setBrightness';
 import setCellularData from './setCellularData';
+import setDoNotDisturb from './setDoNotDisturb';
 import setLowPowerMode from './setLowPowerMode';
 import setName from './setName';
 import setTorch from './setTorch';
@@ -77,6 +78,7 @@ export {
   setBluetooth,
   setBrightness,
   setCellularData,
+  setDoNotDisturb,
   setLowPowerMode,
   setName,
   showNotification,

@@ -57,6 +57,9 @@ interface WFWorkflowActionParameters {
   WFMenuPrompt?: string;
   WFName?: string;
   WFNetworkDetailsNetwork?: WFNetworkDetailsNetwork;
+  WFNotificationActionTitle?: string;
+  WFNotificationActionBody?: string;
+  WFNotificationActionSound?: boolean;
   WFNumberActionNumber?: number;
   WFNumberValue?: number;
   WFShowWorkflow?: boolean;

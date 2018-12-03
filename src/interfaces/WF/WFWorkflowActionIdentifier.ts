@@ -28,6 +28,7 @@ type WFWorkflowActionIdentifier = (
   | 'is.workflow.actions.lowpowermode.set'
   | 'is.workflow.actions.math'
   | 'is.workflow.actions.nothing'
+  | 'is.workflow.actions.notification'
   | 'is.workflow.actions.number'
   | 'is.workflow.actions.previewdocument'
   | 'is.workflow.actions.print'

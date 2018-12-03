@@ -1,7 +1,9 @@
 import { withActionOutput } from '../utils';
 
 import WFMathOperation from '../interfaces/WF/WFMathOperation';
+import WFScientificMathOperation from '../interfaces/WF/WFScientificMathOperation';
 import WFWorkflowAction from '../interfaces/WF/WFWorkflowAction';
+import WFWorkflowActionParameters from '../interfaces/WF/WFWorkflowActionParameters';
 
 /** @ignore */
 const operationsMap = new Map([
@@ -26,7 +28,7 @@ const operationsMap = new Map([
 const calculate = (
   options: {
     /** A second number to perform the operation on */
-    operand: number;
+    operand?: number;
     /** The operation to apply to the number. Defaults to '+' */
     operation?: (
       WFMathOperation
@@ -34,19 +36,37 @@ const calculate = (
       | 'x'
       | '/'
     );
+    /** The scientific operation to apply to the number */
+    scientificOperation?: (
+      WFScientificMathOperation
+      | 'sqrt'
+      | 'cbrt'
+    );
   },
 ): WFWorkflowAction => {
   const {
     operand,
     operation = '+',
+    scientificOperation,
   } = options;
+
+  let parameters;
+  if (operation === '...' && scientificOperation) {
+    parameters = {
+      WFMathOperation: '...',
+      ...(operand !== undefined && { WFScientificMathOperand: operand }),
+      WFScientificMathOperation: (operationsMap.get(scientificOperation) || scientificOperation),
+    };
+  } else {
+    parameters = {
+      WFMathOperand: operand || 42,
+      WFMathOperation: (operationsMap.get(operation) || operation),
+    };
+  }
 
   return {
     WFWorkflowActionIdentifier: 'is.workflow.actions.math',
-    WFWorkflowActionParameters: {
-      WFMathOperand: operand,
-      WFMathOperation: (operationsMap.get(operation) || operation) as WFMathOperation,
-    },
+    WFWorkflowActionParameters: parameters as WFWorkflowActionParameters,
   };
 };
 

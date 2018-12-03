@@ -3,7 +3,7 @@ import { withActionOutput } from '../utils';
 import WFWorkflowAction from '../interfaces/WF/WFWorkflowAction';
 
 /**
- * Set openInBooks Action. Opens the input as a PDF in Books.
+ * Open in Books Action. Opens the input as a PDF in Books.
  *
  * ```js
  * openInBooks();

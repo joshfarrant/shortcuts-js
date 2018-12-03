@@ -1,14 +1,17 @@
 import WFAskActionDateGranularity from './WFAskActionDateGranularity';
 import WFCondition from './WFCondition';
 import WFCountType from './WFCountType';
+import WFDeviceDetail from './WFDeviceDetail';
 import WFFlashlightSetting from './WFFlashlightSetting';
 import WFGetDictionaryValueType from './WFGetDictionaryValueType';
+import WFHashType from './WFHashType';
 import WFHTTPBodyType from './WFHTTPBodyType';
 import WFHTTPMethod from './WFHTTPMethod';
 import WFInputType from './WFInputType';
 import WFIPAddressSourceOption from './WFIPAddressSourceOption';
 import WFIPAddressTypeOption from './WFIPAddressTypeOption';
 import WFMathOperation from './WFMathOperation';
+import WFNetworkDetailsNetwork from './WFNetworkDetailsNetwork';
 import WFSerialization from './WFSerialization';
 
 interface WFWorkflowActionParameters {
@@ -29,11 +32,13 @@ interface WFWorkflowActionParameters {
   WFControlFlowMode?: number;
   WFCountType?: WFCountType;
   WFDelayTime?: number;
+  WFDeviceDetail?: WFSerialization | WFDeviceDetail;
   WFDictionaryKey?: string;
   WFDontIncludeFileExtension?: boolean;
   WFFlashlightSetting?: WFFlashlightSetting;
   WFFormValues?: WFSerialization;
   WFGetDictionaryValueType?: WFGetDictionaryValueType;
+  WFHashType?: WFSerialization | WFHashType;
   WFHTTPBodyType?: WFHTTPBodyType;
   WFHTTPHeaders?: WFSerialization;
   WFHTTPMethod?: WFHTTPMethod;
@@ -47,6 +52,7 @@ interface WFWorkflowActionParameters {
   WFMenuItemTitle?: string;
   WFMenuPrompt?: string;
   WFName?: string;
+  WFNetworkDetailsNetwork?: WFNetworkDetailsNetwork;
   WFNumberActionNumber?: number;
   WFNumberValue?: number;
   WFRandomNumberMinimum?: WFSerialization | number;

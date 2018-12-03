@@ -7,15 +7,21 @@ import conditional from './conditional';
 import continueShortcutInApp from './continueShortcutInApp';
 import count from './count';
 import exitShortcut from './exitShortcut';
+import generateHash from './generateHash';
 import getBatteryLevel from './getBatteryLevel';
 import getContentsOfUrl from './getContentsOfUrl';
 import getCurrentIpAddress from './getCurrentIpAddress';
+import getDeviceDetails from './getDeviceDetails';
 import getDictionaryValue from './getDictionaryValue';
 import getName from './getName';
+import getNetworkDetails from './getNetworkDetails';
 import getType from './getType';
 import getVariable from './getVariable';
 import nothing from './nothing';
 import number from './number';
+import openInBooks from './openInBooks';
+import print from './print';
+import quickLook from './quickLook';
 import randomNumber from './randomNumber';
 import runScriptOverSSH from './runScriptOverSSH';
 import runShortcut from './runShortcut';
@@ -46,15 +52,21 @@ export {
   continueShortcutInApp,
   count,
   exitShortcut,
+  generateHash,
   getBatteryLevel,
   getContentsOfUrl,
   getCurrentIpAddress,
+  getDeviceDetails,
   getDictionaryValue,
   getName,
+  getNetworkDetails,
   getType,
   getVariable,
   nothing,
   number,
+  openInBooks,
+  print,
+  quickLook,
   randomNumber,
   runScriptOverSSH,
   runShortcut,

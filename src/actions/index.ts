@@ -24,6 +24,7 @@ import number from './number';
 import openInBooks from './openInBooks';
 import print from './print';
 import quickLook from './quickLook';
+import randomNumber from './randomNumber';
 import runScriptOverSSH from './runScriptOverSSH';
 import runShortcut from './runShortcut';
 import setAirplaneMode from './setAirplaneMode';
@@ -72,6 +73,7 @@ export {
   openInBooks,
   print,
   quickLook,
+  randomNumber,
   runScriptOverSSH,
   runShortcut,
   setAirplaneMode,

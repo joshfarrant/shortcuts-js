@@ -31,6 +31,7 @@ type WFWorkflowActionIdentifier = (
   | 'is.workflow.actions.nothing'
   | 'is.workflow.actions.notification'
   | 'is.workflow.actions.number'
+  | 'is.workflow.actions.number.random'
   | 'is.workflow.actions.previewdocument'
   | 'is.workflow.actions.print'
   | 'is.workflow.actions.runsshscript'

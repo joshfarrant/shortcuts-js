@@ -7,6 +7,7 @@ import conditional from './conditional';
 import continueShortcutInApp from './continueShortcutInApp';
 import count from './count';
 import exitShortcut from './exitShortcut';
+import generateHash from './generateHash';
 import getBatteryLevel from './getBatteryLevel';
 import getContentsOfUrl from './getContentsOfUrl';
 import getCurrentIpAddress from './getCurrentIpAddress';
@@ -50,6 +51,7 @@ export {
   continueShortcutInApp,
   count,
   exitShortcut,
+  generateHash,
   getBatteryLevel,
   getContentsOfUrl,
   getCurrentIpAddress,

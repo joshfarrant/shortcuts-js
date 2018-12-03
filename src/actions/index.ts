@@ -2,6 +2,7 @@ import addToVariable from './addToVariable';
 import ask from './ask';
 import base64Encode from './base64Encode';
 import calculate from './calculate';
+import calculateStatistics from './calculateStatistics';
 import chooseFromMenu from './chooseFromMenu';
 import comment from './comment';
 import conditional from './conditional';
@@ -48,6 +49,7 @@ export {
   ask,
   base64Encode,
   calculate,
+  calculateStatistics,
   chooseFromMenu,
   comment,
   conditional,

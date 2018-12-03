@@ -38,6 +38,7 @@ type WFWorkflowActionIdentifier = (
   | 'is.workflow.actions.setitemname'
   | 'is.workflow.actions.setvariable'
   | 'is.workflow.actions.showresult'
+  | 'is.workflow.actions.statistics'
   | 'is.workflow.actions.url'
   | 'is.workflow.actions.vibrate'
   | 'is.workflow.actions.viewresult'

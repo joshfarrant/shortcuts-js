@@ -15,6 +15,7 @@ import WFIPAddressTypeOption from './WFIPAddressTypeOption';
 import WFMathOperation from './WFMathOperation';
 import WFNetworkDetailsNetwork from './WFNetworkDetailsNetwork';
 import WFSerialization from './WFSerialization';
+import WFStatisticsOperation from './WFStatisticsOperation';
 
 interface WFWorkflowActionParameters {
   Advanced?: boolean;
@@ -68,6 +69,7 @@ interface WFWorkflowActionParameters {
   WFSSHPort?: WFSerialization | string;
   WFSSHScript?: WFSerialization | string;
   WFSSHUser?: WFSerialization | string;
+  WFStatisticsOperation?: WFSerialization | WFStatisticsOperation;
   WFTextActionText?: WFSerialization | string;
   WFURLActionURL?: string;
   WFVariable?: WFSerialization | string;

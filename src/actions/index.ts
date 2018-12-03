@@ -10,12 +10,17 @@ import exitShortcut from './exitShortcut';
 import getBatteryLevel from './getBatteryLevel';
 import getContentsOfUrl from './getContentsOfUrl';
 import getCurrentIpAddress from './getCurrentIpAddress';
+import getDeviceDetails from './getDeviceDetails';
 import getDictionaryValue from './getDictionaryValue';
 import getName from './getName';
+import getNetworkDetails from './getNetworkDetails';
 import getType from './getType';
 import getVariable from './getVariable';
 import nothing from './nothing';
 import number from './number';
+import openInBooks from './openInBooks';
+import print from './print';
+import quickLook from './quickLook';
 import runScriptOverSSH from './runScriptOverSSH';
 import runShortcut from './runShortcut';
 import setAirplaneMode from './setAirplaneMode';
@@ -49,12 +54,17 @@ export {
   getBatteryLevel,
   getContentsOfUrl,
   getCurrentIpAddress,
+  getDeviceDetails,
   getDictionaryValue,
   getName,
+  getNetworkDetails,
   getType,
   getVariable,
   nothing,
   number,
+  openInBooks,
+  print,
+  quickLook,
   runScriptOverSSH,
   runShortcut,
   setAirplaneMode,

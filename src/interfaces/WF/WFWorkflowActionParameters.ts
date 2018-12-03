@@ -1,6 +1,7 @@
 import WFAskActionDateGranularity from './WFAskActionDateGranularity';
 import WFCondition from './WFCondition';
 import WFCountType from './WFCountType';
+import WFDeviceDetail from './WFDeviceDetail';
 import WFFlashlightSetting from './WFFlashlightSetting';
 import WFGetDictionaryValueType from './WFGetDictionaryValueType';
 import WFHTTPBodyType from './WFHTTPBodyType';
@@ -9,6 +10,7 @@ import WFInputType from './WFInputType';
 import WFIPAddressSourceOption from './WFIPAddressSourceOption';
 import WFIPAddressTypeOption from './WFIPAddressTypeOption';
 import WFMathOperation from './WFMathOperation';
+import WFNetworkDetailsNetwork from './WFNetworkDetailsNetwork';
 import WFSerialization from './WFSerialization';
 
 interface WFWorkflowActionParameters {
@@ -29,6 +31,7 @@ interface WFWorkflowActionParameters {
   WFControlFlowMode?: number;
   WFCountType?: WFCountType;
   WFDelayTime?: number;
+  WFDeviceDetail?: WFSerialization | WFDeviceDetail;
   WFDictionaryKey?: string;
   WFDontIncludeFileExtension?: boolean;
   WFFlashlightSetting?: WFFlashlightSetting;
@@ -47,6 +50,7 @@ interface WFWorkflowActionParameters {
   WFMenuItemTitle?: string;
   WFMenuPrompt?: string;
   WFName?: string;
+  WFNetworkDetailsNetwork?: WFNetworkDetailsNetwork;
   WFNotificationActionTitle?: string;
   WFNotificationActionBody?: string;
   WFNotificationActionSound?: boolean;

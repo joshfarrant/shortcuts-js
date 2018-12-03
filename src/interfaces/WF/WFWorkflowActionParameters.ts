@@ -30,6 +30,9 @@ interface WFWorkflowActionParameters {
   Text?: WFSerialization | string;
   Time?: string;
   UUID?: string;
+  WFAlertActionCancelButtonShown?: boolean;
+  WFAlertActionMessage?: WFSerialization | string;
+  WFAlertActionTitle?: WFSerialization | string;
   WFAskActionDateGranularity?: WFAskActionDateGranularity;
   WFAskActionDefaultAnswer?: WFSerialization | string;
   WFAskActionPrompt?: WFSerialization | string;

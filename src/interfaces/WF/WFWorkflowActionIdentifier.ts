@@ -2,6 +2,7 @@ type WFWorkflowActionIdentifier = (
   'com.apple.iBooks.openin'
   | 'is.workflow.actions.appendvariable'
   | 'is.workflow.actions.airplanemode.set'
+  | 'is.workflow.actions.alert'
   | 'is.workflow.actions.ask'
   | 'is.workflow.actions.base64encode'
   | 'is.workflow.actions.bluetooth.set'

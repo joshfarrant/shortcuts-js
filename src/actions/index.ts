@@ -1,6 +1,7 @@
 import addToVariable from './addToVariable';
 import ask from './ask';
 import calculate from './calculate';
+import calculateStatistics from './calculateStatistics';
 import chooseFromMenu from './chooseFromMenu';
 import comment from './comment';
 import conditional from './conditional';
@@ -39,6 +40,7 @@ export {
   addToVariable,
   ask,
   calculate,
+  calculateStatistics,
   chooseFromMenu,
   comment,
   conditional,

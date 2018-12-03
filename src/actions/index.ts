@@ -16,6 +16,9 @@ import getType from './getType';
 import getVariable from './getVariable';
 import nothing from './nothing';
 import number from './number';
+import openInBooks from './openInBooks';
+import print from './print';
+import quickLook from './quickLook';
 import runScriptOverSSH from './runScriptOverSSH';
 import runShortcut from './runShortcut';
 import setAirplaneMode from './setAirplaneMode';
@@ -54,6 +57,9 @@ export {
   getVariable,
   nothing,
   number,
+  openInBooks,
+  print,
+  quickLook,
   runScriptOverSSH,
   runShortcut,
   setAirplaneMode,

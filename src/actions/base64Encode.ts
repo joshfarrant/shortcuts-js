@@ -6,7 +6,8 @@ import WFSerialization from '../interfaces/WF/WFSerialization';
 import WFWorkflowAction from '../interfaces/WF/WFWorkflowAction';
 
 /**
- * Base 64 Encode Action. Base 64-encode content.
+ * Base 64 Encode Action. Encodes or decodes text or files using Base64
+ * encoding.
  *
  * ```js
  * base64Encode({

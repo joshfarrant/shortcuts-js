@@ -1,7 +1,9 @@
 import WFAskActionDateGranularity from './WFAskActionDateGranularity';
+import WFBase64LineBreakMode from './WFBase64LineBreakMode';
 import WFCondition from './WFCondition';
 import WFCountType from './WFCountType';
 import WFDeviceDetail from './WFDeviceDetail';
+import WFEncodeMode from './WFEncodeMode';
 import WFFlashlightSetting from './WFFlashlightSetting';
 import WFGetDictionaryValueType from './WFGetDictionaryValueType';
 import WFHashType from './WFHashType';
@@ -25,6 +27,7 @@ interface WFWorkflowActionParameters {
   WFAskActionDateGranularity?: WFAskActionDateGranularity;
   WFAskActionDefaultAnswer?: WFSerialization | string;
   WFAskActionPrompt?: WFSerialization | string;
+  WFBase64LineBreakMode?: WFSerialization | WFBase64LineBreakMode;
   WFBrightness?: number;
   WFCommentActionText?: string;
   WFCondition?: WFCondition;
@@ -35,6 +38,7 @@ interface WFWorkflowActionParameters {
   WFDeviceDetail?: WFSerialization | WFDeviceDetail;
   WFDictionaryKey?: string;
   WFDontIncludeFileExtension?: boolean;
+  WFEncodeMode?: WFEncodeMode;
   WFFlashlightSetting?: WFFlashlightSetting;
   WFFormValues?: WFSerialization;
   WFGetDictionaryValueType?: WFGetDictionaryValueType;

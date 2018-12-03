@@ -2,7 +2,8 @@ import WFSerialization from '../interfaces/WF/WFSerialization';
 import WFWorkflowAction from '../interfaces/WF/WFWorkflowAction';
 
 /**
- * Run Script (Pythonista) Action. Run the specified script in Pythonista.
+ * Run Script (Pythonista) Action. Runs the specified script in Pythonista and
+ * waits to continue the shortcut until you return to the Shortcuts app.
  *
  * ```js
  * runPythonistaScript({

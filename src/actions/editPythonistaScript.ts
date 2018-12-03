@@ -2,8 +2,8 @@ import WFSerialization from '../interfaces/WF/WFSerialization';
 import WFWorkflowAction from '../interfaces/WF/WFWorkflowAction';
 
 /**
- * Edit Script (Pythonista) Action. Open the specified script in Pythonista for
- * editing.
+ * Edit Script (Pythonista) Action. Opens the specified script in Pythonista
+ * for editing.
  *
  * ```js
  * editPythonistaScript({

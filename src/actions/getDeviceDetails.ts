@@ -5,7 +5,7 @@ import WFSerialization from '../interfaces/WF/WFSerialization';
 import WFWorkflowAction from '../interfaces/WF/WFWorkflowAction';
 
 /**
- * Get Device Details Action. Returns a particular property of the device.
+ * Get Device Details Action. Gets information about the current device.
  *
  * ```js
  * getDeviceDetails({

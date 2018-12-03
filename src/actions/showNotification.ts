@@ -14,9 +14,11 @@ import WFWorkflowAction from '../interfaces/WF/WFWorkflowAction';
 
 const showNotification = (
   options: {
-    /* Title for the notification */
+    /** Title for the notification */
     title ?: string,
+    /** Body for the notification */
     body ?: string,
+    /** Enable or disable sound for the notification */
     sound ?: boolean,
   },
 ): WFWorkflowAction => {

@@ -7,8 +7,8 @@ import WFWiFiDetail from '../interfaces/WF/WFWiFiDetail';
 import WFWorkflowAction from '../interfaces/WF/WFWorkflowAction';
 
 /**
- * Get Network Details Action. Gets various network-related information from
- * the device.
+ * Get Network Details Action. Gets information about the currently connected
+ * networks.
  *
  * ```js
  * getNetworkDetails({

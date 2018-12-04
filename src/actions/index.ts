@@ -22,6 +22,7 @@ import getVariable from './getVariable';
 import nothing from './nothing';
 import number from './number';
 import openInBooks from './openInBooks';
+import pauseMusic from './pauseMusic';
 import print from './print';
 import quickLook from './quickLook';
 import randomNumber from './randomNumber';
@@ -36,10 +37,13 @@ import setLowPowerMode from './setLowPowerMode';
 import setName from './setName';
 import setTorch from './setTorch';
 import setVariable from './setVariable';
+import setVolume from './setVolume';
 import setWiFi from './setWiFi';
 import showAlert from './showAlert';
 import showNotification from './showNotification';
 import showResult from './showResult';
+import skipBack from './skipBack';
+import skipForward from './skipForward';
 import text from './text';
 import url from './url';
 import vibrateDevice from './vibrateDevice';
@@ -72,6 +76,7 @@ export {
   nothing,
   number,
   openInBooks,
+  pauseMusic,
   print,
   quickLook,
   randomNumber,
@@ -87,9 +92,12 @@ export {
   showNotification,
   setTorch,
   setVariable,
+  setVolume,
   setWiFi,
   showAlert,
   showResult,
+  skipBack,
+  skipForward,
   text,
   url,
   vibrateDevice,

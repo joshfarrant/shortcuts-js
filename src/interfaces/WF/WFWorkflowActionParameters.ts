@@ -16,6 +16,7 @@ import WFIPAddressTypeOption from './WFIPAddressTypeOption';
 import WFMathOperation from './WFMathOperation';
 import WFNetworkDetailsNetwork from './WFNetworkDetailsNetwork';
 import WFSerialization from './WFSerialization';
+import WFSkipBackBehavior from './WFSkipBackBehavior';
 import WFStatisticsOperation from './WFStatisticsOperation';
 
 interface WFWorkflowActionParameters {
@@ -79,11 +80,13 @@ interface WFWorkflowActionParameters {
   WFSSHPort?: WFSerialization | string;
   WFSSHScript?: WFSerialization | string;
   WFSSHUser?: WFSerialization | string;
+  WFSkipBackBehavior?: WFSkipBackBehavior;
   WFStatisticsOperation?: WFSerialization | WFStatisticsOperation;
   WFTextActionText?: WFSerialization | string;
   WFURLActionURL?: string;
   WFVariable?: WFSerialization | string;
   WFVariableName?: string;
+  WFVolume?: number;
   WFWorkflowName?: string;
 }
 

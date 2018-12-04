@@ -19,6 +19,7 @@ import getName from './getName';
 import getNetworkDetails from './getNetworkDetails';
 import getType from './getType';
 import getVariable from './getVariable';
+import markup from './markup';
 import nothing from './nothing';
 import number from './number';
 import openInBooks from './openInBooks';
@@ -73,6 +74,7 @@ export {
   getNetworkDetails,
   getType,
   getVariable,
+  markup,
   nothing,
   number,
   openInBooks,

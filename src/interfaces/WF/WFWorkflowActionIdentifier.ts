@@ -4,6 +4,7 @@ type WFWorkflowActionIdentifier = (
   | 'is.workflow.actions.airplanemode.set'
   | 'is.workflow.actions.alert'
   | 'is.workflow.actions.ask'
+  | 'is.workflow.actions.avairyeditphoto'
   | 'is.workflow.actions.base64encode'
   | 'is.workflow.actions.bluetooth.set'
   | 'is.workflow.actions.cellulardata.set'

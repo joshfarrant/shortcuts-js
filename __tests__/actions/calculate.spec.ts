@@ -64,7 +64,6 @@ describe('calculate function', () => {
   });
 
   it('builds a calculate action when a scientific operation is passed', () => {
-    const operation = '...';
     const scientificOperation = 'log(x)';
     const expected = {
       WFWorkflowActionIdentifier: 'is.workflow.actions.math',
@@ -73,14 +72,13 @@ describe('calculate function', () => {
         WFScientificMathOperation: scientificOperation,
       },
     };
-    const actual = calculate({ operation, scientificOperation });
+    const actual = calculate({ scientificOperation });
 
     expect(actual).toEqual(expected);
   });
 
   it('builds a calculate action when an operand and a scientific operation are passed', () => {
     const operand = 12;
-    const operation = '...';
     const scientificOperation = 'x^y';
     const expected = {
       WFWorkflowActionIdentifier: 'is.workflow.actions.math',
@@ -90,7 +88,7 @@ describe('calculate function', () => {
         WFScientificMathOperation: scientificOperation,
       },
     };
-    const actual = calculate({ operand, operation, scientificOperation });
+    const actual = calculate({ operand, scientificOperation });
 
     expect(actual).toEqual(expected);
   });

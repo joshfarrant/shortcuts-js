@@ -51,7 +51,7 @@ const calculate = (
   } = options;
 
   let parameters;
-  if (operation === '...' && scientificOperation) {
+  if (scientificOperation) {
     parameters = {
       WFMathOperation: '...',
       ...(operand !== undefined && { WFScientificMathOperand: operand }),

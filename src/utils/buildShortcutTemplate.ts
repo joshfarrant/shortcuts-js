@@ -1,17 +1,19 @@
 import { flatten } from './flatten';
 
+import BuildShortcutOptions from '../interfaces/BuildShortcutOptions';
 import WFWorkflow from '../interfaces/WF/WFWorkflow';
 import WFWorkflowActionsInterface from '../interfaces/WF/WFWorkflowAction';
 
 /** @ignore */
 export const buildShortcutTemplate = (
   actions: WFWorkflowActionsInterface[] = [],
+  options: BuildShortcutOptions,
 ): WFWorkflow => ({
   WFWorkflowClientVersion: '724',
   WFWorkflowClientRelease: '2.1',
   WFWorkflowIcon: {
-    WFWorkflowIconStartColor: 1440408063,
-    WFWorkflowIconGlyphNumber: 59446,
+    WFWorkflowIconStartColor: options.icon.color,
+    WFWorkflowIconGlyphNumber: options.icon.glyph,
   },
   WFWorkflowImportQuestions: [],
   WFWorkflowTypes: [

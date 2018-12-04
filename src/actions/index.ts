@@ -6,7 +6,9 @@ import comment from './comment';
 import conditional from './conditional';
 import continueShortcutInApp from './continueShortcutInApp';
 import count from './count';
+import date from './date';
 import exitShortcut from './exitShortcut';
+import formatDate from './formatDate';
 import getBatteryLevel from './getBatteryLevel';
 import getContentsOfUrl from './getContentsOfUrl';
 import getCurrentIpAddress from './getCurrentIpAddress';
@@ -44,7 +46,9 @@ export {
   conditional,
   continueShortcutInApp,
   count,
+  date,
   exitShortcut,
+  formatDate,
   getBatteryLevel,
   getContentsOfUrl,
   getCurrentIpAddress,

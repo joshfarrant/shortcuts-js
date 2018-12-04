@@ -33,6 +33,7 @@ type CoercionType = (
   | 'vCard'
 );
 
+/** @ignore */
 const coercionTypesMap = new Map<CoercionType, AggrandizementCoercionItemClass>([
   ['Anything', 'WFContentItem'],
   ['App Store app', 'WFAppStoreAppContentItem'],

@@ -1,5 +1,12 @@
 type WFDateFormatStyle = (
-  'ISO 8601'
+  'None'
+  | 'Short'
+  | 'Medium'
+  | 'Long'
+  | 'Relative'
+  | 'RFC 2822'
+  | 'ISO 8601'
+  | 'Custom'
 );
 
 export default WFDateFormatStyle;

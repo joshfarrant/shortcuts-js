@@ -1,3 +1,4 @@
+/** @ignore */
 export const COLORS = {
   RED: 4282601983,
   DARK_ORANGE: 4251333119,

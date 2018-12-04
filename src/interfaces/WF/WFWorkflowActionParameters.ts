@@ -20,7 +20,6 @@ import WFNetworkDetailsNetwork from './WFNetworkDetailsNetwork';
 import WFRelativeDateFormatStyle from './WFRelativeDateFormatStyle';
 import WFScientificMathOperation from './WFScientificMathOperation';
 import WFSerialization from './WFSerialization';
-import WFSerialization from './WFSerialization';
 import WFSkipBackBehavior from './WFSkipBackBehavior';
 import WFStatisticsOperation from './WFStatisticsOperation';
 import WFTimeFormatStyle from './WFTimeFormatStyle';

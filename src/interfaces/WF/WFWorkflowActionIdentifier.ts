@@ -43,6 +43,7 @@ type WFWorkflowActionIdentifier = (
   | 'is.workflow.actions.setvariable'
   | 'is.workflow.actions.setvolume'
   | 'is.workflow.actions.showresult'
+  | 'is.workflow.actions.skipback'
   | 'is.workflow.actions.statistics'
   | 'is.workflow.actions.url'
   | 'is.workflow.actions.vibrate'

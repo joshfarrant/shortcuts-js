@@ -42,6 +42,7 @@ import setWiFi from './setWiFi';
 import showAlert from './showAlert';
 import showNotification from './showNotification';
 import showResult from './showResult';
+import skipBack from './skipBack';
 import text from './text';
 import url from './url';
 import vibrateDevice from './vibrateDevice';
@@ -94,6 +95,7 @@ export {
   setWiFi,
   showAlert,
   showResult,
+  skipBack,
   text,
   url,
   vibrateDevice,

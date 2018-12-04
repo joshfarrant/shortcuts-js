@@ -11,8 +11,28 @@ import WFWorkflowActionsInterface from '../interfaces/WF/WFWorkflowAction';
  */
 export const buildShortcut = (
   actions: WFWorkflowActionsInterface[] = [],
+  options?: {
+    icon?: {
+      color?: number,
+      glyph?: number,
+    },
+  },
 ): string => {
-  const template = buildShortcutTemplate(actions);
+  const completeOptions = {
+    icon: {
+      color: 4274264319, // Yellow
+      glyph: 59446, // Keyboard
+    },
+  };
+
+  if (options && options.icon) {
+    completeOptions.icon = {
+      ...completeOptions.icon,
+      ...options.icon,
+    };
+  }
+
+  const template = buildShortcutTemplate(actions, completeOptions);
   const shortcut = encodeShortcut(template);
   return shortcut;
 };

@@ -41,6 +41,7 @@ type WFWorkflowActionIdentifier = (
   | 'is.workflow.actions.setbrightness'
   | 'is.workflow.actions.setitemname'
   | 'is.workflow.actions.setvariable'
+  | 'is.workflow.actions.setvolume'
   | 'is.workflow.actions.showresult'
   | 'is.workflow.actions.statistics'
   | 'is.workflow.actions.url'

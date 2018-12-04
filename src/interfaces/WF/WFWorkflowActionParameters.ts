@@ -84,6 +84,7 @@ interface WFWorkflowActionParameters {
   WFURLActionURL?: string;
   WFVariable?: WFSerialization | string;
   WFVariableName?: string;
+  WFVolume ?: number;
   WFWorkflowName?: string;
 }
 

@@ -37,6 +37,7 @@ import setLowPowerMode from './setLowPowerMode';
 import setName from './setName';
 import setTorch from './setTorch';
 import setVariable from './setVariable';
+import setVolume from './setVolume';
 import setWiFi from './setWiFi';
 import showAlert from './showAlert';
 import showNotification from './showNotification';
@@ -89,6 +90,7 @@ export {
   showNotification,
   setTorch,
   setVariable,
+  setVolume,
   setWiFi,
   showAlert,
   showResult,

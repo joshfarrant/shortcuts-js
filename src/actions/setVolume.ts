@@ -5,25 +5,25 @@ import WFWorkflowAction from '../interfaces/WF/WFWorkflowAction';
  *
  * ```js
  *  setVolume({
- *    volume: 0.5,
+ *    volume: 50,
  * });
  * ```
  */
 
 const setVolume = (
   options: {
-    /** Number between 0 & 1 to set the volume to */
+    /** Number between 0 & 100 to set the volume to */
     volume ?: number,
   },
 ): WFWorkflowAction => {
   const {
-    volume = 0.5,
+    volume = 50,
   } = options;
 
   return {
     WFWorkflowActionIdentifier: 'is.workflow.actions.setvolume',
     WFWorkflowActionParameters: {
-      WFVolume: volume,
+      WFVolume: volume / 100,
     },
   };
 };

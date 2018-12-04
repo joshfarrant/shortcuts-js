@@ -19,11 +19,11 @@ describe('setVolume function', () => {
   });
 
   it('builds a setVolume action when a volume options is specified', () => {
-    const volumeLevel = 0.3;
+    const volumeLevel = 30;
     const expected = {
       WFWorkflowActionIdentifier: 'is.workflow.actions.setvolume',
       WFWorkflowActionParameters: {
-        WFVolume: volumeLevel,
+        WFVolume: 0.3,
       },
     };
 

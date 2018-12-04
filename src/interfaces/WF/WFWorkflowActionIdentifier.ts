@@ -22,6 +22,7 @@ type WFWorkflowActionIdentifier = (
   | 'is.workflow.actions.getdevicedetails'
   | 'is.workflow.actions.getitemname'
   | 'is.workflow.actions.getitemtype'
+  | 'is.workflow.actions.getmapslink'
   | 'is.workflow.actions.gettext'
   | 'is.workflow.actions.getvalueforkey'
   | 'is.workflow.actions.getvariable'

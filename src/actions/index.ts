@@ -15,6 +15,7 @@ import getContentsOfUrl from './getContentsOfUrl';
 import getCurrentIpAddress from './getCurrentIpAddress';
 import getDeviceDetails from './getDeviceDetails';
 import getDictionaryValue from './getDictionaryValue';
+import getMapsURL from './getMapsURL';
 import getName from './getName';
 import getNetworkDetails from './getNetworkDetails';
 import getType from './getType';
@@ -70,6 +71,7 @@ export {
   getCurrentIpAddress,
   getDeviceDetails,
   getDictionaryValue,
+  getMapsURL,
   getName,
   getNetworkDetails,
   getType,

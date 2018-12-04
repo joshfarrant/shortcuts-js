@@ -43,6 +43,7 @@ import showAlert from './showAlert';
 import showNotification from './showNotification';
 import showResult from './showResult';
 import skipBack from './skipBack';
+import skipForward from './skipForward';
 import text from './text';
 import url from './url';
 import vibrateDevice from './vibrateDevice';
@@ -96,6 +97,7 @@ export {
   showAlert,
   showResult,
   skipBack,
+  skipForward,
   text,
   url,
   vibrateDevice,

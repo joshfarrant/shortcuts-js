@@ -1,4 +1,5 @@
 import addToVariable from './addToVariable';
+import airDrop from './airDrop';
 import ask from './ask';
 import base64Encode from './base64Encode';
 import calculate from './calculate';
@@ -55,6 +56,7 @@ import waitToReturn from './waitToReturn';
 
 export {
   addToVariable,
+  airDrop,
   ask,
   base64Encode,
   calculate,

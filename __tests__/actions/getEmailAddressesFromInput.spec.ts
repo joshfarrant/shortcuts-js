@@ -10,7 +10,7 @@ describe('getEmailAddressesFromInput function', () => {
       WFWorkflowActionIdentifier: 'is.workflow.actions.detect.emailaddress',
       WFWorkflowActionParameters: {},
     };
-    const actual = getEmailAddressesFromInput();
+    const actual = getEmailAddressesFromInput({});
 
     expect(actual).toEqual(expected);
   });

@@ -10,7 +10,7 @@ describe('getTextFromInput function', () => {
       WFWorkflowActionIdentifier: 'is.workflow.actions.detect.text',
       WFWorkflowActionParameters: {},
     };
-    const actual = getTextFromInput();
+    const actual = getTextFromInput({});
 
     expect(actual).toEqual(expected);
   });

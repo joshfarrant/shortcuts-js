@@ -10,7 +10,7 @@ describe('getHeadersOfURL function', () => {
       WFWorkflowActionIdentifier: 'is.workflow.actions.url.getheaders',
       WFWorkflowActionParameters: {},
     };
-    const actual = getHeadersOfURL();
+    const actual = getHeadersOfURL({});
 
     expect(actual).toEqual(expected);
   });

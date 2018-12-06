@@ -10,7 +10,7 @@ describe('getNameOfEmoji function', () => {
       WFWorkflowActionIdentifier: 'is.workflow.actions.getnameofemoji',
       WFWorkflowActionParameters: {},
     };
-    const actual = getNameOfEmoji();
+    const actual = getNameOfEmoji({});
 
     expect(actual).toEqual(expected);
   });

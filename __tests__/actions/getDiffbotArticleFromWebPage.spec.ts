@@ -10,7 +10,7 @@ describe('getDiffbotArticleFromWebPage function', () => {
       WFWorkflowActionIdentifier: 'is.workflow.actions.getarticle',
       WFWorkflowActionParameters: {},
     };
-    const actual = getDiffbotArticleFromWebPage();
+    const actual = getDiffbotArticleFromWebPage({});
 
     expect(actual).toEqual(expected);
   });

@@ -10,7 +10,7 @@ describe('getContentsOfWebPage function', () => {
       WFWorkflowActionIdentifier: 'is.workflow.actions.getwebpagecontents',
       WFWorkflowActionParameters: {},
     };
-    const actual = getContentsOfWebPage();
+    const actual = getContentsOfWebPage({});
 
     expect(actual).toEqual(expected);
   });

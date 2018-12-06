@@ -10,7 +10,7 @@ describe('expandURL function', () => {
       WFWorkflowActionIdentifier: 'is.workflow.actions.url.expand',
       WFWorkflowActionParameters: {},
     };
-    const actual = expandURL();
+    const actual = expandURL({});
 
     expect(actual).toEqual(expected);
   });

@@ -10,7 +10,7 @@ describe('getURLsFromInput function', () => {
       WFWorkflowActionIdentifier: 'is.workflow.actions.detect.link',
       WFWorkflowActionParameters: {},
     };
-    const actual = getURLsFromInput();
+    const actual = getURLsFromInput({});
 
     expect(actual).toEqual(expected);
   });

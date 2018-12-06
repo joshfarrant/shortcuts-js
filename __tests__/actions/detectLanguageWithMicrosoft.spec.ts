@@ -10,7 +10,7 @@ describe('detectLanguageWithMicrosoft function', () => {
       WFWorkflowActionIdentifier: 'is.workflow.actions.detectlanguage',
       WFWorkflowActionParameters: {},
     };
-    const actual = detectLanguageWithMicrosoft();
+    const actual = detectLanguageWithMicrosoft({});
 
     expect(actual).toEqual(expected);
   });

@@ -10,7 +10,7 @@ describe('scanQROrBarcode function', () => {
       WFWorkflowActionIdentifier: 'is.workflow.actions.scanbarcode',
       WFWorkflowActionParameters: {},
     };
-    const actual = scanQROrBarcode();
+    const actual = scanQROrBarcode({});
 
     expect(actual).toEqual(expected);
   });

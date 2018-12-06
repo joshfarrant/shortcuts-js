@@ -28,16 +28,20 @@ import getCurrentIpAddress from './getCurrentIpAddress';
 import getCurrentSong from './getCurrentSong';
 import getDatesFromInput from './getDatesFromInput';
 import getDeviceDetails from './getDeviceDetails';
+import getDictionaryFromInput from './getDeviceDetails';
 import getDictionaryValue from './getDictionaryValue';
 import getDiffbotArticleFromWebPage from './getDiffbotArticleFromWebPage';
+import getEmailAddressesFromInput from './getEmailAddressesFromInput';
 import getFramesFromImage from './getFramesFromImage';
 import getHeadersOfURL from './getHeadersOfURL';
 import getImagesFromInput from './getImagesFromInput';
 import getLastImport from './getLastImport';
+import getLinkToFile from './getLinkToFile';
 import getMapsURL from './getMapsURL';
 import getName from './getName';
 import getNameOfEmoji from './getNameOfEmoji';
 import getNetworkDetails from './getNetworkDetails';
+import getPhoneNumbersFromInput from. './getPhoneNumbersFromInput';
 import getTextFromInput from './getTextFromInput';
 import getType from './getType';
 import getURLsFromInput from './getURLsFromInput';
@@ -55,9 +59,12 @@ import playSound from './playSound';
 import print from './print';
 import quickLook from './quickLook';
 import randomNumber from './randomNumber';
+import removeReminders from './removeReminders';
 import runScriptOverSSH from './runScriptOverSSH';
 import runShortcut from './runShortcut';
 import scanQROrBarcode from './scanQROrBarcode';
+import selectEmailAddress from './selectEmailAddress';
+import selectPhoneNumber from './selectPhoneNumber';
 import setAirplaneMode from './setAirplaneMode';
 import setBluetooth from './setBluetooth';
 import setBrightness from './setBrightness';
@@ -73,6 +80,7 @@ import share from './share';
 import shareWithExtensions from './shareWithExtensions';
 import showAlert from './showAlert';
 import showDefinition from './showDefinition';
+import showInCalendar from './showInCalendar';
 import showInItunesStore from './showInItunesStore';
 import showNotification from './showNotification';
 import showResult from './showResult';
@@ -117,16 +125,20 @@ export {
   getCurrentSong,
   getDatesFromInput,
   getDeviceDetails,
+  getDictionaryFromInput,
   getDictionaryValue,
   getDiffbotArticleFromWebPage,
+  getEmailAddessesFromInput,
   getFramesFromImage,
   getHeadersOfURL,
   getImagesFromInput,
   getLastImport,
+  getLinkToFile,
   getMapsURL,
   getName,
   getNameOfEmoji,
   getNetworkDetails,
+  getPhoneNumbersFromInput,
   getTextFromInput,
   getType,
   getURLsFromInput,
@@ -144,9 +156,12 @@ export {
   print,
   quickLook,
   randomNumber,
+  removeReminders,
   runScriptOverSSH,
   runShortcut,
   scanQROrBarcode,
+  selectEmailAddress,
+  selectPhoneNumber,
   setAirplaneMode,
   setBluetooth,
   setBrightness,
@@ -162,6 +177,7 @@ export {
   shareWithExtensions,
   showAlert,
   showDefinition,
+  showInCalendar,
   showInItunesStore,
   showNotification,
   showResult,

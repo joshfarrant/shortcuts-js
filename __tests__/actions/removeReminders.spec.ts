@@ -10,7 +10,7 @@ describe('removeReminders function', () => {
       WFWorkflowActionIdentifier: 'is.workflow.actions.removereminders',
       WFWorkflowActionParameters: {},
     };
-    const actual = removeReminders();
+    const actual = removeReminders({});
 
     expect(actual).toEqual(expected);
   });

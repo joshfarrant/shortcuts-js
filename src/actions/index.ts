@@ -18,6 +18,7 @@ import getCurrentIpAddress from './getCurrentIpAddress';
 import getDeviceDetails from './getDeviceDetails';
 import getDictionaryValue from './getDictionaryValue';
 import getMapsURL from './getMapsURL';
+import getMyShortcuts from './getMyShortcuts';
 import getName from './getName';
 import getNetworkDetails from './getNetworkDetails';
 import getType from './getType';
@@ -82,6 +83,7 @@ export {
   getDeviceDetails,
   getDictionaryValue,
   getMapsURL,
+  getMyShortcuts,
   getName,
   getNetworkDetails,
   getType,

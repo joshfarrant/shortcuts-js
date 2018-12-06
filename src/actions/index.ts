@@ -17,7 +17,6 @@ import detectLanguage from './detectLanguage';
 import exitShortcut from './exitShortcut';
 import expandURL from './expandURL';
 import extractArchive from './extractArchive';
-import extractRSS from './extractRSS';
 import generateHash from './generateHash';
 import getAddressesFromInput from './getAddressesFromInput';
 import getArticle from './getArticle';
@@ -114,7 +113,6 @@ export {
   exitShortcut,
   expandURL,
   extractArchive,
-  extractRSS,
   generateHash,
   getAddressesFromInput,
   getArticle,

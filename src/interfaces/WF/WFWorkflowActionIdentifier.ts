@@ -66,7 +66,6 @@ type WFWorkflowActionIdentifier = (
   | 'is.workflow.actions.playsound'
   | 'is.workflow.actions.readinglist'
   | 'is.workflow.actions.removereminders'
-  | 'is.workflow.actions.rss.extract'
   | 'is.workflow.actions.runextension'
   | 'is.workflow.actions.runsshscript'
   | 'is.workflow.actions.runworkflow'

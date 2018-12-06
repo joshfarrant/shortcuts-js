@@ -1,5 +1,3 @@
-import { withActionOutput } from '../utils';
-
 import WFWorkflowAction from '../interfaces/WF/WFWorkflowAction';
 
 /**
@@ -14,4 +12,4 @@ const getDatesFromInput = (): WFWorkflowAction => ({
   WFWorkflowActionParameters: {},
 });
 
-export default withActionOutput(getDatesFromInput);
+export default getDatesFromInput;

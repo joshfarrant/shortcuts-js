@@ -1,3 +1,5 @@
+import { withActionOutput } from '../utils';
+
 import WFWorkflowAction from '../interfaces/WF/WFWorkflowAction';
 
 /**
@@ -13,4 +15,4 @@ const getURLsFromInput = (): WFWorkflowAction => ({
   WFWorkflowActionParameters: {},
 });
 
-export default getURLsFromInput;
+export default withActionOutput(getURLsFromInput);

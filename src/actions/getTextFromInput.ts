@@ -1,3 +1,5 @@
+import { withActionOutput } from '../utils';
+
 import WFWorkflowAction from '../interfaces/WF/WFWorkflowAction';
 
 /**
@@ -13,4 +15,4 @@ const getTextFromInput = (): WFWorkflowAction => ({
   WFWorkflowActionParameters: {},
 });
 
-export default getTextFromInput;
+export default withActionOutput(getTextFromInput);

@@ -1,5 +1,6 @@
 type WFWorkflowActionIdentifier = (
   'com.apple.iBooks.openin'
+  | 'com.burbn.instagram.openin'
   | 'is.workflow.actions.appendvariable'
   | 'is.workflow.actions.airdropdocument'
   | 'is.workflow.actions.airplanemode.set'
@@ -19,8 +20,8 @@ type WFWorkflowActionIdentifier = (
   | 'is.workflow.actions.exit'
   | 'is.workflow.actions.flashlight'
   | 'is.workflow.actions.getbatterylevel'
-  | 'is.workflow.actions.getipaddress'
   | 'is.workflow.actions.getdevicedetails'
+  | 'is.workflow.actions.getipaddress'
   | 'is.workflow.actions.getitemname'
   | 'is.workflow.actions.getitemtype'
   | 'is.workflow.actions.getmapslink'
@@ -36,9 +37,10 @@ type WFWorkflowActionIdentifier = (
   | 'is.workflow.actions.notification'
   | 'is.workflow.actions.number'
   | 'is.workflow.actions.number.random'
+  | 'is.workflow.actions.pausemusic'
   | 'is.workflow.actions.previewdocument'
   | 'is.workflow.actions.print'
-  | 'is.workflow.actions.pausemusic'
+  | 'is.workflow.actions.postonfacebook'
   | 'is.workflow.actions.runsshscript'
   | 'is.workflow.actions.runworkflow'
   | 'is.workflow.actions.setbrightness'
@@ -49,11 +51,13 @@ type WFWorkflowActionIdentifier = (
   | 'is.workflow.actions.skipback'
   | 'is.workflow.actions.skipforward'
   | 'is.workflow.actions.statistics'
+  | 'is.workflow.actions.tumblr.post'
   | 'is.workflow.actions.url'
   | 'is.workflow.actions.vibrate'
   | 'is.workflow.actions.viewresult'
   | 'is.workflow.actions.waittoreturn'
   | 'is.workflow.actions.wifi.set'
+  | 'is.workflow.actions.wordpress.post'
 );
 
 export default WFWorkflowActionIdentifier;

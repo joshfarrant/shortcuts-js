@@ -28,7 +28,7 @@ import getCurrentIpAddress from './getCurrentIpAddress';
 import getCurrentSong from './getCurrentSong';
 import getDatesFromInput from './getDatesFromInput';
 import getDeviceDetails from './getDeviceDetails';
-import getDictionaryFromInput from './getDeviceDetails';
+import getDictionaryFromInput from './getDictionaryFromInput';
 import getDictionaryValue from './getDictionaryValue';
 import getDiffbotArticleFromWebPage from './getDiffbotArticleFromWebPage';
 import getEmailAddressesFromInput from './getEmailAddressesFromInput';

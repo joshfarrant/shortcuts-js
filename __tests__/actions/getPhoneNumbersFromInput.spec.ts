@@ -10,7 +10,7 @@ describe('getPhoneNumbersFromInput function', () => {
       WFWorkflowActionIdentifier: 'is.workflow.actions.detect.phonenumber',
       WFWorkflowActionParameters: {},
     };
-    const actual = getPhoneNumbersFromInput();
+    const actual = getPhoneNumbersFromInput({});
 
     expect(actual).toEqual(expected);
   });

@@ -21,7 +21,7 @@ type ChooseFromMenuItem = {
  *     // An array of actions to perform if 'green' is selected
  *     actions: [],
  *   }],
- *   prompt: 'Which of these is your favourite colour?'
+ *   prompt: 'Which of these is your favourite colour?',
  * });
  * ```
  */

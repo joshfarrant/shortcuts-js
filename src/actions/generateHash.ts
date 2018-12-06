@@ -9,7 +9,7 @@ import WFWorkflowAction from '../interfaces/WF/WFWorkflowAction';
  *
  * ```js
  * generateHash({
- *   type: 'MD5'
+ *   type: 'MD5',
  * });
  * ```
  */

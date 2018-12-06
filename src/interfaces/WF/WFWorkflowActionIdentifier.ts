@@ -1,5 +1,6 @@
 type WFWorkflowActionIdentifier = (
   'com.apple.iBooks.openin'
+  | 'com.apple.mobilenotes.SharingExtension'
   | 'com.burbn.instagram.openin'
   | 'is.workflow.actions.appendvariable'
   | 'is.workflow.actions.airdropdocument'
@@ -43,6 +44,7 @@ type WFWorkflowActionIdentifier = (
   | 'is.workflow.actions.postonfacebook'
   | 'is.workflow.actions.runsshscript'
   | 'is.workflow.actions.runworkflow'
+  | 'is.workflow.actions.searchmaps'
   | 'is.workflow.actions.setbrightness'
   | 'is.workflow.actions.setitemname'
   | 'is.workflow.actions.setvariable'
@@ -52,6 +54,7 @@ type WFWorkflowActionIdentifier = (
   | 'is.workflow.actions.skipforward'
   | 'is.workflow.actions.statistics'
   | 'is.workflow.actions.tumblr.post'
+  | 'is.workflow.actions.tweet'
   | 'is.workflow.actions.url'
   | 'is.workflow.actions.vibrate'
   | 'is.workflow.actions.viewresult'

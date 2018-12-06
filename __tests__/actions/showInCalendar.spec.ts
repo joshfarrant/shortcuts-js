@@ -10,7 +10,7 @@ describe('showInCalendar function', () => {
       WFWorkflowActionIdentifier: 'is.workflow.actions.showincalendar',
       WFWorkflowActionParameters: {},
     };
-    const actual = showInCalendar();
+    const actual = showInCalendar({});
 
     expect(actual).toEqual(expected);
   });

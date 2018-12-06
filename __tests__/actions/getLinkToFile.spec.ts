@@ -10,7 +10,7 @@ describe('getLinkToFile function', () => {
       WFWorkflowActionIdentifier: 'is.workflow.actions.file.getlink',
       WFWorkflowActionParameters: {},
     };
-    const actual = getLinkToFile();
+    const actual = getLinkToFile({});
 
     expect(actual).toEqual(expected);
   });

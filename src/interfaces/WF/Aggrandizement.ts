@@ -3,6 +3,7 @@ import AggrandizementPropertyName from './AggrandizementPropertyName';
 import AggrandizementPropertyUserInfo from './AggrandizementPropertyUserInfo';
 import AggrandizementType from './AggrandizementType';
 import WFDateFormatStyle from './WFDateFormatStyle';
+import WFRelativeDateFormatStyle from './WFRelativeDateFormatStyle';
 
 interface Aggrandizement {
   CoercionItemClass?: AggrandizementCoercionItemClass;
@@ -13,6 +14,7 @@ interface Aggrandizement {
   WFDateFormat?: string;
   WFDateFormatStyle?: WFDateFormatStyle;
   WFISO8601IncludeTime?: boolean;
+  WFRelativeDateFormatStyle?: WFRelativeDateFormatStyle;
 }
 
 export default Aggrandizement;

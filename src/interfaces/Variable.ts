@@ -97,12 +97,21 @@ export default class Variable implements WFSerialization {
       getValueForKey?: string,
     },
   ): Variable {
+    const {
+      type,
+      // get,
+      dateFormat,
+      timeFormat,
+      customFormat,
+      getValueForKey,
+    } = options;
+
     const result = new Variable({ ...this.Value });
     const aggrandizements: Aggrandizement[] = [];
 
-    if (options.type) {
+    if (type) {
       aggrandizements.push({
-        CoercionItemClass: coercionTypesMap.get(options.type),
+        CoercionItemClass: coercionTypesMap.get(type),
         Type: 'WFCoercionVariableAggrandizement',
       });
     }
@@ -110,14 +119,26 @@ export default class Variable implements WFSerialization {
     // if (options.get) {
     //   // TODO
     // }
-    //
-    // if (options.dateFormat) {
-    //   // TODO
-    // }
 
-    if (options.getValueForKey) {
+    if (dateFormat) {
       aggrandizements.push({
-        DictionaryKey: options.getValueForKey,
+        WFDateFormatStyle: dateFormat === 'How Long Ago/Until' ? 'Relative' : dateFormat,
+        ...(
+          dateFormat !== 'Custom' &&
+          dateFormat !== 'RFC 2822' &&
+          dateFormat !== 'ISO 8601' &&
+          dateFormat !== 'How Long Ago/Until' && { WFTimeFormatStyle: timeFormat }
+        ),
+        ...(dateFormat === 'Custom' && { WFDateFormat: customFormat }),
+        ...(dateFormat === 'Relative' && { WFRelativeDateFormatStyle: 'Short' }),
+        WFISO8601IncludeTime: dateFormat === 'ISO 8601' && timeFormat === 'ISO 8601 Time',
+        Type: 'WFDateFormatVariableAggrandizement',
+      });
+    }
+
+    if (getValueForKey) {
+      aggrandizements.push({
+        DictionaryKey: getValueForKey,
         Type: 'WFDictionaryValueVariableAggrandizement',
       });
     }

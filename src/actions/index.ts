@@ -41,7 +41,7 @@ import getMapsURL from './getMapsURL';
 import getName from './getName';
 import getNameOfEmoji from './getNameOfEmoji';
 import getNetworkDetails from './getNetworkDetails';
-import getPhoneNumbersFromInput from. './getPhoneNumbersFromInput';
+import getPhoneNumbersFromInput from './getPhoneNumbersFromInput';
 import getTextFromInput from './getTextFromInput';
 import getType from './getType';
 import getURLsFromInput from './getURLsFromInput';

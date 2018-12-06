@@ -68,7 +68,7 @@ describe('calculate function', () => {
     const expected = {
       WFWorkflowActionIdentifier: 'is.workflow.actions.math',
       WFWorkflowActionParameters: {
-        WFMathOperation: '...',
+        WFMathOperation: '…',
         WFScientificMathOperation: scientificOperation,
       },
     };
@@ -83,7 +83,7 @@ describe('calculate function', () => {
     const expected = {
       WFWorkflowActionIdentifier: 'is.workflow.actions.math',
       WFWorkflowActionParameters: {
-        WFMathOperation: '...',
+        WFMathOperation: '…',
         WFScientificMathOperand: 12,
         WFScientificMathOperation: scientificOperation,
       },

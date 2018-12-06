@@ -10,7 +10,7 @@ describe('selectEmailAddress function', () => {
       WFWorkflowActionIdentifier: 'is.workflow.actions.selectemail',
       WFWorkflowActionParameters: {},
     };
-    const actual = selectEmailAddress();
+    const actual = selectEmailAddress({});
 
     expect(actual).toEqual(expected);
   });

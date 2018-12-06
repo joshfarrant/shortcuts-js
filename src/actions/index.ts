@@ -26,6 +26,9 @@ import nothing from './nothing';
 import number from './number';
 import openInBooks from './openInBooks';
 import pauseMusic from './pauseMusic';
+import postOnFacebook from './postOnFacebook';
+import postToTumblr from './postToTumblr';
+import postToWordpress from './postToWordpress';
 import print from './print';
 import quickLook from './quickLook';
 import randomNumber from './randomNumber';
@@ -83,6 +86,9 @@ export {
   number,
   openInBooks,
   pauseMusic,
+  postOnFacebook,
+  postToTumblr,
+  postToWordpress,
   print,
   quickLook,
   randomNumber,

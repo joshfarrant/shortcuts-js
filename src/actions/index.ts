@@ -1,4 +1,5 @@
 import addToVariable from './addToVariable';
+import airDrop from './airDrop';
 import ask from './ask';
 import base64Encode from './base64Encode';
 import calculate from './calculate';
@@ -15,10 +16,12 @@ import getContentsOfUrl from './getContentsOfUrl';
 import getCurrentIpAddress from './getCurrentIpAddress';
 import getDeviceDetails from './getDeviceDetails';
 import getDictionaryValue from './getDictionaryValue';
+import getMapsURL from './getMapsURL';
 import getName from './getName';
 import getNetworkDetails from './getNetworkDetails';
 import getType from './getType';
 import getVariable from './getVariable';
+import markup from './markup';
 import nothing from './nothing';
 import number from './number';
 import openInBooks from './openInBooks';
@@ -53,6 +56,7 @@ import waitToReturn from './waitToReturn';
 
 export {
   addToVariable,
+  airDrop,
   ask,
   base64Encode,
   calculate,
@@ -69,10 +73,12 @@ export {
   getCurrentIpAddress,
   getDeviceDetails,
   getDictionaryValue,
+  getMapsURL,
   getName,
   getNetworkDetails,
   getType,
   getVariable,
+  markup,
   nothing,
   number,
   openInBooks,

@@ -3,7 +3,7 @@ import { withActionOutput } from '../utils';
 import WFWorkflowAction from '../interfaces/WF/WFWorkflowAction';
 
 /**
- * Shares the input on Facebook.
+ * Post on Facebook Action. Shares the input on Facebook.
  *
  * ```js
  * postOnFacebook();

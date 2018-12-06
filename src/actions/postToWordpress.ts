@@ -3,7 +3,7 @@ import { withActionOutput } from '../utils';
 import WFWorkflowAction from '../interfaces/WF/WFWorkflowAction';
 
 /**
- * Posts the input to a WordPress blog as a new post or page.
+ * Post to WordPress Action. Posts the input to a WordPress blog as a new post or page.
  *
  * ```js
  * postToWordpress();

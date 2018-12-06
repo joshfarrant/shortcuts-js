@@ -3,7 +3,7 @@ import { withActionOutput } from '../utils';
 import WFWorkflowAction from '../interfaces/WF/WFWorkflowAction';
 
 /**
- * Opens the photo passed into this action in the Instagram app and copies the caption to the clipboard.
+ * Post on Instagram Action. Opens the photo passed into this action in the Instagram app and copies the caption to the clipboard.
  *
  * ```js
  * postOnInstagram();

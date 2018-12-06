@@ -3,7 +3,7 @@ import { withActionOutput } from '../utils';
 import WFWorkflowAction from '../interfaces/WF/WFWorkflowAction';
 
 /**
- * Posts the content passed into the action to Tumblr.
+ * Post to Tumblr Action. Posts the content passed into the action to Tumblr.
  *
  * ```js
  * postToTumblr();

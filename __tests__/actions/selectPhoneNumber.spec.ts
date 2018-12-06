@@ -10,7 +10,7 @@ describe('selectPhoneNumber function', () => {
       WFWorkflowActionIdentifier: 'is.workflow.actions.selectphone',
       WFWorkflowActionParameters: {},
     };
-    const actual = selectPhoneNumber();
+    const actual = selectPhoneNumber({});
 
     expect(actual).toEqual(expected);
   });

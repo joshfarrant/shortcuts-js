@@ -10,7 +10,7 @@ describe('getDictionaryFromInput function', () => {
       WFWorkflowActionIdentifier: 'is.workflow.actions.detect.dictionary',
       WFWorkflowActionParameters: {},
     };
-    const actual = getDictionaryFromInput();
+    const actual = getDictionaryFromInput({});
 
     expect(actual).toEqual(expected);
   });

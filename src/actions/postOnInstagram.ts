@@ -5,7 +5,7 @@ import WFWorkflowAction from '../interfaces/WF/WFWorkflowAction';
  *
  * ```js
  * postOnInstagram({
- *  caption: 'My photo caption'
+ *  caption: 'My caption',
  * });
  * ```
  */

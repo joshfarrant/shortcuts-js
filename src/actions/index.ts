@@ -9,6 +9,7 @@ import comment from './comment';
 import conditional from './conditional';
 import continueShortcutInApp from './continueShortcutInApp';
 import count from './count';
+import createNote from './createNote';
 import exitShortcut from './exitShortcut';
 import generateHash from './generateHash';
 import getBatteryLevel from './getBatteryLevel';
@@ -17,6 +18,7 @@ import getCurrentIpAddress from './getCurrentIpAddress';
 import getDeviceDetails from './getDeviceDetails';
 import getDictionaryValue from './getDictionaryValue';
 import getMapsURL from './getMapsURL';
+import getMyShortcuts from './getMyShortcuts';
 import getName from './getName';
 import getNetworkDetails from './getNetworkDetails';
 import getType from './getType';
@@ -47,11 +49,13 @@ import setVariable from './setVariable';
 import setVolume from './setVolume';
 import setWiFi from './setWiFi';
 import showAlert from './showAlert';
+import showInMaps from './showInMaps';
 import showNotification from './showNotification';
 import showResult from './showResult';
 import skipBack from './skipBack';
 import skipForward from './skipForward';
 import text from './text';
+import tweet from './tweet';
 import url from './url';
 import vibrateDevice from './vibrateDevice';
 import viewContentGraph from './viewContentGraph';
@@ -70,6 +74,7 @@ export {
   conditional,
   continueShortcutInApp,
   count,
+  createNote,
   exitShortcut,
   generateHash,
   getBatteryLevel,
@@ -78,6 +83,7 @@ export {
   getDeviceDetails,
   getDictionaryValue,
   getMapsURL,
+  getMyShortcuts,
   getName,
   getNetworkDetails,
   getType,
@@ -103,6 +109,7 @@ export {
   setDoNotDisturb,
   setLowPowerMode,
   setName,
+  showInMaps,
   showNotification,
   setTorch,
   setVariable,
@@ -113,6 +120,7 @@ export {
   skipBack,
   skipForward,
   text,
+  tweet,
   url,
   vibrateDevice,
   viewContentGraph,

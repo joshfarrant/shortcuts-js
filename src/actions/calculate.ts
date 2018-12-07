@@ -53,7 +53,7 @@ const calculate = (
   let parameters;
   if (scientificOperation) {
     parameters = {
-      WFMathOperation: '...',
+      WFMathOperation: '…',
       ...(operand !== undefined && { WFScientificMathOperand: operand }),
       WFScientificMathOperation: (operationsMap.get(scientificOperation) || scientificOperation),
     };

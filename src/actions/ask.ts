@@ -11,7 +11,7 @@ import WFWorkflowAction from '../interfaces/WF/WFWorkflowAction';
  * // Ask for favourite colour, defaulting to pink
  * ask({
  *   defaultAnswer: 'Pink',
- *   question: 'What is your favourite colour?'
+ *   question: 'What is your favourite colour?',
  * });
  * ```
  */

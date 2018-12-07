@@ -31,6 +31,7 @@ interface WFWorkflowActionParameters {
   Enabled?: boolean;
   Event?: WFSerialization | string;
   GroupingIdentifier?: string;
+  InstagramCaption?: string;
   OnValue?: boolean;
   ShowHeaders?: boolean;
   Text?: WFSerialization | string;

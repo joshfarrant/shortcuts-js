@@ -86,6 +86,7 @@ type WFWorkflowActionIdentifier = (
   | 'is.workflow.actions.skipback'
   | 'is.workflow.actions.skipforward'
   | 'is.workflow.actions.statistics'
+  | 'is.workflow.actions.text.match'
   | 'is.workflow.actions.trimvideo'
   | 'is.workflow.actions.unzip'
   | 'is.workflow.actions.url'

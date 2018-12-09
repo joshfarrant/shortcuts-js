@@ -61,6 +61,8 @@ interface WFWorkflowActionParameters {
   WFIPAddressSourceOption?: WFIPAddressSourceOption;
   WFIPAddressTypeOption?: WFIPAddressTypeOption;
   WFJSONValues?: WFSerialization;
+  WFMatchTextCaseSensitive?: boolean;
+  WFMatchTextPattern?: WFSerialization | string;
   WFMathOperand?: number;
   WFMathOperation?: WFMathOperation;
   WFMenuItems?: string[];

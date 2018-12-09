@@ -50,6 +50,7 @@ import makeMarkdownFromRichText from './makeMarkdownFromRichText';
 import makeRichTextFromHTML from './makeRichTextFromHTML';
 import makeRichTextFromMarkdown from './makeRichTextFromMarkdown';
 import markup from './markup';
+import matchText from './matchText';
 import nothing from './nothing';
 import number from './number';
 import openInBooks from './openInBooks';
@@ -128,7 +129,7 @@ export {
   getDictionaryFromInput,
   getDictionaryValue,
   getDiffbotArticleFromWebPage,
-  getEmailAddessesFromInput,
+  getEmailAddressesFromInput,
   getFramesFromImage,
   getHeadersOfURL,
   getImagesFromInput,
@@ -147,6 +148,7 @@ export {
   makeRichTextFromHTML,
   makeRichTextFromMarkdown,
   markup,
+  matchText,
   nothing,
   number,
   openInBooks,

@@ -60,6 +60,7 @@ interface WFWorkflowActionParameters {
   WFInputType?: WFInputType;
   WFIPAddressSourceOption?: WFIPAddressSourceOption;
   WFIPAddressTypeOption?: WFIPAddressTypeOption;
+  WFJavaScript?: WFSerialization | string;
   WFJSONValues?: WFSerialization;
   WFMatchTextCaseSensitive?: boolean;
   WFMatchTextPattern?: WFSerialization | string;

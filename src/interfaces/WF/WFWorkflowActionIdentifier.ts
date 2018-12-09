@@ -69,6 +69,7 @@ type WFWorkflowActionIdentifier = (
   | 'is.workflow.actions.readinglist'
   | 'is.workflow.actions.removereminders'
   | 'is.workflow.actions.runextension'
+  | 'is.workflow.actions.runjavascriptonwebpage'
   | 'is.workflow.actions.runsshscript'
   | 'is.workflow.actions.runworkflow'
   | 'is.workflow.actions.scanbarcode'

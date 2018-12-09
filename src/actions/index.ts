@@ -61,6 +61,7 @@ import print from './print';
 import quickLook from './quickLook';
 import randomNumber from './randomNumber';
 import removeReminders from './removeReminders';
+import runJavascriptOnWebPage from './runJavascriptOnWebPage';
 import runScriptOverSSH from './runScriptOverSSH';
 import runShortcut from './runShortcut';
 import scanQROrBarcode from './scanQROrBarcode';
@@ -159,6 +160,7 @@ export {
   quickLook,
   randomNumber,
   removeReminders,
+  runJavascriptOnWebPage,
   runScriptOverSSH,
   runShortcut,
   scanQROrBarcode,

@@ -48,6 +48,7 @@ interface WFWorkflowActionParameters {
   WFDelayTime?: number;
   WFDeviceDetail?: WFSerialization | WFDeviceDetail;
   WFDictionaryKey?: string;
+  WFDictionaryValue?: string;
   WFDontIncludeFileExtension?: boolean;
   WFEncodeMode?: WFEncodeMode;
   WFFlashlightSetting?: WFFlashlightSetting;

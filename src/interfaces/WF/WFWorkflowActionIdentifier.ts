@@ -77,6 +77,7 @@ type WFWorkflowActionIdentifier = (
   | 'is.workflow.actions.selectphone'
   | 'is.workflow.actions.setbrightness'
   | 'is.workflow.actions.setitemname'
+  | 'is.workflow.actions.setvalueforkey'
   | 'is.workflow.actions.setvariable'
   | 'is.workflow.actions.setvolume'
   | 'is.workflow.actions.share'

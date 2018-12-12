@@ -8,30 +8,30 @@ import WFWorkflowAction from '../interfaces/WF/WFWorkflowAction';
  *
  * ```js
  * matchText({
- *   text: '[0-9a-zA-Z]',
- *   value: false
+ *   pattern: '[0-9a-zA-Z]',
+ *   caseSensitive: false
  * });
  * ```
  */
 const matchText = (
   options: {
-    /** The text to set */
-    text?: WFSerialization | string,
+    /** The pattern to match */
+    pattern?: WFSerialization | string,
 
     /** Whether to be case sensitive **/
-    value?: boolean,
+    caseSensitive?: boolean,
   },
 ): WFWorkflowAction => {
   const {
-    text = '',
-    value = false,
+    pattern = '',
+    caseSensitive = false,
   } = options;
 
   return {
     WFWorkflowActionIdentifier: 'is.workflow.actions.text.match',
     WFWorkflowActionParameters: {
-      WFMatchTextPattern: text,
-      WFMatchTextCaseSensitive: value,
+      WFMatchTextPattern: pattern,
+      WFMatchTextCaseSensitive: caseSensitive,
     },
   };
 };

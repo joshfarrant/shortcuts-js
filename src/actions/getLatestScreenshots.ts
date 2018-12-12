@@ -14,7 +14,7 @@ import WFWorkflowAction from '../interfaces/WF/WFWorkflowAction';
 const getLatestScreenshots = (
   options: {
     /** The number of screenshots to get */
-    count: number,
+    count?: number,
   },
 ): WFWorkflowAction => {
   const {

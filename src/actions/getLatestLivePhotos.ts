@@ -14,7 +14,7 @@ import WFWorkflowAction from '../interfaces/WF/WFWorkflowAction';
 const getLatestLivePhotos = (
   options: {
     /** The number of live photos to get */
-    count: number,
+    count?: number,
   },
 ): WFWorkflowAction => {
   const {

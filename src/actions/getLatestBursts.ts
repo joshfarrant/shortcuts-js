@@ -7,15 +7,14 @@ import WFWorkflowAction from '../interfaces/WF/WFWorkflowAction';
  *
  * ```js
  * getLatestBursts({
- *   key: 'testKey',
- *   value: 'testValue',
+ *   count: 20,
  * });
  * ```
  */
 const getLatestBursts = (
   options: {
     /** The number of burst photos to get */
-    count: number,
+    count?: number,
   },
 ): WFWorkflowAction => {
   const {

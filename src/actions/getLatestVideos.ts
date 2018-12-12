@@ -13,8 +13,8 @@ import WFWorkflowAction from '../interfaces/WF/WFWorkflowAction';
  */
 const getLatestVideos = (
   options: {
-    /** The number of screenshots to get */
-    count: number,
+    /** The number of videos to get */
+    count?: number,
   },
 ): WFWorkflowAction => {
   const {

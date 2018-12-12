@@ -3,7 +3,7 @@ import { withActionOutput } from '../utils';
 import WFWorkflowAction from '../interfaces/WF/WFWorkflowAction';
 
 /**
- * Set Dictionary Value. Sets the value in the dictionary passed into the action.
+ * Set Dictionary Value. Sets a value in the dictionary passed into the action.
  *
  * ```js
  * setDictionaryValue({

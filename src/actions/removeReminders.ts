@@ -1,5 +1,3 @@
-import { withActionOutput } from '../utils';
-
 import WFWorkflowAction from '../interfaces/WF/WFWorkflowAction';
 
 /**
@@ -15,4 +13,4 @@ const removeReminders = (): WFWorkflowAction => ({
   WFWorkflowActionParameters: {},
 });
 
-export default withActionOutput(removeReminders);
+export default removeReminders;

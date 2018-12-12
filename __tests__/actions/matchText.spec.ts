@@ -6,9 +6,22 @@ describe('matchText function', () => {
     expect(typeof matchText).toBe('function');
   });
 
+  it('builds a matchText action if no params are passed', () => {
+    const expected = {
+      WFWorkflowActionIdentifier: 'is.workflow.actions.text.match',
+      WFWorkflowActionParameters: {
+        WFMatchTextPattern: '',
+        WFMatchTextCaseSensitive: false,
+      },
+    };
+    const actual = matchText({});
+
+    expect(actual).toEqual(expected);
+  });
+
   it('builds a matchText action with a given pattern, case sensitive true', () => {
     const pattern = '[0-9a-zA-Z]';
-    const value = true;
+    const caseSensitive = true;
     const expected = {
       WFWorkflowActionIdentifier: 'is.workflow.actions.text.match',
       WFWorkflowActionParameters: {
@@ -16,14 +29,14 @@ describe('matchText function', () => {
         WFMatchTextCaseSensitive: true,
       },
     };
-    const actual = matchText({ value, text: pattern });
+    const actual = matchText({ caseSensitive, pattern });
 
     expect(actual).toEqual(expected);
   });
 
   it('builds a matchText action with a given pattern, case sensitive false', () => {
     const pattern = '[0-9a-zA-Z]';
-    const value = false;
+    const caseSensitive = false;
     const expected = {
       WFWorkflowActionIdentifier: 'is.workflow.actions.text.match',
       WFWorkflowActionParameters: {
@@ -31,14 +44,14 @@ describe('matchText function', () => {
         WFMatchTextCaseSensitive: false,
       },
     };
-    const actual = matchText({ value, text: pattern });
+    const actual = matchText({ caseSensitive, pattern });
 
     expect(actual).toEqual(expected);
   });
 
   it('builds a matchText action without a pattern, case sensitive true', () => {
     const pattern = '';
-    const value = true;
+    const caseSensitive = true;
     const expected = {
       WFWorkflowActionIdentifier: 'is.workflow.actions.text.match',
       WFWorkflowActionParameters: {
@@ -46,14 +59,14 @@ describe('matchText function', () => {
         WFMatchTextCaseSensitive: true,
       },
     };
-    const actual = matchText({ value, text: pattern });
+    const actual = matchText({ caseSensitive, pattern });
 
     expect(actual).toEqual(expected);
   });
 
   it('builds a matchText action without a pattern, case sensitive false', () => {
     const pattern = '';
-    const value = false;
+    const caseSensitive = false;
     const expected = {
       WFWorkflowActionIdentifier: 'is.workflow.actions.text.match',
       WFWorkflowActionParameters: {
@@ -61,7 +74,7 @@ describe('matchText function', () => {
         WFMatchTextCaseSensitive: false,
       },
     };
-    const actual = matchText({ value, text: pattern });
+    const actual = matchText({ caseSensitive, pattern });
 
     expect(actual).toEqual(expected);
   });

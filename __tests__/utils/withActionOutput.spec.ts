@@ -23,7 +23,7 @@ describe('withActionOutput function', () => {
       WFWorkflowActionIdentifier: 'is.workflow.actions.number',
       WFWorkflowActionParameters: {
         WFNumberActionNumber: 42,
-        UUID: magicVariable.OutputUUID,
+        UUID: magicVariable.Value.OutputUUID,
       },
     };
 
@@ -38,8 +38,8 @@ describe('withActionOutput function', () => {
       WFWorkflowActionIdentifier: 'is.workflow.actions.number',
       WFWorkflowActionParameters: {
         WFNumberActionNumber: 42,
-        UUID: magicVariable.OutputUUID,
-        CustomOutputName: magicVariable.OutputName,
+        UUID: magicVariable.Value.OutputUUID,
+        CustomOutputName: magicVariable.Value.OutputName,
       },
     };
 

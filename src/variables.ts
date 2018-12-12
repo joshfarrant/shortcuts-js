@@ -1,9 +1,20 @@
-import Attachment from './interfaces/WF/Attachment';
+import Variable from './interfaces/Variable';
 
-const askWhenRun: Attachment = { Type: 'Ask' };
-const clipboard: Attachment = { Type: 'Clipboard' };
-const currentDate: Attachment = { Type: 'CurrentDate' };
-const shortcutInput: Attachment = { Type: 'ExtensionInput' };
+const askWhenRun: Variable = new Variable({
+  Type: 'Ask',
+});
+
+const clipboard: Variable = new Variable({
+  Type: 'Clipboard',
+});
+
+const currentDate: Variable = new Variable({
+  Type: 'CurrentDate',
+});
+
+const shortcutInput: Variable = new Variable({
+  Type: 'ExtensionInput',
+});
 
 export {
   askWhenRun,

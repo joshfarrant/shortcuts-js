@@ -1,3 +1,4 @@
+/** @ignore */
 export const GLYPHS = {
   E800: 59392,
   E803: 59395,

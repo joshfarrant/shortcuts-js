@@ -10,7 +10,9 @@ import conditional from './conditional';
 import continueShortcutInApp from './continueShortcutInApp';
 import count from './count';
 import createNote from './createNote';
+import date from './date';
 import exitShortcut from './exitShortcut';
+import formatDate from './formatDate';
 import generateHash from './generateHash';
 import getBatteryLevel from './getBatteryLevel';
 import getContentsOfUrl from './getContentsOfUrl';
@@ -75,7 +77,9 @@ export {
   continueShortcutInApp,
   count,
   createNote,
+  date,
   exitShortcut,
+  formatDate,
   generateHash,
   getBatteryLevel,
   getContentsOfUrl,

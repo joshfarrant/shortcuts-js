@@ -1,4 +1,4 @@
-import Attachment from '../interfaces/WF/Attachment';
+import Variable from '../interfaces/Variable';
 import WFWorkflowAction from '../interfaces/WF/WFWorkflowAction';
 
 /**
@@ -13,7 +13,7 @@ import WFWorkflowAction from '../interfaces/WF/WFWorkflowAction';
 const getVariable = (
   options: {
     /** The variable to get */
-    variable: Attachment;
+    variable: Variable;
   },
 ): WFWorkflowAction => {
   const {
@@ -23,10 +23,7 @@ const getVariable = (
   return {
     WFWorkflowActionIdentifier: 'is.workflow.actions.getvariable',
     WFWorkflowActionParameters: {
-      WFVariable: {
-        Value: variable,
-        WFSerializationType: 'WFTextTokenAttachment',
-      },
+      WFVariable: variable,
     },
   };
 };

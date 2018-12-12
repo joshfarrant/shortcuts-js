@@ -17,7 +17,10 @@ describe('getVariable function', () => {
       WFWorkflowActionIdentifier: 'is.workflow.actions.getvariable',
       WFWorkflowActionParameters: {
         WFVariable: {
-          Value: namedVar,
+          Value: {
+            Type: 'Variable',
+            VariableName: namedVar.Value.VariableName,
+          },
           WFSerializationType: 'WFTextTokenAttachment',
         },
       },
@@ -30,14 +33,13 @@ describe('getVariable function', () => {
 
   it('builds a getVariable action when a magic variable is passed', () => {
     const magic = actionOutput();
-    magic.OutputUUID = 'b74c81a8-192a-463f-a0a6-2d327963714f';
 
     const expected = {
       WFWorkflowActionIdentifier: 'is.workflow.actions.getvariable',
       WFWorkflowActionParameters: {
         WFVariable: {
           Value: {
-            OutputUUID: magic.OutputUUID,
+            OutputUUID: magic.Value.OutputUUID,
             Type: 'ActionOutput',
           },
           WFSerializationType: 'WFTextTokenAttachment',

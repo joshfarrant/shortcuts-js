@@ -18,20 +18,20 @@ describe('withVariables function', () => {
     expect(typeof withVariables).toBe('function');
   });
 
-  it('returns an attachment object when passed an empty string', () => {
+  it('returns a WFTextTokenString when passed an empty string', () => {
     const actual = withVariables``;
     const expected: WFSerialization = {
-      WFSerializationType: 'WFTextTokenString',
       Value: {
         string: '',
         attachmentsByRange: {},
       },
+      WFSerializationType: 'WFTextTokenString',
     };
 
     expect(actual).toEqual(expected);
   });
 
-  it('returns an attachment object when passed a single magic variable', () => {
+  it('returns a WFTextTokenString when passed a single magic variable', () => {
     const magic = actionOutput();
 
     const actual = withVariables`${magic}`;
@@ -41,7 +41,7 @@ describe('withVariables function', () => {
         string: '￼', // Object replacement character
         attachmentsByRange: {
           '{0, 1}': {
-            OutputUUID: magic.OutputUUID,
+            OutputUUID: magic.Value.OutputUUID,
             Type: 'ActionOutput',
           },
         },
@@ -51,7 +51,7 @@ describe('withVariables function', () => {
     expect(actual).toEqual(expected);
   });
 
-  it('returns an attachment object when passed a single custom named magic variable', () => {
+  it('returns a WFTextTokenString when passed a single custom named magic variable', () => {
     const magic = actionOutput('My Custom Output');
 
     const actual = withVariables`${magic}`;
@@ -61,7 +61,7 @@ describe('withVariables function', () => {
         string: '￼', // Object replacement character
         attachmentsByRange: {
           '{0, 1}': {
-            OutputUUID: magic.OutputUUID,
+            OutputUUID: magic.Value.OutputUUID,
             OutputName: 'My Custom Output',
             Type: 'ActionOutput',
           },
@@ -72,7 +72,7 @@ describe('withVariables function', () => {
     expect(actual).toEqual(expected);
   });
 
-  it('returns an attachment object when passed a magic variable in the middle of a string', () => {
+  it('returns a WFTextTokenString when passed a magic variable in the middle of a string', () => {
     const magic = actionOutput();
 
     const actual = withVariables`Hello, ${magic} world!`;
@@ -82,7 +82,7 @@ describe('withVariables function', () => {
         string: 'Hello, ￼ world!', // Contains object replacement character
         attachmentsByRange: {
           '{7, 1}': {
-            OutputUUID: magic.OutputUUID,
+            OutputUUID: magic.Value.OutputUUID,
             Type: 'ActionOutput',
           },
         },
@@ -92,7 +92,7 @@ describe('withVariables function', () => {
     expect(actual).toEqual(expected);
   });
 
-  it('returns an attachment object when passed a single named variable', () => {
+  it('returns a WFTextTokenString when passed a single named variable', () => {
     const name = variable('Test Variable');
 
     const actual = withVariables`${name}`;
@@ -112,7 +112,7 @@ describe('withVariables function', () => {
     expect(actual).toEqual(expected);
   });
 
-  it('returns an attachment object when passed a named variable in the middle of a string', () => {
+  it('returns a WFTextTokenString when passed a named variable in the middle of a string', () => {
     const name = variable('Test Variable');
 
     const actual = withVariables`Hello, ${name} world!`;
@@ -132,7 +132,7 @@ describe('withVariables function', () => {
     expect(actual).toEqual(expected);
   });
 
-  it('returns an attachment object when passed multiple magic variables in a string', () => {
+  it('returns a WFTextTokenString when passed multiple magic variables in a string', () => {
     const magic1 = actionOutput();
     const magic2 = actionOutput();
     const magic3 = actionOutput();
@@ -145,19 +145,19 @@ describe('withVariables function', () => {
         string: '￼ Going ￼￼ to the ￼ blacksmith', // Contains object replacement character
         attachmentsByRange: {
           '{0, 1}': {
-            OutputUUID: magic1.OutputUUID,
+            OutputUUID: magic1.Value.OutputUUID,
             Type: 'ActionOutput',
           },
           '{8, 1}': {
-            OutputUUID: magic2.OutputUUID,
+            OutputUUID: magic2.Value.OutputUUID,
             Type: 'ActionOutput',
           },
           '{9, 1}': {
-            OutputUUID: magic3.OutputUUID,
+            OutputUUID: magic3.Value.OutputUUID,
             Type: 'ActionOutput',
           },
           '{18, 1}': {
-            OutputUUID: magic4.OutputUUID,
+            OutputUUID: magic4.Value.OutputUUID,
             Type: 'ActionOutput',
           },
         },
@@ -167,7 +167,7 @@ describe('withVariables function', () => {
     expect(actual).toEqual(expected);
   });
 
-  it('returns an attachment object when passed multiple named variables in a string', () => {
+  it('returns a WFTextTokenString when passed multiple named variables in a string', () => {
     const name1 = variable('Test Variable1');
     const name2 = variable('Test Variable2');
     const name3 = variable('Test Variable3');
@@ -202,7 +202,7 @@ describe('withVariables function', () => {
     expect(actual).toEqual(expected);
   });
 
-  it('returns an attachment object when passed a named and magic variables in a string', () => {
+  it('returns a WFTextTokenString when passed a named and magic variables in a string', () => {
     const magic = actionOutput();
     const name = variable('Test Variable');
 
@@ -213,7 +213,7 @@ describe('withVariables function', () => {
         string: '￼ Going ￼ to the blacksmith', // Contains object replacement character
         attachmentsByRange: {
           '{0, 1}': {
-            OutputUUID: magic.OutputUUID,
+            OutputUUID: magic.Value.OutputUUID,
             Type: 'ActionOutput',
           },
           '{8, 1}': {
@@ -227,7 +227,7 @@ describe('withVariables function', () => {
     expect(actual).toEqual(expected);
   });
 
-  it('returns an attachment object when passed multiple global variables in a string', () => {
+  it('returns a WFTextTokenString when passed multiple global variables in a string', () => {
     const actual = withVariables`${askWhenRun}, ${clipboard}, ${currentDate} and ${shortcutInput}.`;
 
     const expected: WFSerialization = {

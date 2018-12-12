@@ -3,6 +3,8 @@ import WFAskActionDateGranularity from './WFAskActionDateGranularity';
 import WFBase64LineBreakMode from './WFBase64LineBreakMode';
 import WFCondition from './WFCondition';
 import WFCountType from './WFCountType';
+import WFDateActionMode from './WFDateActionMode';
+import WFDateFormatStyle from './WFDateFormatStyle';
 import WFDeviceDetail from './WFDeviceDetail';
 import WFEncodeMode from './WFEncodeMode';
 import WFFlashlightSetting from './WFFlashlightSetting';
@@ -15,10 +17,12 @@ import WFIPAddressSourceOption from './WFIPAddressSourceOption';
 import WFIPAddressTypeOption from './WFIPAddressTypeOption';
 import WFMathOperation from './WFMathOperation';
 import WFNetworkDetailsNetwork from './WFNetworkDetailsNetwork';
+import WFRelativeDateFormatStyle from './WFRelativeDateFormatStyle';
 import WFScientificMathOperation from './WFScientificMathOperation';
 import WFSerialization from './WFSerialization';
 import WFSkipBackBehavior from './WFSkipBackBehavior';
 import WFStatisticsOperation from './WFStatisticsOperation';
+import WFTimeFormatStyle from './WFTimeFormatStyle';
 
 interface WFWorkflowActionParameters {
   Advanced?: boolean;
@@ -46,6 +50,10 @@ interface WFWorkflowActionParameters {
   WFConditionalActionString?: string;
   WFControlFlowMode?: number;
   WFCountType?: WFCountType;
+  WFDateActionDate?: WFSerialization | string;
+  WFDateActionMode?: WFSerialization | WFDateActionMode;
+  WFDateFormat?: WFSerialization | string;
+  WFDateFormatStyle?: WFSerialization | WFDateFormatStyle;
   WFDelayTime?: number;
   WFDeviceDetail?: WFSerialization | WFDeviceDetail;
   WFDictionaryKey?: string;
@@ -61,6 +69,7 @@ interface WFWorkflowActionParameters {
   WFInputType?: WFInputType;
   WFIPAddressSourceOption?: WFIPAddressSourceOption;
   WFIPAddressTypeOption?: WFIPAddressTypeOption;
+  WFISO8601IncludeTime?: WFSerialization | boolean;
   WFJSONValues?: WFSerialization;
   WFMathOperand?: number;
   WFMathOperation?: WFMathOperation;
@@ -76,6 +85,7 @@ interface WFWorkflowActionParameters {
   WFNumberValue?: number;
   WFRandomNumberMaximum?: WFSerialization | number;
   WFRandomNumberMinimum?: WFSerialization | number;
+  WFRelativeDateFormatStyle?: WFSerialization | WFRelativeDateFormatStyle;
   WFScientificMathOperand?: number;
   WFScientificMathOperation?: WFScientificMathOperation;
   WFShowWorkflow?: boolean;
@@ -87,6 +97,7 @@ interface WFWorkflowActionParameters {
   WFSkipBackBehavior?: WFSkipBackBehavior;
   WFStatisticsOperation?: WFSerialization | WFStatisticsOperation;
   WFTextActionText?: WFSerialization | string;
+  WFTimeFormatStyle?: WFSerialization | WFTimeFormatStyle;
   WFURLActionURL?: string;
   WFVariable?: WFSerialization | string;
   WFVariableName?: string;

@@ -1,9 +1,11 @@
+import Aggrandizement from './Aggrandizement';
 import Attachment from './Attachment';
 import Type from './Type';
 import WFDictionaryFieldValueItem from './WFDictionaryFieldValueItem';
 import WFSerializationType from './WFSerializationType';
 
 interface SerializationValue {
+  Aggrandizements?: Aggrandizement[];
   attachmentsByRange?: {
     [key: string]: Attachment;
   };

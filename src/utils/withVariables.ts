@@ -1,10 +1,10 @@
-import Attachment from '../interfaces/WF/Attachment';
+import Variable from '../interfaces/Variable';
 import WFSerialization from '../interfaces/WF/WFSerialization';
 
 /** @ignore */
 export const withVariables = (
   strings: TemplateStringsArray,
-  ...vars: Attachment[]
+  ...vars: Variable[]
 ): WFSerialization => ({
   WFSerializationType: 'WFTextTokenString',
   Value: {
@@ -24,7 +24,7 @@ export const withVariables = (
 
         return {
           ...a,
-          [`{${lengthSoFar}, 1}`]: vars[i],
+          [`{${lengthSoFar}, 1}`]: vars[i].Value,
         };
       },
       {},

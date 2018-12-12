@@ -1,4 +1,4 @@
-import Attachment from '../interfaces/WF/Attachment';
+import Variable from '../interfaces/Variable';
 import WFWorkflowAction from '../interfaces/WF/WFWorkflowAction';
 
 /**
@@ -14,7 +14,7 @@ import WFWorkflowAction from '../interfaces/WF/WFWorkflowAction';
 const addToVariable = (
   /** The variable to add to */
   options: {
-    variable: Attachment;
+    variable: Variable;
   },
 ): WFWorkflowAction => {
   const {
@@ -24,7 +24,7 @@ const addToVariable = (
   return {
     WFWorkflowActionIdentifier: 'is.workflow.actions.appendvariable',
     WFWorkflowActionParameters: {
-      WFVariableName: variable.VariableName,
+      WFVariableName: variable.Value.VariableName,
     },
   };
 };

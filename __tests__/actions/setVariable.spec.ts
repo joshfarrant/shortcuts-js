@@ -13,7 +13,7 @@ describe('setVariable function', () => {
     const expected = {
       WFWorkflowActionIdentifier: 'is.workflow.actions.setvariable',
       WFWorkflowActionParameters: {
-        WFVariableName: name.VariableName,
+        WFVariableName: name.Value.VariableName,
       },
     };
 

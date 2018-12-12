@@ -42,6 +42,7 @@ type WFWorkflowActionIdentifier = (
   | 'is.workflow.actions.getipaddress'
   | 'is.workflow.actions.getitemname'
   | 'is.workflow.actions.getitemtype'
+  | 'is.workflow.actions.getlatestbursts'
   | 'is.workflow.actions.getlatestphotoimport'
   | 'is.workflow.actions.getmapslink'
   | 'is.workflow.actions.getmarkdownfromrichtext'

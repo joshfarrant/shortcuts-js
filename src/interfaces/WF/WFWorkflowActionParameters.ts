@@ -54,6 +54,7 @@ interface WFWorkflowActionParameters {
   WFFlashlightSetting?: WFFlashlightSetting;
   WFFormValues?: WFSerialization;
   WFGetDictionaryValueType?: WFGetDictionaryValueType;
+  WFGetLatestPhotoCount?: number;
   WFHashType?: WFSerialization | WFHashType;
   WFHTTPBodyType?: WFHTTPBodyType;
   WFHTTPHeaders?: WFSerialization;

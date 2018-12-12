@@ -36,6 +36,7 @@ import getFramesFromImage from './getFramesFromImage';
 import getHeadersOfURL from './getHeadersOfURL';
 import getImagesFromInput from './getImagesFromInput';
 import getLastImport from './getLastImport';
+import getLatestBursts from './getLatestBursts';
 import getLinkToFile from './getLinkToFile';
 import getMapsURL from './getMapsURL';
 import getName from './getName';
@@ -136,6 +137,7 @@ export {
   getHeadersOfURL,
   getImagesFromInput,
   getLastImport,
+  getLatestBursts,
   getLinkToFile,
   getMapsURL,
   getName,

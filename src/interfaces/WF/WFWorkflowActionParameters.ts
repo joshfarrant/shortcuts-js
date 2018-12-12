@@ -57,11 +57,13 @@ interface WFWorkflowActionParameters {
   WFDelayTime?: number;
   WFDeviceDetail?: WFSerialization | WFDeviceDetail;
   WFDictionaryKey?: string;
+  WFDictionaryValue?: string;
   WFDontIncludeFileExtension?: boolean;
   WFEncodeMode?: WFEncodeMode;
   WFFlashlightSetting?: WFFlashlightSetting;
   WFFormValues?: WFSerialization;
   WFGetDictionaryValueType?: WFGetDictionaryValueType;
+  WFGetLatestPhotoCount?: number;
   WFHashType?: WFSerialization | WFHashType;
   WFHTTPBodyType?: WFHTTPBodyType;
   WFHTTPHeaders?: WFSerialization;
@@ -70,7 +72,10 @@ interface WFWorkflowActionParameters {
   WFIPAddressSourceOption?: WFIPAddressSourceOption;
   WFIPAddressTypeOption?: WFIPAddressTypeOption;
   WFISO8601IncludeTime?: WFSerialization | boolean;
+  WFJavaScript?: WFSerialization | string;
   WFJSONValues?: WFSerialization;
+  WFMatchTextCaseSensitive?: boolean;
+  WFMatchTextPattern?: WFSerialization | string;
   WFMathOperand?: number;
   WFMathOperation?: WFMathOperation;
   WFMenuItems?: string[];

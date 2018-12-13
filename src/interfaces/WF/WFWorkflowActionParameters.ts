@@ -66,6 +66,7 @@ interface WFWorkflowActionParameters {
   WFDontIncludeFileExtension?: boolean;
   WFEncodeMode?: WFEncodeMode;
   WFFlashlightSetting?: WFFlashlightSetting;
+  WFFrequency?: string[];
   WFFormValues?: WFSerialization;
   WFGetDictionaryValueType?: WFGetDictionaryValueType;
   WFGetLatestPhotoCount?: number;
@@ -79,6 +80,7 @@ interface WFWorkflowActionParameters {
   WFISO8601IncludeTime?: WFSerialization | boolean;
   WFJavaScript?: WFSerialization | string;
   WFJSONValues?: WFSerialization;
+  WFLabel?: WFSerialization | string;
   WFMatchTextCaseSensitive?: boolean;
   WFMatchTextPattern?: WFSerialization | string;
   WFMathOperand?: number;
@@ -108,6 +110,7 @@ interface WFWorkflowActionParameters {
   WFSkipBackBehavior?: WFSkipBackBehavior;
   WFStatisticsOperation?: WFSerialization | WFStatisticsOperation;
   WFTextActionText?: WFSerialization | string;
+  WFTime?: WFSerialization | string;
   WFTimeFormatStyle?: WFSerialization | WFTimeFormatStyle;
   WFTimeUntilCustomDate?: WFSerialization | string;
   WFTimeUntilReferenceDate?: WFTimeUntilReferenceDate;

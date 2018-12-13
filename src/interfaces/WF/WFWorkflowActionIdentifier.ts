@@ -5,6 +5,7 @@ type WFWorkflowActionIdentifier = (
   | 'is.workflow.actions.appendvariable'
   | 'is.workflow.actions.airdropdocument'
   | 'is.workflow.actions.airplanemode.set'
+  | 'is.workflow.actions.alarm.create'
   | 'is.workflow.actions.alert'
   | 'is.workflow.actions.appendvariable'
   | 'is.workflow.actions.ask'

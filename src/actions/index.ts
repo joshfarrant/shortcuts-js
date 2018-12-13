@@ -54,6 +54,7 @@ import getTextFromInput from './getTextFromInput';
 import getType from './getType';
 import getURLsFromInput from './getURLsFromInput';
 import getVariable from './getVariable';
+import makeArchive from './makeArchive';
 import makeMarkdownFromRichText from './makeMarkdownFromRichText';
 import makeRichTextFromHTML from './makeRichTextFromHTML';
 import makeRichTextFromMarkdown from './makeRichTextFromMarkdown';
@@ -168,6 +169,7 @@ export {
   getType,
   getURLsFromInput,
   getVariable,
+  makeArchive,
   makeMarkdownFromRichText,
   makeRichTextFromHTML,
   makeRichTextFromMarkdown,

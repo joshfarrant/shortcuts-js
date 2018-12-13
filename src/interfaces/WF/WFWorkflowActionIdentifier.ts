@@ -66,6 +66,7 @@ type WFWorkflowActionIdentifier = (
   | 'is.workflow.actions.handoff'
   | 'is.workflow.actions.hash'
   | 'is.workflow.actions.lowpowermode.set'
+  | 'is.workflow.actions.makezip'
   | 'is.workflow.actions.math'
   | 'is.workflow.actions.nothing'
   | 'is.workflow.actions.notification'

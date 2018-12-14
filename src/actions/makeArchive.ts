@@ -19,7 +19,7 @@ const makeArchive = (
   options: {
     /** The operation to perform */
     format?: WFArchiveFormat,
-    /** Set the name of the Archive */    
+    /** Set the name of the Archive */
     name?: WFSerialization | string,
   },
 ): WFWorkflowAction => {

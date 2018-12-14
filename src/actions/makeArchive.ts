@@ -23,7 +23,7 @@ const makeArchive = (
   },
 ): WFWorkflowAction => {
   const {
-    format = '.zip',
+    format = 'zip',
     name = '',
   } = options;
 

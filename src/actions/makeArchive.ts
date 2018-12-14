@@ -5,7 +5,7 @@ import WFSerialization from '../interfaces/WF/WFSerialization';
 import WFWorkflowAction from '../interfaces/WF/WFWorkflowAction';
 
 /**
- * Make Archive Action. Makes an. archive out of the files passed as input.
+ * Make Archive Action. Makes an archive out of the files passed as input.
  *
  *
  * ```js

@@ -107,6 +107,7 @@ import text from './text';
 import trimMedia from './trimMedia';
 import tweet from './tweet';
 import url from './url';
+import urlEncode from './urlEncode';
 import vibrateDevice from './vibrateDevice';
 import viewContentGraph from './viewContentGraph';
 import wait from './wait';
@@ -222,6 +223,7 @@ export {
   tweet,
   trimMedia,
   url,
+  urlEncode,
   vibrateDevice,
   viewContentGraph,
   wait,

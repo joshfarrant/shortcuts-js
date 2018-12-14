@@ -107,6 +107,7 @@ type WFWorkflowActionIdentifier = (
   | 'is.workflow.actions.tweet'
   | 'is.workflow.actions.unzip'
   | 'is.workflow.actions.url'
+  | 'is.workflow.actions.urlencode'
   | 'is.workflow.actions.url.expand'
   | 'is.workflow.actions.url.getheaders'
   | 'is.workflow.actions.vibrate'

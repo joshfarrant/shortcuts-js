@@ -10,7 +10,7 @@ describe('makeArchive function', () => {
     const expected = {
       WFWorkflowActionIdentifier: 'is.workflow.actions.makezip',
       WFWorkflowActionParameters: {
-        WFArchiveFormat: '.zip',
+        WFArchiveFormat: 'zip',
         WFZIPName: '',
       },
     };
@@ -23,12 +23,12 @@ describe('makeArchive function', () => {
     const expected = {
       WFWorkflowActionIdentifier: 'is.workflow.actions.makezip',
       WFWorkflowActionParameters: {
-        WFArchiveFormat: '.tar',
+        WFArchiveFormat: 'tar',
         WFZIPName: 'tarName',
       },
     };
     const actual = makeArchive({
-      format: '.tar',
+      format: 'tar',
       name: 'tarName',
     });
 

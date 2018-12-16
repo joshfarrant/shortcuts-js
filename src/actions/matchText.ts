@@ -9,7 +9,7 @@ import WFWorkflowAction from '../interfaces/WF/WFWorkflowAction';
  * ```js
  * matchText({
  *   pattern: '[0-9a-zA-Z]',
- *   caseSensitive: false
+ *   caseSensitive: false,
  * });
  * ```
  */

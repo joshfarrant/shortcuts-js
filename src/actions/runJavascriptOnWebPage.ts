@@ -22,7 +22,7 @@ import WFWorkflowAction from '../interfaces/WF/WFWorkflowAction';
   *
   *   // Call completion to finish
   *   completion(result);
- *   `
+ *   `,
  * });
  * ```
  */

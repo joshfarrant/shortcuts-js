@@ -20,81 +20,81 @@ describe('getTimeBetweenDates function', () => {
   });
 
   it('builds a getTimeBetweenDates action with a specified time unit', () => {
-    const timeUnit = 'Hours';
+    const unit = 'Hours';
 
     const expected = {
       WFWorkflowActionIdentifier: 'is.workflow.actions.gettimebetweendates',
       WFWorkflowActionParameters: {
-        WFTimeUntilUnit: timeUnit,
+        WFTimeUntilUnit: unit,
       },
     };
 
-    const actual = getTimeBetweenDates({ timeUnit });
+    const actual = getTimeBetweenDates({ unit });
 
     expect(actual).toEqual(expected);
   });
 
   it('builds a getTimeBetweenDates action that asks for time unit when run', () => {
-    const timeUnit = askWhenRun;
+    const unit = askWhenRun;
 
     const expected = {
       WFWorkflowActionIdentifier: 'is.workflow.actions.gettimebetweendates',
       WFWorkflowActionParameters: {
-        WFTimeUntilUnit: timeUnit,
+        WFTimeUntilUnit: unit,
       },
     };
 
-    const actual = getTimeBetweenDates({ timeUnit });
+    const actual = getTimeBetweenDates({ unit });
 
     expect(actual).toEqual(expected);
   });
 
   it('builds a getTimeBetweenDates action that has a custom start time', () => {
-    const customDate = '3/5/2011 5:42PM';
+    const date = '3/5/2011 5:42PM';
 
     const expected = {
       WFWorkflowActionIdentifier: 'is.workflow.actions.gettimebetweendates',
       WFWorkflowActionParameters: {
         WFTimeUntilReferenceDate: 'Other',
-        WFTimeUntilCustomDate: customDate,
+        WFTimeUntilCustomDate: date,
       },
     };
 
-    const actual = getTimeBetweenDates({ customDate });
+    const actual = getTimeBetweenDates({ date });
 
     expect(actual).toEqual(expected);
   });
 
   it('builds a getTimeBetweenDates action that has a garbage custom start time', () => {
-    const customDate = 'thisIsGarbageButItIsStillValid';
+    const date = 'thisIsGarbageButItIsStillValid';
 
     const expected = {
       WFWorkflowActionIdentifier: 'is.workflow.actions.gettimebetweendates',
       WFWorkflowActionParameters: {
         WFTimeUntilReferenceDate: 'Other',
-        WFTimeUntilCustomDate: customDate,
+        WFTimeUntilCustomDate: date,
       },
     };
 
-    const actual = getTimeBetweenDates({ customDate });
+    const actual = getTimeBetweenDates({ date });
 
     expect(actual).toEqual(expected);
   });
 
   it('builds a getTimeBetweenDates action that has a custom start time and unit', () => {
-    const timeUnit = 'Hours';
-    const customDate = '3/5/2011 5:42PM';
+    const unit = 'Hours';
+    const date = '3/5/2011 5:42PM';
 
     const expected = {
       WFWorkflowActionIdentifier: 'is.workflow.actions.gettimebetweendates',
       WFWorkflowActionParameters: {
-        WFTimeUntilUnit: timeUnit,
+        WFTimeUntilUnit: unit,
         WFTimeUntilReferenceDate: 'Other',
-        WFTimeUntilCustomDate: customDate,
+        WFTimeUntilCustomDate: date,
       },
     };
 
-    const actual = getTimeBetweenDates({ timeUnit, customDate });
+    const actual = getTimeBetweenDates({ unit, date });
 
     expect(actual).toEqual(expected);
   });
@@ -120,7 +120,7 @@ describe('getTimeBetweenDates function', () => {
       },
     };
 
-    const actual = getTimeBetweenDates({ customDate: customDateAsk });
+    const actual = getTimeBetweenDates({ date: customDateAsk });
 
     expect(actual).toEqual(expected);
   });
@@ -147,13 +147,13 @@ describe('getTimeBetweenDates function', () => {
       },
     };
 
-    const actual = getTimeBetweenDates({ customDate: variableObject });
+    const actual = getTimeBetweenDates({ date: variableObject });
 
     expect(actual).toEqual(expected);
   });
 
   it('builds a getTimeBetweenDates action that asks for a unit and custom time when run', () => {
-    const timeUnit = askWhenRun;
+    const unit = askWhenRun;
     const customDateAsk: WFSerialization = {
       Value: {
         string: '￼', // Object replacement character
@@ -169,13 +169,13 @@ describe('getTimeBetweenDates function', () => {
     const expected = {
       WFWorkflowActionIdentifier: 'is.workflow.actions.gettimebetweendates',
       WFWorkflowActionParameters: {
-        WFTimeUntilUnit: timeUnit,
+        WFTimeUntilUnit: unit,
         WFTimeUntilReferenceDate: 'Other',
         WFTimeUntilCustomDate: customDateAsk,
       },
     };
 
-    const actual = getTimeBetweenDates({ timeUnit, customDate: customDateAsk });
+    const actual = getTimeBetweenDates({ unit, date: customDateAsk });
 
     expect(actual).toEqual(expected);
   });

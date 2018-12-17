@@ -11,22 +11,22 @@ import WFWorkflowAction from '../interfaces/WF/WFWorkflowAction';
  *
  * ```js
  * getTimeBetweenDates({
- *   timeUnit: 'Days',
- *   customDate: '3/5/2011 5:45pm'
+ *   unit: 'Days',
+ *   date: '3/5/2011 5:45pm'
  * });
  * ```
  */
 const getTimeBetweenDates = (
   options: {
     /** The unit of time for the result. Defaults to 'Minutes' */
-    timeUnit?: WFSerialization | WFTimeUntilUnit,
+    unit?: WFSerialization | WFTimeUntilUnit,
     /** The date/time to calculate the difference from. Defaults to empty string */
-    customDate?: WFSerialization | string,
+    date?: WFSerialization | string,
   },
 ): WFWorkflowAction => {
   const {
-    timeUnit = 'Minutes',
-    customDate = '',
+    unit = 'Minutes',
+    date = '',
   } = options;
 
   const action: WFWorkflowAction = {
@@ -35,15 +35,15 @@ const getTimeBetweenDates = (
   };
 
   // If left as 'Minutes' (default), it is not needed in the serialization
-  if (timeUnit !== 'Minutes') {
-    action.WFWorkflowActionParameters.WFTimeUntilUnit = timeUnit;
+  if (unit !== 'Minutes') {
+    action.WFWorkflowActionParameters.WFTimeUntilUnit = unit;
   }
 
   // If we have a custom date to start from, we need to set the reference to 'Other'
   // otherwise, don't serialize the default data since it's not necessary
-  if (customDate !== '') {
+  if (date !== '') {
     action.WFWorkflowActionParameters.WFTimeUntilReferenceDate = 'Other';
-    action.WFWorkflowActionParameters.WFTimeUntilCustomDate = customDate;
+    action.WFWorkflowActionParameters.WFTimeUntilCustomDate = date;
   }
 
   return action;

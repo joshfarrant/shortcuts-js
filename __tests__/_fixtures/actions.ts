@@ -30,8 +30,8 @@ export const testShortcutNoActions: WFWorkflow = {
   },
   WFWorkflowImportQuestions: [],
   WFWorkflowTypes: [
-    'NCWidget',
     'WatchKit',
+    'NCWidget',
   ],
   WFWorkflowInputContentItemClasses: [
     'WFAppStoreAppContentItem',
@@ -97,8 +97,8 @@ export const testShortcutWithActions: WFWorkflow = {
   },
   WFWorkflowImportQuestions: [],
   WFWorkflowTypes: [
-    'NCWidget',
     'WatchKit',
+    'NCWidget',
   ],
   WFWorkflowInputContentItemClasses: [
     'WFAppStoreAppContentItem',
@@ -131,8 +131,8 @@ export const testShortcutWithModifiedOptions: WFWorkflow = {
   },
   WFWorkflowImportQuestions: [],
   WFWorkflowTypes: [
-    'NCWidget',
     'WatchKit',
+    'NCWidget',
   ],
   WFWorkflowInputContentItemClasses: [
     'WFAppStoreAppContentItem',

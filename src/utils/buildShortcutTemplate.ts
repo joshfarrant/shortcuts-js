@@ -18,8 +18,8 @@ export const buildShortcutTemplate = (
   },
   WFWorkflowImportQuestions: [],
   WFWorkflowTypes: [
-    ...(options.showInWidget ? ['NCWidget' as WFWorkflowType] : []),
     'WatchKit',
+    ...(options.showInWidget ? ['NCWidget' as WFWorkflowType] : []),
   ],
   WFWorkflowInputContentItemClasses: [
     'WFAppStoreAppContentItem',

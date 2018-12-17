@@ -23,6 +23,8 @@ import WFSerialization from './WFSerialization';
 import WFSkipBackBehavior from './WFSkipBackBehavior';
 import WFStatisticsOperation from './WFStatisticsOperation';
 import WFTimeFormatStyle from './WFTimeFormatStyle';
+import WFTimeUntilReferenceDate from './WFTimeUntilReferenceDate';
+import WFTimeUntilUnit from './WFTimeUntilUnit';
 
 interface WFWorkflowActionParameters {
   Advanced?: boolean;
@@ -103,6 +105,9 @@ interface WFWorkflowActionParameters {
   WFStatisticsOperation?: WFSerialization | WFStatisticsOperation;
   WFTextActionText?: WFSerialization | string;
   WFTimeFormatStyle?: WFSerialization | WFTimeFormatStyle;
+  WFTimeUntilCustomDate?: WFSerialization | string;
+  WFTimeUntilReferenceDate?: WFTimeUntilReferenceDate;
+  WFTimeUntilUnit?: WFSerialization | WFTimeUntilUnit;
   WFURLActionURL?: string;
   WFVariable?: WFSerialization | string;
   WFVariableName?: string;

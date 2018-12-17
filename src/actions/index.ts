@@ -51,6 +51,7 @@ import getNameOfEmoji from './getNameOfEmoji';
 import getNetworkDetails from './getNetworkDetails';
 import getPhoneNumbersFromInput from './getPhoneNumbersFromInput';
 import getTextFromInput from './getTextFromInput';
+import getTimeBetweenDates from './getTimeBetweenDates';
 import getType from './getType';
 import getURLsFromInput from './getURLsFromInput';
 import getVariable from './getVariable';
@@ -165,6 +166,7 @@ export {
   getNetworkDetails,
   getPhoneNumbersFromInput,
   getTextFromInput,
+  getTimeBetweenDates,
   getType,
   getURLsFromInput,
   getVariable,

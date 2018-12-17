@@ -29,24 +29,13 @@ const getTimeBetweenDates = (
     date = '',
   } = options;
 
-  const action: WFWorkflowAction = {
+  return {
     WFWorkflowActionIdentifier: 'is.workflow.actions.gettimebetweendates',
-    WFWorkflowActionParameters: {},
+    WFWorkflowActionParameters: {
+      ...(unit !== 'Minutes' && { WFTimeUntilUnit: unit }),
+      ...(date !== '' && { WFTimeUntilReferenceDate: 'Other', WFTimeUntilCustomDate: date }),
+    },
   };
-
-  // If left as 'Minutes' (default), it is not needed in the serialization
-  if (unit !== 'Minutes') {
-    action.WFWorkflowActionParameters.WFTimeUntilUnit = unit;
-  }
-
-  // If we have a custom date to start from, we need to set the reference to 'Other'
-  // otherwise, don't serialize the default data since it's not necessary
-  if (date !== '') {
-    action.WFWorkflowActionParameters.WFTimeUntilReferenceDate = 'Other';
-    action.WFWorkflowActionParameters.WFTimeUntilCustomDate = date;
-  }
-
-  return action;
 };
 
 export default withActionOutput(getTimeBetweenDates);

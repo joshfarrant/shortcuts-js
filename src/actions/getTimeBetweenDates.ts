@@ -12,7 +12,7 @@ import WFWorkflowAction from '../interfaces/WF/WFWorkflowAction';
  * ```js
  * getTimeBetweenDates({
  *   unit: 'Days',
- *   date: '3/5/2011 5:45pm'
+ *   date: '3/5/2011 5:45pm',
  * });
  * ```
  */

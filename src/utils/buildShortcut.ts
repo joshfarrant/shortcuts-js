@@ -27,15 +27,18 @@ export const buildShortcut = (
     showInWidget: true,
   };
 
-  if (options && options.icon) {
-    completeOptions.icon = {
-      ...completeOptions.icon,
-      ...options.icon,
-    };
-  }
+  // Map to internal build options
+  if (options) {
+    if (options.icon) {
+      completeOptions.icon = {
+        ...completeOptions.icon,
+        ...options.icon,
+      };
+    }
 
-  if (options && options.showInWidget === false) {
-    completeOptions.showInWidget = false;
+    if (options.showInWidget === false) {
+      completeOptions.showInWidget = false;
+    }
   }
 
   const template = buildShortcutTemplate(actions, completeOptions);

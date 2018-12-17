@@ -18,7 +18,9 @@ import WFWorkflowAction from '../interfaces/WF/WFWorkflowAction';
  */
 const getTimeBetweenDates = (
   options: {
+    /** The unit of time for the result. Defaults to 'Minutes' */
     timeUnit?: WFSerialization | WFTimeUntilUnit,
+    /** The date/time to calculate the difference from. Defaults to empty string */
     customDate?: WFSerialization | string,
   },
 ): WFWorkflowAction => {

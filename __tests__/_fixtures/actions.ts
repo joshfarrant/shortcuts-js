@@ -55,6 +55,39 @@ export const testShortcutNoActions: WFWorkflow = {
   WFWorkflowActions: [],
 };
 
+export const testShortcutNoActionsNoWidget: WFWorkflow = {
+  WFWorkflowClientVersion: '724',
+  WFWorkflowClientRelease: '2.1',
+  WFWorkflowIcon: {
+    WFWorkflowIconStartColor: 4274264319,
+    WFWorkflowIconGlyphNumber: 59446,
+  },
+  WFWorkflowImportQuestions: [],
+  WFWorkflowTypes: [
+    'WatchKit',
+  ],
+  WFWorkflowInputContentItemClasses: [
+    'WFAppStoreAppContentItem',
+    'WFArticleContentItem',
+    'WFContactContentItem',
+    'WFDateContentItem',
+    'WFEmailAddressContentItem',
+    'WFGenericFileContentItem',
+    'WFImageContentItem',
+    'WFiTunesProductContentItem',
+    'WFLocationContentItem',
+    'WFDCMapsLinkContentItem',
+    'WFAVAssetContentItem',
+    'WFPDFContentItem',
+    'WFPhoneNumberContentItem',
+    'WFRichTextContentItem',
+    'WFSafariWebPageContentItem',
+    'WFStringContentItem',
+    'WFURLContentItem',
+  ],
+  WFWorkflowActions: [],
+};
+
 export const testShortcutWithActions: WFWorkflow = {
   WFWorkflowClientVersion: '724',
   WFWorkflowClientRelease: '2.1',

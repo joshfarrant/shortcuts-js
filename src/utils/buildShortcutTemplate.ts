@@ -3,6 +3,7 @@ import { flatten } from './flatten';
 import BuildShortcutOptions from '../interfaces/BuildShortcutOptions';
 import WFWorkflow from '../interfaces/WF/WFWorkflow';
 import WFWorkflowActionsInterface from '../interfaces/WF/WFWorkflowAction';
+import WFWorkflowType from '../interfaces/WF/WFWorkflowType';
 
 /** @ignore */
 export const buildShortcutTemplate = (
@@ -17,7 +18,7 @@ export const buildShortcutTemplate = (
   },
   WFWorkflowImportQuestions: [],
   WFWorkflowTypes: [
-    'NCWidget',
+    ...(options.showInWidget ? ['NCWidget' as WFWorkflowType] : []),
     'WatchKit',
   ],
   WFWorkflowInputContentItemClasses: [

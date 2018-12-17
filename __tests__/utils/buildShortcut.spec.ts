@@ -20,6 +20,7 @@ describe('buildShortcut function', () => {
         color: 4274264319,
         glyph: 59446,
       },
+      showInWidget: true,
     });
     const expected = encodeShortcut(template);
 
@@ -33,6 +34,7 @@ describe('buildShortcut function', () => {
         color: 4274264319,
         glyph: 59446,
       },
+      showInWidget: true,
     });
     const expected = encodeShortcut(template);
 
@@ -46,6 +48,7 @@ describe('buildShortcut function', () => {
         color: 1440408063,
         glyph: 59784,
       },
+      showInWidget: true,
     };
     const template = buildShortcutTemplate(testActions, options);
     const expected = encodeShortcut(template);
@@ -60,6 +63,7 @@ describe('buildShortcut function', () => {
         color: 1440408063,
         glyph: 59446,
       },
+      showInWidget: true,
     });
     const expected = encodeShortcut(template);
 
@@ -68,6 +72,20 @@ describe('buildShortcut function', () => {
         color: 1440408063,
       },
     });
+    expect(actual).toEqual(expected);
+  });
+
+  it('builds an encoded shortcut object that is not shown in shortcuts widget', () => {
+    const template = buildShortcutTemplate([], {
+      icon: {
+        color: 4274264319,
+        glyph: 59446,
+      },
+      showInWidget: false,
+    });
+    const expected = encodeShortcut(template);
+
+    const actual = buildShortcut([], { showInWidget: false });
     expect(actual).toEqual(expected);
   });
 

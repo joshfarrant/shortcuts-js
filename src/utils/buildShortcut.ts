@@ -16,6 +16,7 @@ export const buildShortcut = (
       color?: number,
       glyph?: number,
     },
+    showInWidget?: boolean,
   },
 ): string => {
   const completeOptions = {
@@ -23,6 +24,7 @@ export const buildShortcut = (
       color: 4274264319, // Yellow
       glyph: 59446, // Keyboard
     },
+    showInWidget: true,
   };
 
   if (options && options.icon) {
@@ -30,6 +32,10 @@ export const buildShortcut = (
       ...completeOptions.icon,
       ...options.icon,
     };
+  }
+
+  if (options && options.showInWidget === false) {
+    completeOptions.showInWidget = false;
   }
 
   const template = buildShortcutTemplate(actions, completeOptions);

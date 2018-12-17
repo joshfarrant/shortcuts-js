@@ -1,17 +1,29 @@
 import { buildShortcutTemplate } from '../../src/utils';
 
+import BuildShortcutOptions from '../../src/interfaces/BuildShortcutOptions';
+
 import {
   testActions,
   testShortcutNoActions,
+  testShortcutNoActionsNoWidget,
   testShortcutWithActions,
   testShortcutWithModifiedOptions,
 } from '../_fixtures/actions';
 
-const defaultOptions = {
+const defaultOptions: BuildShortcutOptions = {
   icon: {
     color: 4274264319,
     glyph: 59446,
   },
+  showInWidget: true,
+};
+
+const noWidgetOptions: BuildShortcutOptions = {
+  icon: {
+    color: 4274264319,
+    glyph: 59446,
+  },
+  showInWidget: false,
 };
 
 describe('buildShortcutTemplate function', () => {
@@ -42,7 +54,15 @@ describe('buildShortcutTemplate function', () => {
         color: 3980825855,
         glyph: 59769,
       },
+      showInWidget: true,
     });
+    expect(actual).toMatchObject(expected);
+  });
+
+  it('builds a shortcut object that is not shown in shortcuts widget', () => {
+    const expected = testShortcutNoActionsNoWidget;
+
+    const actual = buildShortcutTemplate(undefined, noWidgetOptions);
     expect(actual).toMatchObject(expected);
   });
 

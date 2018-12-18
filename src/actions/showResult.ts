@@ -7,7 +7,7 @@ import WFSerialization from '../interfaces/WF/WFSerialization';
  *
  * ```js
  * showResult({
- *   text: 'Hello, world!'
+ *   text: 'Hello, world!',
  * });
  * ```
  */

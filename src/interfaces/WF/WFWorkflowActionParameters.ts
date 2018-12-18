@@ -15,6 +15,7 @@ import WFHTTPMethod from './WFHTTPMethod';
 import WFInputType from './WFInputType';
 import WFIPAddressSourceOption from './WFIPAddressSourceOption';
 import WFIPAddressTypeOption from './WFIPAddressTypeOption';
+import WFMapsApps from './WFMapsApps';
 import WFMathOperation from './WFMathOperation';
 import WFNetworkDetailsNetwork from './WFNetworkDetailsNetwork';
 import WFRelativeDateFormatStyle from './WFRelativeDateFormatStyle';
@@ -93,6 +94,7 @@ interface WFWorkflowActionParameters {
   WFRelativeDateFormatStyle?: WFSerialization | WFRelativeDateFormatStyle;
   WFScientificMathOperand?: number;
   WFScientificMathOperation?: WFScientificMathOperation;
+  WFSearchMapsActionApp?: WFMapsApps | string;
   WFShowWorkflow?: boolean;
   WFSSHHost?: WFSerialization | string;
   WFSSHPassword?: WFSerialization | string;

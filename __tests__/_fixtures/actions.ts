@@ -30,7 +30,40 @@ export const testShortcutNoActions: WFWorkflow = {
   },
   WFWorkflowImportQuestions: [],
   WFWorkflowTypes: [
+    'WatchKit',
     'NCWidget',
+  ],
+  WFWorkflowInputContentItemClasses: [
+    'WFAppStoreAppContentItem',
+    'WFArticleContentItem',
+    'WFContactContentItem',
+    'WFDateContentItem',
+    'WFEmailAddressContentItem',
+    'WFGenericFileContentItem',
+    'WFImageContentItem',
+    'WFiTunesProductContentItem',
+    'WFLocationContentItem',
+    'WFDCMapsLinkContentItem',
+    'WFAVAssetContentItem',
+    'WFPDFContentItem',
+    'WFPhoneNumberContentItem',
+    'WFRichTextContentItem',
+    'WFSafariWebPageContentItem',
+    'WFStringContentItem',
+    'WFURLContentItem',
+  ],
+  WFWorkflowActions: [],
+};
+
+export const testShortcutNoActionsNoWidget: WFWorkflow = {
+  WFWorkflowClientVersion: '724',
+  WFWorkflowClientRelease: '2.1',
+  WFWorkflowIcon: {
+    WFWorkflowIconStartColor: 4274264319,
+    WFWorkflowIconGlyphNumber: 59446,
+  },
+  WFWorkflowImportQuestions: [],
+  WFWorkflowTypes: [
     'WatchKit',
   ],
   WFWorkflowInputContentItemClasses: [
@@ -64,8 +97,8 @@ export const testShortcutWithActions: WFWorkflow = {
   },
   WFWorkflowImportQuestions: [],
   WFWorkflowTypes: [
-    'NCWidget',
     'WatchKit',
+    'NCWidget',
   ],
   WFWorkflowInputContentItemClasses: [
     'WFAppStoreAppContentItem',
@@ -98,8 +131,8 @@ export const testShortcutWithModifiedOptions: WFWorkflow = {
   },
   WFWorkflowImportQuestions: [],
   WFWorkflowTypes: [
-    'NCWidget',
     'WatchKit',
+    'NCWidget',
   ],
   WFWorkflowInputContentItemClasses: [
     'WFAppStoreAppContentItem',

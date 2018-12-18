@@ -3,6 +3,7 @@ interface BuildShortcutOptions {
     color: number;
     glyph: number;
   };
+  showInWidget: boolean;
 }
 
 export default BuildShortcutOptions;

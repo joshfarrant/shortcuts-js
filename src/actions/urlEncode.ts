@@ -5,7 +5,7 @@ import WFWorkflowAction from '../interfaces/WF/WFWorkflowAction';
 
 /**
  * URL Encode Action. Encodes or decodes text passed into the action to be suitable for inclusion in
- * a URL by adding. or removing percent escapes when appropriate
+ * a URL by adding or removing percent escapes when appropriate.
  *
  * ```js
  * URLEncode({

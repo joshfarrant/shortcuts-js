@@ -7,6 +7,6 @@ type WFTimeUntilUnit = (
   | 'Weeks'
   | 'Months'
   | 'Years'
-  );
+);
 
 export default WFTimeUntilUnit;

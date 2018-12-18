@@ -1,4 +1,4 @@
-type WFArchiveType = (
+type WFArchiveFormat = (
   'zip'
   | 'tar.gz'
   | 'tar.bz2'
@@ -9,4 +9,4 @@ type WFArchiveType = (
   | 'iso'
 );
 
-export default WFArchiveType;
+export default WFArchiveFormat;

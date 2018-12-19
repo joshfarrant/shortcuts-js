@@ -54,6 +54,7 @@ import getTextFromInput from './getTextFromInput';
 import getType from './getType';
 import getURLsFromInput from './getURLsFromInput';
 import getVariable from './getVariable';
+import makeArchive from './makeArchive';
 import makeMarkdownFromRichText from './makeMarkdownFromRichText';
 import makeRichTextFromHTML from './makeRichTextFromHTML';
 import makeRichTextFromMarkdown from './makeRichTextFromMarkdown';
@@ -106,6 +107,7 @@ import text from './text';
 import trimMedia from './trimMedia';
 import tweet from './tweet';
 import url from './url';
+import urlEncode from './urlEncode';
 import vibrateDevice from './vibrateDevice';
 import viewContentGraph from './viewContentGraph';
 import wait from './wait';
@@ -168,6 +170,7 @@ export {
   getType,
   getURLsFromInput,
   getVariable,
+  makeArchive,
   makeMarkdownFromRichText,
   makeRichTextFromHTML,
   makeRichTextFromMarkdown,
@@ -220,6 +223,7 @@ export {
   tweet,
   trimMedia,
   url,
+  urlEncode,
   vibrateDevice,
   viewContentGraph,
   wait,

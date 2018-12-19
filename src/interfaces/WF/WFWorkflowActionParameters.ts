@@ -1,4 +1,5 @@
 import AssertionType from './AssertionType';
+import WFArchiveFormat from './WFArchiveFormat';
 import WFAskActionDateGranularity from './WFAskActionDateGranularity';
 import WFBase64LineBreakMode from './WFBase64LineBreakMode';
 import WFCondition from './WFCondition';
@@ -41,6 +42,7 @@ interface WFWorkflowActionParameters {
   WFAlertActionCancelButtonShown?: boolean;
   WFAlertActionMessage?: WFSerialization | string;
   WFAlertActionTitle?: WFSerialization | string;
+  WFArchiveFormat?: WFArchiveFormat;
   WFAskActionDateGranularity?: WFAskActionDateGranularity;
   WFAskActionDefaultAnswer?: WFSerialization | string;
   WFAskActionPrompt?: WFSerialization | string;
@@ -110,6 +112,7 @@ interface WFWorkflowActionParameters {
   WFVariableName?: string;
   WFVolume?: number;
   WFWorkflowName?: string;
+  WFZIPName?: WFSerialization | string;
 }
 
 export default WFWorkflowActionParameters;

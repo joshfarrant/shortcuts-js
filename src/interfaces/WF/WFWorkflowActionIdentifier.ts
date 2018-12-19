@@ -59,6 +59,7 @@ type WFWorkflowActionIdentifier = (
   | 'is.workflow.actions.getrichtextfromhtml'
   | 'is.workflow.actions.getrichtextfrommarkdown'
   | 'is.workflow.actions.gettext'
+  | 'is.workflow.actions.gettimebetweendates'
   | 'is.workflow.actions.getvalueforkey'
   | 'is.workflow.actions.getvariable'
   | 'is.workflow.actions.getwebpagecontents'

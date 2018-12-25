@@ -1,0 +1,51 @@
+@import './variables.scss';
+
+:root {
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  position: fixed;
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family:
+    -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu",
+    "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace;
+}
+
+a {
+  text-decoration: none;
+  color: var(--blue-colour);
+  font-weight: 700;
+
+  &:hover,
+  &:focus {
+    text-decoration: underline;
+  }
+}
+
+hr {
+  width: 100%;
+  max-width: 320px;
+  height: 1px;
+  border: none;
+  margin: 1.7rem !important;
+  background: var(--lighter-grey-colour) !important;
+}
+
+div {
+  box-sizing: border-box;
+}

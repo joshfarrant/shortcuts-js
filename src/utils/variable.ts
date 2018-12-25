@@ -2,9 +2,15 @@ import Variable from '../interfaces/Variable';
 
 /**
  * Creates a Variable.
- * @ignore
+ *
+ * ```js
+ * const myVar = variable('My Variable');
+ * ```
  */
-export const variable = (name: string): Variable => new Variable({
+export const variable = (
+  /** The name of the Variable */
+  name: string,
+): Variable => new Variable({
   VariableName: name,
   Type: 'Variable',
 });

@@ -1,0 +1,27 @@
+.container {
+  width: 100%;
+  margin-top: 64px;
+  padding-top: 6px;
+
+  background: var(--pink-colour);
+  background: -webkit-linear-gradient(to right, var(--pink-colour), var(--aqua-colour));
+  background: linear-gradient(to right, var(--pink-colour), var(--aqua-colour));
+  color: var(--white-colour);
+}
+
+.textContainer {
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  justify-content: center;
+
+  width: 100%;
+  height: 100%;
+  padding: 16px;
+  background: rgba(0, 0, 0, .4);
+  text-align: center;
+}
+
+.link {
+  color: var(--white-colour);
+}

@@ -1,0 +1,52 @@
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  margin: 8px 12px;
+  padding: 12px 16px;
+  text-decoration: none;
+  color: var(--white-colour);
+  border: 1px solid rgba(255, 255, 255, .7);
+  border-radius: 5px;
+  transition: all .2s ease;
+
+  &:hover,
+  &:focus {
+    background: var(--white-colour);
+    color: var(--pink-colour);
+    cursor: pointer;
+  }
+}
+
+.inverted {
+  color: var(--purple-colour);
+  border-color: var(--purple-colour);
+
+  &:hover,
+  &:focus {
+    background: var(--purple-colour);
+    color: var(--white-colour);
+  }
+}
+
+.anchor {
+  @extend .container;
+
+  font-weight: 400;
+  text-decoration: none !important;
+}
+
+.anchorInverted {
+  @extend .anchor;
+  @extend .inverted;
+}
+
+.button {
+  @extend .container;
+}
+
+.buttonInverted {
+  @extend .button;
+  @extend .inverted;
+}

@@ -67,7 +67,6 @@
     "test:watch": "jest --watch",
     "docs": "typedoc src --out documentation --mode file --target es6 --theme default",
     "docs:json": "typedoc src --json docs/api/data.json --target es6",
-    "docs:build": "webpack",
     "docs:serve": "webpack-dev-server",
     "preversion": "npm run clean && npm test",
     "version": "npm run build",

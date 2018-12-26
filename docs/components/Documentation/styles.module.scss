@@ -55,7 +55,7 @@
 
   padding: 2rem;
   min-width: 240px;
-  overflow-y: scroll;
+  overflow-y: scroll; // FIXME: works well on desktop, bad on mobile
 
   & ul {
     list-style: none;
@@ -82,5 +82,5 @@
 .content {
   grid-area: content;
 
-  overflow-y: scroll;
+  overflow-y: scroll; // FIXME: works well on desktop, bad on mobile
 }

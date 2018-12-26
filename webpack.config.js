@@ -52,10 +52,13 @@ module.exports = {
   },
   devServer: {
     contentBase: path.resolve(__dirname, 'docs/'), // 'public/'
+    host: '0.0.0.0',
     port: 3000,
     publicPath: '/', // '/docs/',
     hotOnly: true,
     watchContentBase: true,
+    historyApiFallback: true,
+    open: true,
   },
   plugins: [
     new webpack.HotModuleReplacementPlugin(),

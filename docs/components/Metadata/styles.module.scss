@@ -15,6 +15,8 @@
   border-radius: 12px;
   fill: #222;
 
+  // display: none;
+
   &:hover {
     cursor: pointer;
     background: #eee;
@@ -22,6 +24,8 @@
 
   &.unnamed {
     fill: red;
+
+    // display: initial;
   }
 
   & path {

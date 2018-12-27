@@ -1,0 +1,92 @@
+.container {
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  margin-bottom: 40px;
+
+  background: var(--pink-colour);
+  background: -webkit-linear-gradient(to right, var(--pink-colour), var(--aqua-colour));
+  background: linear-gradient(to right, var(--pink-colour), var(--aqua-colour));
+}
+
+.headingContainer {
+  flex: 1;
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  padding-top: 40px;
+  justify-content: center;
+  color: var(--white-colour);
+}
+
+.heading {
+  font-size: 3rem;
+  font-weight: 800;
+  text-align: center;
+  color: var(--white-colour);
+
+  &:hover, &:focus {
+    text-decoration: none;
+  }
+}
+
+.subheading {
+  font-weight: 300;
+  margin-bottom: 0;
+  text-align: center;
+}
+
+.buttonContainer {
+  display: flex;
+  flex-flow: row wrap;
+  align-items: center;
+  justify-content: center;
+  padding: 32px 0 24px;
+}
+
+.banner {
+  display: flex;
+  flex-flow: row wrap;
+  align-items: center;
+  justify-content: center;
+
+  width: 100%;
+  padding: 16px 8px;
+  background: rgba(0, 0, 0, .4);
+}
+
+.badge {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 4px;
+  line-height: 0;
+
+  img {
+    margin: 0;
+    padding: 0;
+  }
+}
+
+.github {
+  @extend .badge;
+}
+
+@media (max-width: 670px) {
+  .banner {
+    // display: grid;
+    // grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    // grid-gap: 16px;
+  }
+}
+
+@media (max-width: 470px) {
+  .heading {
+    font-size: 2.2rem;
+  }
+  .subheading {
+    font-size: 1.31951rem;
+  }
+}

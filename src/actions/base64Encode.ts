@@ -1,8 +1,8 @@
 import { withActionOutput } from '../utils';
 
+import Variable from '../interfaces/Variable';
 import WFBase64LineBreakMode from '../interfaces/WF/WFBase64LineBreakMode';
 import WFEncodeMode from '../interfaces/WF/WFEncodeMode';
-import WFSerialization from '../interfaces/WF/WFSerialization';
 import WFWorkflowAction from '../interfaces/WF/WFWorkflowAction';
 
 /**
@@ -20,9 +20,8 @@ const base64Encode = (
   options: {
     /** The encoding mode to use */
     encodeMode?: WFEncodeMode,
-
     /** The line break mode to use */
-    lineBreakMode?: WFSerialization | WFBase64LineBreakMode,
+    lineBreakMode?: Variable | WFBase64LineBreakMode,
   },
 ): WFWorkflowAction => {
   const {

@@ -1,0 +1,46 @@
+.container {
+  padding-bottom: 40px;
+}
+
+.action {
+  padding: 3px 12px 2px 52px;
+  position: relative;
+
+  & span {
+    display: block;
+    line-height: 20px;
+  }
+
+  & .func {
+    color: var(--light-grey-colour);
+    font-family: monospace;
+    line-height: 14px;
+  }
+}
+
+.actionGroup {
+  margin: 12px;
+}
+
+$icon-size: 29px;
+
+%icon {
+  position: absolute;
+  left: 12px;
+  top: 5px;
+  width: $icon-size;
+  height: $icon-size;
+  background-size: 10 * $icon-size 10 * $icon-size;
+}
+
+@mixin icons($class, $path, $num) {
+  @for $i from 0 through $num - 1 {
+    #{$class}-#{$i} {
+      @extend %icon;
+      background-image: url($path);
+      background-position: ($i % 10) * -$icon-size floor($i / 10) * -$icon-size;
+    }
+  }
+}
+
+@include icons('.icon', 'icons@2x.png', 100)

@@ -1,0 +1,34 @@
+.glyphSection {
+  max-width: 720px;
+  margin: auto;
+}
+
+.glyphContainer {
+  font-size: 0;
+}
+
+.glyphIcon {
+  width: 32px;
+  height: 32px;
+  padding: 12px;
+  margin: 6px;
+  border-radius: 12px;
+  fill: #222;
+
+  // display: none;
+
+  &:hover {
+    cursor: pointer;
+    background: #eee;
+  }
+
+  &.unnamed {
+    fill: red;
+
+    // display: initial;
+  }
+
+  & path {
+    transform: translate(0, 1024px) scale(1, -1);
+  }
+}

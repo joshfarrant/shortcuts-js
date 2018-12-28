@@ -7,9 +7,9 @@ import WFWorkflowAction from '../interfaces/WF/WFWorkflowAction';
  * Repeat Action. Repeat a set of actions
  *
  * ```js
- * runShortcut({
- *   name: 'My Great Shortcut',
- *   show: true,
+ * repeat({
+ *   count: 10,
+ *   actions: [showAlert({}), comment({})]
  * });
  * ```
  */

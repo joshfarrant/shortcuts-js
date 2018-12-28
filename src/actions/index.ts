@@ -75,6 +75,7 @@ import print from './print';
 import quickLook from './quickLook';
 import randomNumber from './randomNumber';
 import removeReminders from './removeReminders';
+import repeat from './repeat';
 import runJavascriptOnWebPage from './runJavascriptOnWebPage';
 import runScriptOverSSH from './runScriptOverSSH';
 import runShortcut from './runShortcut';
@@ -192,6 +193,7 @@ export {
   quickLook,
   randomNumber,
   removeReminders,
+  repeat,
   runJavascriptOnWebPage,
   runScriptOverSSH,
   runShortcut,

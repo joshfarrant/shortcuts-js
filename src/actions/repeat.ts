@@ -2,6 +2,7 @@ import * as uuidv4 from 'uuid/v4';
 
 import WFSerialization from '../interfaces/WF/WFSerialization';
 import WFWorkflowAction from '../interfaces/WF/WFWorkflowAction';
+import { withActionOutput } from '../utils';
 
 /**
  * Repeat Action. Repeat a set of actions
@@ -30,8 +31,7 @@ const repeat = (
     {
       WFWorkflowActionIdentifier: 'is.workflow.actions.repeat.count',
       WFWorkflowActionParameters: {
-        WFRepeatCount: typeof count === 'number' ?
-          Math.floor(count as number) : count as WFSerialization,
+        WFRepeatCount: count,
         GroupingIdentifier: groupingIdentifier,
         WFControlFlowMode: 0,
       },
@@ -47,4 +47,4 @@ const repeat = (
   ];
 };
 
-export default repeat;
+export default withActionOutput(repeat);

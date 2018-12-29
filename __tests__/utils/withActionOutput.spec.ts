@@ -1,9 +1,30 @@
+import { comment, number, repeat, showAlert } from '../../src/actions';
+import WFWorkflowAction from '../../src/interfaces/WF/WFWorkflowAction';
 import {
   actionOutput,
   withActionOutput,
 } from '../../src/utils';
 
-import { number } from '../../src/actions';
+const compareObjectsWithGroupingIdentifier = (
+  actual: WFWorkflowAction[],
+  expected: WFWorkflowAction[],
+) => {
+  expect.assertions(expected.length);
+
+  expected.forEach((obj, idx) => {
+    const actualObj = actual[idx];
+    const expectedObj = {
+      ...obj,
+    };
+
+    const { GroupingIdentifier } = actualObj.WFWorkflowActionParameters;
+    if (GroupingIdentifier) {
+      expectedObj.WFWorkflowActionParameters.GroupingIdentifier = GroupingIdentifier;
+    }
+
+    expect(actual[idx]).toEqual(expectedObj);
+  });
+};
 
 describe('withActionOutput function', () => {
 
@@ -44,6 +65,98 @@ describe('withActionOutput function', () => {
     };
 
     expect(actual).toEqual(expected);
+  });
+
+  it('adds a custom named action output to an action that generates a list', () => {
+    const magicVariable = actionOutput('Repeat Action Output');
+
+    const actions = [
+      comment({
+        text: 'Hello World 2',
+      }),
+      showAlert({}),
+    ];
+    const actual = withActionOutput(repeat)({ actions, count: 10 }, magicVariable);
+
+    const expected: WFWorkflowAction[] = [
+      {
+        WFWorkflowActionIdentifier: 'is.workflow.actions.repeat.count',
+        WFWorkflowActionParameters: {
+          WFRepeatCount: 10,
+          WFControlFlowMode: 0,
+          UUID: magicVariable.Value.OutputUUID,
+          CustomOutputName: magicVariable.Value.OutputName,
+        },
+      },
+      {
+        WFWorkflowActionIdentifier: 'is.workflow.actions.comment',
+        WFWorkflowActionParameters: {
+          WFCommentActionText: 'Hello World 2',
+        },
+      },
+      {
+        WFWorkflowActionIdentifier: 'is.workflow.actions.alert',
+        WFWorkflowActionParameters: {
+          WFAlertActionTitle: 'Alert',
+          WFAlertActionMessage: 'Do you want to continue?',
+          WFAlertActionCancelButtonShown: true,
+        },
+      },
+      {
+        WFWorkflowActionIdentifier: 'is.workflow.actions.repeat.count',
+        WFWorkflowActionParameters: {
+          WFControlFlowMode: 2,
+          UUID: magicVariable.Value.OutputUUID,
+          CustomOutputName: magicVariable.Value.OutputName,
+        },
+      },
+    ];
+    compareObjectsWithGroupingIdentifier(<WFWorkflowAction[]>actual, expected);
+  });
+
+  it('adds an action output to an action that generates a list', () => {
+    const magicVariable = actionOutput();
+
+    const actions = [
+      comment({
+        text: 'Hello World 2',
+      }),
+      showAlert({}),
+    ];
+    const actual = withActionOutput(repeat)({ actions, count: 10 }, magicVariable);
+
+    const expected: WFWorkflowAction[] = [
+      {
+        WFWorkflowActionIdentifier: 'is.workflow.actions.repeat.count',
+        WFWorkflowActionParameters: {
+          WFRepeatCount: 10,
+          WFControlFlowMode: 0,
+          UUID: magicVariable.Value.OutputUUID,
+        },
+      },
+      {
+        WFWorkflowActionIdentifier: 'is.workflow.actions.comment',
+        WFWorkflowActionParameters: {
+          WFCommentActionText: 'Hello World 2',
+        },
+      },
+      {
+        WFWorkflowActionIdentifier: 'is.workflow.actions.alert',
+        WFWorkflowActionParameters: {
+          WFAlertActionTitle: 'Alert',
+          WFAlertActionMessage: 'Do you want to continue?',
+          WFAlertActionCancelButtonShown: true,
+        },
+      },
+      {
+        WFWorkflowActionIdentifier: 'is.workflow.actions.repeat.count',
+        WFWorkflowActionParameters: {
+          WFControlFlowMode: 2,
+          UUID: magicVariable.Value.OutputUUID,
+        },
+      },
+    ];
+    compareObjectsWithGroupingIdentifier(<WFWorkflowAction[]>actual, expected);
   });
 
 });

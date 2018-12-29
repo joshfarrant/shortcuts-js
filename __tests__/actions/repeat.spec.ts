@@ -46,7 +46,7 @@ describe('repeat function', () => {
     ];
     const actual = repeat({});
 
-    compareObjectsWithGroupingIdentifier(actual, expected);
+    compareObjectsWithGroupingIdentifier(<WFWorkflowAction[]>actual, expected);
   });
 
   it('builds a repeat action when all options are passed', () => {
@@ -92,6 +92,6 @@ describe('repeat function', () => {
       count,
     });
 
-    compareObjectsWithGroupingIdentifier(actual, expected);
+    compareObjectsWithGroupingIdentifier(<WFWorkflowAction[]>actual, expected);
   });
 });

@@ -7,6 +7,7 @@ import {
   askWhenRun,
   clipboard,
   currentDate,
+  repeatIndex,
   shortcutInput,
 } from '../../src/variables';
 
@@ -239,6 +240,25 @@ describe('withVariables function', () => {
           '{3, 1}': { Type: 'Clipboard' },
           '{6, 1}': { Type: 'CurrentDate' },
           '{12, 1}': { Type: 'ExtensionInput' },
+        },
+      },
+    };
+
+    expect(actual).toEqual(expected);
+  });
+
+  it('returns a WFTextTokenString when passed repeat variables in a string', () => {
+    const actual = withVariables`${repeatIndex()}, ${repeatIndex(1)}, ${repeatIndex(2)} and ${repeatIndex(4)}.`; // tslint:disable-line:max-line-length
+
+    const expected: WFSerialization = {
+      WFSerializationType: 'WFTextTokenString',
+      Value: {
+        string: '￼, ￼, ￼ and ￼.', // Contains object replacement character
+        attachmentsByRange: {
+          '{0, 1}': { Type: 'Variable', VariableName: 'Repeat Index' },
+          '{3, 1}': { Type: 'Variable', VariableName: 'Repeat Index' },
+          '{6, 1}': { Type: 'Variable', VariableName: 'Repeat Index 2' },
+          '{12, 1}': { Type: 'Variable', VariableName: 'Repeat Index 4' },
         },
       },
     };

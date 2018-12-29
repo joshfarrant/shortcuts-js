@@ -16,9 +16,17 @@ const shortcutInput: Variable = new Variable({
   Type: 'ExtensionInput',
 });
 
+const repeatIndex = (
+  level?: number,
+): Variable => new Variable({
+  VariableName: level && level !== 1 ? `Repeat Index ${level}` : 'Repeat Index',
+  Type: 'Variable',
+});
+
 export {
   askWhenRun,
   clipboard,
   currentDate,
+  repeatIndex,
   shortcutInput,
 };

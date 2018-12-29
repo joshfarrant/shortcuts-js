@@ -84,8 +84,6 @@ describe('withActionOutput function', () => {
         WFWorkflowActionParameters: {
           WFRepeatCount: 10,
           WFControlFlowMode: 0,
-          UUID: magicVariable.Value.OutputUUID,
-          CustomOutputName: magicVariable.Value.OutputName,
         },
       },
       {
@@ -131,7 +129,6 @@ describe('withActionOutput function', () => {
         WFWorkflowActionParameters: {
           WFRepeatCount: 10,
           WFControlFlowMode: 0,
-          UUID: magicVariable.Value.OutputUUID,
         },
       },
       {

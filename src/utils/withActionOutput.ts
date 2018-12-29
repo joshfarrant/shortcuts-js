@@ -12,22 +12,15 @@ export const withActionOutput = <OptionsType>(
       const action = actionBuilder(options);
 
       if (output) {
-        const actionSingle = <WFWorkflowAction>action;
-        if (actionSingle.WFWorkflowActionIdentifier) {
-          actionSingle.WFWorkflowActionParameters.UUID = output.Value.OutputUUID;
-          if (output.Value.OutputName) {
-            actionSingle.WFWorkflowActionParameters.CustomOutputName = output.Value.OutputName;
-          }
+        let actionToModify = undefined;
+        if (!Array.isArray(action)) {
+          actionToModify = action;
         } else {
-          const actionList = <WFWorkflowAction[]>action;
-          const firstActionBlock = actionList[0];
-          const lastActionBlock = actionList[actionList.length - 1];
-          firstActionBlock.WFWorkflowActionParameters.UUID = output.Value.OutputUUID;
-          lastActionBlock.WFWorkflowActionParameters.UUID = output.Value.OutputUUID;
-          if (output.Value.OutputName) {
-            firstActionBlock.WFWorkflowActionParameters.CustomOutputName = output.Value.OutputName;
-            lastActionBlock.WFWorkflowActionParameters.CustomOutputName = output.Value.OutputName;
-          }
+          actionToModify = action[action.length - 1];
+        }
+        actionToModify.WFWorkflowActionParameters.UUID = output.Value.OutputUUID;
+        if (output.Value.OutputName) {
+          actionToModify.WFWorkflowActionParameters.CustomOutputName = output.Value.OutputName;
         }
       }
       return action;

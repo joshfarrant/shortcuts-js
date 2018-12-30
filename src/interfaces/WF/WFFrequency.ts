@@ -1,4 +1,4 @@
-type DayOfWeek = (
+type WFFrequency = (
   'Sunday'
   | 'Monday'
   | 'Tuesday'
@@ -8,4 +8,4 @@ type DayOfWeek = (
   | 'Saturday'
 );
 
-export default DayOfWeek;
+export default WFFrequency;

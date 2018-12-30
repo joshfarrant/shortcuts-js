@@ -9,6 +9,7 @@ import WFDateFormatStyle from './WFDateFormatStyle';
 import WFDeviceDetail from './WFDeviceDetail';
 import WFEncodeMode from './WFEncodeMode';
 import WFFlashlightSetting from './WFFlashlightSetting';
+import WFFrequency from './WFFrequency';
 import WFGetDictionaryValueType from './WFGetDictionaryValueType';
 import WFHashType from './WFHashType';
 import WFHTTPBodyType from './WFHTTPBodyType';
@@ -66,7 +67,7 @@ interface WFWorkflowActionParameters {
   WFDontIncludeFileExtension?: boolean;
   WFEncodeMode?: WFEncodeMode;
   WFFlashlightSetting?: WFFlashlightSetting;
-  WFFrequency?: string[];
+  WFFrequency?: WFFrequency[];
   WFFormValues?: WFSerialization;
   WFGetDictionaryValueType?: WFGetDictionaryValueType;
   WFGetLatestPhotoCount?: number;

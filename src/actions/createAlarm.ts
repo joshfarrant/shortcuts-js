@@ -1,4 +1,4 @@
-import DayOfWeek from '../interfaces/WF/DayOfWeek';
+import WFFrequency from '../interfaces/WF/WFFrequency';
 import WFSerialization from '../interfaces/WF/WFSerialization';
 import WFWorkflowAction from '../interfaces/WF/WFWorkflowAction';
 
@@ -22,7 +22,7 @@ const createAlarm = (
     time?: WFSerialization | string,
 
     /** Whether the alarm should repeat on certain days */
-    repeat?: DayOfWeek[],
+    repeat?: WFFrequency[],
   },
 ): WFWorkflowAction => {
   const {

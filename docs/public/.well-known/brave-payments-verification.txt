@@ -1,0 +1,4 @@
+This is a Brave Payments publisher verification file.
+
+Domain: shortcuts.fun
+Token: b8c3959c9b78028e083f95844c567339c7dac8dbde82b121b9d5bab164ec2f20

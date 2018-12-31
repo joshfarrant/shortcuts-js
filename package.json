@@ -46,7 +46,9 @@
     "lint": "tslint -t stylish --project \"tsconfig.json\"",
     "test": "npm run lint && jest --coverage",
     "test:watch": "jest --watch",
-    "docs": "typedoc src --out docs --mode file --target es6 --theme default",
+    "docs": "cd docs && npm run",
+    "docs:json": "typedoc src --json docs/src/api/data.json --target es6",
+    "postinstall": "cd docs && npm install",
     "preversion": "npm run clean && npm test",
     "version": "npm run build",
     "postversion": "git push && git push --tags"

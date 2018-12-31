@@ -1,0 +1,68 @@
+.container {
+  --profile-image-size: 144px;
+  --profile-image-border-width: 4px;
+
+  display: flex;
+  flex-flow: row wrap;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  max-width: 900px;
+
+  padding: 16px 32px;
+}
+
+.imageContainer {
+  flex: 0 0 var(--profile-image-size);
+  position: relative;
+  margin-right: 64px;
+  width: var(--profile-image-size);
+  height: var(--profile-image-size);
+
+  &::before {
+    content: '';
+    display: block;
+    position: absolute;
+    top: calc(-1 * var(--profile-image-border-width));
+    left: calc(-1 * var(--profile-image-border-width));
+    width: calc(var(--profile-image-size) + (2 * var(--profile-image-border-width)));
+    height: calc(var(--profile-image-size) + (2 * var(--profile-image-border-width)));
+    border-radius: calc(var(--profile-image-size) + (2 * var(--profile-image-border-width)));
+    background: var(--pink-colour);
+    background: -webkit-linear-gradient(to bottom left, var(--pink-colour), var(--aqua-colour));
+    background: linear-gradient(to bottom left, var(--pink-colour), var(--aqua-colour));
+  }
+}
+
+.textContainer {
+  flex: 1;
+}
+
+.image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  max-width: var(--profile-image-size);
+  max-height: var(--profile-image-size);
+  border-radius: var(--profile-image-size);
+}
+
+@media (max-width: 670px) {
+  .container {
+    --profile-image-size: 128px;
+    --profile-image-border-width: 3px;
+
+    flex-flow: column;
+    align-items: center;
+    justify-content: flex-start;
+  }
+
+  .imageContainer {
+    margin-right: 0;
+    margin-bottom: 40px;
+  }
+
+  .textContainer p:last-child {
+    margin-bottom: 0;
+  }
+}

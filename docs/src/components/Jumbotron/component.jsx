@@ -44,14 +44,10 @@ export default () => (
       </h3>
 
       <div className={styles.buttonContainer}>
-        <Button
-          href="https://github.com/joshfarrant/shortcuts-js"
-        >
+        <Button href="https://github.com/joshfarrant/shortcuts-js">
           GitHub
         </Button>
-        <Button
-          href="https://docs.shortcuts.fun/globals.html"
-        >
+        <Button to="/docs/">
           Documentation
         </Button>
       </div>

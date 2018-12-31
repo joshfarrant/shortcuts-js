@@ -5,6 +5,13 @@
   padding: 0;
 }
 
+html {
+  position: fixed;
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+}
+
 body {
   margin: 0;
   padding: 0;
@@ -33,4 +40,15 @@ hr {
   max-width: 320px;
   margin: 1.7rem !important;
   background: var(--lighter-grey-colour) !important;
+}
+
+@media (pointer: coarse), (-moz-touch-enabled: 1) {
+  html {
+    position: initial;
+  }
+}
+
+// FIXME: removable if Typography gets removed
+html {
+  overflow: hidden !important;
 }

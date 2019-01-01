@@ -1,4 +1,5 @@
 @import './variables.scss';
+@import './typography.scss';
 
 :root {
   margin: 0;
@@ -39,7 +40,6 @@ hr {
   width: 100%;
   max-width: 320px;
   height: 1px;
-  margin: 1.7rem;
   border: none;
   background: var(--lighter-grey-colour);
 }

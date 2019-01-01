@@ -1,0 +1,77 @@
+$baseFontSize: 18px;
+$baseLineHeight: 1.7;
+$baseLineHeightRem: #{$baseLineHeight}rem;
+
+html {
+  font-size: 100% * $baseFontSize / 16px;
+  line-height: $baseLineHeight;
+}
+
+body {
+  color: hsla(0, 0%, 0%, .8);
+	word-wrap: break-word;
+	font-kerning: normal;
+	font-feature-settings: "kern", "liga", "clig", "calt";
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: bold;
+  color: inherit;
+  text-rendering: optimizeLegibility;
+  line-height: 1.1;
+  margin-top: 0;
+  margin-bottom: $baseLineHeightRem;
+}
+
+h1 {
+  font-size: 2rem;
+}
+
+h2 {
+  font-size: 1.51572rem;
+}
+
+h3 {
+  font-size: 1.31951rem;
+}
+
+h4 {
+  font-size: 1rem;
+}
+
+h5 {
+  font-size: 0.87055rem;
+}
+
+h6 {
+  font-size: 0.81225rem;
+}
+
+p {
+  margin-top: 0;
+  margin-bottom: $baseLineHeightRem;
+}
+
+small {
+	font-size: 80%;
+}
+
+code,
+kbd,
+pre,
+samp {
+  font-size: $baseLineHeightRem / 2;
+}
+
+button {
+	font: inherit;
+}
+
+hr {
+  margin: $baseLineHeightRem;
+}

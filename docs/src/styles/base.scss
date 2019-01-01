@@ -38,17 +38,18 @@ a {
 hr {
   width: 100%;
   max-width: 320px;
-  margin: 1.7rem !important;
-  background: var(--lighter-grey-colour) !important;
+  height: 1px;
+  margin: 1.7rem;
+  border: none;
+  background: var(--lighter-grey-colour);
+}
+
+div {
+  box-sizing: border-box;
 }
 
 @media (pointer: coarse), (-moz-touch-enabled: 1) {
   html {
     position: initial;
   }
-}
-
-// FIXME: removable if Typography gets removed
-html {
-  overflow: hidden !important;
 }

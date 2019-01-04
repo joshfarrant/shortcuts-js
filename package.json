@@ -34,7 +34,7 @@
     "tslint-microsoft-contrib": "~6.0.0",
     "tsutils": "~3.5.0",
     "typedoc": "^0.13.0",
-    "typescript": "~3.1.6"
+    "typescript": "~3.2.2"
   },
   "main": "build/index.js",
   "types": "build/index.d.ts",

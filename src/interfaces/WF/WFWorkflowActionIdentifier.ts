@@ -2,6 +2,7 @@ type WFWorkflowActionIdentifier = (
   'com.apple.iBooks.openin'
   | 'com.apple.mobilenotes.SharingExtension'
   | 'com.burbn.instagram.openin'
+  | 'com.google.chrome.ios.openurl'
   | 'is.workflow.actions.appendvariable'
   | 'is.workflow.actions.airdropdocument'
   | 'is.workflow.actions.airplanemode.set'

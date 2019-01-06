@@ -66,6 +66,7 @@ import nothing from './nothing';
 import number from './number';
 import openInBooks from './openInBooks';
 import openURLs from './openURLs';
+import openURLsInChrome from './openURLsInChrome';
 import pauseMusic from './pauseMusic';
 import playSound from './playSound';
 import postOnFacebook from './postOnFacebook';
@@ -184,6 +185,7 @@ export {
   number,
   openInBooks,
   openURLs,
+  openURLsInChrome,
   pauseMusic,
   postOnFacebook,
   postOnInstagram,

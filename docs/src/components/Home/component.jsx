@@ -104,24 +104,24 @@ export default class Component extends React.Component {
                       status={this.state.implementedPercent === 100 ? 'success' : ''}
                       theme={{
                         success: {
-                          color: 'var(--yellow-colour)',
+                          color: 'var(--yellow-color)',
                           symbol: '🎉',
                         },
                         default: {
                           color: 'url(#linear)',
-                          trailColor: 'var(--lighter-grey-colour)',
+                          trailColor: 'var(--lighter-gray-color)',
                         },
                         active: {
                           color: 'url(#linear)',
-                          trailColor: 'var(--lighter-grey-colour)',
+                          trailColor: 'var(--lighter-gray-color)',
                         },
                       }}
                     />
                     <svg width="0" height="0">
                       <defs>
                         <linearGradient id="linear" x1="0%" y1="0%" x2="100%" y2="100%">
-                          <stop offset="0%" stopColor="var(--pink-colour)" />
-                          <stop offset="100%" stopColor="var(--aqua-colour)" />
+                          <stop offset="0%" stopColor="var(--pink-color)" />
+                          <stop offset="100%" stopColor="var(--aqua-color)" />
                         </linearGradient>
                       </defs>
                     </svg>

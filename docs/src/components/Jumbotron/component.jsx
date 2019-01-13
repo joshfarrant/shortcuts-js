@@ -47,7 +47,7 @@ export default () => (
         <Button href="https://github.com/joshfarrant/shortcuts-js">
           GitHub
         </Button>
-        <Button to="/docs/">
+        <Button to="/docs">
           Documentation
         </Button>
       </div>

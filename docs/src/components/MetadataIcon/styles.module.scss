@@ -1,0 +1,174 @@
+.content {
+  padding: 1.7rem 1.7rem 80px;
+  max-width: 700px;
+  margin: auto;
+}
+
+.container {
+  max-width: 720px;
+  margin: 0 auto 1.7rem;
+}
+
+.iconContainer {
+  font-size: 0;
+}
+
+.iconHeader {
+  color: var(--gray-color);
+  font-size: 12px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: .05em;
+  margin: 20px;
+}
+
+%icon {
+  display: inline-block;
+  width: 64px;
+  height: 64px;
+  margin: 3px;
+  border-radius: 12px;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+
+  &.selected {
+    background: #e7eaef;
+  }
+
+  @media (pointer: fine) {
+    &:hover:not(.selected) {
+      box-shadow: 0 2px 4px 0 rgba(0,0,0,.1);
+    }
+  }
+}
+
+$shortcutColors: (
+  RED: #f62d4a #c40e1f,
+  DARK_ORANGE: #ee6a41 #d82f06,
+  ORANGE: #fd8a33 #df5800,
+  YELLOW: #eeb91e #e48200,
+  GREEN: #66ca4c #3a991f,
+  TEAL: #4dcfb2 #00a28f,
+  LIGHT_BLUE: #49d0d5 #0096bf,
+  BLUE: #56acee #077add,
+  DARK_BLUE: #357adc #004ab7,
+  DARK_PURPLE: #7a5ae3 #4b2ab3,
+  LIGHT_PURPLE: #b453d7 #811aaa,
+  PINK: #f16eae #cd2e7e,
+  DARK_GRAY: #797c81 #525457,
+  GRAY: #9e9d95 #7d796a,
+  BLUE_GRAY: #929bb0 #6b758b,
+);
+
+@each $name, $colors in $shortcutColors {
+  .color--#{$name} {
+    background: linear-gradient(120deg, nth($colors, 1) 20%, nth($colors, 2) 80%);
+  }
+}
+
+.colorIcon {
+  @extend %icon;
+  padding: 16px;
+
+  .inner {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+  }
+}
+
+.glyphIcon {
+  @extend %icon;
+
+  svg {
+    fill: #8b98af;
+    box-sizing: border-box;
+    padding: 18px;
+    width: 100%;
+    height: 100%;
+  }
+
+  path {
+    transform: translate(0, 1024px) scale(1, -1);
+  }
+}
+
+.previewContainer {
+  --margin: 20px;
+
+  position: fixed;
+  left: var(--menu-width);
+  right: 0;
+  bottom: 0;
+  margin: var(--margin);
+  pointer-events: none;
+  transition:
+    transform .15s ease-in,
+    opacity .1s ease-in .05s;
+
+  &.hidden {
+    transform: translateY(calc(100% + 2 * var(--margin)));
+    opacity: 0;
+  }
+
+  .previewBox {
+    background: var(--darker-gray-color);
+    overflow: hidden;
+    display: flex;
+    margin: auto;
+    max-width: 500px;
+    border-radius: 24px;
+    padding: 12px 12px 12px 20px;
+    pointer-events: initial;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, .2);
+  }
+
+  .previewIcon {
+    --size: 54px;
+
+    margin: 0;
+    width: var(--size);
+    height: var(--size);
+    cursor: initial;
+
+    svg {
+      fill: #fff;
+      padding: 10px;
+    }
+  }
+
+  .section {
+    flex: 1;
+    margin-right: 12px;
+
+    span {
+      display: block;
+      margin-bottom: 8px;
+      color: var(--light-gray-color);
+      font-weight: 600;
+      font-size: 10px;
+      line-height: 10px;
+      letter-spacing: .05em;
+      text-transform: uppercase;
+    }
+
+    code {
+      box-sizing: border-box;
+      display: block;
+      width: 100%;
+      background: #363e49;
+      color: #ff9c07;
+      font-size: 12px;
+      line-height: 12px;
+      padding: 10px 12px;
+      border-radius: 6px;
+      cursor: text;
+    }
+  }
+}
+
+@media (max-width: 640px) {
+  .previewContainer {
+    left: 0;
+  }
+}

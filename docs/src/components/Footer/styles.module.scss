@@ -3,10 +3,10 @@
   margin-top: 64px;
   padding-top: 6px;
 
-  background: var(--pink-colour);
-  background: -webkit-linear-gradient(to right, var(--pink-colour), var(--aqua-colour));
-  background: linear-gradient(to right, var(--pink-colour), var(--aqua-colour));
-  color: var(--white-colour);
+  background: var(--pink-color);
+  background: -webkit-linear-gradient(to right, var(--pink-color), var(--aqua-color));
+  background: linear-gradient(to right, var(--pink-color), var(--aqua-color));
+  color: var(--white-color);
 }
 
 .textContainer {
@@ -18,10 +18,10 @@
   width: 100%;
   height: 100%;
   padding: 16px;
-  background: rgba(0, 0, 0, .4);
+  background: var(--shadow-color);
   text-align: center;
 }
 
 .link {
-  color: var(--white-colour);
+  color: var(--white-color);
 }

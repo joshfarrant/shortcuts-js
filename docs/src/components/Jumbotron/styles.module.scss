@@ -6,9 +6,9 @@
   width: 100%;
   margin-bottom: 40px;
 
-  background: var(--pink-colour);
-  background: -webkit-linear-gradient(to right, var(--pink-colour), var(--aqua-colour));
-  background: linear-gradient(to right, var(--pink-colour), var(--aqua-colour));
+  background: var(--pink-color);
+  background: -webkit-linear-gradient(to right, var(--pink-color), var(--aqua-color));
+  background: linear-gradient(to right, var(--pink-color), var(--aqua-color));
 }
 
 .headingContainer {
@@ -18,7 +18,7 @@
   align-items: center;
   padding-top: 40px;
   justify-content: center;
-  color: var(--white-colour);
+  color: var(--white-color);
 }
 
 .heading {
@@ -49,7 +49,7 @@
 
   width: 100%;
   padding: 16px 8px;
-  background: rgba(0, 0, 0, .4);
+  background: var(--shadow-color);
 }
 
 .badge {

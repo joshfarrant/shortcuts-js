@@ -1,62 +1,122 @@
-:root {
-  --navbar-height: 60px;
-}
-
 .container {
+  --navbar-height: 60px;
+  --menu-width: 240px;
+
   display: grid;
-  grid-template-columns: auto 1fr;
+  grid-template-columns: var(--menu-width) 1fr;
   grid-template-rows: var(--navbar-height) calc(100% - var(--navbar-height));
   grid-template-areas:
     "nav nav"
     "menu content";
 
-  width: 100%;
-  height: 100%;
   position: absolute;
   top: 0;
   left: 0;
+  width: 100%;
+  height: 100%;
 }
 
 .navbar {
   grid-area: nav;
 
-  color: var(--white-colour);
+  color: var(--white-color);
   padding-bottom: 6px;
 
-  background: var(--pink-colour);
-  background: -webkit-linear-gradient(to right, var(--pink-colour), var(--aqua-colour));
-  background: linear-gradient(to right, var(--pink-colour), var(--aqua-colour));
+  background: var(--pink-color);
+  background: linear-gradient(to right, var(--pink-color), var(--aqua-color));
 
   .textContainer {
     height: 100%;
-    background: rgba(0, 0, 0, .4);
+    background: var(--shadow-color);
   }
 
   .logo,
   .soft {
+    display: inline-block;
     font-size: 20px;
-    color: var(--white-colour);
     line-height: calc(var(--navbar-height) - 6px);
+    color: var(--white-color);
+    vertical-align: middle;
     text-decoration: none;
   }
 
   .logo {
     font-weight: 700;
-    margin: 0 8px 0 2rem;
+    margin: 0 8px 0 1.7rem;
   }
 
   .soft {
     opacity: 0.8;
     font-weight: 600;
   }
+
+  .menuIcon {
+    display: none;
+    right: 0;
+    padding: .7rem;
+    margin-right: 1rem;
+    height: calc(var(--navbar-height) - 6px);
+    position: absolute;
+    cursor: pointer;
+
+    %line {
+      display: block;
+      width: 24px;
+      height: 2px;
+      border-radius: 2px;
+      background: var(--white-color);
+    }
+
+    span {
+      @extend %line;
+      position: relative;
+      top: calc(50% - 1px);
+    }
+
+    span::before,
+    span::after {
+      @extend %line;
+      position: absolute;
+      display: block;
+      content: '';
+    }
+
+    span::before {
+      top: 7px;
+    }
+
+    span::after {
+      bottom: 7px;
+    }
+
+    &.close {
+      span {
+        background: none;
+      }
+
+      span::before,
+      span::after {
+        top: 0;
+        bottom: 0;
+      }
+
+      span::before {
+        transform: rotate(45deg);
+      }
+
+      span::after {
+        transform: rotate(-45deg);
+      }
+    }
+  }
 }
 
 .menu {
   grid-area: menu;
 
-  padding: 2rem;
-  min-width: 240px;
-  overflow-y: scroll; // FIXME: works well on desktop, bad on mobile
+  width: 100%;
+  padding: 1.7rem 1.7rem 40px 1.7rem;
+  overflow-y: scroll;
 
   ul {
     list-style: none;
@@ -64,24 +124,103 @@
     margin: 0;
 
     & + ul {
-      border-top: solid 1px var(--lightest-grey-colour);
+      border-top: solid 1px var(--lighter-gray-color);
       margin-top: 1rem;
       padding-top: 1rem;
     }
   }
 
-  li {
-    font-size: 14px;
-    line-height: 2.4;
+  %item {
+    display: block;
+    line-height: 2;
+    text-decoration: none;
+
+    &:hover {
+      color: var(--darkest-gray-color);
+    }
+
+    &.active {
+      color: var(--blue-color);
+    }
   }
 
-  a {
-    display: block;
+  .menuItem {
+    @extend %item;
+    font-size: 15px;
+    color: var(--dark-gray-color);
+  }
+
+  .submenuItem {
+    @extend %item;
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--gray-color);
+    padding-left: 12px;
   }
 }
 
 .content {
   grid-area: content;
 
-  overflow-y: scroll; // FIXME: works well on desktop, bad on mobile
+  overflow-y: scroll;
+}
+
+@media (max-width: 640px) {
+  .navbar .menuIcon {
+    display: inline-block;
+  }
+
+  .container {
+    grid-template-columns: auto;
+    grid-template-areas:
+      "nav"
+      "content";
+  }
+
+  .menu {
+    display: none;
+
+    %item {
+      line-height: 44px;
+    }
+
+    li ul,
+    li + li {
+      border-top: 1px solid var(--lightest-gray-color);
+    }
+
+    .menuItem {
+      font-size: 18px;
+    }
+
+    .submenuItem {
+      font-size: 15px;
+      padding-left: 20px;
+    }
+  }
+
+  .menuShown {
+    grid-template-areas:
+      "nav"
+      "menu";
+
+    .menu {
+      display: block;
+    }
+
+    .content {
+      display: none;
+    }
+  }
+}
+
+@media (pointer: coarse) {
+  .menu,
+  .content {
+    overflow-y: initial;
+  }
+
+  .container {
+    grid-template-rows: var(--navbar-height) auto;
+  }
 }

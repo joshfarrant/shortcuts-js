@@ -28,9 +28,9 @@
     width: calc(var(--profile-image-size) + (2 * var(--profile-image-border-width)));
     height: calc(var(--profile-image-size) + (2 * var(--profile-image-border-width)));
     border-radius: calc(var(--profile-image-size) + (2 * var(--profile-image-border-width)));
-    background: var(--pink-colour);
-    background: -webkit-linear-gradient(to bottom left, var(--pink-colour), var(--aqua-colour));
-    background: linear-gradient(to bottom left, var(--pink-colour), var(--aqua-colour));
+    background: var(--pink-color);
+    background: -webkit-linear-gradient(to bottom left, var(--pink-color), var(--aqua-color));
+    background: linear-gradient(to bottom left, var(--pink-color), var(--aqua-color));
   }
 }
 

@@ -5,7 +5,7 @@
   overflow-y: scroll;
 }
 
-@media (pointer: coarse), (-moz-touch-enabled: 1) {
+@media (pointer: coarse) {
   .container {
     position: initial;
   }

@@ -23,11 +23,14 @@ body {
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace;
+  background-color: rgba(27,31,35,.05);
+  border-radius: 3px;
+  padding: .2em .4em;
 }
 
 a {
   text-decoration: none;
-  color: var(--blue-colour);
+  color: var(--blue-color);
   font-weight: 700;
 
   &:hover,
@@ -41,15 +44,16 @@ hr {
   max-width: 320px;
   height: 1px;
   border: none;
-  background: var(--lighter-grey-colour);
+  background: var(--lighter-gray-color);
 }
 
 div {
   box-sizing: border-box;
 }
 
-@media (pointer: coarse), (-moz-touch-enabled: 1) {
+@media (pointer: coarse) {
   html {
     position: initial;
+    overflow: initial;
   }
 }

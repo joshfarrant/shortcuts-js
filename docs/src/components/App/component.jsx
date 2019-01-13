@@ -12,7 +12,7 @@ export default class Component extends React.Component {
       <div className={styles.container}>
 
         <Route path="/" exact component={Home} />
-        <Route path="/docs/" component={Documentation} />
+        <Route path="/docs" component={Documentation} />
 
       </div>
     );

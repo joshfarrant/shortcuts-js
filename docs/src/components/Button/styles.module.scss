@@ -6,28 +6,28 @@
   margin: 8px 12px;
   padding: 12px 16px;
   text-decoration: none;
-  color: var(--white-colour);
+  color: var(--white-color);
   border: 1px solid rgba(255, 255, 255, .7);
   border-radius: 5px;
   transition: all .2s ease;
 
   &:hover,
   &:focus {
-    background: var(--white-colour);
-    color: var(--pink-colour);
+    background: var(--white-color);
+    color: var(--pink-color);
     cursor: pointer;
   }
 }
 
 .inverted {
-  color: var(--purple-colour);
-  border-color: var(--purple-colour);
-  background: var(--white-colour);
+  color: var(--purple-color);
+  border-color: var(--purple-color);
+  background: var(--white-color);
 
   &:hover,
   &:focus {
-    background: var(--purple-colour);
-    color: var(--white-colour);
+    background: var(--purple-color);
+    color: var(--white-color);
   }
 }
 

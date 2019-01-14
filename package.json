@@ -33,7 +33,7 @@
     "tslint-config-airbnb": "^5.11.1",
     "tslint-microsoft-contrib": "~6.0.0",
     "tsutils": "~3.7.0",
-    "typedoc": "^0.13.0",
+    "typedoc": "^0.14.0",
     "typescript": "~3.2.2"
   },
   "main": "build/index.js",

@@ -1,6 +1,6 @@
 import React from 'react';
 
-import contributors from '../../contributors.json';
+import contributors from '../../../contributors.json';
 
 import styles from './styles.module.scss';
 

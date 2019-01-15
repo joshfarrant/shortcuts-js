@@ -59,7 +59,7 @@ export default class Component extends React.Component {
 
   selectGlyph = (glyph) => () => {
     this.setState({
-      color: this.state.color || 'GRAY',
+      color: this.state.color || 'DARK_BLUE',
       glyph: glyph,
     });
   }
@@ -68,7 +68,9 @@ export default class Component extends React.Component {
     return (
       <div className={styles.content}>
 
-        <h2>Shortcut Icon</h2>
+        <h2 className={styles.title}>
+          Shortcut Icon
+        </h2>
 
         <p>
           [WIP: a markdown parser could be a better approach to handle docs contents]

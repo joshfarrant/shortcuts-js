@@ -1,0 +1,152 @@
+$icon-size: 29px;
+$icon-number: 117;
+
+.content {
+  display: flex;
+  height: 100%;
+}
+
+.listPanel {
+  flex: 1;
+  max-width: 460px;
+  padding: 1.7rem 0;
+  background: var(--lightest-gray-color);
+
+  overflow-y: scroll; // FIXME: scroll on mobile
+
+  b {
+    line-height: 32px;
+    padding-top: 20px;
+    margin-left: 1.7rem;
+    display: block;
+  }
+
+  .item {
+    position: relative;
+    padding: 0 1.7rem;
+    cursor: pointer;
+
+    &::after {
+      content: '';
+      display: block;
+      position: absolute;
+      height: 1px;
+      bottom: 0;
+      right: 1.7rem;
+      left: calc(1.7rem + #{$icon-size} + 10px);
+      background: var(--lighter-gray-color);
+    }
+
+    span {
+      line-height: 44px;
+      display: inline-block;
+      vertical-align: middle;
+    }
+  }
+
+  .search {
+    box-sizing: border-box;
+    font-size: 16px;
+    border: none;
+    border-radius: 6px;
+    padding: 8px 12px;
+    margin: 0 1.7rem;
+    width: calc(100% - 2 * 1.7rem);
+    background: var(--white-color);
+
+    &:focus {
+      box-shadow: 0 1px 5px 1px var(--lighter-gray-color);
+    }
+  }
+
+  .titleBar {
+    display: flex;
+    margin: 0 1.7rem;
+
+    button {
+      padding: 0 20px;
+      margin: 0;
+      border: none;
+      border-radius: 6px;
+      color: var(--blue-color);
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    h2 {
+      flex: 1;
+      margin: 0;
+      line-height: 44px;
+      text-align: center;
+    }
+  }
+}
+
+.infoPanel {
+  flex: 1;
+  padding: 1.7rem;
+
+  overflow-y: scroll; // FIXME: scroll on mobile
+
+  .title {
+    margin-bottom: 16px;
+    padding-bottom: 16px;
+    border-bottom: 1px solid var(--lighter-gray-color);
+  }
+}
+
+.icon {
+  width: $icon-size;
+  height: $icon-size;
+
+  display: inline-block;
+  vertical-align: middle;
+  margin-right: 10px;
+
+  @for $i from 0 through $icon-number {
+    &.i-#{$i} {
+      // FIXME: Missing: Calendar, Clock, Blink
+      background-image: url('./icons@2x.png');
+      background-size: 10 * $icon-size ceil($icon-number / 10) * $icon-size;
+      background-position: ($i % 10) * -$icon-size floor($i / 10) * -$icon-size;
+    }
+  }
+
+  &.i-calendar {
+    background: #ffffff;
+    border-radius: 6.5px;
+    padding: 4px 0;
+
+    span {
+      display: block;
+      width: 100%;
+      text-align: center;
+    }
+
+    span:first-child {
+      height: 5px;
+      line-height: 5px;
+      font-size: 5px;
+      color: red;
+      overflow: hidden;
+    }
+
+    span:last-child {
+      line-height: 16px;
+      font-weight: 100;
+      font-size: 18px;
+      color: black;
+    }
+  }
+}
+
+// FIXME: WIP, collapse .infoPanel and show it when an action is clicked
+@media (max-width: 1000px) {
+  .listPanel {
+    max-width: 100%;
+  }
+
+  .infoPanel {
+    display: none;
+  }
+}

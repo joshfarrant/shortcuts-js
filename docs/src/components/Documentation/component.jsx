@@ -2,9 +2,10 @@ import React from 'react';
 import { Route } from 'react-router';
 import { HashLink as Link, NavHashLink as NavLink } from 'react-router-hash-link';
 
-// import Actions from '../Actions';
-// import Metadata from '../Metadata';
-import MetadataIcon from '../MetadataIcon';
+import Actions from './Actions';
+// import Metadata from './Metadata';
+import Metadata_ShortcutIcon from './Metadata/ShortcutIcon';
+import Contributing_ActionIcons from './Contributing/ActionIcons';
 
 import styles from './styles.module.scss';
 
@@ -25,15 +26,11 @@ const menuItems = [
     ['Magic Variables', '#magic'],
     ['Global Variables', '#global'],
     ['Local Variables', '#local'],
-    [(
-      <React.Fragment>
-        <code>with()</code> method
-      </React.Fragment>
-    ), '#with'],
+    ['Aggrandizements', '#aggrandizements'],
   ]],
   ['Actions', '/docs/actions', []],
   ['Metadata', '/docs/metadata', [
-    ['Build options', '#build-options'],
+    ['Build Options', '#build-options'],
     ['Shortcut Icon', '/icon'],
   ]],
   ['Contributing', '/docs/contributing', [
@@ -157,9 +154,10 @@ export default class Component extends React.Component {
         <Menu onClick={this.toggleMenu(false)} />
 
         <div className={styles.content}>
-          {/* <Route path="/docs/actions" component={Actions} /> */}
+          <Route path="/docs/actions" component={Actions} />
           {/* <Route path="/docs/metadata" component={Metadata} /> */}
-          <Route path="/docs/metadata/icon" component={MetadataIcon} />
+          <Route path="/docs/metadata/icon" component={Metadata_ShortcutIcon} />
+          <Route path="/docs/contributing/action-icons" component={Contributing_ActionIcons} />
         </div>
 
       </div>

@@ -71,8 +71,11 @@ samp {
   font-size: $baseLineHeightRem / 2;
 }
 
-button {
+button,
+input {
 	font: inherit;
+  outline: none;
+  -webkit-appearance: none;
 }
 
 hr {

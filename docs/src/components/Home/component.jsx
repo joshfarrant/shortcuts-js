@@ -3,11 +3,11 @@ import React from 'react';
 import fetch from 'isomorphic-fetch';
 import { Progress } from 'react-sweet-progress';
 
-import AboutTheAuthor from '../AboutTheAuthor';
-import Contributors from '../Contributors';
-import Footer from '../Footer';
-import Jumbotron from '../Jumbotron';
-import ShortcutCreator from '../ShortcutCreator';
+import AboutTheAuthor from './AboutTheAuthor';
+import Contributors from './Contributors';
+import Footer from './Footer';
+import Jumbotron from './Jumbotron';
+import ShortcutCreator from './ShortcutCreator';
 
 import 'react-sweet-progress/lib/style.css';
 import styles from './styles.module.scss';

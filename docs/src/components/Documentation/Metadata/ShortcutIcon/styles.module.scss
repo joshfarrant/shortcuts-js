@@ -2,6 +2,12 @@
   padding: 1.7rem 1.7rem 80px;
   max-width: 700px;
   margin: auto;
+
+  .title {
+    margin-bottom: 16px;
+    padding-bottom: 16px;
+    border-bottom: 1px solid var(--lighter-gray-color);
+  }
 }
 
 .container {

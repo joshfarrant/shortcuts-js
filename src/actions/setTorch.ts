@@ -1,3 +1,5 @@
+/** @module actions */
+
 import WFFlashlightSetting from '../interfaces/WF/WFFlashlightSetting';
 import WFWorkflowAction from '../interfaces/WF/WFWorkflowAction';
 

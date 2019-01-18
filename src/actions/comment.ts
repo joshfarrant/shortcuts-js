@@ -1,7 +1,7 @@
 import WFWorkflowAction from '../interfaces/WF/WFWorkflowAction';
 
 /**
- * Comment Action. This action lets you explain how part of a shortcut works. When run, this action does nothing.
+ * This action lets you explain how part of a shortcut works. When run, this action does nothing.
  *
  * ```js
  * // Create a comment
@@ -9,6 +9,9 @@ import WFWorkflowAction from '../interfaces/WF/WFWorkflowAction';
  *   text: 'A very important comment',
  * });
  * ```
+ *
+ * @action Comment
+ * @section Actions/Scripting/_
  */
 const comment = (
   options: {
@@ -29,3 +32,5 @@ const comment = (
 };
 
 export default comment;
+
+export const icon = 79;

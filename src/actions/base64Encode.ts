@@ -6,7 +6,7 @@ import WFEncodeMode from '../interfaces/WF/WFEncodeMode';
 import WFWorkflowAction from '../interfaces/WF/WFWorkflowAction';
 
 /**
- * Base 64 Encode Action. Encodes or decodes text or files using Base64
+ * Encodes or decodes text or files using Base64
  * encoding.
  *
  * ```js
@@ -15,6 +15,9 @@ import WFWorkflowAction from '../interfaces/WF/WFWorkflowAction';
  *   lineBreakMode: 'Every 76 Characters',
  * });
  * ```
+ *
+ * @action Base 64 Encode
+ * @section Actions/Scripting/Files
  */
 const base64Encode = (
   options: {
@@ -39,3 +42,5 @@ const base64Encode = (
 };
 
 export default withActionOutput(base64Encode);
+
+export const icon = 70;

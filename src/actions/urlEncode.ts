@@ -1,3 +1,5 @@
+/** @module actions */
+
 import { withActionOutput } from '../utils';
 
 import WFEncodeMode from '../interfaces/WF/WFEncodeMode';

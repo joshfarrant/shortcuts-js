@@ -1,3 +1,5 @@
+/** @module actions */
+
 import WFWorkflowAction from '../interfaces/WF/WFWorkflowAction';
 
 import { withActionOutput } from '../utils';

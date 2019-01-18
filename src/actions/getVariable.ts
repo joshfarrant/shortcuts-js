@@ -1,3 +1,5 @@
+/** @module actions */
+
 import Variable from '../interfaces/Variable';
 import WFWorkflowAction from '../interfaces/WF/WFWorkflowAction';
 

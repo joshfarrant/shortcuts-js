@@ -8,6 +8,9 @@ import WFWorkflowAction from '../interfaces/WF/WFWorkflowAction';
  * ```js
  * expandURL();
  * ```
+ *
+ * @action Expand URL
+ * @section Content Types/Web/URLs
  */
 
 const expandURL = (): WFWorkflowAction => ({
@@ -16,3 +19,5 @@ const expandURL = (): WFWorkflowAction => ({
 });
 
 export default withActionOutput(expandURL);
+
+export const icon = 84;

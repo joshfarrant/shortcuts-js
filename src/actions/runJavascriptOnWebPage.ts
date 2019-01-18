@@ -1,3 +1,4 @@
+/** @module actions */
 
 import { withActionOutput } from '../utils';
 

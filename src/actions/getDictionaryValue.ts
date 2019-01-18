@@ -1,3 +1,5 @@
+/** @module actions */
+
 import WFGetDictionaryValueType from '../interfaces/WF/WFGetDictionaryValueType';
 import WFWorkflowAction from '../interfaces/WF/WFWorkflowAction';
 

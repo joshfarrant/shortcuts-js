@@ -8,7 +8,7 @@ type ChooseFromMenuItem = {
 };
 
 /**
- * Choose From Menu Action. Presents a menu and runs different actions based on which menu was chosen.
+ * Presents a menu and runs different actions based on which menu was chosen.
  *
  * ```js
  * chooseFromMenu({
@@ -24,6 +24,9 @@ type ChooseFromMenuItem = {
  *   prompt: 'Which of these is your favourite colour?',
  * });
  * ```
+ *
+ * @action Choose From Menu
+ * @section Actions/Scripting/Control Flow
  */
 const chooseFromMenu = (
   options: {
@@ -79,3 +82,5 @@ const chooseFromMenu = (
 };
 
 export default chooseFromMenu;
+
+export const icon = 70;

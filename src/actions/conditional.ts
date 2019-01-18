@@ -1,3 +1,5 @@
+/** @module actions */
+
 import * as uuidv4 from 'uuid/v4';
 
 import WFCondition from '../interfaces/WF/WFCondition';

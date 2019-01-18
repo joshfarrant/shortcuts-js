@@ -1,3 +1,5 @@
+/** @module actions */
+
 import WFSerialization from '../interfaces/WF/WFSerialization';
 import WFWorkflowAction from '../interfaces/WF/WFWorkflowAction';
 

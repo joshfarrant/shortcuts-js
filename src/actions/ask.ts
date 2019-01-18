@@ -5,7 +5,7 @@ import WFSerialization from '../interfaces/WF/WFSerialization';
 import WFWorkflowAction from '../interfaces/WF/WFWorkflowAction';
 
 /**
- * Ask for Input Action. Displays a dialogue prompting the user to enter a piece of information.
+ * Displays a dialogue prompting the user to enter a piece of information.
  *
  * ```js
  * // Ask for favourite colour, defaulting to pink
@@ -14,6 +14,9 @@ import WFWorkflowAction from '../interfaces/WF/WFWorkflowAction';
  *   question: 'What is your favourite colour?',
  * });
  * ```
+ *
+ * @action Ask for Input
+ * @section Actions/Scripting/Notification
  */
 const ask = (
   options: {
@@ -42,3 +45,5 @@ const ask = (
 };
 
 export default withActionOutput(ask);
+
+export const icon = 70;

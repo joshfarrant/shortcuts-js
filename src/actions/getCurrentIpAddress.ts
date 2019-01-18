@@ -1,3 +1,5 @@
+/** @module actions */
+
 import { withActionOutput } from '../utils';
 
 import WFIPAddressSourceOption from '../interfaces/WF/WFIPAddressSourceOption';

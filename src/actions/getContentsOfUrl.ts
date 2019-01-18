@@ -1,3 +1,5 @@
+/** @module actions */
+
 import {
   buildSerialization,
   withActionOutput,

@@ -1,3 +1,5 @@
+/** @module actions */
+
 import WFSkipBackBehavior from '../interfaces/WF/WFSkipBackBehavior';
 import WFWorkflowAction from '../interfaces/WF/WFWorkflowAction';
 

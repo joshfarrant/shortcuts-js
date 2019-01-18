@@ -1,11 +1,14 @@
 import WFWorkflowAction from '../interfaces/WF/WFWorkflowAction';
 
 /**
- * Add to Reading List Action. Adds URLs passed into the action to your reading list.
+ * Adds URLs passed into the action to your reading list.
  *
  * ```js
  * addToReadingList();
  * ```
+ *
+ * @action Add to Reading List
+ * @section Content Types/Web/Safari
  */
 
 const addToReadingList = (): WFWorkflowAction => ({
@@ -14,3 +17,5 @@ const addToReadingList = (): WFWorkflowAction => ({
 });
 
 export default addToReadingList;
+
+export const icon = 69;

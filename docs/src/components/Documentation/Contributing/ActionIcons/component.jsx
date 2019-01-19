@@ -1,7 +1,7 @@
 import React from 'react';
 
 import { Icon } from '../../Actions';
-import { icons } from '../../Actions/icons.js';
+import icons from '../../Actions/icons.js';
 
 // import styles from './styles.module.scss';
 

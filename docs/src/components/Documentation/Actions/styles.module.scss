@@ -8,11 +8,10 @@ $icon-number: 117;
 
 .listPanel {
   flex: 1;
-  max-width: 460px;
+  max-width: 400px;
   padding: 1.7rem 0;
+  overflow-y: scroll;
   background: var(--lightest-gray-color);
-
-  overflow-y: scroll; // FIXME: scroll on mobile
 
   b {
     line-height: 32px;
@@ -34,6 +33,10 @@ $icon-number: 117;
       bottom: 0;
       right: 1.7rem;
       left: calc(1.7rem + #{$icon-size} + 10px);
+      background: var(--lighter-gray-color);
+    }
+
+    &.selected {
       background: var(--lighter-gray-color);
     }
 
@@ -64,13 +67,14 @@ $icon-number: 117;
     margin: 0 1.7rem;
 
     button {
+      cursor: pointer;
+      font-size: 16px;
       padding: 0 20px;
       margin: 0;
       border: none;
       border-radius: 6px;
       color: var(--blue-color);
-      font-size: 16px;
-      cursor: pointer;
+      background: var(--white-color);
     }
 
     h2 {
@@ -85,8 +89,7 @@ $icon-number: 117;
 .infoPanel {
   flex: 1;
   padding: 1.7rem;
-
-  overflow-y: scroll; // FIXME: scroll on mobile
+  overflow-y: scroll;
 
   .title {
     margin-bottom: 16px;
@@ -140,7 +143,6 @@ $icon-number: 117;
   }
 }
 
-// FIXME: WIP, collapse .infoPanel and show it when an action is clicked
 @media (max-width: 1000px) {
   .listPanel {
     max-width: 100%;
@@ -148,5 +150,15 @@ $icon-number: 117;
 
   .infoPanel {
     display: none;
+  }
+
+  .collapsed {
+    .listPanel {
+      display: none;
+    }
+
+    .infoPanel {
+      display: block;
+    }
   }
 }

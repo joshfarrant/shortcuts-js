@@ -1,8 +1,7 @@
 import React from 'react';
-// import { Route } from 'react-router';
-// import { HashLink as Link, NavHashLink as NavLink } from 'react-router-hash-link';
 
-import { icons, sections } from './icons.js';
+import data from './data.js';
+import icons from './icons.js';
 
 import styles from './styles.module.scss';
 
@@ -41,30 +40,59 @@ const Icon = ({ name }) => {
   );
 };
 
-const ItemList = ({ sections, onClick, ...props }) => (
-  sections.map(([section, items], i) => (
+const CategoryList = ({ content, onClick }) => Object.entries(content)
+  .sort(([a],[b]) => a.localeCompare(b))
+  .map(([section, categories], i) => (
     <div key={i}>
       <b>{section}</b>
-      {items.map(([icon, label], j) => (
-        <div
-          key={j}
-          className={styles.item}
-          onClick={onClick(i,j)}
-          {...props}
-        >
-          <Icon name={icon} />
-          <span>{label}</span>
-        </div>
-      ))}
+      {Object.entries(categories)
+        .sort(([a],[b]) => a.localeCompare(b))
+        .map(([category, { icon }], j) => (
+          <div
+            key={j}
+            className={styles.item}
+            onClick={onClick(section, category)}
+          >
+            <Icon name={icon} />
+            <span>{category}</span>
+          </div>
+        ))
+      }
     </div>
-  ))
-);
+  ));
+
+const ActionList = ({ content, current, onClick }) => content ? Object.entries(content)
+  .sort(([a],[b]) => a.localeCompare(b))
+  .map(([group, actions], i) => (
+    <div key={i}>
+      <b>{group}</b>
+      {Object.entries(actions)
+        .sort(([a],[b]) => a.localeCompare(b))
+        .map(([action, id], j) => {
+          const { icon, func } = data.actions[id];
+          return (
+            <div
+              key={j}
+              className={classList({
+                [styles.item]: true,
+                [styles.selected]: func.name.toLowerCase() === current,
+              })}
+              onClick={onClick(func.name)}
+            >
+              <Icon name={icon} />
+              <span>{action}</span>
+            </div>
+          );
+        })
+      }
+    </div>
+  )) : null;
 
 export default class Component extends React.Component {
   state = {
     search: '',
-    currentAction: null,
-    currentCategory: null,
+    section: null,
+    category: null,
   }
 
   listPanel = React.createRef()
@@ -72,60 +100,63 @@ export default class Component extends React.Component {
   setCategory = (section, category) => () => {
     this.listPanel.current.scrollTop = 0;
     this.setState({
-      currentCategory: section === undefined ? null : [section, category],
+      section: section || null,
+      category: category || null,
     });
   }
 
-  setAction = (group, action) => () => {
-    // FIXME: WIP
-    console.log(group, action)
+  setAction = (name) => () => {
+    const path = name ? `/${name.toLowerCase()}` : '';
+    this.props.history.push(`/docs/actions${path}`);
   }
 
   updateSearch = (event) => {
     this.setState({
-      search: event.target.value,
+      search: event.target.value.replace(/[^0-9a-z\.\s]/gi, ''),
     });
   }
 
   isSearched = (string) => {
-    const search = this.state.search.toLowerCase();
-    const regex = new RegExp(search.split('').join('.*?'));
-    return regex.test(string.toLowerCase());
+    const search = [...this.state.search].join('.*?');
+    const regex = new RegExp(search, 'i');
+    return regex.test(string);
   }
 
   render() {
-    // FIXME: WIP
-    let searchResults = [];
+    const searchResults = {};
+    const actionName = this.props.match.params.name;
+    const action = actionName && data.actions
+      .find(({ func }) => func.name.toLowerCase() === actionName);
+
     if (this.state.search !== '') {
-      sections.forEach(([, categories]) => {
-        categories.forEach(([, category, groups]) => {
-          let filteredActions = [];
-          groups.forEach(([, actions]) => {
-            filteredActions = filteredActions.concat(
-              actions.filter(([, action]) => this.isSearched(action))
-            );
-          });
-          if (filteredActions.length > 0) searchResults.push([category, filteredActions]);
+      Object.values(data.sections).forEach((section) => {
+        Object.entries(section).forEach(([category, groups]) => {
+          if (groups.content) {
+            const filteredActions = {};
+            Object.values(groups.content).forEach((group) => {
+              Object.entries(group).forEach(([action, id]) => {
+                if (this.isSearched(action)) filteredActions[action] = id;
+              });
+            });
+            if (Object.values(filteredActions).length > 0) {
+              searchResults[category] = filteredActions;
+            }
+          }
         });
       });
     }
 
-    // FIXME: WIP
-    let currentCategory;
-    if (this.state.currentCategory !== null) {
-      const [section, category] = this.state.currentCategory;
-      const [, name, groups] = sections[section][1][category];
-      currentCategory = { name, groups };
-    }
-
     return (
-      <div className={styles.content}>
+      <div className={classList({
+        [styles.content]: true,
+        [styles.collapsed]: actionName,
+      })}>
 
         <div
           className={styles.listPanel}
           ref={this.listPanel}
         >
-          {!currentCategory ? (
+          {!this.state.category ? (
             <React.Fragment>
               <input
                 type="search"
@@ -136,27 +167,29 @@ export default class Component extends React.Component {
               />
 
               {this.state.search === '' ? (
-                <ItemList
-                  sections={sections}
+                <CategoryList
+                  content={data.sections}
                   onClick={this.setCategory}
                 />
               ) : (
-                <ItemList
-                  sections={searchResults}
-                  onClick={() => () => console.log('WIP')}
+                <ActionList
+                  content={searchResults}
+                  onClick={this.setAction}
+                  current={actionName}
                 />
               )}
             </React.Fragment>
           ) : (
             <React.Fragment>
               <div className={styles.titleBar}>
-                <h2>{currentCategory.name}</h2>
+                <h2>{this.state.category}</h2>
                 <button onClick={this.setCategory()}>Back</button>
               </div>
 
-              <ItemList
-                sections={currentCategory.groups}
+              <ActionList
+                content={data.sections[this.state.section][this.state.category].content}
                 onClick={this.setAction}
+                current={actionName}
               />
             </React.Fragment>
           )}
@@ -167,7 +200,51 @@ export default class Component extends React.Component {
             Actions
           </h2>
 
-          <p>[WIP: action details]</p>
+          {/* ----------------------- WIP ----------------------- */}
+          {action && <React.Fragment>
+            <h3>{action.name} <code>{action.func.name}()</code></h3>
+
+            <p>{action.description}</p>
+            <pre>{action.comment}</pre>
+
+            <h4>Parameters</h4>
+            {action.func.parameters ? (
+              <table>
+                <thead>
+                  <tr>
+                    <th>Name</th>
+                    <th>Description</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {action.func.parameters.map((parameter, i) => (
+                    <tr key={i}>
+                      <td><code>{parameter.name}</code></td>
+                      <td>{parameter.comment}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            ) : (
+              <p>None</p>
+            )}
+
+            <h4>Has Action Output?</h4>
+            <p>{action.func.hasOutput ? 'Yes' : 'No'}</p>
+
+            <h4>Source</h4>
+            <p>
+              <code>{action.func.source}</code>
+            </p>
+
+            {actionName && (
+              <button onClick={this.setAction()}>
+                GO BACK TO ACTION LIST
+              </button>
+            )}
+          </React.Fragment>}
+          {/* --------------------- END WIP --------------------- */}
+
         </div>
 
       </div>

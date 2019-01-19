@@ -5,6 +5,7 @@ import { Progress } from 'react-sweet-progress';
 
 import AboutTheAuthor from './AboutTheAuthor';
 import Contributors from './Contributors';
+import ExternalLinks from './ExternalLinks';
 import Footer from './Footer';
 import Jumbotron from './Jumbotron';
 import ShortcutCreator from './ShortcutCreator';
@@ -170,6 +171,12 @@ export default class Component extends React.Component {
 
         <div className={styles.fullWidth}>
           <Contributors />
+        </div>
+
+        <hr />
+
+        <div className={styles.fullWidth}>
+          <ExternalLinks />
         </div>
 
         <Footer />

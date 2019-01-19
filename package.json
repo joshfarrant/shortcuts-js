@@ -47,7 +47,7 @@
     "test": "npm run lint && jest --coverage",
     "test:watch": "jest --watch",
     "docs": "cd docs && npm run",
-    "docs:json": "typedoc src --json docs/src/api/data.json --target es6",
+    "docs:json": "typedoc src --json docs/src/api/exported.json --target es6",
     "postinstall": "cd docs && npm install",
     "preversion": "npm run clean && npm test",
     "version": "npm run build",

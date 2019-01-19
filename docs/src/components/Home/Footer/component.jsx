@@ -6,7 +6,15 @@ export default () => (
   <div className={styles.container}>
     <div className={styles.textContainer}>
       <small>
-        Released under the&nbsp;
+        <a
+          className={styles.link}
+          href="https://github.com/joshfarrant/shortcuts-js"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Shortcuts JS
+        </a>
+        &nbsp;is released under the&nbsp;
         <a
           className={styles.link}
           href="https://github.com/joshfarrant/shortcuts-js/blob/master/LICENSE"

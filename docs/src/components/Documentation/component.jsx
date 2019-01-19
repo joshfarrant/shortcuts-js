@@ -154,7 +154,7 @@ export default class Component extends React.Component {
         <Menu onClick={this.toggleMenu(false)} />
 
         <div className={styles.content}>
-          <Route path="/docs/actions" component={Actions} />
+          <Route path="/docs/actions/:name?" component={Actions} />
           {/* <Route path="/docs/metadata" component={Metadata} /> */}
           <Route path="/docs/metadata/icon" component={Metadata_ShortcutIcon} />
           <Route path="/docs/contributing/action-icons" component={Contributing_ActionIcons} />

@@ -1,8 +1,9 @@
 $height: 510px;
+$padding: 8px;
 
 .container {
   position: relative;
-  height: $height;
+  height: $height + 2 * $padding;
   margin-bottom: 1.7rem;
 }
 
@@ -15,5 +16,7 @@ $height: 510px;
 }
 
 :global .CodeMirror {
-  height: $height;
+  height: $height + 2 * $padding;
+  border-radius: 5px;
+  padding: $padding;
 }

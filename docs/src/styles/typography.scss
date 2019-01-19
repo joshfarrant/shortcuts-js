@@ -1,6 +1,5 @@
 $baseFontSize: 18px;
 $baseLineHeight: 1.7;
-$baseLineHeightRem: #{$baseLineHeight}rem;
 
 html {
   font-size: 100% * $baseFontSize / 16px;
@@ -20,12 +19,11 @@ h3,
 h4,
 h5,
 h6 {
-  font-weight: bold;
   color: inherit;
-  text-rendering: optimizeLegibility;
   line-height: 1.1;
-  margin-top: 0;
-  margin-bottom: $baseLineHeightRem;
+  font-weight: bold;
+  margin: 0 0 #{$baseLineHeight}rem;
+  text-rendering: optimizeLegibility;
 }
 
 h1 {
@@ -53,22 +51,25 @@ h6 {
 }
 
 p {
-  margin-top: 0;
-  margin-bottom: $baseLineHeightRem;
+  padding: 0;
+  margin: 0 0 #{$baseLineHeight}rem;
 }
 
 small {
 	font-size: 80%;
 }
 
-code {
-  font-size: 85%;
-}
-
 kbd,
 pre,
+code,
 samp {
-  font-size: $baseLineHeightRem / 2;
+  font-size: #{$baseLineHeight / 2}rem;
+	line-height: #{$baseLineHeight}rem;
+}
+
+pre {
+	padding: 0;
+	margin: 0 0 #{$baseLineHeight}rem;
 }
 
 button,
@@ -79,5 +80,39 @@ input {
 }
 
 hr {
-  margin: $baseLineHeightRem;
+  margin: #{$baseLineHeight}rem;
+}
+
+table {
+	padding: 0;
+	margin: 0 0 #{$baseLineHeight}rem;
+	line-height: #{$baseLineHeight}rem;
+	border-collapse: collapse;
+  font-size: 1rem;
+	width: 100%;
+}
+
+thead {
+	text-align: left;
+}
+
+td,
+th {
+	text-align: left;
+	border-bottom: 1px solid hsla(0, 0%, 0%, 0.12);
+	font-feature-settings: "tnum";
+	padding-left: 1.13333rem;
+	padding-right: 1.13333rem;
+	padding-top: #{$baseLineHeight / 2}rem;
+	padding-bottom: calc(#{$baseLineHeight / 2}rem - 1px);
+}
+
+th:first-child,
+td:first-child {
+	padding-left: 0;
+}
+
+th:last-child,
+td:last-child {
+	padding-right: 0;
 }

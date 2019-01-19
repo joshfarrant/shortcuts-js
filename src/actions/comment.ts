@@ -1,7 +1,11 @@
 import WFWorkflowAction from '../interfaces/WF/WFWorkflowAction';
 
 /**
- * Comment Action. This action lets you explain how part of a shortcut works. When run, this action does nothing.
+ * @action Comment
+ * @section Actions > Scripting >
+ * @icon Text
+ *
+ * This action lets you explain how part of a shortcut works. When run, this action does nothing.
  *
  * ```js
  * // Create a comment

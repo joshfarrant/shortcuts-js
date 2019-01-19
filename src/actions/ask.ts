@@ -5,7 +5,11 @@ import WFSerialization from '../interfaces/WF/WFSerialization';
 import WFWorkflowAction from '../interfaces/WF/WFWorkflowAction';
 
 /**
- * Ask for Input Action. Displays a dialogue prompting the user to enter a piece of information.
+ * @action Ask for Input
+ * @section Actions > Scripting > Notification
+ * @icon Scripting
+ *
+ * Displays a dialogue prompting the user to enter a piece of information.
  *
  * ```js
  * // Ask for favourite colour, defaulting to pink

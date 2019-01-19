@@ -10,7 +10,7 @@ import CodeEditor from '../CodeEditor';
 import styles from './styles.module.scss';
 
 const initialCode = `// We'll use this later to reference the output of a calculation
-let calcVar = actionOutput();
+const calcVar = actionOutput();
 
 // Define a list of actions
 const actions = [

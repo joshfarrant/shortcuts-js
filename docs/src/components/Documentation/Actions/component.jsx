@@ -1,4 +1,7 @@
 import React from 'react';
+import PropTypes from 'prop-types';
+
+import Markdown from '../Markdown';
 
 import data from './data.js';
 import icons from './icons.js';
@@ -38,6 +41,10 @@ const Icon = ({ name }) => {
       [styles[`i-${index}`]]: true,
     })} />
   );
+};
+
+Icon.propTypes = {
+  name: PropTypes.string.isRequired,
 };
 
 const CategoryList = ({ content, onClick }) => Object.entries(content)
@@ -112,7 +119,7 @@ export default class Component extends React.Component {
 
   updateSearch = (event) => {
     this.setState({
-      search: event.target.value.replace(/[^0-9a-z\.\s]/gi, ''),
+      search: event.target.value.replace(/[^0-9a-z.\s]/gi, ''),
     });
   }
 
@@ -205,7 +212,7 @@ export default class Component extends React.Component {
             <h3>{action.name} <code>{action.func.name}()</code></h3>
 
             <p>{action.description}</p>
-            <pre>{action.comment}</pre>
+            <Markdown content={action.comment} />
 
             <h4>Parameters</h4>
             {action.func.parameters ? (

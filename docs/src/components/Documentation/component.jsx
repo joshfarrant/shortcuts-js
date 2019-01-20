@@ -57,7 +57,7 @@ class MenuItem extends React.Component {
       />
     );
   }
-}
+};
 
 class Menu extends React.Component {
   render() {

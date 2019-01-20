@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import PropTypes from 'prop-types'; // ES6
+import PropTypes from 'prop-types';
 
 import styles from './styles.module.scss';
 
@@ -27,8 +27,8 @@ const Component = props => {
 
   return (
     <button
-      className={props.inverted ? styles.buttonInverted : styles.button}
       type="button"
+      className={props.inverted ? styles.buttonInverted : styles.button}
       onClick={props.onClick}
       target="_blank"
       rel="noopener noreferrer"

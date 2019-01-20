@@ -5,7 +5,11 @@ import WFSerialization from '../interfaces/WF/WFSerialization';
 import WFWorkflowAction from '../interfaces/WF/WFWorkflowAction';
 
 /**
- * Date Action. Passes the specified date and time to the next action.
+ * @action Date
+ * @section Content Types > Calendar > Dates
+ * @icon Date
+ *
+ * Passes the specified date and time to the next action.
  *
  * ```js
  * date({

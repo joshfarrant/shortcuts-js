@@ -53,6 +53,10 @@ h6 {
 p {
   padding: 0;
   margin: 0 0 #{$baseLineHeight}rem;
+
+  *:last-child {
+  	margin-bottom: 0;
+  }
 }
 
 small {
@@ -60,9 +64,8 @@ small {
 }
 
 kbd,
-pre,
-code,
-samp {
+samp,
+code {
   font-size: #{$baseLineHeight / 2}rem;
 	line-height: #{$baseLineHeight}rem;
 }
@@ -81,6 +84,37 @@ input {
 
 hr {
   margin: #{$baseLineHeight}rem;
+}
+
+ol,
+ul {
+	padding: 0;
+	margin: 0 0 #{$baseLineHeight}rem #{$baseLineHeight}rem;
+	list-style-position: outside;
+	list-style-image: none;
+
+  li {
+    padding-left: 0;
+  }
+}
+
+li {
+	margin-bottom: #{$baseLineHeight / 2}rem;
+
+  & > ol,
+  & > ul {
+  	margin-left: #{$baseLineHeight}rem;
+  	margin-bottom: #{$baseLineHeight / 2}rem;
+  	margin-top: #{$baseLineHeight / 2}rem;
+  }
+
+  & > p {
+  	margin-bottom: #{$baseLineHeight / 2}rem;
+  }
+
+  *:last-child {
+  	margin-bottom: 0;
+  }
 }
 
 table {

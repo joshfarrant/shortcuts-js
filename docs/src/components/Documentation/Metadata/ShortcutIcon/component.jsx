@@ -1,5 +1,5 @@
 import React from 'react';
-import PropTypes from 'prop-types'; // ES6
+import PropTypes from 'prop-types';
 
 import iconGlyphs from './iconGlyphs';
 import { colors, glyphs } from './iconOptions';

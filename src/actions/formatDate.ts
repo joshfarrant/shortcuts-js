@@ -7,7 +7,11 @@ import WFTimeFormatStyle from '../interfaces/WF/WFTimeFormatStyle';
 import WFWorkflowAction from '../interfaces/WF/WFWorkflowAction';
 
 /**
- * Format Date Action. Formats a date and time into text.
+ * @action Format Date
+ * @section Content Types > Calendar > Dates
+ * @icon Date
+ *
+ * Formats a date and time into text.
  *
  * Custom format strings use the format patterns from Unicode Technical Standard #35
  * ([unicode.org/reports/tr35/tr35-31/tr35-dates.html#Date_Format_Patterns](

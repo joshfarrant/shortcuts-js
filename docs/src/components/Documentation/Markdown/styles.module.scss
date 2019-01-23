@@ -4,4 +4,11 @@
   padding: 16px 24px;
   border-radius: 5px;
   overflow-x: scroll;
+  word-wrap: normal;
+  -webkit-overflow-scrolling: touch;
+}
+
+.table {
+  overflow-x: scroll;
+  -webkit-overflow-scrolling: touch;
 }

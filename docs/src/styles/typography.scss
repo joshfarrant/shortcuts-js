@@ -4,6 +4,7 @@ $baseLineHeight: 1.7;
 html {
   font-size: 100% * $baseFontSize / 16px;
   line-height: $baseLineHeight;
+  -webkit-text-size-adjust: 100%;
 }
 
 body {

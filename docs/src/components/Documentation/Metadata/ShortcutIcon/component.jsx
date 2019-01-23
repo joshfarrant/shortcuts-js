@@ -1,6 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
+import Markdown from '../../Markdown';
+import pageContent from './content.md';
+
 import iconGlyphs from './iconGlyphs';
 import { colors, glyphs } from './iconOptions';
 
@@ -48,6 +51,7 @@ export default class Component extends React.Component {
   state = {
     color: null,
     glyph: null,
+    content: null,
   }
 
   selectColor = (color) => () => {
@@ -64,17 +68,37 @@ export default class Component extends React.Component {
     });
   }
 
+  handleClick = (event) => {
+    if (this.state.glyph && !event.target.matches(
+      [styles.colorIcon, styles.glyphIcon, styles.previewContainer]
+        .map((className) => `.${className}, .${className} *`)
+        .join(', ')
+    )) this.setState({
+      color: null,
+      glyph: null,
+    });
+  }
+
+  async componentDidMount() {
+    document.body.addEventListener('mousedown', this.handleClick);
+    this.setState({
+      content: await (await fetch(pageContent)).text(),
+    });
+  }
+
+  componentWillUnmount() {
+    document.body.removeEventListener('mousedown', this.handleClick);
+  }
+
   render() {
-    return (
+    return this.state.content && (
       <div className={styles.content}>
 
         <h2 className={styles.title}>
           Shortcut Icon
         </h2>
 
-        <p>
-          [WIP: a markdown parser could be a better approach to handle docs contents]
-        </p>
+        <Markdown content={this.state.content} />
 
         <h4 id="colors">Icon Colors</h4>
 

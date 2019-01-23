@@ -139,10 +139,7 @@
     line-height: 2;
     text-decoration: none;
 
-    &:hover {
-      color: var(--darkest-gray-color);
-    }
-
+    &:hover,
     &.active {
       color: var(--blue-color);
     }
@@ -150,14 +147,17 @@
 
   .menuItem {
     @extend %item;
-    font-size: 15px;
-    color: var(--dark-gray-color);
+    font-size: 18px;
+    font-weight: 600;
+    letter-spacing: -0.2px;
+    color: var(--darker-gray-color);
+    transition: color 0.2s ease;
   }
 
   .submenuItem {
     @extend %item;
-    font-size: 13px;
-    font-weight: 500;
+    font-size: 14px;
+    font-weight: 400;
     color: var(--gray-color);
     padding-left: 12px;
   }
@@ -221,10 +221,10 @@
 @media (pointer: coarse) {
   .menu,
   .content {
-    overflow-y: initial;
+    overflow: hidden;
   }
 
   .container {
-    grid-template-rows: var(--navbar-height) auto;
+    grid-template-rows: var(--navbar-height) minmax(max-content, auto);
   }
 }

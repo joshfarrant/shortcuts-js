@@ -97,4 +97,11 @@ exported.children
     }),
   );
 
+Object.entries(data.sections).forEach(([section, categories]) => {
+  Object.entries(categories).forEach(([category, { content }]) => {
+    if (!content) delete data.sections[section][category];
+  });
+  if (Object.keys(categories).length === 0) delete data.sections[section];
+});
+
 export default data;

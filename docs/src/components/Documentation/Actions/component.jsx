@@ -68,7 +68,7 @@ const CategoryList = ({ content, onClick }) => Object.entries(content)
     </div>
   ));
 
-const ActionList = ({ content, current, onClick }) => content ? Object.entries(content)
+const ActionList = ({ content, current, onClick }) => Object.entries(content)
   .sort(([a],[b]) => a.localeCompare(b))
   .map(([group, actions], i) => (
     <div key={i}>
@@ -93,7 +93,7 @@ const ActionList = ({ content, current, onClick }) => content ? Object.entries(c
         })
       }
     </div>
-  )) : null;
+  ));
 
 export default class Component extends React.Component {
   state = {

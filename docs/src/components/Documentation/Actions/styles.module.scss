@@ -1,5 +1,5 @@
 $icon-size: 29px;
-$icon-number: 117;
+$icon-number: 119;
 
 .content {
   display: flex;
@@ -81,7 +81,6 @@ $icon-number: 117;
       flex: 1;
       margin: 0;
       line-height: 44px;
-      text-align: center;
     }
   }
 }
@@ -108,7 +107,7 @@ $icon-number: 117;
 
   @for $i from 0 through $icon-number {
     &.i-#{$i} {
-      // FIXME: Missing: Calendar, Clock, Blink
+      // FIXME: Missing: Clock@2x
       background-image: url('./icons@2x.png');
       background-size: 10 * $icon-size ceil($icon-number / 10) * $icon-size;
       background-position: ($i % 10) * -$icon-size floor($i / 10) * -$icon-size;

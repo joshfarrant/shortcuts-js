@@ -1,3 +1,13 @@
+.headingLink {
+  font-weight: inherit;
+  color: inherit;
+
+  &:hover,
+  &:focus {
+    text-decoration: none;
+  }
+}
+
 .codeBlock {
   color: #f8f8f2;
   background: #282a36;

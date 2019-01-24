@@ -1,5 +1,6 @@
-import WFWorkflowAction from '../interfaces/WF/WFWorkflowAction';
+[WIP: you can set an action icon via the `@icon` tag...]
 
+```ts
 /**
  * @action Add to Reading List
  * @section Content Types > Web > Safari
@@ -15,5 +16,6 @@ const addToReadingList = (): WFWorkflowAction => ({
   WFWorkflowActionIdentifier: 'is.workflow.actions.readinglist',
   WFWorkflowActionParameters: {},
 });
+```
 
-export default addToReadingList;
+[WIP: here are the available action icons...]

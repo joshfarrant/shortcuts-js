@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { Link } from 'react-router-dom';
 
 import Remarkable from 'remarkable';
 import RemarkableRenderer from 'remarkable-react';
@@ -39,13 +40,19 @@ const innerText = (children) => {
 md.renderer = new RemarkableRenderer({
   components: {
     a: ({ children, href }) => (
-      <a
-        href={href}
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        {children}
-      </a>
+      href.startsWith('http') ? (
+        <a
+          href={href}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          {children}
+        </a>
+      ) : (
+        <Link to={href}>
+          {children}
+        </Link>
+      )
     ),
     h1: ({ children }) => (
       <Heading level={1}>{children}</Heading>
@@ -72,13 +79,34 @@ md.renderer = new RemarkableRenderer({
 
 const Heading = ({ children, level }) => {
   const Tag = `h${level}`;
+
   const anchor = innerText(children)
     .toLowerCase()
     .replace(/[^a-z0-9\s]/g, '')
     .trim()
     .replace(/\s+/g, '-');
+
+  const handleScroll = (element) => {
+    const { hash } = window.location;
+    if (
+      hash !== '' &&
+      element &&
+      element.id === hash.substr(1)
+    ) element.scrollIntoView();
+  };
+
   return (
-    <Tag id={anchor}>{children}</Tag>
+    <Tag
+      id={anchor}
+    	ref={handleScroll}
+    >
+      <Link
+        className={styles.headingLink}
+        to={`#${anchor}`}
+      >
+        {children}
+      </Link>
+    </Tag>
   );
 };
 

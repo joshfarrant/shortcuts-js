@@ -1,11 +1,11 @@
 import React from 'react';
 import { Route } from 'react-router';
-import { HashLink as Link, NavHashLink as NavLink } from 'react-router-hash-link';
+import { Link, NavLink } from 'react-router-dom';
 
 import Actions from './Actions';
 import Contributing_ActionIcons from './Contributing/ActionIcons';
 import GettingStarted from './GettingStarted';
-// import Metadata from './Metadata';
+import Metadata from './Metadata';
 import Metadata_ShortcutIcon from './Metadata/ShortcutIcon';
 
 import styles from './styles.module.scss';
@@ -157,7 +157,7 @@ export default class Component extends React.Component {
         <div className={styles.content}>
           <Route path="/docs" exact component={GettingStarted} />
           <Route path="/docs/actions/:name?" component={Actions} />
-          {/* <Route path="/docs/metadata" component={Metadata} /> */}
+          <Route path="/docs/metadata" exact component={Metadata} />
           <Route path="/docs/metadata/icon" component={Metadata_ShortcutIcon} />
           <Route path="/docs/contributing/action-icons" component={Contributing_ActionIcons} />
         </div>

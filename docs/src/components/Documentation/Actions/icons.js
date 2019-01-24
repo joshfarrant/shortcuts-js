@@ -55,6 +55,7 @@ export default [
   'Imgur',
   'Instagram',
   'Instapaper',
+  'Lightroom',
   'LivePhotos',
   'Location',
   'Mail',

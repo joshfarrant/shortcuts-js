@@ -1,3 +1,7 @@
+## Metadata
+
+### Shortcut Icon
+
 In `buildShortcut()`, the `icon` option let you specify what icon the Shortcut will have. A total of 15 color shades and 256 glyphs (with the addition of 2 unreleased ones) can be used within Shortcuts JS.
 
 ```js

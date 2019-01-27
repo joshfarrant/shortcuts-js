@@ -6,10 +6,6 @@ import WFSerialization from '../interfaces/WF/WFSerialization';
 import WFWorkflowAction from '../interfaces/WF/WFWorkflowAction';
 
 /**
- * @action Base64 Encode
- * @section Actions > Scripting > Files
- * @icon Scripting
- *
  * Encodes or decodes text or files using Base64 encoding.
  *
  * ```js
@@ -18,27 +14,27 @@ import WFWorkflowAction from '../interfaces/WF/WFWorkflowAction';
  *   lineBreakMode: 'Every 76 Characters',
  * });
  * ```
+ *
+ * @action Base64 Encode
+ * @section Actions > Scripting > Files
+ * @icon Scripting
  */
 const base64Encode = (
-  options: {
+  {
     /** The encoding mode to use */
-    encodeMode?: WFEncodeMode,
+    encodeMode = 'Encode',
     /** The line break mode to use */
+    lineBreakMode = 'Every 76 Characters',
+  }: {
+    encodeMode?: WFEncodeMode,
     lineBreakMode?: WFSerialization | WFBase64LineBreakMode,
   },
-): WFWorkflowAction => {
-  const {
-    encodeMode = 'Encode',
-    lineBreakMode = 'Every 76 Characters',
-  } = options;
-
-  return {
-    WFWorkflowActionIdentifier: 'is.workflow.actions.base64encode',
-    WFWorkflowActionParameters: {
-      WFEncodeMode: encodeMode,
-      WFBase64LineBreakMode: lineBreakMode,
-    },
-  };
-};
+): WFWorkflowAction => ({
+  WFWorkflowActionIdentifier: 'is.workflow.actions.base64encode',
+  WFWorkflowActionParameters: {
+    WFEncodeMode: encodeMode,
+    WFBase64LineBreakMode: lineBreakMode,
+  },
+});
 
 export default withActionOutput(base64Encode);

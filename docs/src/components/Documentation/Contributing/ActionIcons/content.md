@@ -1,3 +1,7 @@
+## Contributing
+
+### Action Icons
+
 [WIP: you can set an action icon via the `@icon` tag...]
 
 ```ts

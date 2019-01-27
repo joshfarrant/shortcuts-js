@@ -3,15 +3,15 @@ import { withActionOutput } from '../utils';
 import WFWorkflowAction from '../interfaces/WF/WFWorkflowAction';
 
 /**
- * @action AirDrop
- * @section Content Types > Sharing > System
- * @icon AirDrop
- *
  * Prompts to share the input via AirDrop.
  *
  * ```js
  * airDrop();
  * ```
+ *
+ * @action AirDrop
+ * @section Content Types > Sharing > System
+ * @icon AirDrop
  */
 const airDrop = (): WFWorkflowAction => ({
   WFWorkflowActionIdentifier: 'is.workflow.actions.airdropdocument',

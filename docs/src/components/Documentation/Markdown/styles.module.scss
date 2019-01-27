@@ -1,10 +1,18 @@
-.headingLink {
-  font-weight: inherit;
-  color: inherit;
+h2.heading {
+  margin-bottom: 16px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid var(--lighter-gray-color);
+}
 
-  &:hover,
-  &:focus {
-    text-decoration: none;
+.heading {
+  .link {
+    font-weight: inherit;
+    color: inherit;
+
+    &:hover,
+    &:focus {
+      text-decoration: none;
+    }
   }
 }
 
@@ -21,4 +29,37 @@
 .table {
   overflow-x: scroll;
   -webkit-overflow-scrolling: touch;
+}
+
+.screenshot {
+  $width: 300px;
+  $padding: $width / 397px * 24px;
+
+  display: block;
+  padding: $padding;
+  margin: 0 auto 1.7rem;
+  box-sizing: border-box;
+  background-image: url(./frame-xs-max.png);
+  background-repeat: no-repeat;
+  background-size: 100%;
+  overflow: hidden;
+  width: $width;
+  font-size: 0;
+
+  &.top {
+    padding-bottom: 0;
+    border-bottom: 1px solid #e6e6e6;
+  }
+
+  &.bottom {
+    padding-top: 0;
+    border-top: 1px solid #e6e6e6;
+    background-position: bottom;
+  }
+
+  img {
+    position: relative;
+    width: 100%;
+    z-index: -1;
+  }
 }

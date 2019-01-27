@@ -51,6 +51,12 @@ div {
   box-sizing: border-box;
 }
 
+blockquote {
+  border-left: .25em solid #dfe2e5;
+  color: #6a737d;
+  padding: 0 1em;
+}
+
 @media (pointer: coarse) {
   html {
     position: initial;

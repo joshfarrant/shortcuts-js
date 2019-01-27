@@ -48,13 +48,12 @@ exported.children
     ))
     .forEach((child) => {
       // comment parsing
-      const tags = child.comment.tags;
-      const last = tags.pop();
-      const [content, description, ...rest] = last.text.split('\n\n');
-      const comment = rest.join('\n\n');
-
-      last.text = content;
-      tags.push(last);
+      const description = child.comment.shortText;
+      const comment = child.comment.text;
+      const tags = child.comment.tags.map(({ tag, text }) => ({
+        tag,
+        text: text.trim(),
+      }));
 
       const name = tags.find((tag) => tag.tag === 'action').text;
       const iconTag = tags.find((tag) => tag.tag === 'icon');
@@ -71,6 +70,7 @@ exported.children
         .map((parameter) => ({
           name: parameter.name,
           type: parameter.type,
+          default: parameter.defaultValue,
           comment: parameter.comment.shortText,
         }));
 

@@ -84,7 +84,7 @@ input {
 }
 
 hr {
-  margin: #{$baseLineHeight}rem;
+  margin: #{$baseLineHeight}rem auto;
 }
 
 ol,
@@ -123,7 +123,6 @@ table {
 	margin: 0 0 #{$baseLineHeight}rem;
 	line-height: #{$baseLineHeight}rem;
 	border-collapse: collapse;
-  font-size: 1rem;
 	width: 100%;
 }
 
@@ -150,4 +149,13 @@ td:first-child {
 th:last-child,
 td:last-child {
 	padding-right: 0;
+}
+
+blockquote {
+	padding: 0;
+	margin: 0 0 #{$baseLineHeight}rem;
+}
+
+blockquote *:last-child {
+	margin-bottom: 0;
 }

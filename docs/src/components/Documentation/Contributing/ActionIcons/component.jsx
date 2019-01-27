@@ -22,10 +22,6 @@ export default class Component extends React.Component {
   render() {
     return this.state.content && (
       <div className={styles.content}>
-        <h2 className={styles.title}>
-          Action Icons
-        </h2>
-
         <Markdown content={this.state.content} />
 
         <div className={styles.iconList}>

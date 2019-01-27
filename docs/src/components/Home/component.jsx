@@ -21,10 +21,6 @@ export default class Component extends React.Component {
     totalActions: null,
   }
 
-  componentDidMount() {
-    this.fetchActionStats();
-  }
-
   fetchActionStats = async () => {
     try {
       const url = 'https://api.github.com/repos/joshfarrant/shortcuts-js/issues/6';
@@ -48,6 +44,10 @@ export default class Component extends React.Component {
         fetchingStatsFailed: true,
       });
     }
+  }
+
+  componentDidMount() {
+    this.fetchActionStats();
   }
 
   render() {

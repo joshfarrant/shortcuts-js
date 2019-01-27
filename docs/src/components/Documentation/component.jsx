@@ -7,6 +7,7 @@ import Contributing_ActionIcons from './Contributing/ActionIcons';
 import GettingStarted from './GettingStarted';
 import Metadata from './Metadata';
 import Metadata_ShortcutIcon from './Metadata/ShortcutIcon';
+import Variables from './Variables';
 
 import styles from './styles.module.scss';
 
@@ -23,10 +24,10 @@ const menuItems = [
   ]],
   ['Examples', '/docs/examples', []],
   ['Variables', '/docs/variables', [
-    ['Named Variables', '#named'],
-    ['Magic Variables', '#magic'],
-    ['Global Variables', '#global'],
-    ['Local Variables', '#local'],
+    ['Magic Variables', '#magic-variables'],
+    ['Named Variables', '#named-variables'],
+    ['Global Variables', '#global-variables'],
+    ['Local Variables', '#local-variables'],
     ['Aggrandizements', '#aggrandizements'],
   ]],
   ['Actions', '/docs/actions', []],
@@ -156,6 +157,7 @@ export default class Component extends React.Component {
 
         <div className={styles.content}>
           <Route path="/docs" exact component={GettingStarted} />
+          <Route path="/docs/variables" component={Variables} />
           <Route path="/docs/actions/:name?" component={Actions} />
           <Route path="/docs/metadata" exact component={Metadata} />
           <Route path="/docs/metadata/icon" component={Metadata_ShortcutIcon} />

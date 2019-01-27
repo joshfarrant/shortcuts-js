@@ -220,6 +220,7 @@ export default class Component extends React.Component {
                 <thead>
                   <tr>
                     <th>Name</th>
+                    <th>Default</th>
                     <th>Description</th>
                   </tr>
                 </thead>
@@ -227,6 +228,7 @@ export default class Component extends React.Component {
                   {action.func.parameters.map((parameter, i) => (
                     <tr key={i}>
                       <td><code>{parameter.name}</code></td>
+                      <td>{parameter.default && <code>{parameter.default}</code>}</td>
                       <td>{parameter.comment}</td>
                     </tr>
                   ))}

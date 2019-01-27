@@ -15,6 +15,12 @@ import styles from './styles.module.scss';
 
 const md = new Remarkable();
 
+const classList = (classNames) => Object
+  .entries(classNames)
+  .map(([className, condition]) => condition && className)
+  .filter(el => el)
+  .join(' ');
+
 const innerText = (children) => {
   if (
     children === null ||
@@ -63,6 +69,31 @@ md.renderer = new RemarkableRenderer({
     h3: ({ children }) => (
       <Heading level={3}>{children}</Heading>
     ),
+    h4: ({ children }) => (
+      <Heading level={4}>{children}</Heading>
+    ),
+    h5: ({ children }) => (
+      <Heading level={5}>{children}</Heading>
+    ),
+    h6: ({ children }) => (
+      <Heading level={6}>{children}</Heading>
+    ),
+    img: ({ src, alt }) => {
+      const [altern, options] = alt.split('!');
+      if (options && options.startsWith('screenshot')) {
+        const align = options.substr(11);
+        return (
+          <Screenshot
+            align={align}
+            alt={altern}
+            src={src}
+          />
+        );
+      }
+      return (
+        <img alt={altern} src={src} />
+      );
+    },
     pre: ({ content, params: language }) => (
       <CodeBlock
         content={content}
@@ -99,9 +130,10 @@ const Heading = ({ children, level }) => {
     <Tag
       id={anchor}
     	ref={handleScroll}
+      className={styles.heading}
     >
       <Link
-        className={styles.headingLink}
+        className={styles.link}
         to={`#${anchor}`}
       >
         {children}
@@ -157,6 +189,19 @@ CodeBlock.propTypes = {
 
 CodeBlock.defaultProps = {
   language: 'js',
+};
+
+const Screenshot = ({ align, alt, ...props }) => (
+  <span className={classList({
+    [styles.screenshot]: true,
+    [styles[align]]: align,
+  })}>
+    <img alt={alt} {...props} />
+  </span>
+);
+
+Screenshot.propTypes = {
+  align: PropTypes.oneOf(['top', 'bottom', '']),
 };
 
 const Component = ({ content }) => md.render(content);

@@ -2,10 +2,6 @@ import Variable from '../interfaces/Variable';
 import WFWorkflowAction from '../interfaces/WF/WFWorkflowAction';
 
 /**
- * @action Add to Variable
- * @section Actions > Scripting > Variables
- * @icon Variable
- *
  * Appends this action's input to the specified variable, creating the variable if it does not exist.
  *
  * ```js
@@ -14,23 +10,23 @@ import WFWorkflowAction from '../interfaces/WF/WFWorkflowAction';
  *   variable: variable('My Var'),
  * });
  * ```
+ *
+ * @action Add to Variable
+ * @section Actions > Scripting > Variables
+ * @icon Variable
  */
 const addToVariable = (
-  options: {
+  {
     /** The variable to add to */
+    variable,
+  }: {
     variable: Variable;
   },
-): WFWorkflowAction => {
-  const {
-    variable,
-  } = options;
-
-  return {
-    WFWorkflowActionIdentifier: 'is.workflow.actions.appendvariable',
-    WFWorkflowActionParameters: {
-      WFVariableName: variable.Value.VariableName,
-    },
-  };
-};
+): WFWorkflowAction => ({
+  WFWorkflowActionIdentifier: 'is.workflow.actions.appendvariable',
+  WFWorkflowActionParameters: {
+    WFVariableName: variable.Value.VariableName,
+  },
+});
 
 export default addToVariable;

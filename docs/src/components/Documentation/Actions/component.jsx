@@ -47,7 +47,7 @@ Icon.propTypes = {
   name: PropTypes.string.isRequired,
 };
 
-const CategoryList = ({ content, onClick }) => Object.entries(content)
+const CategoryList = ({ content, current, onClick }) => Object.entries(content)
   .sort(([a],[b]) => a.localeCompare(b))
   .map(([section, categories], i) => (
     <div key={i}>
@@ -57,7 +57,10 @@ const CategoryList = ({ content, onClick }) => Object.entries(content)
         .map(([category, { icon }], j) => (
           <div
             key={j}
-            className={styles.item}
+            className={classList({
+              [styles.item]: true,
+              [styles.selected]: current && current.includes(`${section} > ${category}`),
+            })}
             onClick={onClick(section, category)}
           >
             <Icon name={icon} />
@@ -134,6 +137,8 @@ export default class Component extends React.Component {
     const actionName = this.props.match.params.name;
     const action = actionName && data.actions
       .find(({ func }) => func.name.toLowerCase() === actionName);
+    const actionCategories = action && action.sections
+      .map(([section, category]) => `${section} > ${category}`);
 
     if (this.state.search !== '') {
       Object.values(data.sections).forEach((section) => {
@@ -177,6 +182,7 @@ export default class Component extends React.Component {
                 <CategoryList
                   content={data.sections}
                   onClick={this.setCategory}
+                  current={actionCategories}
                 />
               ) : (
                 <ActionList
@@ -189,7 +195,7 @@ export default class Component extends React.Component {
           ) : (
             <React.Fragment>
               <div className={styles.titleBar}>
-                <h2>{this.state.category}</h2>
+                <h3>{this.state.category}</h3>
                 <button onClick={this.setCategory()}>Back</button>
               </div>
 
@@ -220,6 +226,7 @@ export default class Component extends React.Component {
                 <thead>
                   <tr>
                     <th>Name</th>
+                    <th>Type</th>
                     <th>Default</th>
                     <th>Description</th>
                   </tr>
@@ -227,7 +234,11 @@ export default class Component extends React.Component {
                 <tbody>
                   {action.func.parameters.map((parameter, i) => (
                     <tr key={i}>
-                      <td><code>{parameter.name}</code></td>
+                      <td>
+                        <b>{parameter.name}</b>
+                        {parameter.default && '?'}
+                      </td>
+                      <td>{parameter.type}</td>
                       <td>{parameter.default && <code>{parameter.default}</code>}</td>
                       <td>{parameter.comment}</td>
                     </tr>
@@ -243,7 +254,15 @@ export default class Component extends React.Component {
 
             <h4>Source</h4>
             <p>
-              <code>{action.func.source}</code>
+              <code>
+                <a
+                  href={`https://github.com/joshfarrant/shortcuts-js/blob/master/src/${action.func.source}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  {action.func.source}
+                </a>
+              </code>
             </p>
 
             {actionName && (

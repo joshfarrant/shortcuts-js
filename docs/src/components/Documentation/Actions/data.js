@@ -35,6 +35,21 @@ const addToSections = (name, id, paths) => {
   });
 };
 
+// TODO: WIP
+const parseType = (type) => {
+  switch (type.type) {
+    case 'stringLiteral':
+      return `'${type.value}'`;
+    case 'union':
+      return type.types.map(parseType).join(' | ');
+    case 'array':
+      const element = parseType(type.elementType);
+      return `${type.elementType.type === 'union' ? `(${element})` : element}[]`;
+    default:
+      return type.name;
+  }
+};
+
 exported.children
   .filter((file) => (
     file.name.startsWith('"actions/') &&
@@ -69,7 +84,7 @@ exported.children
       const parameters = signature.parameters && signature.parameters[0].type.declaration.children
         .map((parameter) => ({
           name: parameter.name,
-          type: parameter.type,
+          type: parseType(parameter.type),
           default: parameter.defaultValue,
           comment: parameter.comment.shortText,
         }));
@@ -85,9 +100,9 @@ exported.children
         comment,
         func: {
           name: child.name,
-          type: signature.type,
           parameters: parameters,
           hasOutput: !child.flags.isExported,
+          type: parseType(signature.type),
           source: source,
         },
       };

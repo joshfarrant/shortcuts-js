@@ -8,7 +8,7 @@ $icon-number: 120;
 
 .listPanel {
   flex: 1;
-  max-width: 400px;
+  max-width: 360px;
   padding: 1.7rem 0;
   overflow-y: scroll;
   background: var(--lightest-gray-color);
@@ -77,7 +77,7 @@ $icon-number: 120;
       background: var(--white-color);
     }
 
-    h2 {
+    h3 {
       flex: 1;
       margin: 0;
       line-height: 44px;

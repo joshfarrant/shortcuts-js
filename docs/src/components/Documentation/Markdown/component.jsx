@@ -15,12 +15,6 @@ import styles from './styles.module.scss';
 
 const md = new Remarkable();
 
-const classList = (classNames) => Object
-  .entries(classNames)
-  .map(([className, condition]) => condition && className)
-  .filter(el => el)
-  .join(' ');
-
 const innerText = (children) => {
   if (
     children === null ||
@@ -78,22 +72,9 @@ md.renderer = new RemarkableRenderer({
     h6: ({ children }) => (
       <Heading level={6}>{children}</Heading>
     ),
-    img: ({ src, alt }) => {
-      const [altern, options] = alt.split('!');
-      if (options && options.startsWith('screenshot')) {
-        const align = options.substr(11);
-        return (
-          <Screenshot
-            align={align}
-            alt={altern}
-            src={src}
-          />
-        );
-      }
-      return (
-        <img alt={altern} src={src} />
-      );
-    },
+    img: ({ src, alt }) => (
+      <img alt={alt} src={src} />
+    ),
     pre: ({ content, params: language }) => (
       <CodeBlock
         content={content}
@@ -191,20 +172,14 @@ CodeBlock.defaultProps = {
   language: 'js',
 };
 
-const Screenshot = ({ align, alt, ...props }) => (
-  <span className={classList({
-    [styles.screenshot]: true,
-    [styles[align]]: align,
-  })}>
-    <img alt={alt} {...props} />
-  </span>
-);
+const Component = ({ children, content }) => {
+  if (!children) return md.render(content);
 
-Screenshot.propTypes = {
-  align: PropTypes.oneOf(['top', 'bottom', '']),
-};
-
-const Component = ({ content }) => md.render(content);
+  const sections = content.split(/^---$/m);
+  return children.map((child) => {
+    return child.type === 'section' ? md.render(sections.shift()) : child;
+  });
+}
 
 Component.propTypes = {
   content: PropTypes.string.isRequired,

@@ -1,13 +1,15 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import Raw from 'raw.macro';
 
 import Markdown from '../../Markdown';
-import pageContent from './content.md';
 
 import iconGlyphs from './iconGlyphs';
 import { colors, glyphs } from './iconOptions';
 
 import styles from './styles.module.scss';
+
+const content = Raw('./content.md');
 
 const classList = (classNames) => Object
   .entries(classNames)
@@ -79,11 +81,8 @@ export default class Component extends React.Component {
     });
   }
 
-  async componentDidMount() {
+  componentDidMount() {
     document.body.addEventListener('mousedown', this.handleClick);
-    this.setState({
-      content: await (await fetch(pageContent)).text(),
-    });
   }
 
   componentWillUnmount() {
@@ -91,9 +90,9 @@ export default class Component extends React.Component {
   }
 
   render() {
-    return this.state.content && (
+    return (
       <div className={styles.content}>
-        <Markdown content={this.state.content} />
+        <Markdown content={content} />
 
         <h4 id="colors">Icon Colors</h4>
 

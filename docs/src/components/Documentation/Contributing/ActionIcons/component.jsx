@@ -1,48 +1,36 @@
 import React from 'react';
+import Raw from 'raw.macro';
 
 import Markdown from '../../Markdown';
-import pageContent from './content.md';
 
 import { Icon } from '../../Actions';
 import icons from '../../Actions/icons.js';
 
 import styles from './styles.module.scss';
 
-export default class Component extends React.Component {
-  state = {
-    content: null,
-  }
+const content = Raw('./content.md');
 
-  async componentDidMount() {
-    this.setState({
-      content: await (await fetch(pageContent)).text(),
-    });
-  }
+export default () => (
+  <div className={styles.content}>
+    <Markdown content={content} />
 
-  render() {
-    return this.state.content && (
-      <div className={styles.content}>
-        <Markdown content={this.state.content} />
-
-        <div className={styles.iconList}>
-          {icons
-            .concat(['Calendar'])
-            .sort((a,b) => a.localeCompare(b))
-            .map((icon) => (
-              <div
-                className={styles.item}
-                key={icon}
-              >
-                <Icon
-                  key={icon}
-                  name={icon}
-                />
-                <code>{icon}</code>
-              </div>
-            )
-          )}
-        </div>
-      </div>
-    );
-  }
-};
+    <div className={styles.iconList}>
+      {icons
+        .concat(['Calendar'])
+        .sort((a,b) => a.localeCompare(b))
+        .map((icon) => (
+          <div
+            className={styles.item}
+            key={icon}
+          >
+            <Icon
+              key={icon}
+              name={icon}
+            />
+            <code>{icon}</code>
+          </div>
+        )
+      )}
+    </div>
+  </div>
+);

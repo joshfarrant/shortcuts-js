@@ -6,7 +6,7 @@ As stated in the [Shortcuts official guide](https://support.apple.com/it-it/guid
 >
 > In Shortcuts, variables are represented by small tokens labeled with the name of the variable. You place variables throughout the shortcut to mark where you want to set and retrieve content each time the shortcut is run.
 
-![!screenshot](./screenshot00.png)
+---
 
 Shortcuts JS let you create and handle all the variable types that the app provides.
 
@@ -14,7 +14,7 @@ Shortcuts JS let you create and handle all the variable types that the app provi
 
 In Shortcuts, some actions can have an output. Those outputs can be available as *Magic Variables*. In Shortcuts JS you need to initialize an action output preliminarily. You can do so using the `actionOutput()` function.
 
-![!screenshot:top](./screenshot01.png) ![!screenshot:top](./screenshot02.png)
+---
 
 ```js
 const { actionOutput } = require('@joshfarrant/shortcuts-js');

@@ -15,7 +15,7 @@ const operationsMap = new Map([
 ]);
 
 /**
- * Calculate Action. Performs a number operation on the input and returns the result.
+ * Performs a number operation on the input and returns the result.
  *
  * ```js
  * // Divide the input by 7
@@ -24,19 +24,27 @@ const operationsMap = new Map([
  *   operation: '/',
  * });
  * ```
+ *
+ * @action Calculate
+ * @section Actions > Scripting > Maths
+ * @icon Calculator
  */
 const calculate = (
-  options: {
+  {
     /** A second number to perform the operation on */
-    operand?: number;
+    operand,
     /** The operation to apply to the number. Defaults to '+' */
+    operation = '+',
+    /** The scientific operation to apply to the number */
+    scientificOperation,
+  }: {
+    operand?: number;
     operation?: (
       WFMathOperation
       | '*'
       | 'x'
       | '/'
     );
-    /** The scientific operation to apply to the number */
     scientificOperation?: (
       WFScientificMathOperation
       | 'sqrt'
@@ -44,12 +52,6 @@ const calculate = (
     );
   },
 ): WFWorkflowAction => {
-  const {
-    operand,
-    operation = '+',
-    scientificOperation,
-  } = options;
-
   let parameters;
   if (scientificOperation) {
     parameters = {

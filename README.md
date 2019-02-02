@@ -14,11 +14,11 @@ Find out more at [Shortcuts.fun](https://shortcuts.fun).
 
 [@joshfarrant/shortcuts-js](https://www.npmjs.com/package/@joshfarrant/shortcuts-js) on npm.
 
-[NPM](https://www.npmjs.com/package/@joshfarrant/shortcuts-js) | [Documentation](https://docs.shortcuts.fun/globals.html) | [Contributing](https://github.com/joshfarrant/shortcuts-js/blob/master/CONTRIBUTING.md) | [Medium](https://medium.com/@JoshFarrant/creating-ios-12-shortcuts-with-javascript-and-shortcuts-js-942420ca9904) | [Discord](https://discord.gg/aHbREz)
+[NPM](https://www.npmjs.com/package/@joshfarrant/shortcuts-js) | [Documentation](https://docs.shortcuts.fun/globals.html) | [Contributing](https://github.com/joshfarrant/shortcuts-js/blob/master/CONTRIBUTING.md) | [Medium](https://medium.com/@JoshFarrant/creating-ios-12-shortcuts-with-javascript-and-shortcuts-js-942420ca9904) | [Discord](https://discord.gg/pyvcYbB)
 
 See [this issue](https://github.com/joshfarrant/shortcuts-js/issues/6) for a complete list of all Actions implemented so far.
 
-We have a Discord! If you need any help or have any questions, come and say hi! [Join the Discord](https://discord.gg/aHbREz)
+We have a Discord! If you need any help or have any questions, come and say hi! [Join the Discord](https://discord.gg/pyvcYbB)
 
 #### Is the Action you want not available?
 

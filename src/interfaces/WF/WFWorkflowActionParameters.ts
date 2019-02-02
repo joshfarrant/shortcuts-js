@@ -45,6 +45,7 @@ interface WFWorkflowActionParameters {
   WFAlertActionCancelButtonShown?: boolean;
   WFAlertActionMessage?: WFSerialization | string;
   WFAlertActionTitle?: WFSerialization | string;
+  WFAppIdentifier?: string;
   WFArchiveFormat?: WFArchiveFormat;
   WFAskActionDateGranularity?: WFAskActionDateGranularity;
   WFAskActionDefaultAnswer?: WFSerialization | string;

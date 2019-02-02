@@ -1,11 +1,13 @@
-/** @module actions */
-
 import { withActionOutput } from '../utils';
 
 import WFWorkflowAction from '../interfaces/WF/WFWorkflowAction';
 
 /**
- * Get Contents of Web Page Action. Extracts the contents of the web pages passed into the action.
+ * @action Get Contents of Web Page
+ * @section Actions > Web > Web
+ * @icon Safari
+ *
+ * Extracts the contents of the web pages passed into the action.
  *
  * ```js
  * getContentsOfWebPage();

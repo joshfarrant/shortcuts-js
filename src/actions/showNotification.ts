@@ -1,9 +1,11 @@
-/** @module actions */
-
 import WFWorkflowAction from '../interfaces/WF/WFWorkflowAction';
 
 /**
- * Show Notification Action. Displays a local notification.
+ * @action Show Notification
+ * @section Actions > Scripting > Notification
+ * @icon Notification
+ *
+ * Displays a local notification.
  *
  * ```js
  * showNotification({

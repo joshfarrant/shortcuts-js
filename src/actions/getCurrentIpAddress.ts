@@ -1,5 +1,3 @@
-/** @module actions */
-
 import { withActionOutput } from '../utils';
 
 import WFIPAddressSourceOption from '../interfaces/WF/WFIPAddressSourceOption';
@@ -7,8 +5,11 @@ import WFIPAddressTypeOption from '../interfaces/WF/WFIPAddressTypeOption';
 import WFWorkflowAction from '../interfaces/WF/WFWorkflowAction';
 
 /**
- * Get Current IP Address Action. Returns the public/private IPv4 or IPv6
- * address of the device.
+ * @action Get Current IP Address
+ * @section Actions > Scripting > Device
+ * @icon Network
+ *
+ * Returns the local or external IP address of the device.
  *
  * ```js
  * getCurrentIpAddress({
@@ -17,6 +18,7 @@ import WFWorkflowAction from '../interfaces/WF/WFWorkflowAction';
  * });
  * ```
  */
+
 const getCurrentIpAddress = (
   options: {
     /** The address (public or private) to get */

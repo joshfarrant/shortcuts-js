@@ -1,12 +1,14 @@
-/** @module actions */
-
 import { withActionOutput } from '../utils';
 
 import WFSerialization from '../interfaces/WF/WFSerialization';
 import WFWorkflowAction from '../interfaces/WF/WFWorkflowAction';
 
 /**
- * Match Text Action. Searches text passed into the action for matches to a regular expression.
+ * @action Match Text
+ * @section Actions > Text > Text Editing
+ * @icon Text
+ *
+ * Searches text passed into the action for matches to a regular expression.
  *
  * ```js
  * matchText({
@@ -15,6 +17,7 @@ import WFWorkflowAction from '../interfaces/WF/WFWorkflowAction';
  * });
  * ```
  */
+
 const matchText = (
   options: {
     /** The pattern to match */

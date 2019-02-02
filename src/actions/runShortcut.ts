@@ -1,11 +1,13 @@
-/** @module actions */
-
 import { withActionOutput } from '../utils';
 
 import WFWorkflowAction from '../interfaces/WF/WFWorkflowAction';
 
 /**
- * Run Shortcut Action. Run a shortcut from your shortcut.
+ * @action Run Shortcut
+ * @section Actions > Scripting > Shortcuts
+ * @icon Shortcuts
+ *
+ * Run a shortcut from your shortcut.
  *
  * ```js
  * runShortcut({
@@ -14,6 +16,7 @@ import WFWorkflowAction from '../interfaces/WF/WFWorkflowAction';
  * });
  * ```
  */
+
 const runShortcut = (
   options: {
     /** The name of the shortcut to run */

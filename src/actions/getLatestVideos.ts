@@ -1,11 +1,13 @@
-/** @module actions */
-
 import { withActionOutput } from '../utils';
 
 import WFWorkflowAction from '../interfaces/WF/WFWorkflowAction';
 
 /**
- * Get Latest Videos. Gets the most recent videos from the camera roll.
+ * @action Get Latest Videos
+ * @section Actions > Photos & Video > Video
+ * @icon Photos
+ *
+ * Gets the most recent videos from the camera roll.
  *
  * ```js
  * getLatestVideos({
@@ -13,6 +15,7 @@ import WFWorkflowAction from '../interfaces/WF/WFWorkflowAction';
  * });
  * ```
  */
+
 const getLatestVideos = (
   options: {
     /** The number of videos to get */

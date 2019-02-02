@@ -1,9 +1,11 @@
-/** @module actions */
-
 import WFWorkflowAction from '../interfaces/WF/WFWorkflowAction';
 
 /**
- * Set Cellular Data Action. Sets the device's Cellular Data to on or off.
+ * @action Set Cellular Data
+ * @section Actions > Scripting > Device
+ * @icon CellularData
+ *
+ * Sets the device’s Cellular Data to on or off.
  *
  * ```js
  * setCellularData({
@@ -11,6 +13,7 @@ import WFWorkflowAction from '../interfaces/WF/WFWorkflowAction';
  * });
  * ```
  */
+
 const setCellularData = (
   options: {
     /** Enable or disable cellular data */

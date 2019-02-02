@@ -1,11 +1,13 @@
-/** @module actions */
-
 import { withActionOutput } from '../utils';
 
 import WFWorkflowAction from '../interfaces/WF/WFWorkflowAction';
 
 /**
- * Get Latest Live Photos. Gets the most recent Live Photos from the camera roll.
+ * @action Get Latest Live Photos
+ * @section Actions > Photos & Video > Photos
+ * @icon LivePhotos
+ *
+ * Gets the most recent Live Photos from the camera roll.
  *
  * ```js
  * getLatestLivePhotos({
@@ -13,6 +15,7 @@ import WFWorkflowAction from '../interfaces/WF/WFWorkflowAction';
  * });
  * ```
  */
+
 const getLatestLivePhotos = (
   options: {
     /** The number of live photos to get */

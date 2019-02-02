@@ -5,8 +5,12 @@ import WFSerialization from '../interfaces/WF/WFSerialization';
 import WFWorkflowAction from '../interfaces/WF/WFWorkflowAction';
 
 /**
- * Displays a dialogue prompting the user to enter a piece of information.
+ * @action Ask for Input
+ * @section Actions > Scripting > Notification
+ * @icon Scripting
  *
+ * Displays a dialog prompting the user to enter a piece of information.
+ * *
  * ```js
  * // Ask for favourite colour, defaulting to pink
  * ask({
@@ -14,10 +18,8 @@ import WFWorkflowAction from '../interfaces/WF/WFWorkflowAction';
  *   question: 'What is your favourite colour?',
  * });
  * ```
- *
- * @action Ask for Input
- * @section Actions/Scripting/Notification
  */
+
 const ask = (
   options: {
     /** The type of input to accept */
@@ -45,5 +47,3 @@ const ask = (
 };
 
 export default withActionOutput(ask);
-
-export const icon = 70;

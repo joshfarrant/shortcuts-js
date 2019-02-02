@@ -1,5 +1,3 @@
-/** @module actions */
-
 import { withActionOutput } from '../utils';
 
 import WFDateActionMode from '../interfaces/WF/WFDateActionMode';
@@ -7,7 +5,11 @@ import WFSerialization from '../interfaces/WF/WFSerialization';
 import WFWorkflowAction from '../interfaces/WF/WFWorkflowAction';
 
 /**
- * Date Action. Passes the specified date and time to the next action.
+ * @action Date
+ * @section Actions > Calendar > Dates
+ * @icon Date
+ *
+ * Passes the specified date and time to the next action.
  *
  * ```js
  * date({
@@ -16,6 +18,7 @@ import WFWorkflowAction from '../interfaces/WF/WFWorkflowAction';
  * });
  * ```
  */
+
 const date = (
   options: {
     /** The type of date to use */

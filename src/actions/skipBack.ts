@@ -1,10 +1,12 @@
-/** @module actions */
-
 import WFSkipBackBehavior from '../interfaces/WF/WFSkipBackBehavior';
 import WFWorkflowAction from '../interfaces/WF/WFWorkflowAction';
 
 /**
- * Skip Back Action. Skips to the previous song in the current music queue.
+ * @action Skip Back
+ * @section Actions > Music > Playback
+ * @icon Rewind
+ *
+ * Skips to the previous song in the current music queue.
  *
  * ```js
  *  skipBack({

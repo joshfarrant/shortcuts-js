@@ -1,5 +1,3 @@
-/** @module actions */
-
 import { withActionOutput } from '../utils';
 
 import WFSerialization from '../interfaces/WF/WFSerialization';
@@ -7,9 +5,11 @@ import WFTimeUntilUnit from '../interfaces/WF/WFTimeUntilUnit';
 import WFWorkflowAction from '../interfaces/WF/WFWorkflowAction';
 
 /**
- * Get Time Between Dates Action. Subtracts the specified date from the date passed
- * into the action. For example, this action could get the number of minutes from
- * now until a calendar event passed in as input.
+ * @action Get Time Between Dates
+ * @section Actions > Calendar > Dates
+ * @icon Date
+ *
+ * Subtracts the specified date from the date passed into the action. For example, this action could get the number of minutes from now until a calendar event passed in as input.
  *
  * ```js
  * getTimeBetweenDates({
@@ -18,6 +18,7 @@ import WFWorkflowAction from '../interfaces/WF/WFWorkflowAction';
  * });
  * ```
  */
+
 const getTimeBetweenDates = (
   options: {
     /** The unit of time for the result. Defaults to 'Minutes' */

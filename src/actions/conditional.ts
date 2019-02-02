@@ -1,5 +1,3 @@
-/** @module actions */
-
 import * as uuidv4 from 'uuid/v4';
 
 import WFCondition from '../interfaces/WF/WFCondition';
@@ -15,7 +13,11 @@ const conditionMap = new Map([
 ]);
 
 /**
- * If Action. Tests if any item passed as input matches the specified condition, and if so, runs the actions inside. Otherwise, the actions under "Otherwise" are run.
+ * @action If
+ * @section Actions > Scripting > Control Flow
+ * @icon Scripting
+ *
+ * Tests if any item passed as input matches the specified condition, and if so, runs the actions inside. Otherwise, the actions under “Otherwise” are run.
  *
  * ```js
  * conditional({
@@ -34,6 +36,7 @@ const conditionMap = new Map([
  * });
  * ```
  */
+
 const conditional = (
   options: {
     /** An array of actions to perform if condition is true */

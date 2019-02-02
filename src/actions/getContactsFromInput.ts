@@ -1,9 +1,11 @@
-/** @module actions */
-
 import WFWorkflowAction from '../interfaces/WF/WFWorkflowAction';
 
 /**
- * Get Contacts from Input Action. Gets contacts from the result of the previous action.
+ * @action Get Contacts from Input
+ * @section Actions > Contacts > Contacts
+ * @icon Contacts
+ *
+ * Gets contacts from the result of the previous action.
  *
  * ```js
  * getContactsFromInput();

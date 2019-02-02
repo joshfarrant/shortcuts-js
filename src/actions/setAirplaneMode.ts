@@ -1,9 +1,11 @@
-/** @module actions */
-
 import WFWorkflowAction from '../interfaces/WF/WFWorkflowAction';
 
 /**
- * Set Airplane Mode Action. Sets the device's Airplane Mode to on or off.
+ * @action Set Airplane Mode
+ * @section Actions > Scripting > Device
+ * @icon AirplaneMode
+ *
+ * Sets the device’s Airplane Mode to on or off.
  *
  * ```js
  * setAirplaneMode({
@@ -11,6 +13,7 @@ import WFWorkflowAction from '../interfaces/WF/WFWorkflowAction';
  * });
  * ```
  */
+
 const setAirplaneMode = (
   options: {
     /** Enable or disable airplane mode */

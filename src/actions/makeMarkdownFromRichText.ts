@@ -1,9 +1,11 @@
-/** @module actions */
-
 import WFWorkflowAction from '../interfaces/WF/WFWorkflowAction';
 
 /**
- * Make Markdown from RichText Action. Converts the rich text passed as inputto Markdown text (comparable to Aaron Swartz's html2text script).
+ * @action Make Markdown from Rich Text
+ * @section Actions > Text > Rich Text
+ * @icon RichText
+ *
+ * Converts the rich text passed as input to Markdown text (comparable to Aaron Swartz's html2text script).
  *
  * ```js
  * makeMarkdownFromRichText();

@@ -1,14 +1,14 @@
-/** @module actions */
-
 import { withActionOutput } from '../utils';
 
 import WFSerialization from '../interfaces/WF/WFSerialization';
 import WFWorkflowAction from '../interfaces/WF/WFWorkflowAction';
 
 /**
- * Random Number Action. Passes a random number between the given minimum and
- * maximum to the next action,. The minimum and maximum numbers are included as
- * possible results.
+ * @action Random Number
+ * @section Actions > Scripting > Math
+ * @icon Calculator
+ *
+ * Passes a random number between the given minimum and maximum to the next action. The minimum and maximum numbers are included as possible results.
  *
  * ```js
  * randomNumber({
@@ -17,6 +17,7 @@ import WFWorkflowAction from '../interfaces/WF/WFWorkflowAction';
  * });
  * ```
  */
+
 const randomNumber = (
   options: {
     /** The minimum */

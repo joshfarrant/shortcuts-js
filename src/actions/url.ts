@@ -1,9 +1,11 @@
-/** @module actions */
-
 import WFWorkflowAction from '../interfaces/WF/WFWorkflowAction';
 
 /**
- * URL Action. Passes the specified URL to the next action.
+ * @action URL
+ * @section Actions > Web > URLs
+ * @icon URL
+ *
+ * Passes the specified URL to the next action.
  *
  * ```js
  * url({
@@ -11,6 +13,7 @@ import WFWorkflowAction from '../interfaces/WF/WFWorkflowAction';
  * });
  * ```
  */
+
 const url = (
   options: {
     /** The URL to set */

@@ -1,9 +1,11 @@
-/** @module actions */
-
 import WFWorkflowAction from '../interfaces/WF/WFWorkflowAction';
 
 /**
- * Set Bluetooth Action. Sets the device's Bluetooth to on or off.
+ * @action Set Bluetooth
+ * @section Actions > Scripting > Device
+ * @icon Bluetooth
+ *
+ * Sets the device’s Bluetooth to on or off.
  *
  * ```js
  * setBluetooth({
@@ -11,6 +13,7 @@ import WFWorkflowAction from '../interfaces/WF/WFWorkflowAction';
  * });
  * ```
  */
+
 const setBluetooth = (
   options: {
     /** Enable or disable Bluetooth */

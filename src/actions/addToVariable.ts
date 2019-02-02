@@ -2,7 +2,11 @@ import Variable from '../interfaces/Variable';
 import WFWorkflowAction from '../interfaces/WF/WFWorkflowAction';
 
 /**
- * Appends this action's input to the specified variable, creating the variable if it does not exist.
+ * @action Add to Variable
+ * @section Actions > Scripting > Variables
+ * @icon Variable
+ *
+ * Appends this action's input to the specified variable, creating the variable if it does not exist. This allows you to make a variable hold multiple items.
  *
  * ```js
  * // Append the input to the variable named 'My Var'
@@ -10,10 +14,8 @@ import WFWorkflowAction from '../interfaces/WF/WFWorkflowAction';
  *   variable: variable('My Var'),
  * });
  * ```
- *
- * @action Add to Variable
- * @section Actions/Scripting/Variables
  */
+
 const addToVariable = (
   /** The variable to add to */
   options: {
@@ -33,5 +35,3 @@ const addToVariable = (
 };
 
 export default addToVariable;
-
-export const icon = 86;

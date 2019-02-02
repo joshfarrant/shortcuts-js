@@ -1,11 +1,13 @@
-/** @module actions */
-
 import { withActionOutput } from '../utils';
 
 import WFWorkflowAction from '../interfaces/WF/WFWorkflowAction';
 
 /**
- * Select Email Address Action. Prompts to pick an email address from your contacts and passes the selection to the next action.
+ * @action Select Email Address
+ * @section Actions > Contacts > Email
+ * @icon Mail
+ *
+ * Prompts to pick an email address from your contacts and passes the selection to the next action.
  *
  * ```js
  * selectEmailAddress();

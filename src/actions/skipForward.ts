@@ -1,9 +1,11 @@
-/** @module actions */
-
 import WFWorkflowAction from '../interfaces/WF/WFWorkflowAction';
 
 /**
- * Skip Forward Action. Skips to the next song in the current music queue.
+ * @action Skip Forward
+ * @section Actions > Music > Playback
+ * @icon FastForward
+ *
+ * Skips to the next song in the current music queue.
  *
  * ```js
  *  skipForward();

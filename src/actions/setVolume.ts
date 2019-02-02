@@ -1,9 +1,11 @@
-/** @module actions */
-
 import WFWorkflowAction from '../interfaces/WF/WFWorkflowAction';
 
 /**
- * Set Volume Action. Sets the system volume.
+ * @action Set Volume
+ * @section Actions > Music > Playback
+ * @icon Sound
+ *
+ * Sets the system volume.
  *
  * ```js
  *  setVolume({

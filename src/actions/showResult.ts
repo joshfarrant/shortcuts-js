@@ -3,6 +3,10 @@ import WFWorkflowAction from '../interfaces/WF/WFWorkflowAction';
 import WFSerialization from '../interfaces/WF/WFSerialization';
 
 /**
+ * @action Show Result
+ * @section Actions > Scripting
+ * @icon Scripting
+ *
  * Shows the specified text in Siri or in an alert.
  *
  * ```js
@@ -10,10 +14,8 @@ import WFSerialization from '../interfaces/WF/WFSerialization';
  *   text: 'Hello, world!',
  * });
  * ```
- *
- * @action Show Result
- * @section Actions/Scripting/_
  */
+
 const showResult = (
   options: {
     /** The text to show in the dialogue */
@@ -33,5 +35,3 @@ const showResult = (
 };
 
 export default showResult;
-
-export const icon = 70;

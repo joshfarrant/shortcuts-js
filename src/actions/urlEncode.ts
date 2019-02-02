@@ -1,13 +1,14 @@
-/** @module actions */
-
 import { withActionOutput } from '../utils';
 
 import WFEncodeMode from '../interfaces/WF/WFEncodeMode';
 import WFWorkflowAction from '../interfaces/WF/WFWorkflowAction';
 
 /**
- * URL Encode Action. Encodes or decodes text passed into the action to be suitable for inclusion in
- * a URL by adding or removing percent escapes when appropriate.
+ * @action URL Encode
+ * @section Actions > Scripting > X-Callback
+ * @icon URL
+ *
+ * Encodes or decodes text passed into the action to be suitable for inclusion in a URL by adding or removing percent escapes when appropriate.
  *
  * ```js
  * URLEncode({
@@ -15,6 +16,7 @@ import WFWorkflowAction from '../interfaces/WF/WFWorkflowAction';
  * });
  * ```
  */
+
 const URLEncode = (
   options: {
     /** The encoding mode to use */

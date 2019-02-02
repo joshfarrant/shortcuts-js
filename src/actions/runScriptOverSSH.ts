@@ -1,10 +1,12 @@
-/** @module actions */
-
 import WFSerialization from '../interfaces/WF/WFSerialization';
 import WFWorkflowAction from '../interfaces/WF/WFWorkflowAction';
 
 /**
- * Run Script Over SSH Action. Runs a script on a remote computer over SSH.
+ * @action Run Script Over SSH
+ * @section Actions > Scripting > Shell
+ * @icon Scripting
+ *
+ * Runs a script on a remote computer over SSH.
  *
  * ```js
  * runScriptOverSSH({
@@ -16,6 +18,7 @@ import WFWorkflowAction from '../interfaces/WF/WFWorkflowAction';
  * });
  * ```
  */
+
 const runScriptOverSSH = (
   options: {
     /** The host to run the script on */

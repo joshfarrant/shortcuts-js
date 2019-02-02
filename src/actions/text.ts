@@ -1,12 +1,14 @@
-/** @module actions */
-
 import { withActionOutput } from '../utils';
 
 import WFSerialization from '../interfaces/WF/WFSerialization';
 import WFWorkflowAction from '../interfaces/WF/WFWorkflowAction';
 
 /**
- * Text Action. Passes the specified text to the next action.
+ * @action Text
+ * @section Actions > Text
+ * @icon Text
+ *
+ * Passes the specified text to the next action.
  *
  * ```js
  * text({
@@ -14,6 +16,7 @@ import WFWorkflowAction from '../interfaces/WF/WFWorkflowAction';
  * });
  * ```
  */
+
 const text = (
   options: {
     /** The text to set */

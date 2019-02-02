@@ -1,9 +1,11 @@
-/** @module actions */
-
 import WFWorkflowAction from '../interfaces/WF/WFWorkflowAction';
 
 /**
- * Set Brightness Action. Sets the device brightness.
+ * @action Set Brightness
+ * @section Actions > Scripting > Device
+ * @icon Brightness
+ *
+ * Sets the device brightness.
  *
  * ```js
  * setBrightness({
@@ -11,6 +13,7 @@ import WFWorkflowAction from '../interfaces/WF/WFWorkflowAction';
  * });
  * ```
  */
+
 const setBrightness = (
   options: {
     /** The brightness percentage value from 0 to 100 */

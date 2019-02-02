@@ -1,12 +1,12 @@
-/** @module actions */
-
 import WFSerialization from '../interfaces/WF/WFSerialization';
 import WFWorkflowAction from '../interfaces/WF/WFWorkflowAction';
 
 /**
- * Show Alert Action. Displays an alert with a title, a message, and two
- * buttons. If the user selects the OK button, the shortcut continues. The
- * cancel button stops the shortcut.
+ * @action Show Alert
+ * @section Actions > Scripting > Notification
+ * @icon Scripting
+ *
+ * Displays an alert with a title, a message, and two buttons. If the user selects the OK button, the shortcut continues. The cancel button stops the shortcut.
  *
  * ```js
  * showAlert({
@@ -16,6 +16,7 @@ import WFWorkflowAction from '../interfaces/WF/WFWorkflowAction';
  * });
  * ```
  */
+
 const showAlert = (
   options: {
     /** The title of the alert */

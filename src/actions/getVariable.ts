@@ -1,10 +1,12 @@
-/** @module actions */
-
 import Variable from '../interfaces/Variable';
 import WFWorkflowAction from '../interfaces/WF/WFWorkflowAction';
 
 /**
- * Get Variable Action. Gets the value of the specified variable and passes it to the next action.
+ * @action Get Variable
+ * @section Actions > Scripting > Variables
+ * @icon Variable
+ *
+ * Gets the value of the specified variable and passes it to the next action.
  *
  * ```js
  * getVariable({
@@ -12,6 +14,7 @@ import WFWorkflowAction from '../interfaces/WF/WFWorkflowAction';
  * });
  * ```
  */
+
 const getVariable = (
   options: {
     /** The variable to get */

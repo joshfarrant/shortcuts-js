@@ -4,6 +4,10 @@ import WFCountType from '../interfaces/WF/WFCountType';
 import WFWorkflowAction from '../interfaces/WF/WFWorkflowAction';
 
 /**
+ * @action Count
+ * @section Actions > Scripting > Content
+ * @icon Calculator
+ *
  * Counts the number of items, characters, words, sentences, or lines passed as input.
  *
  * ```js
@@ -12,10 +16,8 @@ import WFWorkflowAction from '../interfaces/WF/WFWorkflowAction';
  *   type: 'Lines',
  * });
  * ```
- *
- * @action Count
- * @section Actions/Scripting/Content
  */
+
 const count = (
   options: {
     /** The thing to count */
@@ -35,5 +37,3 @@ const count = (
 };
 
 export default withActionOutput(count);
-
-export const icon = 11;

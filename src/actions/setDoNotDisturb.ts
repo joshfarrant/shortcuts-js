@@ -1,11 +1,13 @@
-/** @module actions */
-
 import AssertionType from '../interfaces/WF/AssertionType';
 import WFSerialization from '../interfaces/WF/WFSerialization';
 import WFWorkflowAction from '../interfaces/WF/WFWorkflowAction';
 
 /**
- * Set Do Not Disturb Action. Sets the device's Do Not Disturb to on or off.
+ * @action Set Do Not Disturb
+ * @section Actions > Scripting > Device
+ * @icon DoNotDisturb
+ *
+ * Sets the device’s Do Not Disturb to on or off
  *
  * ```js
  * setDoNotDisturb({
@@ -16,6 +18,7 @@ import WFWorkflowAction from '../interfaces/WF/WFWorkflowAction';
  * });
  * ```
  */
+
 const setDoNotDisturb = (
   options: {
     /** Enable or disable Do Not Disturb */

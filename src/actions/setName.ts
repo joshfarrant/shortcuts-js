@@ -1,11 +1,13 @@
-/** @module actions */
-
 import { withActionOutput } from '../utils';
 
 import WFWorkflowAction from '../interfaces/WF/WFWorkflowAction';
 
 /**
- * Set Name Action. Sets the name of the item passed as input.
+ * @action Set Name
+ * @section Actions > Scripting > Content
+ * @icon Scripting
+ *
+ * Sets the name of the item passed as input.
  *
  * ```js
  * setName({
@@ -14,6 +16,7 @@ import WFWorkflowAction from '../interfaces/WF/WFWorkflowAction';
  * });
  * ```
  */
+
 const setName = (
   options: {
     /** The name to set */

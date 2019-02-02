@@ -1,11 +1,13 @@
-/** @module actions */
-
 import { withActionOutput } from '../utils';
 
 import WFWorkflowAction from '../interfaces/WF/WFWorkflowAction';
 
 /**
- * Set Dictionary Value. Sets a value in the dictionary passed into the action.
+ * @action Set Dictionary Value
+ * @section Actions > Scripting > Dictionaries
+ * @icon Scripting
+ *
+ * Sets a value in the dictionary passed into the action.
  *
  * ```js
  * setDictionaryValue({
@@ -14,6 +16,7 @@ import WFWorkflowAction from '../interfaces/WF/WFWorkflowAction';
  * });
  * ```
  */
+
 const setDictionaryValue = (
   options: {
     /** The key to set */

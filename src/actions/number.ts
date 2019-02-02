@@ -1,11 +1,13 @@
-/** @module actions */
-
 import { withActionOutput } from '../utils';
 
 import WFWorkflowAction from '../interfaces/WF/WFWorkflowAction';
 
 /**
- * Number Action. Passes a number to the next action.
+ * @action Number
+ * @section Actions > Scripting > Math
+ * @icon Calculator
+ *
+ * Passes a number to the next action.
  *
  * ```js
  * number({
@@ -13,6 +15,7 @@ import WFWorkflowAction from '../interfaces/WF/WFWorkflowAction';
  * });
  * ```
  */
+
 const number = (
   options: {
     /** The number to set */

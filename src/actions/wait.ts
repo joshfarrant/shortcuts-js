@@ -1,9 +1,11 @@
-/** @module actions */
-
 import WFWorkflowAction from '../interfaces/WF/WFWorkflowAction';
 
 /**
- * Wait Action. Waits for the specified number of seconds before continuing with the next action
+ * @action Wait
+ * @section Actions > Scripting > Control Flow
+ * @icon Scripting
+ *
+ * Waits for the specified number of seconds before continuing with the next action.
  *
  * ```js
  * wait({
@@ -11,6 +13,7 @@ import WFWorkflowAction from '../interfaces/WF/WFWorkflowAction';
  * });
  * ```
  */
+
 const wait = (
   options: {
     /** The number of seconds to wait */

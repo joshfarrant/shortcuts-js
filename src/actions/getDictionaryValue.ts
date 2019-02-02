@@ -1,10 +1,12 @@
-/** @module actions */
-
 import WFGetDictionaryValueType from '../interfaces/WF/WFGetDictionaryValueType';
 import WFWorkflowAction from '../interfaces/WF/WFWorkflowAction';
 
 /**
- * Get Dictionary Value Action. Gets the value for the specified key in the dictionary passed into the action.
+ * @action Get Dictionary Value
+ * @section Actions > Scripting > Dictionaries
+ * @icon Scripting
+ *
+ * Gets the value for the specified key in the dictionary passed into the action.
  *
  * ```js
  * getDictionaryValue({
@@ -13,6 +15,7 @@ import WFWorkflowAction from '../interfaces/WF/WFWorkflowAction';
  * });
  * ```
  */
+
 const getDictionaryValue = (
   options: {
     /** The key of the dictionary to get */

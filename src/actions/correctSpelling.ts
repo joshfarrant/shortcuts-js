@@ -1,8 +1,12 @@
-/** @module actions */
-
 import WFWorkflowAction from '../interfaces/WF/WFWorkflowAction';
 
 /**
+ * @action Correct Spelling
+ * @section Actions > Text > Text Editing
+ * @icon Text
+ *
+ * Autocorrects the spelling of text passed into the action.
+ *
  * Correct Spelling Action. Autocorrects the spelling of text passed into the action.
  *
  * ```js

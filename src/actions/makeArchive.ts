@@ -1,5 +1,3 @@
-/** @module actions */
-
 import { withActionOutput } from '../utils';
 
 import WFArchiveFormat from '../interfaces/WF/WFArchiveFormat';
@@ -7,8 +5,11 @@ import WFSerialization from '../interfaces/WF/WFSerialization';
 import WFWorkflowAction from '../interfaces/WF/WFWorkflowAction';
 
 /**
- * Make Archive Action. Makes an archive out of the files passed as input. Support creating zip, tar.gz, tar.bz2, tar, gzip, cpio or iso archives.
+ * @action Make Archive
+ * @section Actions > Documents > Archives
+ * @icon Documents
  *
+ * Makes an archive out of the files passed as input. Supports creating zip, tar.gz, tar.bz2, tar, gzip, cpio, or iso archives.
  *
  * ```js
  * makeArchive({
@@ -17,6 +18,7 @@ import WFWorkflowAction from '../interfaces/WF/WFWorkflowAction';
  * });
  * ```
  */
+
 const makeArchive = (
   options: {
     /** The operation to perform */

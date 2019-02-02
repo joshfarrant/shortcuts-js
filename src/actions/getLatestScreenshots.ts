@@ -1,11 +1,13 @@
-/** @module actions */
-
 import { withActionOutput } from '../utils';
 
 import WFWorkflowAction from '../interfaces/WF/WFWorkflowAction';
 
 /**
- * Get Latest Screenshots. Gets the most recent screenshots from the camera roll.
+ * @action Get Latest Screenshots
+ * @section Actions > Photos & Video > Photos
+ * @icon Photos
+ *
+ * Gets the most recent screenshots from the camera roll.
  *
  * ```js
  * getLatestScreenshots({
@@ -13,6 +15,7 @@ import WFWorkflowAction from '../interfaces/WF/WFWorkflowAction';
  * });
  * ```
  */
+
 const getLatestScreenshots = (
   options: {
     /** The number of screenshots to get */

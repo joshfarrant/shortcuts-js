@@ -1,5 +1,3 @@
-/** @module actions */
-
 import { withActionOutput } from '../utils';
 
 import WFMathOperation from '../interfaces/WF/WFMathOperation';
@@ -17,7 +15,11 @@ const operationsMap = new Map([
 ]);
 
 /**
- * Calculate Action. Performs a number operation on the input and returns the result.
+ * @action Calculate
+ * @section Actions > Scripting > Math
+ * @icon Calculator
+ *
+ * Performs a number operation on the input and returns the result.
  *
  * ```js
  * // Divide the input by 7
@@ -27,6 +29,7 @@ const operationsMap = new Map([
  * });
  * ```
  */
+
 const calculate = (
   options: {
     /** A second number to perform the operation on */

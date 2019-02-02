@@ -1,5 +1,3 @@
-/** @module actions */
-
 import { withActionOutput } from '../utils';
 
 import WFCellularDetail from '../interfaces/WF/WFCellularDetail';
@@ -9,8 +7,11 @@ import WFWiFiDetail from '../interfaces/WF/WFWiFiDetail';
 import WFWorkflowAction from '../interfaces/WF/WFWorkflowAction';
 
 /**
- * Get Network Details Action. Gets information about the currently connected
- * networks.
+ * @action Get Network Details
+ * @section Actions > Scripting > Device
+ * @icon Wi-Fi
+ *
+ * Gets information about the currently connected networks.
  *
  * ```js
  * getNetworkDetails({
@@ -24,6 +25,7 @@ import WFWorkflowAction from '../interfaces/WF/WFWorkflowAction';
  * });
  * ```
  */
+
 const getNetworkDetails = (
   options: {
     /** The type of network to look at */

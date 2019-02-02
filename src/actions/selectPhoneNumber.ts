@@ -1,11 +1,13 @@
-/** @module actions */
-
 import { withActionOutput } from '../utils';
 
 import WFWorkflowAction from '../interfaces/WF/WFWorkflowAction';
 
 /**
- * Select Phone Number Action. Prompts to pick a phone number from your contacts and passes the selection to the next action.
+ * @action Select Phone Number
+ * @section Actions > Contacts > Phone
+ * @icon PhoneNumber
+ *
+ * Prompts to pick a phone number from your contacts and passes the selection to the next action.
  *
  * ```js
  * selectPhoneNumber();

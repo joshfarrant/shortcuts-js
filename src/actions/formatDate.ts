@@ -1,5 +1,3 @@
-/** @module actions */
-
 import { withActionOutput } from '../utils';
 
 import WFDateFormatStyle from '../interfaces/WF/WFDateFormatStyle';
@@ -9,11 +7,11 @@ import WFTimeFormatStyle from '../interfaces/WF/WFTimeFormatStyle';
 import WFWorkflowAction from '../interfaces/WF/WFWorkflowAction';
 
 /**
- * Format Date Action. Formats a date and time into text.
+ * @action Format Date
+ * @section Actions > Calendar > Dates
+ * @icon Date
  *
- * Custom format strings use the format patterns from Unicode Technical Standard #35
- * ([unicode.org/reports/tr35/tr35-31/tr35-dates.html#Date_Format_Patterns](
- * http://unicode.org/reports/tr35/tr35-31/tr35-dates.html#Date_Format_Patterns)).
+ * Formats a date and time into text.
  *
  * ```js
  * formatDate({
@@ -22,6 +20,7 @@ import WFWorkflowAction from '../interfaces/WF/WFWorkflowAction';
  * });
  * ```
  */
+
 const formatDate = (
   options: {
     /** The date format to use */

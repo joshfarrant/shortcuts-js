@@ -1,5 +1,3 @@
-/** @module actions */
-
 import { withActionOutput } from '../utils';
 
 import WFDeviceDetail from '../interfaces/WF/WFDeviceDetail';
@@ -7,7 +5,11 @@ import WFSerialization from '../interfaces/WF/WFSerialization';
 import WFWorkflowAction from '../interfaces/WF/WFWorkflowAction';
 
 /**
- * Get Device Details Action. Gets information about the current device.
+ * @action Get Device Details
+ * @section Actions > Scripting > Device
+ * @icon Scripting
+ *
+ * Gets information about the current device.
  *
  * ```js
  * getDeviceDetails({
@@ -15,6 +17,7 @@ import WFWorkflowAction from '../interfaces/WF/WFWorkflowAction';
  * });
  * ```
  */
+
 const getDeviceDetails = (
   options: {
     /** The particular detail to retrieve */

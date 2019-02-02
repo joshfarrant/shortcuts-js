@@ -1,10 +1,12 @@
-/** @module actions */
-
 import { withActionOutput } from '../utils';
 
 import WFWorkflowAction from '../interfaces/WF/WFWorkflowAction';
 
 /**
+ * @action Tweet
+ * @section Actions > Twitter
+ * @icon Twitter
+ *
  * Tweet Action. Tweets the input.
  *
  * ```js

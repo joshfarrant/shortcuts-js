@@ -1,11 +1,13 @@
-/** @module actions */
-
 import { withActionOutput } from '../utils';
 
 import WFWorkflowAction from '../interfaces/WF/WFWorkflowAction';
 
 /**
- * Get Latest Bursts. Gets the most recent burst photos from the camera roll.
+ * @action Get Latest Bursts
+ * @section Actions > Photos & Video > Photos
+ * @icon Bursts
+ *
+ * Gets the most recent burst photos from the camera roll.
  *
  * ```js
  * getLatestBursts({
@@ -13,6 +15,7 @@ import WFWorkflowAction from '../interfaces/WF/WFWorkflowAction';
  * });
  * ```
  */
+
 const getLatestBursts = (
   options: {
     /** The number of burst photos to get */

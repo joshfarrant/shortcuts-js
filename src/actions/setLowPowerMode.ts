@@ -1,9 +1,11 @@
-/** @module actions */
-
 import WFWorkflowAction from '../interfaces/WF/WFWorkflowAction';
 
 /**
- * Set Low Power Mode Action. Sets the device's Low Power Mode to on or off.
+ * @action Set Low Power Mode
+ * @section Actions > Scripting > Device
+ * @icon Battery
+ *
+ * Sets the device’s Low Power Mode to on or off.
  *
  * ```js
  * setLowPowerMode({
@@ -11,6 +13,7 @@ import WFWorkflowAction from '../interfaces/WF/WFWorkflowAction';
  * });
  * ```
  */
+
 const setLowPowerMode = (
   options: {
     /** Enable or disable low power mode */

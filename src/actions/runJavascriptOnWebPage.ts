@@ -1,12 +1,14 @@
-/** @module actions */
-
 import { withActionOutput } from '../utils';
 
 import WFSerialization from '../interfaces/WF/WFSerialization';
 import WFWorkflowAction from '../interfaces/WF/WFWorkflowAction';
 
 /**
- * Run JavaScript On Web Page Action. Runs JavaScript on a Safari web page passed in as input.
+ * @action Run JavaScript on Web Page
+ * @section Actions > Web > Safari
+ * @icon Safari
+ *
+ * Runs JavaScript on a Safari web page passed in as input
  *
  * ```js
  * runJavascriptOnWebPage({
@@ -27,6 +29,7 @@ import WFWorkflowAction from '../interfaces/WF/WFWorkflowAction';
  * });
  * ```
  */
+
 const runJavascriptOnWebPage = (
   options: {
     /** The JavaScript to run */

@@ -1,5 +1,3 @@
-/** @module actions */
-
 import {
   buildSerialization,
   withActionOutput,
@@ -19,7 +17,11 @@ type Value = (
 );
 
 /**
- * Get Content of URL Action. Gets the contents of URLs passed into the action. Useful for downloading files and web content, or for making API requests.
+ * @action Get Contents of URL
+ * @section Actions > Web > URLs
+ * @icon Downloads
+ *
+ * Gets the contents of URLs passed into the action. Useful for downloading files and web content, or for making API requests.
  *
  * ```js
  * getContentsOfUrl({
@@ -39,6 +41,7 @@ type Value = (
  * });
  * ```
  */
+
 const getContentsOfUrl = (
   options: {
     /** The headers to attach to the request */

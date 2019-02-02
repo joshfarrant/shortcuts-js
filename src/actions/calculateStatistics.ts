@@ -1,5 +1,3 @@
-/** @module actions */
-
 import { withActionOutput } from '../utils';
 
 import WFSerialization from '../interfaces/WF/WFSerialization';
@@ -7,8 +5,11 @@ import WFStatisticsOperation from '../interfaces/WF/WFStatisticsOperation';
 import WFWorkflowAction from '../interfaces/WF/WFWorkflowAction';
 
 /**
- * Calculate Statistics Action. Calculates statistics on the numbers that are
- * provided as input.
+ * @action Calculate Statistics
+ * @section Actions > Scripting > Math
+ * @icon Calculator
+ *
+ * Calculates statistics on the numbers that are provided as input.
  *
  * ```js
  * calculateStatistics({
@@ -16,6 +17,7 @@ import WFWorkflowAction from '../interfaces/WF/WFWorkflowAction';
  * });
  * ```
  */
+
 const calculateStatistics = (
   options: {
     /** The operation to perform */

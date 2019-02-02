@@ -1,8 +1,10 @@
-/** @module actions */
-
 import WFWorkflowAction from '../interfaces/WF/WFWorkflowAction';
 
 /**
+ * @action Post on Instagram
+ * @section Actions > Instagram
+ * @icon Instagram
+ *
  * Post on Instagram Action. Opens the photo passed into this action in the Instagram app and copies the caption to the clipboard.
  *
  * ```js
@@ -11,6 +13,7 @@ import WFWorkflowAction from '../interfaces/WF/WFWorkflowAction';
  * });
  * ```
  */
+
 const postOnInstagram = (
   options: {
     /** Photo caption */

@@ -1,7 +1,11 @@
 import WFWorkflowAction from '../interfaces/WF/WFWorkflowAction';
 
 /**
- * Remove Reminders Action. Removes all reminders passed into the action from the lists they are contained in.
+ * @action Remove Reminders
+ * @section Content Types > Calendar > Reminders
+ * @icon Reminders
+ *
+ * Removes all reminders passed into the action from the lists they are contained in.
  *
  * ```js
  * removeReminders();

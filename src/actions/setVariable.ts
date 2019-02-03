@@ -2,7 +2,11 @@ import Variable from '../interfaces/Variable';
 import WFWorkflowAction from '../interfaces/WF/WFWorkflowAction';
 
 /**
- * Set Variable Action. Sets the value of the specified variable to the input of this action.
+ * @action Set Variable
+ * @section Actions > Scripting > Variables
+ * @icon Variable
+ *
+ * Sets the value of the specified variable to the input of this action.
  *
  * ```js
  * setVariable({
@@ -10,22 +14,19 @@ import WFWorkflowAction from '../interfaces/WF/WFWorkflowAction';
  * });
  * ```
  */
+
 const setVariable = (
-  options: {
+  {
+    variable,
+  }: {
     /** The variable to set */
     variable: Variable,
   },
-): WFWorkflowAction => {
-  const {
-    variable,
-  } = options;
-
-  return {
-    WFWorkflowActionIdentifier: 'is.workflow.actions.setvariable',
-    WFWorkflowActionParameters: {
-      WFVariableName: variable.Value.VariableName,
-    },
-  };
-};
+): WFWorkflowAction => ({
+  WFWorkflowActionIdentifier: 'is.workflow.actions.setvariable',
+  WFWorkflowActionParameters: {
+    WFVariableName: variable.Value.VariableName,
+  },
+});
 
 export default setVariable;

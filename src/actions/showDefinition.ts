@@ -1,7 +1,11 @@
 import WFWorkflowAction from '../interfaces/WF/WFWorkflowAction';
 
 /**
- * Show Definition Action. Shows the definition of the word passed into the action.
+ * @action Show Definition
+ * @section Content Types > Text >
+ * @icon Dictionary
+ *
+ * Shows the definition of the word passed into the action.
  *
  * ```js
  * showDefinition();

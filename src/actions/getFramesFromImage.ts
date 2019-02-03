@@ -1,7 +1,11 @@
 import WFWorkflowAction from '../interfaces/WF/WFWorkflowAction';
 
 /**
- * Get Frames from Image Action. Splits an animated GIF or a photo burst into individual frames.
+ * @action Get Frames from Image
+ * @section Content Types > Photos & Video > GIFs
+ * @icon GIF
+ *
+ * Splits an animated GIF or a photo burst into individual frames.
  *
  * ```js
  * getFramesFromImage();

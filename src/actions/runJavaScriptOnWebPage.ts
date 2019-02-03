@@ -1,14 +1,17 @@
-
 import { withActionOutput } from '../utils';
 
 import WFSerialization from '../interfaces/WF/WFSerialization';
 import WFWorkflowAction from '../interfaces/WF/WFWorkflowAction';
 
 /**
- * Run JavaScript On Web Page Action. Runs JavaScript on a Safari web page passed in as input.
+ * @action Run JavaScript on Web Page
+ * @section Content Types > Web > Safari
+ * @icon Safari
+ *
+ * Runs JavaScript on a Safari web page passed in as input
  *
  * ```js
- * runJavascriptOnWebPage({
+ * runJavaScriptOnWebPage({
  *   text: '
   *   var result = [];
   *   // Get all links from the page
@@ -26,22 +29,19 @@ import WFWorkflowAction from '../interfaces/WF/WFWorkflowAction';
  * });
  * ```
  */
-const runJavascriptOnWebPage = (
-  options: {
+
+const runJavaScriptOnWebPage = (
+  {
+    text = '',
+  }: {
     /** The JavaScript to run */
     text?: WFSerialization | string,
   },
-): WFWorkflowAction => {
-  const {
-    text = '',
-  } = options;
+): WFWorkflowAction => ({
+  WFWorkflowActionIdentifier: 'is.workflow.actions.runjavascriptonwebpage',
+  WFWorkflowActionParameters: {
+    WFJavaScript: text,
+  },
+});
 
-  return {
-    WFWorkflowActionIdentifier: 'is.workflow.actions.runjavascriptonwebpage',
-    WFWorkflowActionParameters: {
-      WFJavaScript: text,
-    },
-  };
-};
-
-export default withActionOutput(runJavascriptOnWebPage);
+export default withActionOutput(runJavaScriptOnWebPage);

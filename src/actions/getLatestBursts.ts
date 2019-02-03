@@ -3,7 +3,11 @@ import { withActionOutput } from '../utils';
 import WFWorkflowAction from '../interfaces/WF/WFWorkflowAction';
 
 /**
- * Get Latest Bursts. Gets the most recent burst photos from the camera roll.
+ * @action Get Latest Bursts
+ * @section Content Types > Photos & Video > Photos
+ * @icon Bursts
+ *
+ * Gets the most recent burst photos from the camera roll.
  *
  * ```js
  * getLatestBursts({
@@ -11,22 +15,19 @@ import WFWorkflowAction from '../interfaces/WF/WFWorkflowAction';
  * });
  * ```
  */
+
 const getLatestBursts = (
-  options: {
+  {
+    count = 1,
+  }: {
     /** The number of burst photos to get */
     count?: number,
   },
-): WFWorkflowAction => {
-  const {
-    count = 1,
-  } = options;
-
-  return {
-    WFWorkflowActionIdentifier: 'is.workflow.actions.getlatestbursts',
-    WFWorkflowActionParameters: {
-      WFGetLatestPhotoCount: count,
-    },
-  };
-};
+): WFWorkflowAction => ({
+  WFWorkflowActionIdentifier: 'is.workflow.actions.getlatestbursts',
+  WFWorkflowActionParameters: {
+    WFGetLatestPhotoCount: count,
+  },
+});
 
 export default withActionOutput(getLatestBursts);

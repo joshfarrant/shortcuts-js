@@ -4,7 +4,11 @@ import WFMapsApps from '../interfaces/WF/WFMapsApps';
 import WFWorkflowAction from '../interfaces/WF/WFWorkflowAction';
 
 /**
- * Show in Maps Action. Opens your choice of Maps, Google Maps or Waze, and searches for the location, place or text that was passed into the action.
+ * @action Show in Maps
+ * @section Content Types > Location > Maps
+ * @icon Maps
+ *
+ * Opens your choice of Maps, Google Maps, or Waze and searches for the location, place, or text that was passed into the action.
  *
  * ```js
  * showInMaps({
@@ -12,21 +16,19 @@ import WFWorkflowAction from '../interfaces/WF/WFWorkflowAction';
  * });
  * ```
  */
+
 const showInMaps = (
-  options: {
+  {
+    app = 'Maps',
+  }: {
+    /** The maps app to use */
     app?: WFMapsApps,
   },
-): WFWorkflowAction => {
-  const {
-    app = '',
-  } = options;
-
-  return ({
-    WFWorkflowActionIdentifier: 'is.workflow.actions.searchmaps',
-    WFWorkflowActionParameters: {
-      WFSearchMapsActionApp: app,
-    },
-  });
-};
+): WFWorkflowAction => ({
+  WFWorkflowActionIdentifier: 'is.workflow.actions.searchmaps',
+  WFWorkflowActionParameters: {
+    WFSearchMapsActionApp: app,
+  },
+});
 
 export default withActionOutput(showInMaps);

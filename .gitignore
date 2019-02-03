@@ -12,6 +12,10 @@ coverage
 # Transpiled files
 build/
 
+# Documentation
+docs/api/data.json
+docs/static/
+
 # VS Code
 .vscode
 !.vscode/tasks.js
@@ -28,9 +32,8 @@ build/
 # Misc
 .DS_Store
 
-# Docs
-docs/
-
 # Dev
 shortcuts/
 playground.js
+playground/
+

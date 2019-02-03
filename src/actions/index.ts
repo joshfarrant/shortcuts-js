@@ -26,9 +26,9 @@ import getAddressesFromInput from './getAddressesFromInput';
 import getBatteryLevel from './getBatteryLevel';
 import getClipboard from './getClipboard';
 import getContactsFromInput from './getContactsFromInput';
-import getContentsOfUrl from './getContentsOfUrl';
+import getContentsOfURL from './getContentsOfURL';
 import getContentsOfWebPage from './getContentsOfWebPage';
-import getCurrentIpAddress from './getCurrentIpAddress';
+import getCurrentIPAddress from './getCurrentIPAddress';
 import getCurrentSong from './getCurrentSong';
 import getDatesFromInput from './getDatesFromInput';
 import getDeviceDetails from './getDeviceDetails';
@@ -77,7 +77,7 @@ import print from './print';
 import quickLook from './quickLook';
 import randomNumber from './randomNumber';
 import removeReminders from './removeReminders';
-import runJavascriptOnWebPage from './runJavascriptOnWebPage';
+import runJavaScriptOnWebPage from './runJavaScriptOnWebPage';
 import runScriptOverSSH from './runScriptOverSSH';
 import runShortcut from './runShortcut';
 import scanQROrBarcode from './scanQROrBarcode';
@@ -100,7 +100,7 @@ import shareWithExtensions from './shareWithExtensions';
 import showAlert from './showAlert';
 import showDefinition from './showDefinition';
 import showInCalendar from './showInCalendar';
-import showInItunesStore from './showInItunesStore';
+import showInITunesStore from './showInITunesStore';
 import showInMaps from './showInMaps';
 import showNotification from './showNotification';
 import showResult from './showResult';
@@ -109,8 +109,8 @@ import skipForward from './skipForward';
 import text from './text';
 import trimMedia from './trimMedia';
 import tweet from './tweet';
-import url from './url';
-import urlEncode from './urlEncode';
+import URL from './URL';
+import URLEncode from './URLEncode';
 import vibrateDevice from './vibrateDevice';
 import viewContentGraph from './viewContentGraph';
 import wait from './wait';
@@ -145,9 +145,9 @@ export {
   getBatteryLevel,
   getClipboard,
   getContactsFromInput,
-  getContentsOfUrl,
+  getContentsOfURL,
   getContentsOfWebPage,
-  getCurrentIpAddress,
+  getCurrentIPAddress,
   getCurrentSong,
   getDatesFromInput,
   getDeviceDetails,
@@ -196,7 +196,7 @@ export {
   quickLook,
   randomNumber,
   removeReminders,
-  runJavascriptOnWebPage,
+  runJavaScriptOnWebPage,
   runScriptOverSSH,
   runShortcut,
   scanQROrBarcode,
@@ -220,7 +220,7 @@ export {
   showAlert,
   showDefinition,
   showInCalendar,
-  showInItunesStore,
+  showInITunesStore,
   showNotification,
   showResult,
   skipBack,
@@ -228,8 +228,8 @@ export {
   text,
   tweet,
   trimMedia,
-  url,
-  urlEncode,
+  URL,
+  URLEncode,
   vibrateDevice,
   viewContentGraph,
   wait,

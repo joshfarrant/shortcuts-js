@@ -5,8 +5,11 @@ import WFStatisticsOperation from '../interfaces/WF/WFStatisticsOperation';
 import WFWorkflowAction from '../interfaces/WF/WFWorkflowAction';
 
 /**
- * Calculate Statistics Action. Calculates statistics on the numbers that are
- * provided as input.
+ * @action Calculate Statistics
+ * @section Actions > Scripting > Maths
+ * @icon Calculator
+ *
+ * Calculates statistics on the numbers that are provided as input.
  *
  * ```js
  * calculateStatistics({
@@ -14,22 +17,19 @@ import WFWorkflowAction from '../interfaces/WF/WFWorkflowAction';
  * });
  * ```
  */
+
 const calculateStatistics = (
-  options: {
+  {
+    operation = 'Average',
+  }: {
     /** The operation to perform */
     operation?: WFSerialization | WFStatisticsOperation,
   },
-): WFWorkflowAction => {
-  const {
-    operation = 'Average',
-  } = options;
-
-  return {
-    WFWorkflowActionIdentifier: 'is.workflow.actions.statistics',
-    WFWorkflowActionParameters: {
-      WFStatisticsOperation: operation,
-    },
-  };
-};
+): WFWorkflowAction => ({
+  WFWorkflowActionIdentifier: 'is.workflow.actions.statistics',
+  WFWorkflowActionParameters: {
+    WFStatisticsOperation: operation,
+  },
+});
 
 export default withActionOutput(calculateStatistics);

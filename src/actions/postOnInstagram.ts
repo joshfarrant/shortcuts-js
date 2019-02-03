@@ -1,6 +1,10 @@
 import WFWorkflowAction from '../interfaces/WF/WFWorkflowAction';
 
 /**
+ * @action Post on Instagram
+ * @section Content Types > Sharing > Instagram
+ * @icon Instagram
+ *
  * Post on Instagram Action. Opens the photo passed into this action in the Instagram app and copies the caption to the clipboard.
  *
  * ```js
@@ -9,22 +13,19 @@ import WFWorkflowAction from '../interfaces/WF/WFWorkflowAction';
  * });
  * ```
  */
+
 const postOnInstagram = (
-  options: {
+  {
+    caption = '',
+  }: {
     /** Photo caption */
     caption?: string,
   },
-): WFWorkflowAction => {
-  const {
-    caption = '',
-  } = options;
-
-  return {
-    WFWorkflowActionIdentifier: 'com.burbn.instagram.openin',
-    WFWorkflowActionParameters: {
-      InstagramCaption: caption,
-    },
-  };
-};
+): WFWorkflowAction => ({
+  WFWorkflowActionIdentifier: 'com.burbn.instagram.openin',
+  WFWorkflowActionParameters: {
+    InstagramCaption: caption,
+  },
+});
 
 export default postOnInstagram;

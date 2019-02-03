@@ -1,12 +1,12 @@
-import { getCurrentIpAddress } from '../../src/actions';
+import { getCurrentIPAddress } from '../../src/actions';
 
-describe('getCurrentIpAddress function', () => {
+describe('getCurrentIPAddress function', () => {
 
   it('is a function', () => {
-    expect(typeof getCurrentIpAddress).toBe('function');
+    expect(typeof getCurrentIPAddress).toBe('function');
   });
 
-  it('builds a getCurrentIpAddress action', () => {
+  it('builds a getCurrentIPAddress action', () => {
     const expected = {
       WFWorkflowActionIdentifier: 'is.workflow.actions.getipaddress',
       WFWorkflowActionParameters: {
@@ -14,12 +14,12 @@ describe('getCurrentIpAddress function', () => {
         WFIPAddressTypeOption: 'IPv4',
       },
     };
-    const actual = getCurrentIpAddress({});
+    const actual = getCurrentIPAddress({});
 
     expect(actual).toEqual(expected);
   });
 
-  it('builds a getCurrentIpAddress action when an address is passed', () => {
+  it('builds a getCurrentIPAddress action when an address is passed', () => {
     const expected = {
       WFWorkflowActionIdentifier: 'is.workflow.actions.getipaddress',
       WFWorkflowActionParameters: {
@@ -27,12 +27,12 @@ describe('getCurrentIpAddress function', () => {
         WFIPAddressTypeOption: 'IPv4',
       },
     };
-    const actual = getCurrentIpAddress({ address: 'Local' });
+    const actual = getCurrentIPAddress({ address: 'Local' });
 
     expect(actual).toEqual(expected);
   });
 
-  it('builds a getCurrentIpAddress action when a type is passed', () => {
+  it('builds a getCurrentIPAddress action when a type is passed', () => {
     const expected = {
       WFWorkflowActionIdentifier: 'is.workflow.actions.getipaddress',
       WFWorkflowActionParameters: {
@@ -40,7 +40,7 @@ describe('getCurrentIpAddress function', () => {
         WFIPAddressTypeOption: 'IPv6',
       },
     };
-    const actual = getCurrentIpAddress({ type: 'IPv6' });
+    const actual = getCurrentIPAddress({ type: 'IPv6' });
 
     expect(actual).toEqual(expected);
   });

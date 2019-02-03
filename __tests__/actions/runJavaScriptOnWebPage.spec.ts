@@ -1,24 +1,24 @@
-import { runJavascriptOnWebPage } from '../../src/actions';
+import { runJavaScriptOnWebPage } from '../../src/actions';
 
-describe('runJavascriptOnWebPage function', () => {
+describe('runJavaScriptOnWebPage function', () => {
 
   it('is a function', () => {
-    expect(typeof runJavascriptOnWebPage).toBe('function');
+    expect(typeof runJavaScriptOnWebPage).toBe('function');
   });
 
-  it('builds a runJavascriptOnWebPage action without a given string', () => {
+  it('builds a runJavaScriptOnWebPage action without a given string', () => {
     const expected = {
       WFWorkflowActionIdentifier: 'is.workflow.actions.runjavascriptonwebpage',
       WFWorkflowActionParameters: {
         WFJavaScript: '',
       },
     };
-    const actual = runJavascriptOnWebPage({});
+    const actual = runJavaScriptOnWebPage({});
 
     expect(actual).toEqual(expected);
   });
 
-  it('builds a runJavascriptOnWebPage action with a code string', () => {
+  it('builds a runJavaScriptOnWebPage action with a code string', () => {
     const text = 'var result = "Hello World"; \n \n completion(result);';
     const expected = {
       WFWorkflowActionIdentifier: 'is.workflow.actions.runjavascriptonwebpage',
@@ -26,7 +26,7 @@ describe('runJavascriptOnWebPage function', () => {
         WFJavaScript: 'var result = "Hello World"; \n \n completion(result);',
       },
     };
-    const actual = runJavascriptOnWebPage({ text });
+    const actual = runJavaScriptOnWebPage({ text });
 
     expect(actual).toEqual(expected);
   });

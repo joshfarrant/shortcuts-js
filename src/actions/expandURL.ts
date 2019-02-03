@@ -3,7 +3,11 @@ import { withActionOutput } from '../utils';
 import WFWorkflowAction from '../interfaces/WF/WFWorkflowAction';
 
 /**
- * Expand URL Action. This action expands and cleans up URLs that have been shortend using a URL shortening service like TinyURL or Bit.ly.
+ * @action Expand URL
+ * @section Content Types > Web > URLs
+ * @icon URL
+ *
+ * This action expands and cleans up URLs which have been shortened using a URL shortening service like TinyURL or Bit.ly.
  *
  * ```js
  * expandURL();

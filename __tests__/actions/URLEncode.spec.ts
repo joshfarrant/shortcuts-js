@@ -1,31 +1,31 @@
-import { urlEncode } from '../../src/actions';
+import { URLEncode } from '../../src/actions';
 
-describe('urlEncode function', () => {
+describe('URLEncode function', () => {
 
   it('is a function', () => {
-    expect(typeof urlEncode).toBe('function');
+    expect(typeof URLEncode).toBe('function');
   });
 
-  it('builds a urlEncode action (encode)', () => {
+  it('builds a URLEncode action (encode)', () => {
     const expected = {
       WFWorkflowActionIdentifier: 'is.workflow.actions.urlencode',
       WFWorkflowActionParameters: {
         WFEncodeMode: 'Encode',
       },
     };
-    const actual = urlEncode({});
+    const actual = URLEncode({});
 
     expect(actual).toEqual(expected);
   });
 
-  it('builds a urlEncode action (decode)', () => {
+  it('builds a URLEncode action (decode)', () => {
     const expected = {
       WFWorkflowActionIdentifier: 'is.workflow.actions.urlencode',
       WFWorkflowActionParameters: {
         WFEncodeMode: 'Decode',
       },
     };
-    const actual = urlEncode({
+    const actual = URLEncode({
       encodeMode: 'Decode',
     });
 

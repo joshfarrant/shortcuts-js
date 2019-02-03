@@ -1,24 +1,24 @@
-import { url } from '../../src/actions';
+import { URL } from '../../src/actions';
 
-describe('url function', () => {
+describe('URL function', () => {
 
   it('is a function', () => {
-    expect(typeof url).toBe('function');
+    expect(typeof URL).toBe('function');
   });
 
-  it('builds a url action when no url is passed', () => {
+  it('builds a URL action when no URL is passed', () => {
     const expected = {
       WFWorkflowActionIdentifier: 'is.workflow.actions.url',
       WFWorkflowActionParameters: {
         WFURLActionURL: '',
       },
     };
-    const actual = url({});
+    const actual = URL({});
 
     expect(actual).toEqual(expected);
   });
 
-  it('builds a url action with given url', () => {
+  it('builds a URL action with given URL', () => {
     const testUrl = '';
     const expected = {
       WFWorkflowActionIdentifier: 'is.workflow.actions.url',
@@ -26,7 +26,7 @@ describe('url function', () => {
         WFURLActionURL: testUrl,
       },
     };
-    const actual = url({ url: testUrl });
+    const actual = URL({ url: testUrl });
 
     expect(actual).toEqual(expected);
   });

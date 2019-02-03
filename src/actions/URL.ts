@@ -8,13 +8,13 @@ import WFWorkflowAction from '../interfaces/WF/WFWorkflowAction';
  * Passes the specified URL to the next action.
  *
  * ```js
- * url({
+ * URL({
  *   url: 'https://shortcuts.fun',
  * });
  * ```
  */
 
-const url = (
+const URL = (
   {
     url = '',
   }: {
@@ -28,4 +28,4 @@ const url = (
   },
 });
 
-export default url;
+export default URL;

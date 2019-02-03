@@ -1,8 +1,8 @@
-import { showInItunesStore } from '../../src/actions';
+import { showInITunesStore } from '../../src/actions';
 
-describe('showInItunesStore function', () => {
+describe('showInITunesStore function', () => {
   it('is a function', () => {
-    expect(typeof showInItunesStore).toBe('function');
+    expect(typeof showInITunesStore).toBe('function');
   });
 
   it('builds a show in itunes store action', () => {
@@ -10,7 +10,7 @@ describe('showInItunesStore function', () => {
       WFWorkflowActionIdentifier: 'is.workflow.actions.showinstore',
       WFWorkflowActionParameters: {},
     };
-    const actual = showInItunesStore();
+    const actual = showInITunesStore();
 
     expect(actual).toEqual(expected);
   });

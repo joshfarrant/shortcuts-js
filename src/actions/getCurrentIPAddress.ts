@@ -12,14 +12,14 @@ import WFWorkflowAction from '../interfaces/WF/WFWorkflowAction';
  * Returns the local or external IP address of the device.
  *
  * ```js
- * getCurrentIpAddress({
+ * getCurrentIPAddress({
  *   address: 'External',
  *   type: 'IPv4',
  * });
  * ```
  */
 
-const getCurrentIpAddress = (
+const getCurrentIPAddress = (
   {
     address = 'External',
     type = 'IPv4',
@@ -37,4 +37,4 @@ const getCurrentIpAddress = (
   },
 });
 
-export default withActionOutput(getCurrentIpAddress);
+export default withActionOutput(getCurrentIPAddress);

@@ -24,7 +24,7 @@ type Value = (
  * Gets the contents of URLs passed into the action. Useful for downloading files and web content, or for making API requests.
  *
  * ```js
- * getContentsOfUrl({
+ * getContentsOfURL({
  *   headers: {
  *     'Authorization': 'Pretty please',
  *     'X-Some-Header': 'Badger',
@@ -42,7 +42,7 @@ type Value = (
  * ```
  */
 
-const getContentsOfUrl = (
+const getContentsOfURL = (
   {
     headers = {},
     method = 'GET',
@@ -87,4 +87,4 @@ const getContentsOfUrl = (
   return action;
 };
 
-export default withActionOutput(getContentsOfUrl);
+export default withActionOutput(getContentsOfURL);

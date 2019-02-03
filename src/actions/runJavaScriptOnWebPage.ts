@@ -11,7 +11,7 @@ import WFWorkflowAction from '../interfaces/WF/WFWorkflowAction';
  * Runs JavaScript on a Safari web page passed in as input
  *
  * ```js
- * runJavascriptOnWebPage({
+ * runJavaScriptOnWebPage({
  *   text: '
   *   var result = [];
   *   // Get all links from the page
@@ -30,7 +30,7 @@ import WFWorkflowAction from '../interfaces/WF/WFWorkflowAction';
  * ```
  */
 
-const runJavascriptOnWebPage = (
+const runJavaScriptOnWebPage = (
   {
     text = '',
   }: {
@@ -44,4 +44,4 @@ const runJavascriptOnWebPage = (
   },
 });
 
-export default withActionOutput(runJavascriptOnWebPage);
+export default withActionOutput(runJavaScriptOnWebPage);

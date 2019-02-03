@@ -16,6 +16,7 @@ module.exports = {
     '/node_modules/',
     '/shortcuts/',
     '/__tests__/_fixtures/',
+    '/__tests__/_helpers/',
   ],
   coverageDirectory: 'coverage',
   collectCoverageFrom: [

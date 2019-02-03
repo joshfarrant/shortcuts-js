@@ -1,6 +1,7 @@
 import * as uuidv4 from 'uuid/v4';
 
 import WFWorkflowAction from '../interfaces/WF/WFWorkflowAction';
+import { withActionOutput } from '../utils';
 
 type ChooseFromMenuItem = {
   label: string;
@@ -81,4 +82,4 @@ const chooseFromMenu = (
   ];
 };
 
-export default chooseFromMenu;
+export default withActionOutput(chooseFromMenu);

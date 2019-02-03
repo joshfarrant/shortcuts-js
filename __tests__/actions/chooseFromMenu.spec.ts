@@ -3,29 +3,11 @@ import { chooseFromMenu } from '../../src/actions';
 import {
   testActions,
 } from '../_fixtures/actions';
+import {
+  compareObjectsWithGroupingIdentifier,
+} from '../_helpers/compareObjectsWithGroupingIdentifier';
 
 import WFWorkflowAction from '../../src/interfaces/WF/WFWorkflowAction';
-
-const compareObjectsWithGroupingIdentifier = (
-  actual: WFWorkflowAction[],
-  expected: WFWorkflowAction[],
-) => {
-  expect.assertions(expected.length);
-
-  expected.forEach((obj, idx) => {
-    const actualObj = actual[idx];
-    const expectedObj = {
-      ...obj,
-    };
-
-    const { GroupingIdentifier } = actualObj.WFWorkflowActionParameters;
-    if (GroupingIdentifier) {
-      expectedObj.WFWorkflowActionParameters.GroupingIdentifier = GroupingIdentifier;
-    }
-
-    expect(actual[idx]).toEqual(expectedObj);
-  });
-};
 
 describe('chooseFromMenu function', () => {
 

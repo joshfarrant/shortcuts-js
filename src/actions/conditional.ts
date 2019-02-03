@@ -2,6 +2,7 @@ import * as uuidv4 from 'uuid/v4';
 
 import WFCondition from '../interfaces/WF/WFCondition';
 import WFWorkflowAction from '../interfaces/WF/WFWorkflowAction';
+import { withActionOutput } from '../utils';
 
 /** @ignore */
 const conditionMap = new Map([
@@ -129,4 +130,4 @@ const conditional = (
   return actionArr;
 };
 
-export default conditional;
+export default withActionOutput(conditional);

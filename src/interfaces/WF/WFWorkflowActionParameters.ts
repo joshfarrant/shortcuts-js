@@ -99,6 +99,7 @@ interface WFWorkflowActionParameters {
   WFNumberValue?: number;
   WFRandomNumberMaximum?: WFSerialization | number;
   WFRandomNumberMinimum?: WFSerialization | number;
+  WFRepeatCount?: WFSerialization | number;
   WFRelativeDateFormatStyle?: WFSerialization | WFRelativeDateFormatStyle;
   WFScientificMathOperand?: number;
   WFScientificMathOperation?: WFScientificMathOperation;

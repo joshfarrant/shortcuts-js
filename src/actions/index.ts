@@ -116,6 +116,9 @@ import viewContentGraph from './viewContentGraph';
 import wait from './wait';
 import waitToReturn from './waitToReturn';
 
+// 3rd-party app imports
+import * as pythonista from './pythonista';
+
 export {
   addToReadingList,
   addToVariable,
@@ -234,4 +237,7 @@ export {
   viewContentGraph,
   wait,
   waitToReturn,
+
+  // 3rd-party app exports
+  pythonista,
 };

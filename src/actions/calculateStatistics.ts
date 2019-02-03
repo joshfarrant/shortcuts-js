@@ -19,21 +19,17 @@ import WFWorkflowAction from '../interfaces/WF/WFWorkflowAction';
  */
 
 const calculateStatistics = (
-  options: {
+  {
+    operation = 'Average',
+  }: {
     /** The operation to perform */
     operation?: WFSerialization | WFStatisticsOperation,
   },
-): WFWorkflowAction => {
-  const {
-    operation = 'Average',
-  } = options;
-
-  return {
-    WFWorkflowActionIdentifier: 'is.workflow.actions.statistics',
-    WFWorkflowActionParameters: {
-      WFStatisticsOperation: operation,
-    },
-  };
-};
+): WFWorkflowAction => ({
+  WFWorkflowActionIdentifier: 'is.workflow.actions.statistics',
+  WFWorkflowActionParameters: {
+    WFStatisticsOperation: operation,
+  },
+});
 
 export default withActionOutput(calculateStatistics);

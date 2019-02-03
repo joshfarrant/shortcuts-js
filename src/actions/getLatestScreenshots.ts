@@ -17,21 +17,17 @@ import WFWorkflowAction from '../interfaces/WF/WFWorkflowAction';
  */
 
 const getLatestScreenshots = (
-  options: {
+  {
+    count = 1,
+  }: {
     /** The number of screenshots to get */
     count?: number,
   },
-): WFWorkflowAction => {
-  const {
-    count = 1,
-  } = options;
-
-  return {
-    WFWorkflowActionIdentifier: 'is.workflow.actions.getlastscreenshot',
-    WFWorkflowActionParameters: {
-      WFGetLatestPhotoCount: count,
-    },
-  };
-};
+): WFWorkflowAction => ({
+  WFWorkflowActionIdentifier: 'is.workflow.actions.getlastscreenshot',
+  WFWorkflowActionParameters: {
+    WFGetLatestPhotoCount: count,
+  },
+});
 
 export default withActionOutput(getLatestScreenshots);

@@ -43,7 +43,12 @@ type Value = (
  */
 
 const getContentsOfUrl = (
-  options: {
+  {
+    headers = {},
+    method = 'GET',
+    requestBodyType = 'JSON',
+    requestBody = {},
+  }: {
     /** The headers to attach to the request */
     headers?: {
       [x: string]: Value,
@@ -58,13 +63,6 @@ const getContentsOfUrl = (
     };
   },
 ): WFWorkflowAction => {
-  const {
-    headers = {},
-    method = 'GET',
-    requestBodyType = 'JSON',
-    requestBody = {},
-  } = options;
-
   const action: WFWorkflowAction = {
     WFWorkflowActionIdentifier: 'is.workflow.actions.downloadurl',
     WFWorkflowActionParameters: {

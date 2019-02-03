@@ -22,7 +22,13 @@ import WFWorkflowAction from '../interfaces/WF/WFWorkflowAction';
  */
 
 const formatDate = (
-  options: {
+  {
+    dateFormat = 'Short',
+    timeFormat = 'Short',
+    alternativeFormat = 'Medium',
+    includeISO8601Time = false,
+    formatString = 'EEE, dd MMM yyyy HH:mm:ss Z',
+  }: {
     /** The date format to use */
     dateFormat?: WFSerialization | WFDateFormatStyle;
     /** The time format to use */
@@ -34,29 +40,19 @@ const formatDate = (
     /** The custom format string to use */
     formatString?: WFSerialization | string;
   },
-): WFWorkflowAction => {
-  const {
-    dateFormat = 'Short',
-    timeFormat = 'Short',
-    alternativeFormat = 'Medium',
-    includeISO8601Time = false,
-    formatString = 'EEE, dd MMM yyyy HH:mm:ss Z',
-  } = options;
-
-  return {
-    WFWorkflowActionIdentifier: 'is.workflow.actions.format.date',
-    WFWorkflowActionParameters: {
-      WFDateFormatStyle: dateFormat,
-      ...(
-        dateFormat !== 'RFC 2822' &&
-        dateFormat !== 'ISO 8601' &&
-        dateFormat !== 'Custom' && { WFTimeFormatStyle: timeFormat }
-      ),
-      ...(dateFormat === 'Relative' && { WFRelativeDateFormatStyle: alternativeFormat }),
-      ...(dateFormat === 'ISO 8601' && { WFISO8601IncludeTime: includeISO8601Time }),
-      ...(dateFormat === 'Custom' && { WFDateFormat: formatString }),
-    },
-  };
-};
+): WFWorkflowAction => ({
+  WFWorkflowActionIdentifier: 'is.workflow.actions.format.date',
+  WFWorkflowActionParameters: {
+    WFDateFormatStyle: dateFormat,
+    ...(
+      dateFormat !== 'RFC 2822' &&
+      dateFormat !== 'ISO 8601' &&
+      dateFormat !== 'Custom' && { WFTimeFormatStyle: timeFormat }
+    ),
+    ...(dateFormat === 'Relative' && { WFRelativeDateFormatStyle: alternativeFormat }),
+    ...(dateFormat === 'ISO 8601' && { WFISO8601IncludeTime: includeISO8601Time }),
+    ...(dateFormat === 'Custom' && { WFDateFormat: formatString }),
+  },
+});
 
 export default withActionOutput(formatDate);

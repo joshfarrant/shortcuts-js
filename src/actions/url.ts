@@ -15,21 +15,17 @@ import WFWorkflowAction from '../interfaces/WF/WFWorkflowAction';
  */
 
 const url = (
-  options: {
+  {
+    url = '',
+  }: {
     /** The URL to set */
     url?: string,
   },
-): WFWorkflowAction => {
-  const {
-    url = '',
-  } = options;
-
-  return {
-    WFWorkflowActionIdentifier: 'is.workflow.actions.url',
-    WFWorkflowActionParameters: {
-      WFURLActionURL: url,
-    },
-  };
-};
+): WFWorkflowAction => ({
+  WFWorkflowActionIdentifier: 'is.workflow.actions.url',
+  WFWorkflowActionParameters: {
+    WFURLActionURL: url,
+  },
+});
 
 export default url;

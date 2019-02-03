@@ -15,21 +15,17 @@ import WFWorkflowAction from '../interfaces/WF/WFWorkflowAction';
  */
 
 const setAirplaneMode = (
-  options: {
+  {
+    value = true,
+  }: {
     /** Enable or disable airplane mode */
     value?: boolean,
   },
-): WFWorkflowAction => {
-  const {
-    value = true,
-  } = options;
-
-  return {
-    WFWorkflowActionIdentifier: 'is.workflow.actions.airplanemode.set',
-    WFWorkflowActionParameters: {
-      OnValue: value,
-    },
-  };
-};
+): WFWorkflowAction => ({
+  WFWorkflowActionIdentifier: 'is.workflow.actions.airplanemode.set',
+  WFWorkflowActionParameters: {
+    OnValue: value,
+  },
+});
 
 export default setAirplaneMode;

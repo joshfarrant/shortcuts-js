@@ -21,7 +21,11 @@ import WFWorkflowAction from '../interfaces/WF/WFWorkflowAction';
  */
 
 const ask = (
-  options: {
+  {
+    inputType = 'Text',
+    defaultAnswer = '',
+    question = '',
+  }: {
     /** The type of input to accept */
     inputType?: WFInputType;
     /** The default answer */
@@ -29,21 +33,13 @@ const ask = (
     /** The title of the dialogue */
     question?: WFSerialization | string;
   },
-): WFWorkflowAction => {
-  const {
-    inputType = 'Text',
-    defaultAnswer = '',
-    question = '',
-  } = options;
-
-  return {
-    WFWorkflowActionIdentifier: 'is.workflow.actions.ask',
-    WFWorkflowActionParameters: {
-      WFInputType: inputType,
-      WFAskActionDefaultAnswer: defaultAnswer,
-      WFAskActionPrompt: question,
-    },
-  };
-};
+): WFWorkflowAction => ({
+  WFWorkflowActionIdentifier: 'is.workflow.actions.ask',
+  WFWorkflowActionParameters: {
+    WFInputType: inputType,
+    WFAskActionDefaultAnswer: defaultAnswer,
+    WFAskActionPrompt: question,
+  },
+});
 
 export default withActionOutput(ask);

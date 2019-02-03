@@ -20,25 +20,21 @@ import WFWorkflowAction from '../interfaces/WF/WFWorkflowAction';
  */
 
 const getTimeBetweenDates = (
-  options: {
+  {
+    unit = 'Minutes',
+    date = '',
+  }: {
     /** The unit of time for the result. Defaults to 'Minutes' */
     unit?: WFSerialization | WFTimeUntilUnit,
     /** The date/time to calculate the difference from. Defaults to empty string */
     date?: WFSerialization | string,
   },
-): WFWorkflowAction => {
-  const {
-    unit = 'Minutes',
-    date = '',
-  } = options;
-
-  return {
-    WFWorkflowActionIdentifier: 'is.workflow.actions.gettimebetweendates',
-    WFWorkflowActionParameters: {
-      ...(unit !== 'Minutes' && { WFTimeUntilUnit: unit }),
-      ...(date !== '' && { WFTimeUntilReferenceDate: 'Other', WFTimeUntilCustomDate: date }),
-    },
-  };
-};
+): WFWorkflowAction => ({
+  WFWorkflowActionIdentifier: 'is.workflow.actions.gettimebetweendates',
+  WFWorkflowActionParameters: {
+    ...(unit !== 'Minutes' && { WFTimeUntilUnit: unit }),
+    ...(date !== '' && { WFTimeUntilReferenceDate: 'Other', WFTimeUntilCustomDate: date }),
+  },
+});
 
 export default withActionOutput(getTimeBetweenDates);

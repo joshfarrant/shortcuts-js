@@ -17,21 +17,17 @@ import WFWorkflowAction from '../interfaces/WF/WFWorkflowAction';
  */
 
 const getLatestLivePhotos = (
-  options: {
+  {
+    count = 1,
+  }: {
     /** The number of live photos to get */
     count?: number,
   },
-): WFWorkflowAction => {
-  const {
-    count = 1,
-  } = options;
-
-  return {
-    WFWorkflowActionIdentifier: 'is.workflow.actions.getlatestlivephotos',
-    WFWorkflowActionParameters: {
-      WFGetLatestPhotoCount: count,
-    },
-  };
-};
+): WFWorkflowAction => ({
+  WFWorkflowActionIdentifier: 'is.workflow.actions.getlatestlivephotos',
+  WFWorkflowActionParameters: {
+    WFGetLatestPhotoCount: count,
+  },
+});
 
 export default withActionOutput(getLatestLivePhotos);

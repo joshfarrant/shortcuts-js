@@ -17,7 +17,11 @@ import WFWorkflowAction from '../interfaces/WF/WFWorkflowAction';
  */
 
 const showNotification = (
-  options: {
+  {
+    title = '',
+    body = 'Hello World',
+    sound = true,
+  }: {
     /** Title for the notification */
     title ?: string,
     /** Body for the notification */
@@ -25,21 +29,13 @@ const showNotification = (
     /** Enable or disable sound for the notification */
     sound ?: boolean,
   },
-): WFWorkflowAction => {
-  const {
-    title = '',
-    body = 'Hello World',
-    sound = true,
-  } = options;
-
-  return {
-    WFWorkflowActionIdentifier: 'is.workflow.actions.notification',
-    WFWorkflowActionParameters: {
-      WFNotificationActionTitle: title,
-      WFNotificationActionBody: body,
-      WFNotificationActionSound: sound,
-    },
-  };
-};
+): WFWorkflowAction => ({
+  WFWorkflowActionIdentifier: 'is.workflow.actions.notification',
+  WFWorkflowActionParameters: {
+    WFNotificationActionTitle: title,
+    WFNotificationActionBody: body,
+    WFNotificationActionSound: sound,
+  },
+});
 
 export default showNotification;

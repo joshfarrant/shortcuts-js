@@ -18,25 +18,21 @@ import WFWorkflowAction from '../interfaces/WF/WFWorkflowAction';
  */
 
 const runShortcut = (
-  options: {
+  {
+    name,
+    show = false,
+  }: {
     /** The name of the shortcut to run */
     name: string,
     /** Whether to show the shortcut while it runs */
     show?: boolean,
   },
-): WFWorkflowAction => {
-  const {
-    name,
-    show = false,
-  } = options;
-
-  return {
-    WFWorkflowActionIdentifier: 'is.workflow.actions.runworkflow',
-    WFWorkflowActionParameters: {
-      WFWorkflowName: name,
-      WFShowWorkflow: show,
-    },
-  };
-};
+): WFWorkflowAction => ({
+  WFWorkflowActionIdentifier: 'is.workflow.actions.runworkflow',
+  WFWorkflowActionParameters: {
+    WFWorkflowName: name,
+    WFShowWorkflow: show,
+  },
+});
 
 export default withActionOutput(runShortcut);

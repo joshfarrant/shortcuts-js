@@ -19,21 +19,17 @@ import WFWorkflowAction from '../interfaces/WF/WFWorkflowAction';
  */
 
 const generateHash = (
-  options: {
+  {
+    type = 'MD5',
+  }: {
     /** The type of hash to use */
     type?: WFSerialization | WFHashType,
   },
-): WFWorkflowAction => {
-  const {
-    type = 'MD5',
-  } = options;
-
-  return {
-    WFWorkflowActionIdentifier: 'is.workflow.actions.hash',
-    WFWorkflowActionParameters: {
-      WFHashType: type,
-    },
-  };
-};
+): WFWorkflowAction => ({
+  WFWorkflowActionIdentifier: 'is.workflow.actions.hash',
+  WFWorkflowActionParameters: {
+    WFHashType: type,
+  },
+});
 
 export default withActionOutput(generateHash);

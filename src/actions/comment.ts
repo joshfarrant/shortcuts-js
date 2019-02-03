@@ -16,21 +16,17 @@ import WFWorkflowAction from '../interfaces/WF/WFWorkflowAction';
  */
 
 const comment = (
-  options: {
+  {
+    text = '',
+  }: {
     /** The body of the comment */
     text?: string,
   },
-): WFWorkflowAction => {
-  const {
-    text = '',
-  } = options;
-
-  return {
-    WFWorkflowActionIdentifier: 'is.workflow.actions.comment',
-    WFWorkflowActionParameters: {
-      WFCommentActionText: text,
-    },
-  };
-};
+): WFWorkflowAction => ({
+  WFWorkflowActionIdentifier: 'is.workflow.actions.comment',
+  WFWorkflowActionParameters: {
+    WFCommentActionText: text,
+  },
+});
 
 export default comment;

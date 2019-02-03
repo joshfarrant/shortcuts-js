@@ -17,21 +17,17 @@ import WFWorkflowAction from '../interfaces/WF/WFWorkflowAction';
  */
 
 const getLatestVideos = (
-  options: {
+  {
+    count = 1,
+  }: {
     /** The number of videos to get */
     count?: number,
   },
-): WFWorkflowAction => {
-  const {
-    count = 1,
-  } = options;
-
-  return {
-    WFWorkflowActionIdentifier: 'is.workflow.actions.getlastvideo',
-    WFWorkflowActionParameters: {
-      WFGetLatestPhotoCount: count,
-    },
-  };
-};
+): WFWorkflowAction => ({
+  WFWorkflowActionIdentifier: 'is.workflow.actions.getlastvideo',
+  WFWorkflowActionParameters: {
+    WFGetLatestPhotoCount: count,
+  },
+});
 
 export default withActionOutput(getLatestVideos);

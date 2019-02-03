@@ -19,26 +19,21 @@ import WFWorkflowAction from '../interfaces/WF/WFWorkflowAction';
  */
 
 const matchText = (
-  options: {
+  {
+    pattern = '',
+    caseSensitive = false,
+  }: {
     /** The pattern to match */
     pattern?: WFSerialization | string,
-
     /** Whether to be case sensitive **/
     caseSensitive?: boolean,
   },
-): WFWorkflowAction => {
-  const {
-    pattern = '',
-    caseSensitive = false,
-  } = options;
-
-  return {
-    WFWorkflowActionIdentifier: 'is.workflow.actions.text.match',
-    WFWorkflowActionParameters: {
-      WFMatchTextPattern: pattern,
-      WFMatchTextCaseSensitive: caseSensitive,
-    },
-  };
-};
+): WFWorkflowAction => ({
+  WFWorkflowActionIdentifier: 'is.workflow.actions.text.match',
+  WFWorkflowActionParameters: {
+    WFMatchTextPattern: pattern,
+    WFMatchTextCaseSensitive: caseSensitive,
+  },
+});
 
 export default withActionOutput(matchText);

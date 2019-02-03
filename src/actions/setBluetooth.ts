@@ -15,21 +15,17 @@ import WFWorkflowAction from '../interfaces/WF/WFWorkflowAction';
  */
 
 const setBluetooth = (
-  options: {
+  {
+    value = true,
+  }: {
     /** Enable or disable Bluetooth */
     value?: boolean,
   },
-): WFWorkflowAction => {
-  const {
-    value = true,
-  } = options;
-
-  return {
-    WFWorkflowActionIdentifier: 'is.workflow.actions.bluetooth.set',
-    WFWorkflowActionParameters: {
-      OnValue: value,
-    },
-  };
-};
+): WFWorkflowAction => ({
+  WFWorkflowActionIdentifier: 'is.workflow.actions.bluetooth.set',
+  WFWorkflowActionParameters: {
+    OnValue: value,
+  },
+});
 
 export default setBluetooth;

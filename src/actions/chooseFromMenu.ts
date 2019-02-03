@@ -31,18 +31,16 @@ type ChooseFromMenuItem = {
  */
 
 const chooseFromMenu = (
-  options: {
+  {
+    items = [],
+    prompt = '',
+  }: {
     /** An array of menu items */
     items?: ChooseFromMenuItem[],
     /** The title of the menu */
     prompt?: string,
   },
 ): WFWorkflowAction[] => {
-  const {
-    items = [],
-    prompt = '',
-  } = options;
-
   const groupingIdentifier = uuidv4();
 
   return [

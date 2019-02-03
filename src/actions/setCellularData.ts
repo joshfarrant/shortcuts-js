@@ -15,21 +15,17 @@ import WFWorkflowAction from '../interfaces/WF/WFWorkflowAction';
  */
 
 const setCellularData = (
-  options: {
+  {
+    value = true,
+  }: {
     /** Enable or disable cellular data */
     value?: boolean,
   },
-): WFWorkflowAction => {
-  const {
-    value = true,
-  } = options;
-
-  return {
-    WFWorkflowActionIdentifier: 'is.workflow.actions.cellulardata.set',
-    WFWorkflowActionParameters: {
-      OnValue: value,
-    },
-  };
-};
+): WFWorkflowAction => ({
+  WFWorkflowActionIdentifier: 'is.workflow.actions.cellulardata.set',
+  WFWorkflowActionParameters: {
+    OnValue: value,
+  },
+});
 
 export default setCellularData;

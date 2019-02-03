@@ -20,7 +20,13 @@ import WFWorkflowAction from '../interfaces/WF/WFWorkflowAction';
  */
 
 const runScriptOverSSH = (
-  options: {
+  {
+    host,
+    password,
+    port,
+    script,
+    user,
+  }: {
     /** The host to run the script on */
     host: WFSerialization | string;
     /** The password for the specified user */
@@ -32,25 +38,15 @@ const runScriptOverSSH = (
     /** The user to run the script as */
     user: WFSerialization | string;
   },
-): WFWorkflowAction => {
-  const {
-    host,
-    password,
-    port,
-    script,
-    user,
-  } = options;
-
-  return {
-    WFWorkflowActionIdentifier: 'is.workflow.actions.runsshscript',
-    WFWorkflowActionParameters: {
-      WFSSHHost: host,
-      WFSSHPassword: password,
-      WFSSHPort: port,
-      WFSSHScript: script,
-      WFSSHUser: user,
-    },
-  };
-};
+): WFWorkflowAction => ({
+  WFWorkflowActionIdentifier: 'is.workflow.actions.runsshscript',
+  WFWorkflowActionParameters: {
+    WFSSHHost: host,
+    WFSSHPassword: password,
+    WFSSHPort: port,
+    WFSSHScript: script,
+    WFSSHUser: user,
+  },
+});
 
 export default runScriptOverSSH;

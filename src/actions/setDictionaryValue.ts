@@ -18,25 +18,21 @@ import WFWorkflowAction from '../interfaces/WF/WFWorkflowAction';
  */
 
 const setDictionaryValue = (
-  options: {
+  {
+    key = '',
+    value = '',
+  }: {
     /** The key to set */
     key?: string,
     /** The value to set */
     value?: string,
   },
-): WFWorkflowAction => {
-  const {
-    key = '',
-    value = '',
-  } = options;
-
-  return {
-    WFWorkflowActionIdentifier: 'is.workflow.actions.setvalueforkey',
-    WFWorkflowActionParameters: {
-      WFDictionaryKey: key,
-      WFDictionaryValue: value,
-    },
-  };
-};
+): WFWorkflowAction => ({
+  WFWorkflowActionIdentifier: 'is.workflow.actions.setvalueforkey',
+  WFWorkflowActionParameters: {
+    WFDictionaryKey: key,
+    WFDictionaryValue: value,
+  },
+});
 
 export default withActionOutput(setDictionaryValue);

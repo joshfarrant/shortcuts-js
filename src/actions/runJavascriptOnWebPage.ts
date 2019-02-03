@@ -31,21 +31,17 @@ import WFWorkflowAction from '../interfaces/WF/WFWorkflowAction';
  */
 
 const runJavascriptOnWebPage = (
-  options: {
+  {
+    text = '',
+  }: {
     /** The JavaScript to run */
     text?: WFSerialization | string,
   },
-): WFWorkflowAction => {
-  const {
-    text = '',
-  } = options;
-
-  return {
-    WFWorkflowActionIdentifier: 'is.workflow.actions.runjavascriptonwebpage',
-    WFWorkflowActionParameters: {
-      WFJavaScript: text,
-    },
-  };
-};
+): WFWorkflowAction => ({
+  WFWorkflowActionIdentifier: 'is.workflow.actions.runjavascriptonwebpage',
+  WFWorkflowActionParameters: {
+    WFJavaScript: text,
+  },
+});
 
 export default withActionOutput(runJavascriptOnWebPage);

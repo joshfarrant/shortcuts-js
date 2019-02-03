@@ -16,21 +16,17 @@ import WFWorkflowAction from '../interfaces/WF/WFWorkflowAction';
  */
 
 const setVariable = (
-  options: {
+  {
+    variable,
+  }: {
     /** The variable to set */
     variable: Variable,
   },
-): WFWorkflowAction => {
-  const {
-    variable,
-  } = options;
-
-  return {
-    WFWorkflowActionIdentifier: 'is.workflow.actions.setvariable',
-    WFWorkflowActionParameters: {
-      WFVariableName: variable.Value.VariableName,
-    },
-  };
-};
+): WFWorkflowAction => ({
+  WFWorkflowActionIdentifier: 'is.workflow.actions.setvariable',
+  WFWorkflowActionParameters: {
+    WFVariableName: variable.Value.VariableName,
+  },
+});
 
 export default setVariable;

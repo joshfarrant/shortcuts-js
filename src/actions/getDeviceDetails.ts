@@ -19,21 +19,17 @@ import WFWorkflowAction from '../interfaces/WF/WFWorkflowAction';
  */
 
 const getDeviceDetails = (
-  options: {
+  {
+    detail = 'Device Name',
+  }: {
     /** The particular detail to retrieve */
     detail?: WFSerialization | WFDeviceDetail,
   },
-): WFWorkflowAction => {
-  const {
-    detail = 'Device Name',
-  } = options;
-
-  return {
-    WFWorkflowActionIdentifier: 'is.workflow.actions.getdevicedetails',
-    WFWorkflowActionParameters: {
-      WFDeviceDetail: detail,
-    },
-  };
-};
+): WFWorkflowAction => ({
+  WFWorkflowActionIdentifier: 'is.workflow.actions.getdevicedetails',
+  WFWorkflowActionParameters: {
+    WFDeviceDetail: detail,
+  },
+});
 
 export default withActionOutput(getDeviceDetails);

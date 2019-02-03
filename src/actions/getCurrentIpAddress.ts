@@ -20,25 +20,21 @@ import WFWorkflowAction from '../interfaces/WF/WFWorkflowAction';
  */
 
 const getCurrentIpAddress = (
-  options: {
+  {
+    address = 'External',
+    type = 'IPv4',
+  }: {
     /** The address (public or private) to get */
     address?: WFIPAddressSourceOption,
     /** The type of address to get */
     type?: WFIPAddressTypeOption,
   },
-): WFWorkflowAction => {
-  const {
-    address = 'External',
-    type = 'IPv4',
-  } = options;
-
-  return {
-    WFWorkflowActionIdentifier: 'is.workflow.actions.getipaddress',
-    WFWorkflowActionParameters: {
-      WFIPAddressSourceOption: address,
-      WFIPAddressTypeOption: type,
-    },
-  };
-};
+): WFWorkflowAction => ({
+  WFWorkflowActionIdentifier: 'is.workflow.actions.getipaddress',
+  WFWorkflowActionParameters: {
+    WFIPAddressSourceOption: address,
+    WFIPAddressTypeOption: type,
+  },
+});
 
 export default withActionOutput(getCurrentIpAddress);

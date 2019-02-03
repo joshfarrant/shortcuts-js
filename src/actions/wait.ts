@@ -15,21 +15,17 @@ import WFWorkflowAction from '../interfaces/WF/WFWorkflowAction';
  */
 
 const wait = (
-  options: {
+  {
+    time = 1,
+  }: {
     /** The number of seconds to wait */
     time?: number,
   },
-): WFWorkflowAction => {
-  const {
-    time = 1,
-  } = options;
-
-  return {
-    WFWorkflowActionIdentifier: 'is.workflow.actions.delay',
-    WFWorkflowActionParameters: {
-      WFDelayTime: time,
-    },
-  };
-};
+): WFWorkflowAction => ({
+  WFWorkflowActionIdentifier: 'is.workflow.actions.delay',
+  WFWorkflowActionParameters: {
+    WFDelayTime: time,
+  },
+});
 
 export default wait;

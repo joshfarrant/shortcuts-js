@@ -18,21 +18,17 @@ import WFWorkflowAction from '../interfaces/WF/WFWorkflowAction';
  */
 
 const text = (
-  options: {
+  {
+    text = '',
+  }: {
     /** The text to set */
     text?: WFSerialization | string,
   },
-): WFWorkflowAction => {
-  const {
-    text = '',
-  } = options;
-
-  return {
-    WFWorkflowActionIdentifier: 'is.workflow.actions.gettext',
-    WFWorkflowActionParameters: {
-      WFTextActionText: text,
-    },
-  };
-};
+): WFWorkflowAction => ({
+  WFWorkflowActionIdentifier: 'is.workflow.actions.gettext',
+  WFWorkflowActionParameters: {
+    WFTextActionText: text,
+  },
+});
 
 export default withActionOutput(text);

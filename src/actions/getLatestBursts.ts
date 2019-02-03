@@ -17,21 +17,17 @@ import WFWorkflowAction from '../interfaces/WF/WFWorkflowAction';
  */
 
 const getLatestBursts = (
-  options: {
+  {
+    count = 1,
+  }: {
     /** The number of burst photos to get */
     count?: number,
   },
-): WFWorkflowAction => {
-  const {
-    count = 1,
-  } = options;
-
-  return {
-    WFWorkflowActionIdentifier: 'is.workflow.actions.getlatestbursts',
-    WFWorkflowActionParameters: {
-      WFGetLatestPhotoCount: count,
-    },
-  };
-};
+): WFWorkflowAction => ({
+  WFWorkflowActionIdentifier: 'is.workflow.actions.getlatestbursts',
+  WFWorkflowActionParameters: {
+    WFGetLatestPhotoCount: count,
+  },
+});
 
 export default withActionOutput(getLatestBursts);

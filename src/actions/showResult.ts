@@ -17,21 +17,17 @@ import WFSerialization from '../interfaces/WF/WFSerialization';
  */
 
 const showResult = (
-  options: {
+  {
+    text = '',
+  }: {
     /** The text to show in the dialogue */
     text?: WFSerialization | string,
   },
-): WFWorkflowAction => {
-  const {
-    text = '',
-  } = options;
-
-  return {
-    WFWorkflowActionIdentifier: 'is.workflow.actions.showresult',
-    WFWorkflowActionParameters: {
-      Text: text,
-    },
-  };
-};
+): WFWorkflowAction => ({
+  WFWorkflowActionIdentifier: 'is.workflow.actions.showresult',
+  WFWorkflowActionParameters: {
+    Text: text,
+  },
+});
 
 export default showResult;

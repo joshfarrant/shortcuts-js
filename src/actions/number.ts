@@ -17,21 +17,17 @@ import WFWorkflowAction from '../interfaces/WF/WFWorkflowAction';
  */
 
 const number = (
-  options: {
+  {
+    number = 0,
+  }: {
     /** The number to set */
     number?: number;
   },
-): WFWorkflowAction => {
-  const {
-    number = 0,
-  } = options;
-
-  return {
-    WFWorkflowActionIdentifier: 'is.workflow.actions.number',
-    WFWorkflowActionParameters: {
-      WFNumberActionNumber: number,
-    },
-  };
-};
+): WFWorkflowAction => ({
+  WFWorkflowActionIdentifier: 'is.workflow.actions.number',
+  WFWorkflowActionParameters: {
+    WFNumberActionNumber: number,
+  },
+});
 
 export default withActionOutput(number);

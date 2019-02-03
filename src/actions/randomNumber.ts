@@ -19,26 +19,21 @@ import WFWorkflowAction from '../interfaces/WF/WFWorkflowAction';
  */
 
 const randomNumber = (
-  options: {
+  {
+    minimum = 0,
+    maximum = 100,
+  }: {
     /** The minimum */
     minimum?: WFSerialization | number,
-
     /** The maximum */
     maximum?: WFSerialization | number,
   },
-): WFWorkflowAction => {
-  const {
-    minimum = 0,
-    maximum = 100,
-  } = options;
-
-  return {
-    WFWorkflowActionIdentifier: 'is.workflow.actions.number.random',
-    WFWorkflowActionParameters: {
-      WFRandomNumberMinimum: minimum,
-      WFRandomNumberMaximum: maximum,
-    },
-  };
-};
+): WFWorkflowAction => ({
+  WFWorkflowActionIdentifier: 'is.workflow.actions.number.random',
+  WFWorkflowActionParameters: {
+    WFRandomNumberMinimum: minimum,
+    WFRandomNumberMaximum: maximum,
+  },
+});
 
 export default withActionOutput(randomNumber);

@@ -20,25 +20,21 @@ import WFWorkflowAction from '../interfaces/WF/WFWorkflowAction';
  */
 
 const makeArchive = (
-  options: {
+  {
+    format = 'zip',
+    name = '',
+  }: {
     /** The operation to perform */
     format?: WFArchiveFormat,
     /** Set the name of the Archive */
     name?: WFSerialization | string,
   },
-): WFWorkflowAction => {
-  const {
-    format = 'zip',
-    name = '',
-  } = options;
-
-  return {
-    WFWorkflowActionIdentifier: 'is.workflow.actions.makezip',
-    WFWorkflowActionParameters: {
-      WFArchiveFormat: format,
-      WFZIPName: name,
-    },
-  };
-};
+): WFWorkflowAction => ({
+  WFWorkflowActionIdentifier: 'is.workflow.actions.makezip',
+  WFWorkflowActionParameters: {
+    WFArchiveFormat: format,
+    WFZIPName: name,
+  },
+});
 
 export default withActionOutput(makeArchive);

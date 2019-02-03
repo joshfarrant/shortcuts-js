@@ -18,20 +18,17 @@ import WFWorkflowAction from '../interfaces/WF/WFWorkflowAction';
  */
 
 const showInMaps = (
-  options: {
+  {
+    app = 'Maps',
+  }: {
+    /** The maps app to use */
     app?: WFMapsApps,
   },
-): WFWorkflowAction => {
-  const {
-    app = '',
-  } = options;
-
-  return ({
-    WFWorkflowActionIdentifier: 'is.workflow.actions.searchmaps',
-    WFWorkflowActionParameters: {
-      WFSearchMapsActionApp: app,
-    },
-  });
-};
+): WFWorkflowAction => ({
+  WFWorkflowActionIdentifier: 'is.workflow.actions.searchmaps',
+  WFWorkflowActionParameters: {
+    WFSearchMapsActionApp: app,
+  },
+});
 
 export default withActionOutput(showInMaps);

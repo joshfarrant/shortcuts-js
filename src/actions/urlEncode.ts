@@ -18,21 +18,17 @@ import WFWorkflowAction from '../interfaces/WF/WFWorkflowAction';
  */
 
 const URLEncode = (
-  options: {
+  {
+    encodeMode = 'Encode',
+  }: {
     /** The encoding mode to use */
     encodeMode?: WFEncodeMode,
   },
-): WFWorkflowAction => {
-  const {
-    encodeMode = 'Encode',
-  } = options;
-
-  return {
-    WFWorkflowActionIdentifier: 'is.workflow.actions.urlencode',
-    WFWorkflowActionParameters: {
-      WFEncodeMode: encodeMode,
-    },
-  };
-};
+): WFWorkflowAction => ({
+  WFWorkflowActionIdentifier: 'is.workflow.actions.urlencode',
+  WFWorkflowActionParameters: {
+    WFEncodeMode: encodeMode,
+  },
+});
 
 export default withActionOutput(URLEncode);

@@ -16,21 +16,17 @@ import WFWorkflowAction from '../interfaces/WF/WFWorkflowAction';
  */
 
 const skipBack = (
-  options: {
+  {
+    skipBackBehavior = 'Beginning',
+  }: {
     /** The skip back behavior option to get (Beginning or Previous Song) */
     skipBackBehavior ?: WFSkipBackBehavior,
   },
-): WFWorkflowAction => {
-  const {
-    skipBackBehavior = 'Beginning',
-  } = options;
-
-  return {
-    WFWorkflowActionIdentifier: 'is.workflow.actions.skipback',
-    WFWorkflowActionParameters: {
-      WFSkipBackBehavior: skipBackBehavior,
-    },
-  };
-};
+): WFWorkflowAction => ({
+  WFWorkflowActionIdentifier: 'is.workflow.actions.skipback',
+  WFWorkflowActionParameters: {
+    WFSkipBackBehavior: skipBackBehavior,
+  },
+});
 
 export default skipBack;

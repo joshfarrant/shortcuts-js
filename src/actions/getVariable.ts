@@ -16,21 +16,17 @@ import WFWorkflowAction from '../interfaces/WF/WFWorkflowAction';
  */
 
 const getVariable = (
-  options: {
+  {
+    variable,
+  }: {
     /** The variable to get */
     variable: Variable;
   },
-): WFWorkflowAction => {
-  const {
-    variable,
-  } = options;
-
-  return {
-    WFWorkflowActionIdentifier: 'is.workflow.actions.getvariable',
-    WFWorkflowActionParameters: {
-      WFVariable: variable,
-    },
-  };
-};
+): WFWorkflowAction => ({
+  WFWorkflowActionIdentifier: 'is.workflow.actions.getvariable',
+  WFWorkflowActionParameters: {
+    WFVariable: variable,
+  },
+});
 
 export default getVariable;

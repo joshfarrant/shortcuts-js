@@ -17,21 +17,17 @@ import WFWorkflowAction from '../interfaces/WF/WFWorkflowAction';
  */
 
 const addToVariable = (
-  /** The variable to add to */
-  options: {
+  {
+    variable,
+  }: {
+    /** The variable to add to */
     variable: Variable;
   },
-): WFWorkflowAction => {
-  const {
-    variable,
-  } = options;
-
-  return {
-    WFWorkflowActionIdentifier: 'is.workflow.actions.appendvariable',
-    WFWorkflowActionParameters: {
-      WFVariableName: variable.Value.VariableName,
-    },
-  };
-};
+): WFWorkflowAction => ({
+  WFWorkflowActionIdentifier: 'is.workflow.actions.appendvariable',
+  WFWorkflowActionParameters: {
+    WFVariableName: variable.Value.VariableName,
+  },
+});
 
 export default addToVariable;

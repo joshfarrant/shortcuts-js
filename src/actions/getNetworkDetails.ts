@@ -27,19 +27,16 @@ import WFWorkflowAction from '../interfaces/WF/WFWorkflowAction';
  */
 
 const getNetworkDetails = (
-  options: {
+  {
+    network = 'Wi-Fi',
+    attribute = 'Network Name',
+  }: {
     /** The type of network to look at */
     network?: WFNetworkDetailsNetwork,
-
     /** The particular network detail to retrieve */
     attribute?: WFSerialization | WFWiFiDetail | WFCellularDetail,
   },
 ): WFWorkflowAction => {
-  const {
-    network = 'Wi-Fi',
-    attribute = 'Network Name',
-  } = options;
-
   let detailKey = 'WFWiFiDetail';
   if (network === 'Cellular') {
     detailKey = 'WFCellularDetail';

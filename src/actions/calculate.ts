@@ -31,7 +31,11 @@ const operationsMap = new Map([
  */
 
 const calculate = (
-  options: {
+  {
+    operand,
+    operation = '+',
+    scientificOperation,
+  }: {
     /** A second number to perform the operation on */
     operand?: number;
     /** The operation to apply to the number. Defaults to '+' */
@@ -49,12 +53,6 @@ const calculate = (
     );
   },
 ): WFWorkflowAction => {
-  const {
-    operand,
-    operation = '+',
-    scientificOperation,
-  } = options;
-
   let parameters;
   if (scientificOperation) {
     parameters = {

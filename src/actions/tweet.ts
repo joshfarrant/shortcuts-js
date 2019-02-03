@@ -4,7 +4,7 @@ import WFWorkflowAction from '../interfaces/WF/WFWorkflowAction';
 
 /**
  * @action Tweet
- * @section Actions > Twitter
+ * @section Content Types > Sharing > Twitter
  * @icon Twitter
  *
  * Tweet Action. Tweets the input.

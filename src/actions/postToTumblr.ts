@@ -4,7 +4,7 @@ import WFWorkflowAction from '../interfaces/WF/WFWorkflowAction';
 
 /**
  * @action Post to Tumblr
- * @section Actions > Sharing > Social
+ * @section Content Types > Sharing > Tumblr
  * @icon Tumblr
  *
  * Posts the content passed into the action to Tumblr.

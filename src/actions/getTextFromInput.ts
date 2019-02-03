@@ -4,7 +4,7 @@ import WFWorkflowAction from '../interfaces/WF/WFWorkflowAction';
 
 /**
  * @action Get Text from Input
- * @section Actions > Text
+ * @section Content Types > Text >
  * @icon Text
  *
  * Returns text from the previous action's output. For example, this action can get the name of a photo or song, or the text of a web page.

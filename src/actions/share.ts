@@ -2,7 +2,7 @@ import WFWorkflowAction from '../interfaces/WF/WFWorkflowAction';
 
 /**
  * @action Share
- * @section Actions > Sharing > System
+ * @section Content Types > Sharing > System
  * @icon Sharing
  *
  * Prompts to share the input.

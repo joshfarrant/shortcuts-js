@@ -4,7 +4,7 @@ import WFWorkflowAction from '../interfaces/WF/WFWorkflowAction';
 
 /**
  * @action Get Latest Videos
- * @section Actions > Photos & Video > Video
+ * @section Content Types > Photos & Video > Photos
  * @icon Photos
  *
  * Gets the most recent videos from the camera roll.

@@ -4,7 +4,7 @@ import WFWorkflowAction from '../interfaces/WF/WFWorkflowAction';
 
 /**
  * @action Quick Look
- * @section Actions > Documents > Previewing
+ * @section Content Types > Documents > Previewing
  * @icon Quick Look
  *
  * Displays a preview of the input.

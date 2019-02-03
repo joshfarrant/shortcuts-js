@@ -2,7 +2,7 @@ import WFWorkflowAction from '../interfaces/WF/WFWorkflowAction';
 
 /**
  * @action Set Volume
- * @section Actions > Music > Playback
+ * @section Content Types > Music > Playback
  * @icon Sound
  *
  * Sets the system volume.

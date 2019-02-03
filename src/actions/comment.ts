@@ -2,7 +2,7 @@ import WFWorkflowAction from '../interfaces/WF/WFWorkflowAction';
 
 /**
  * @action Comment
- * @section Actions > Scripting
+ * @section Actions > Scripting >
  * @icon Text
  *
  * This action lets you explain how part of a shortcut works. When run, this action does nothing.

@@ -4,7 +4,7 @@ import WFWorkflowAction from '../interfaces/WF/WFWorkflowAction';
 
 /**
  * @action Get Latest Live Photos
- * @section Actions > Photos & Video > Photos
+ * @section Content Types > Photos & Video > Photos
  * @icon LivePhotos
  *
  * Gets the most recent Live Photos from the camera roll.

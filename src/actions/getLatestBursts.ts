@@ -4,7 +4,7 @@ import WFWorkflowAction from '../interfaces/WF/WFWorkflowAction';
 
 /**
  * @action Get Latest Bursts
- * @section Actions > Photos & Video > Photos
+ * @section Content Types > Photos & Video > Photos
  * @icon Bursts
  *
  * Gets the most recent burst photos from the camera roll.

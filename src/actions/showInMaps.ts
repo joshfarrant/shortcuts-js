@@ -5,7 +5,7 @@ import WFWorkflowAction from '../interfaces/WF/WFWorkflowAction';
 
 /**
  * @action Show in Maps
- * @section Actions > Location > Maps
+ * @section Content Types > Location > Maps
  * @icon Maps
  *
  * Opens your choice of Maps, Google Maps, or Waze and searches for the location, place, or text that was passed into the action.

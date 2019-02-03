@@ -6,7 +6,7 @@ import WFWorkflowAction from '../interfaces/WF/WFWorkflowAction';
 
 /**
  * @action Get Time Between Dates
- * @section Actions > Calendar > Dates
+ * @section Content Types > Calendar > Dates
  * @icon Date
  *
  * Subtracts the specified date from the date passed into the action. For example, this action could get the number of minutes from now until a calendar event passed in as input.

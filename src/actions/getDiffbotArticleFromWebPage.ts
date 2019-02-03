@@ -4,7 +4,7 @@ import WFWorkflowAction from '../interfaces/WF/WFWorkflowAction';
 
 /**
  * @action Get Diffbot Article from Web Page
- * @section Actions > Web > Articles
+ * @section Content Types > Web > Articles
  * @icon DownloadArticle
  *
  * Gets article details, including body text, author, publish date, and more, from every URL passed into the action.

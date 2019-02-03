@@ -4,7 +4,7 @@ import WFWorkflowAction from '../interfaces/WF/WFWorkflowAction';
 
 /**
  * @action AirDrop
- * @section Actions > Sharing > System
+ * @section Content Types > Sharing > System
  * @icon AirDrop
  *
  * Prompts to share the input via AirDrop.

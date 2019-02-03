@@ -4,7 +4,7 @@ import WFWorkflowAction from '../interfaces/WF/WFWorkflowAction';
 
 /**
  * @action Get Headers of URL
- * @section Actions > Web > URLs
+ * @section Content Types > Web > URLs
  * @icon Downloads
  *
  * Retrieves the HTTP headers of the URL passed as input using a HEAD request.

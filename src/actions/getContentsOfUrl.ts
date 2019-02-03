@@ -18,7 +18,7 @@ type Value = (
 
 /**
  * @action Get Contents of URL
- * @section Actions > Web > URLs
+ * @section Content Types > Web > URLs
  * @icon Downloads
  *
  * Gets the contents of URLs passed into the action. Useful for downloading files and web content, or for making API requests.

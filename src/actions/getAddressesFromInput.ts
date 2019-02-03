@@ -2,7 +2,7 @@ import WFWorkflowAction from '../interfaces/WF/WFWorkflowAction';
 
 /**
  * @action Get Addresses from Input
- * @section Actions > Location > Location
+ * @section Content Types > Location > Maps
  * @icon Maps
  *
  * Returns any street addresses found in the output from the previous action.

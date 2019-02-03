@@ -4,7 +4,7 @@ import WFWorkflowAction from '../interfaces/WF/WFWorkflowAction';
 
 /**
  * @action Get Link to File
- * @section Actions > Documents > File Storage
+ * @section Content Types > Documents > File Storage
  * @icon Documents
  *
  * Gets a public link to the file passed into the action.

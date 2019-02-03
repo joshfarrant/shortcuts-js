@@ -5,7 +5,7 @@ import WFWorkflowAction from '../interfaces/WF/WFWorkflowAction';
 
 /**
  * @action Text
- * @section Actions > Text
+ * @section Content Types > Text >
  * @icon Text
  *
  * Passes the specified text to the next action.

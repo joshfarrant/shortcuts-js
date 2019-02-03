@@ -3,7 +3,7 @@ import WFWorkflowAction from '../interfaces/WF/WFWorkflowAction';
 
 /**
  * @action Run Script Over SSH
- * @section Actions > Scripting > Shell
+ * @section Actions > Scripting > Run Script Over SSH
  * @icon Scripting
  *
  * Runs a script on a remote computer over SSH.

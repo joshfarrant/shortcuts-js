@@ -6,7 +6,7 @@ import WFWorkflowAction from '../interfaces/WF/WFWorkflowAction';
 
 /**
  * @action Calculate Statistics
- * @section Actions > Scripting > Math
+ * @section Actions > Scripting > Maths
  * @icon Calculator
  *
  * Calculates statistics on the numbers that are provided as input.

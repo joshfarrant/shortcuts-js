@@ -2,7 +2,7 @@ import WFWorkflowAction from '../interfaces/WF/WFWorkflowAction';
 
 /**
  * @action Get Dates from Input
- * @section Actions > Calendar > Dates
+ * @section Content Types > Calendar > Dates
  * @icon Date
  *
  * Returns any dates found in the output from the previous action.

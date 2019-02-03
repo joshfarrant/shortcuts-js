@@ -2,7 +2,7 @@ import WFWorkflowAction from '../interfaces/WF/WFWorkflowAction';
 
 /**
  * @action Open URLs
- * @section Actions > Web > Safari
+ * @section Content Types > Web > Safari
  * @icon Safari
  *
  * Opens URLs passed into the action in Safari.

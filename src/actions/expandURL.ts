@@ -4,7 +4,7 @@ import WFWorkflowAction from '../interfaces/WF/WFWorkflowAction';
 
 /**
  * @action Expand URL
- * @section Actions > Web > URLs
+ * @section Content Types > Web > URLs
  * @icon URL
  *
  * This action expands and cleans up URLs which have been shortened using a URL shortening service like TinyURL or Bit.ly.

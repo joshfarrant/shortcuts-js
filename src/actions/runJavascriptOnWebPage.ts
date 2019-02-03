@@ -5,7 +5,7 @@ import WFWorkflowAction from '../interfaces/WF/WFWorkflowAction';
 
 /**
  * @action Run JavaScript on Web Page
- * @section Actions > Web > Safari
+ * @section Content Types > Web > Safari
  * @icon Safari
  *
  * Runs JavaScript on a Safari web page passed in as input

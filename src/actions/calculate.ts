@@ -16,7 +16,7 @@ const operationsMap = new Map([
 
 /**
  * @action Calculate
- * @section Actions > Scripting > Math
+ * @section Actions > Scripting > Maths
  * @icon Calculator
  *
  * Performs a number operation on the input and returns the result.

@@ -2,7 +2,7 @@ import WFWorkflowAction from '../interfaces/WF/WFWorkflowAction';
 
 /**
  * @action URL
- * @section Actions > Web > URLs
+ * @section Content Types > Web > URLs
  * @icon URL
  *
  * Passes the specified URL to the next action.

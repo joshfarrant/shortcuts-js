@@ -4,7 +4,7 @@ import WFWorkflowAction from '../interfaces/WF/WFWorkflowAction';
 
 /**
  * @action Get Name of Emoji
- * @section Actions > Text
+ * @section Content Types > Text >
  * @icon Smiley
  *
  * Gets the names of emoji passed into the action.

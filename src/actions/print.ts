@@ -4,7 +4,7 @@ import WFWorkflowAction from '../interfaces/WF/WFWorkflowAction';
 
 /**
  * @action Print
- * @section Actions > Documents > Printing
+ * @section Content Types > Documents > Printing
  * @icon Print
  *
  * Prints the input using AirPrint.

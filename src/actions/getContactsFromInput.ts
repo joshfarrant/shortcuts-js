@@ -2,7 +2,7 @@ import WFWorkflowAction from '../interfaces/WF/WFWorkflowAction';
 
 /**
  * @action Get Contacts from Input
- * @section Actions > Contacts > Contacts
+ * @section Content Types > Contacts > Contacts
  * @icon Contacts
  *
  * Gets contacts from the result of the previous action.

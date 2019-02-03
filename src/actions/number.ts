@@ -4,7 +4,7 @@ import WFWorkflowAction from '../interfaces/WF/WFWorkflowAction';
 
 /**
  * @action Number
- * @section Actions > Scripting > Math
+ * @section Actions > Scripting > Maths
  * @icon Calculator
  *
  * Passes a number to the next action.

@@ -2,7 +2,7 @@ import WFWorkflowAction from '../interfaces/WF/WFWorkflowAction';
 
 /**
  * @action Clear Up Next
- * @section Actions > Music > Up Next
+ * @section Content Types > Music > Music
  * @icon Music
  *
  * Clears all the music in your Up Next queue.

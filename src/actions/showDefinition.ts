@@ -2,7 +2,7 @@ import WFWorkflowAction from '../interfaces/WF/WFWorkflowAction';
 
 /**
  * @action Show Definition
- * @section Actions > Text
+ * @section Content Types > Text >
  * @icon Dictionary
  *
  * Shows the definition of the word passed into the action.

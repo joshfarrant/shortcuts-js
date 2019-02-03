@@ -5,7 +5,7 @@ import WFWorkflowAction from '../interfaces/WF/WFWorkflowAction';
 
 /**
  * @action Match Text
- * @section Actions > Text > Text Editing
+ * @section Content Types > Text > Text Editing
  * @icon Text
  *
  * Searches text passed into the action for matches to a regular expression.

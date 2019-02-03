@@ -4,7 +4,7 @@ import WFWorkflowAction from '../interfaces/WF/WFWorkflowAction';
 
 /**
  * @action Get Email Addresses from Input
- * @section Actions > Contacts > Email
+ * @section Content Types > Contacts > Mail
  * @icon Mail
  *
  * Returns any email addresses found in the output from the previous action.

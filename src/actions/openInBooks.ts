@@ -4,7 +4,7 @@ import WFWorkflowAction from '../interfaces/WF/WFWorkflowAction';
 
 /**
  * @action Open in Books
- * @section Actions > Books
+ * @section Content Types > Documents > Books
  * @icon Books
  *
  * Open in Books Action. Opens the input as a PDF in Books.

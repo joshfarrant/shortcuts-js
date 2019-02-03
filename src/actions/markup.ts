@@ -4,7 +4,7 @@ import WFWorkflowAction from '../interfaces/WF/WFWorkflowAction';
 
 /**
  * @action Markup
- * @section Actions > Documents > Editing
+ * @section Content Types > Photos & Video > Editing
  * @icon Markup
  *
  * Edits an image or PDF with Markup.

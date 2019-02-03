@@ -4,7 +4,7 @@ import WFSerialization from '../interfaces/WF/WFSerialization';
 
 /**
  * @action Show Result
- * @section Actions > Scripting
+ * @section Actions > Scripting >
  * @icon Scripting
  *
  * Shows the specified text in Siri or in an alert.

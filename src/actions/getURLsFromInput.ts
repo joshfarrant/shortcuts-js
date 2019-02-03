@@ -4,7 +4,7 @@ import WFWorkflowAction from '../interfaces/WF/WFWorkflowAction';
 
 /**
  * @action Get URLs from Input
- * @section Actions > Web > URLs
+ * @section Content Types > Web > URLs
  * @icon URL
  *
  * Returns any links found in the output from the previous action.

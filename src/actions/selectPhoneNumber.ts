@@ -4,7 +4,7 @@ import WFWorkflowAction from '../interfaces/WF/WFWorkflowAction';
 
 /**
  * @action Select Phone Number
- * @section Actions > Contacts > Phone
+ * @section Content Types > Contacts > Phone
  * @icon PhoneNumber
  *
  * Prompts to pick a phone number from your contacts and passes the selection to the next action.

@@ -4,7 +4,7 @@ import WFWorkflowAction from '../interfaces/WF/WFWorkflowAction';
 
 /**
  * @action Get Latest Screenshots
- * @section Actions > Photos & Video > Photos
+ * @section Content Types > Photos & Video > Photos
  * @icon Photos
  *
  * Gets the most recent screenshots from the camera roll.

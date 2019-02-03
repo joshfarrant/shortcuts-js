@@ -4,7 +4,7 @@ import WFWorkflowAction from '../interfaces/WF/WFWorkflowAction';
 
 /**
  * @action Post to WordPress
- * @section Actions > Sharing
+ * @section Content Types > Sharing > WordPress
  * @icon Wordpress
  *
  * Posts the input to a WordPress blog as a new post or page.

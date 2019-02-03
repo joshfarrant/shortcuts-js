@@ -6,7 +6,7 @@ import WFWorkflowAction from '../interfaces/WF/WFWorkflowAction';
 
 /**
  * @action Date
- * @section Actions > Calendar > Dates
+ * @section Content Types > Calendar > Dates
  * @icon Date
  *
  * Passes the specified date and time to the next action.

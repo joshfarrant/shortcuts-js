@@ -5,7 +5,7 @@ import WFWorkflowAction from '../interfaces/WF/WFWorkflowAction';
 
 /**
  * @action Random Number
- * @section Actions > Scripting > Math
+ * @section Actions > Scripting > Maths
  * @icon Calculator
  *
  * Passes a random number between the given minimum and maximum to the next action. The minimum and maximum numbers are included as possible results.

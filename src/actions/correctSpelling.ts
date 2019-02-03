@@ -2,7 +2,7 @@ import WFWorkflowAction from '../interfaces/WF/WFWorkflowAction';
 
 /**
  * @action Correct Spelling
- * @section Actions > Text > Text Editing
+ * @section Content Types > Text > Text Editing
  * @icon Text
  *
  * Autocorrects the spelling of text passed into the action.

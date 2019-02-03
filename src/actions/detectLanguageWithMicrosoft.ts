@@ -4,7 +4,7 @@ import WFWorkflowAction from '../interfaces/WF/WFWorkflowAction';
 
 /**
  * @action Detect Language with Microsoft
- * @section Actions > Text
+ * @section Content Types > Text >
  * @icon Translate
  *
  * Detects the language of the text provided as input.

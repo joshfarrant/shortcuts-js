@@ -6,7 +6,7 @@ import WFWorkflowAction from '../interfaces/WF/WFWorkflowAction';
 
 /**
  * @action Make Archive
- * @section Actions > Documents > Archives
+ * @section Content Types > Documents > Archives
  * @icon Documents
  *
  * Makes an archive out of the files passed as input. Supports creating zip, tar.gz, tar.bz2, tar, gzip, cpio, or iso archives.

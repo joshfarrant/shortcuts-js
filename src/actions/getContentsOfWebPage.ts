@@ -4,7 +4,7 @@ import WFWorkflowAction from '../interfaces/WF/WFWorkflowAction';
 
 /**
  * @action Get Contents of Web Page
- * @section Actions > Web > Web
+ * @section Content Types > Web > Safari
  * @icon Safari
  *
  * Extracts the contents of the web pages passed into the action.

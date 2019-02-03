@@ -8,7 +8,7 @@ import WFWorkflowAction from '../interfaces/WF/WFWorkflowAction';
 
 /**
  * @action Format Date
- * @section Actions > Calendar > Dates
+ * @section Content Types > Calendar > Dates
  * @icon Date
  *
  * Formats a date and time into text.

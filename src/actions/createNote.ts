@@ -4,7 +4,7 @@ import WFWorkflowAction from '../interfaces/WF/WFWorkflowAction';
 
 /**
  * @action Create Note
- * @section Actions > Notes
+ * @section Content Types > Sharing > Notes
  * @icon Notes
  *
  * Create Note Action. Shares the input with Notes.

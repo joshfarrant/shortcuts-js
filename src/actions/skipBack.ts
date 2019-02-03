@@ -3,7 +3,7 @@ import WFWorkflowAction from '../interfaces/WF/WFWorkflowAction';
 
 /**
  * @action Skip Back
- * @section Actions > Music > Playback
+ * @section Content Types > Music > Playback
  * @icon Rewind
  *
  * Skips to the previous song in the current music queue.

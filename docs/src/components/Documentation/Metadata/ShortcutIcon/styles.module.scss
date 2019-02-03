@@ -1,7 +1,7 @@
 .content {
   padding: 1.7rem 1.7rem 80px;
-  max-width: 700px;
-  margin: auto;
+  max-width: 100%;
+  width: var(--max-content-width);
 }
 
 .container {
@@ -97,9 +97,9 @@ $shortcutColors: (
   --margin: 20px;
 
   position: fixed;
-  left: var(--menu-width);
-  right: 0;
   bottom: 0;
+  right: 0;
+  left: var(--min-aside-width);
   margin: var(--margin);
   pointer-events: none;
   transition:

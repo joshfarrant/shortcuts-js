@@ -1,13 +1,10 @@
 .container {
   --navbar-height: 60px;
-  --menu-width: 240px;
+  --min-aside-width: 237px;
+  --max-content-width: 760px;
 
-  display: grid;
-  grid-template-columns: var(--menu-width) 1fr;
-  grid-template-rows: var(--navbar-height) calc(100% - var(--navbar-height));
-  grid-template-areas:
-    "nav nav"
-    "menu content";
+  display: flex;
+  justify-content: center;
 
   position: absolute;
   top: 0;
@@ -21,21 +18,48 @@
   code {
     font-size: 14px;
   }
+
+  &::after,
+  &::before {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+  }
+
+  &::after {
+    height: var(--navbar-height);
+    background: var(--pink-color);
+    background: linear-gradient(to right, var(--pink-color), var(--aqua-color));
+    z-index: -2;
+  }
+
+  &::before {
+    height: calc(var(--navbar-height) - 6px);
+    background: var(--shadow-color);
+    z-index: -1;
+  }
+}
+
+.aside {
+  min-width: var(--min-aside-width);
+  height: 100%;
+  flex-grow: 1;
+}
+
+.content {
+  flex-grow: 1;
+  overflow-y: scroll;
+  margin-top: var(--navbar-height);
 }
 
 .navbar {
-  grid-area: nav;
-
+  padding: 0 1.7rem 6px;
+  height: var(--navbar-height);
   color: var(--white-color);
-  padding-bottom: 6px;
-
-  background: var(--pink-color);
-  background: linear-gradient(to right, var(--pink-color), var(--aqua-color));
-
-  .textContainer {
-    height: 100%;
-    background: var(--shadow-color);
-  }
+  text-align: right;
 
   .logo,
   .soft {
@@ -49,12 +73,12 @@
 
   .logo {
     font-weight: 700;
-    margin: 0 8px 0 1.7rem;
   }
 
   .soft {
     opacity: 0.8;
     font-weight: 600;
+    margin-left: 8px;
   }
 
   .menuIcon {
@@ -119,26 +143,24 @@
 }
 
 .menu {
-  grid-area: menu;
-
-  width: 100%;
-  padding: 1.4rem 1.7rem 40px;
+  text-align: right;
   overflow-y: scroll;
+  padding: 1.4rem 1.7rem 40px;
+  height: calc(100% - var(--navbar-height));
 
   ul {
     list-style: none;
     padding: 0;
     margin: 0;
 
-    & + ul {
-      border-top: solid 1px var(--lighter-gray-color);
-      margin-top: 1rem;
-      padding-top: 1rem;
-    }
-
     li {
       margin: 0;
     }
+  }
+
+  hr {
+    margin: 1rem 0 1rem auto;
+    max-width: calc(var(--min-aside-width) - 2 * 1.7rem);
   }
 
   %item {
@@ -164,30 +186,40 @@
     font-size: 14px;
     font-weight: 400;
     color: var(--gray-color);
-    padding-left: 12px;
+
+    &::after {
+      content: ' ⚬';
+    }
   }
 }
 
-.content {
-  grid-area: content;
-
-  overflow-y: scroll;
-}
-
-@media (max-width: 640px) {
-  .navbar .menuIcon {
-    display: inline-block;
-  }
-
+@media (max-width: 700px) {
   .container {
-    grid-template-columns: auto;
-    grid-template-areas:
-      "nav"
-      "content";
+    flex-direction: column;
+  }
+
+  .aside {
+    width: 100%;
+    height: auto;
+    flex-grow: 0;
+  }
+
+  .content {
+    margin-top: 0;
+    flex: 1;
+  }
+
+  .navbar {
+    text-align: left;
+
+    .menuIcon {
+      display: inline-block;
+    }
   }
 
   .menu {
     display: none;
+    text-align: left;
 
     %item {
       line-height: 44px;
@@ -198,38 +230,50 @@
       border-top: 1px solid var(--lightest-gray-color);
     }
 
+    hr {
+      max-width: none;
+    }
+
     .menuItem {
       font-size: 18px;
     }
 
     .submenuItem {
       font-size: 15px;
-      padding-left: 20px;
+
+      &::after {
+        content: none;
+      }
     }
   }
 
   .menuShown {
-    grid-template-areas:
-      "nav"
-      "menu";
-
-    .menu {
-      display: block;
+    .aside {
+      height: 100%;
     }
 
     .content {
       display: none;
     }
+
+    .menu {
+      display: block;
+    }
   }
 }
 
 @media (pointer: coarse) {
+  .container {
+    height: auto;
+    min-height: 100%;
+  }
+
   .menu,
   .content {
     overflow: hidden;
   }
 
-  .container {
-    grid-template-rows: var(--navbar-height) minmax(max-content, auto);
+  .menuShown .aside {
+    flex: 1;
   }
 }

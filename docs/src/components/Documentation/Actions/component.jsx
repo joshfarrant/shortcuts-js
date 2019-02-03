@@ -209,70 +209,72 @@ export default class Component extends React.Component {
         </div>
 
         <div className={styles.infoPanel}>
-          <h2 className={styles.title}>
-            Actions
-          </h2>
+          <div className={styles.infoContent}>
+            <h2 className={styles.title}>
+              Actions
+            </h2>
 
-          {/* ----------------------- WIP ----------------------- */}
-          {action && <React.Fragment>
-            <h3>{action.name} <code>{action.func.name}()</code></h3>
+            {/* ----------------------- WIP ----------------------- */}
+            {action && <React.Fragment>
+              <h3>{action.name} <code>{action.func.name}()</code></h3>
 
-            <p>{action.description}</p>
-            <Markdown content={action.comment} />
+              <p>{action.description}</p>
+              <Markdown content={action.comment} />
 
-            <h4>Parameters</h4>
-            {action.func.parameters ? (
-              <table>
-                <thead>
-                  <tr>
-                    <th>Name</th>
-                    <th>Type</th>
-                    <th>Default</th>
-                    <th>Description</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  {action.func.parameters.map((parameter, i) => (
-                    <tr key={i}>
-                      <td>
-                        <b>{parameter.name}</b>
-                        {parameter.default && '?'}
-                      </td>
-                      <td>{parameter.type}</td>
-                      <td>{parameter.default && <code>{parameter.default}</code>}</td>
-                      <td>{parameter.comment}</td>
+              <h4>Parameters</h4>
+              {action.func.parameters ? (
+                <table>
+                  <thead>
+                    <tr>
+                      <th>Name</th>
+                      <th>Type</th>
+                      <th>Default</th>
+                      <th>Description</th>
                     </tr>
-                  ))}
-                </tbody>
-              </table>
-            ) : (
-              <p>None</p>
-            )}
+                  </thead>
+                  <tbody>
+                    {action.func.parameters.map((parameter, i) => (
+                      <tr key={i}>
+                        <td>
+                          <b>{parameter.name}</b>
+                          {parameter.default && '?'}
+                        </td>
+                        <td>{parameter.type}</td>
+                        <td>{parameter.default && <code>{parameter.default}</code>}</td>
+                        <td>{parameter.comment}</td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              ) : (
+                <p>None</p>
+              )}
 
-            <h4>Has Action Output?</h4>
-            <p>{action.func.hasOutput ? 'Yes' : 'No'}</p>
+              <h4>Has Action Output?</h4>
+              <p>{action.func.hasOutput ? 'Yes' : 'No'}</p>
 
-            <h4>Source</h4>
-            <p>
-              <code>
-                <a
-                  href={`https://github.com/joshfarrant/shortcuts-js/blob/master/src/${action.func.source}`}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  {action.func.source}
-                </a>
-              </code>
-            </p>
+              <h4>Source</h4>
+              <p>
+                <code>
+                  <a
+                    href={`https://github.com/joshfarrant/shortcuts-js/blob/master/src/${action.func.source}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    {action.func.source}
+                  </a>
+                </code>
+              </p>
 
-            {actionName && (
-              <button onClick={this.setAction()}>
-                GO BACK TO ACTION LIST
-              </button>
-            )}
-          </React.Fragment>}
-          {/* --------------------- END WIP --------------------- */}
+              {actionName && (
+                <button onClick={this.setAction()}>
+                  GO BACK TO ACTION LIST
+                </button>
+              )}
+            </React.Fragment>}
+            {/* --------------------- END WIP --------------------- */}
 
+          </div>
         </div>
 
       </div>

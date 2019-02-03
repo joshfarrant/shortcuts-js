@@ -90,6 +90,7 @@ class Menu extends React.Component {
             </li>
           ))}
         </ul>
+        <hr />
         <ul>
           {[
             ['API Reference', 'https://docs.shortcuts.fun/globals.html'],
@@ -129,9 +130,8 @@ export default class Component extends React.Component {
         [styles.container]: true,
         [styles.menuShown]: this.state.menuShown,
       })}>
-
-        <div className={styles.navbar}>
-          <div className={styles.textContainer}>
+        <div className={styles.aside}>
+          <div className={styles.navbar}>
             <Link to="/" className={styles.logo}>
               Shortcuts JS
             </Link>
@@ -149,9 +149,9 @@ export default class Component extends React.Component {
               <span />
             </div>
           </div>
-        </div>
 
-        <Menu onClick={this.toggleMenu(false)} />
+          <Menu onClick={this.toggleMenu(false)} />
+        </div>
 
         <div className={styles.content}>
           <Route path="/docs" exact component={GettingStarted} />
@@ -161,7 +161,6 @@ export default class Component extends React.Component {
           <Route path="/docs/metadata/icon" component={Metadata_ShortcutIcon} />
           <Route path="/docs/contributing/action-icons" component={Contributing_ActionIcons} />
         </div>
-
       </div>
     );
   }

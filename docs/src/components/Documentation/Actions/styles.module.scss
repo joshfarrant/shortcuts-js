@@ -4,11 +4,11 @@ $icon-number: 120;
 .content {
   display: flex;
   height: 100%;
+  min-height: calc(100vh - var(--navbar-height));
 }
 
 .listPanel {
-  flex: 1;
-  max-width: 360px;
+  width: 360px;
   padding: 1.7rem 0;
   overflow-y: scroll;
   background: var(--lightest-gray-color);
@@ -88,12 +88,19 @@ $icon-number: 120;
 .infoPanel {
   flex: 1;
   padding: 1.7rem;
+  overflow-x: hidden;
   overflow-y: scroll;
 
   .title {
     margin-bottom: 16px;
     padding-bottom: 16px;
     border-bottom: 1px solid var(--lighter-gray-color);
+  }
+
+  .infoContent {
+    width: 640px;
+    max-width: 100%;
+    overflow-x: hidden;
   }
 }
 
@@ -144,11 +151,13 @@ $icon-number: 120;
 
 @media (max-width: 1000px) {
   .listPanel {
-    max-width: 100%;
+    flex: 1;
+    width: 1000px;
   }
 
   .infoPanel {
     display: none;
+    width: 1000px;
   }
 
   .collapsed {
@@ -159,5 +168,12 @@ $icon-number: 120;
     .infoPanel {
       display: block;
     }
+  }
+}
+
+@media (pointer: coarse) {
+  .listPanel,
+  .infoPanel {
+    overflow-y: initial;
   }
 }

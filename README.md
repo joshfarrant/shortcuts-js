@@ -7,6 +7,7 @@
 [![Build Status](https://img.shields.io/travis/joshfarrant/shortcuts-js/master.svg)](https://travis-ci.org/joshfarrant/shortcuts-js)
 [![Coverage Status](https://coveralls.io/repos/github/joshfarrant/shortcuts-js/badge.svg?branch=master)](https://coveralls.io/github/joshfarrant/shortcuts-js?branch=master)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-blue.svg)](https://github.com/joshfarrant/shortcuts-js/blob/master/CONTRIBUTING.md)
+[![Discord](https://img.shields.io/discord/537267258922237954.svg?label=Discord&logo=discord&style=flat)](https://discord.gg/pyvcYbB)
 
 A Node.js iOS 12 Shortcuts creator.
 

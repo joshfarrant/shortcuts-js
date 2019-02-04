@@ -10,7 +10,7 @@ import WFWorkflowAction from '../interfaces/WF/WFWorkflowAction';
  * @icon Scripting
  *
  * Displays a dialog prompting the user to enter a piece of information.
- * *
+ *
  * ```js
  * // Ask for favourite colour, defaulting to pink
  * ask({

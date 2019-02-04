@@ -28,3 +28,4 @@ tsconfig.json
 tsconfig.release.json
 tslint.json
 playground.js
+playground/

@@ -1,7 +1,11 @@
 import WFWorkflowAction from '../interfaces/WF/WFWorkflowAction';
 
 /**
- * Pause Music Action. Pauses the currently playing music.
+ * @action Pause Music
+ * @section Content Types > Music > Playback
+ * @icon Pause
+ *
+ * Pauses the currently playing music.
  *
  * ```js
  * pauseMusic();

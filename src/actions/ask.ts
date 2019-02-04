@@ -5,8 +5,12 @@ import WFSerialization from '../interfaces/WF/WFSerialization';
 import WFWorkflowAction from '../interfaces/WF/WFWorkflowAction';
 
 /**
- * Ask for Input Action. Displays a dialogue prompting the user to enter a piece of information.
+ * @action Ask for Input
+ * @section Actions > Scripting > Notification
+ * @icon Scripting
  *
+ * Displays a dialog prompting the user to enter a piece of information.
+ * *
  * ```js
  * // Ask for favourite colour, defaulting to pink
  * ask({
@@ -15,8 +19,13 @@ import WFWorkflowAction from '../interfaces/WF/WFWorkflowAction';
  * });
  * ```
  */
+
 const ask = (
-  options: {
+  {
+    inputType = 'Text',
+    defaultAnswer = '',
+    question = '',
+  }: {
     /** The type of input to accept */
     inputType?: WFInputType;
     /** The default answer */
@@ -24,21 +33,13 @@ const ask = (
     /** The title of the dialogue */
     question?: WFSerialization | string;
   },
-): WFWorkflowAction => {
-  const {
-    inputType = 'Text',
-    defaultAnswer = '',
-    question = '',
-  } = options;
-
-  return {
-    WFWorkflowActionIdentifier: 'is.workflow.actions.ask',
-    WFWorkflowActionParameters: {
-      WFInputType: inputType,
-      WFAskActionDefaultAnswer: defaultAnswer,
-      WFAskActionPrompt: question,
-    },
-  };
-};
+): WFWorkflowAction => ({
+  WFWorkflowActionIdentifier: 'is.workflow.actions.ask',
+  WFWorkflowActionParameters: {
+    WFInputType: inputType,
+    WFAskActionDefaultAnswer: defaultAnswer,
+    WFAskActionPrompt: question,
+  },
+});
 
 export default withActionOutput(ask);

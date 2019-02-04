@@ -3,7 +3,11 @@ import { withActionOutput } from '../utils';
 import WFWorkflowAction from '../interfaces/WF/WFWorkflowAction';
 
 /**
- * Get Name of Emoji Action. Gets the names of emoji passed into the action.
+ * @action Get Name of Emoji
+ * @section Content Types > Text >
+ * @icon Smiley
+ *
+ * Gets the names of emoji passed into the action.
  *
  * ```js
  * getNameOfEmoji();

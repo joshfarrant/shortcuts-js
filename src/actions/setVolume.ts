@@ -1,7 +1,11 @@
 import WFWorkflowAction from '../interfaces/WF/WFWorkflowAction';
 
 /**
- * Set Volume Action. Sets the system volume.
+ * @action Set Volume
+ * @section Content Types > Music > Playback
+ * @icon Sound
+ *
+ * Sets the system volume.
  *
  * ```js
  *  setVolume({
@@ -11,21 +15,17 @@ import WFWorkflowAction from '../interfaces/WF/WFWorkflowAction';
  */
 
 const setVolume = (
-  options: {
+  {
+    volume = 50,
+  }: {
     /** Number between 0 & 100 to set the volume to */
     volume ?: number,
   },
-): WFWorkflowAction => {
-  const {
-    volume = 50,
-  } = options;
-
-  return {
-    WFWorkflowActionIdentifier: 'is.workflow.actions.setvolume',
-    WFWorkflowActionParameters: {
-      WFVolume: volume / 100,
-    },
-  };
-};
+): WFWorkflowAction => ({
+  WFWorkflowActionIdentifier: 'is.workflow.actions.setvolume',
+  WFWorkflowActionParameters: {
+    WFVolume: volume / 100,
+  },
+});
 
 export default setVolume;

@@ -7,8 +7,11 @@ import WFWiFiDetail from '../interfaces/WF/WFWiFiDetail';
 import WFWorkflowAction from '../interfaces/WF/WFWorkflowAction';
 
 /**
- * Get Network Details Action. Gets information about the currently connected
- * networks.
+ * @action Get Network Details
+ * @section Actions > Scripting > Device
+ * @icon Wi-Fi
+ *
+ * Gets information about the currently connected networks.
  *
  * ```js
  * getNetworkDetails({
@@ -22,20 +25,18 @@ import WFWorkflowAction from '../interfaces/WF/WFWorkflowAction';
  * });
  * ```
  */
+
 const getNetworkDetails = (
-  options: {
+  {
+    network = 'Wi-Fi',
+    attribute = 'Network Name',
+  }: {
     /** The type of network to look at */
     network?: WFNetworkDetailsNetwork,
-
     /** The particular network detail to retrieve */
     attribute?: WFSerialization | WFWiFiDetail | WFCellularDetail,
   },
 ): WFWorkflowAction => {
-  const {
-    network = 'Wi-Fi',
-    attribute = 'Network Name',
-  } = options;
-
   let detailKey = 'WFWiFiDetail';
   if (network === 'Cellular') {
     detailKey = 'WFCellularDetail';

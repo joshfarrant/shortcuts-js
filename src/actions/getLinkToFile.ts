@@ -3,7 +3,11 @@ import { withActionOutput } from '../utils';
 import WFWorkflowAction from '../interfaces/WF/WFWorkflowAction';
 
 /**
- * Get Link to File Action. Gets a public link to the file passed into the action.
+ * @action Get Link to File
+ * @section Content Types > Documents > File Storage
+ * @icon Documents
+ *
+ * Gets a public link to the file passed into the action.
  *
  * ```js
  * getLinkToFile();

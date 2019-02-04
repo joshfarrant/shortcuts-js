@@ -1,7 +1,11 @@
 import WFWorkflowAction from '../interfaces/WF/WFWorkflowAction';
 
 /**
- * Share with Extensions Action. Prompts to share the input.
+ * @action Share
+ * @section Content Types > Sharing > System
+ * @icon Sharing
+ *
+ * Prompts to share the input.
  *
  * ```js
  * share();

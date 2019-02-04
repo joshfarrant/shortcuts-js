@@ -3,6 +3,8 @@ type WFWorkflowActionIdentifier = (
   | 'com.apple.mobilenotes.SharingExtension'
   | 'com.burbn.instagram.openin'
   | 'com.google.chrome.ios.openurl'
+  | 'com.omz-software.Pythonista.editscript'
+  | 'com.omz-software.Pythonista.runscript'
   | 'is.workflow.actions.appendvariable'
   | 'is.workflow.actions.airdropdocument'
   | 'is.workflow.actions.airplanemode.set'

@@ -8,7 +8,11 @@ type ChooseFromMenuItem = {
 };
 
 /**
- * Choose From Menu Action. Presents a menu and runs different actions based on which menu was chosen.
+ * @action Choose from Menu
+ * @section Actions > Scripting > Control Flow
+ * @icon Scripting
+ *
+ * Presents a menu and runs different actions based on which menu item was chosen.
  *
  * ```js
  * chooseFromMenu({
@@ -25,19 +29,18 @@ type ChooseFromMenuItem = {
  * });
  * ```
  */
+
 const chooseFromMenu = (
-  options: {
+  {
+    items = [],
+    prompt = '',
+  }: {
     /** An array of menu items */
     items?: ChooseFromMenuItem[],
     /** The title of the menu */
     prompt?: string,
   },
 ): WFWorkflowAction[] => {
-  const {
-    items = [],
-    prompt = '',
-  } = options;
-
   const groupingIdentifier = uuidv4();
 
   return [

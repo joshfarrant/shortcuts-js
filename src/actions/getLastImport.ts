@@ -1,7 +1,11 @@
 import WFWorkflowAction from '../interfaces/WF/WFWorkflowAction';
 
 /**
- * Get Last Import Action. Gets the most recent photo import from the Photos app.
+ * @action Get Last Import
+ * @section Content Types > Photos & Video > Photos
+ * @icon Photos
+ *
+ * Gets the most recent photo import from the Photos app.
  *
  * ```js
  * getLastImport();

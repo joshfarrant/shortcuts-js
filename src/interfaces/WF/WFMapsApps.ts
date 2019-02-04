@@ -1,5 +1,6 @@
 type WFMapsApps = (
-  'Google Maps'
+  'Maps'
+  | 'Google Maps'
   | 'Waze'
 );
 

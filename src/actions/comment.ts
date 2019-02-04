@@ -1,7 +1,11 @@
 import WFWorkflowAction from '../interfaces/WF/WFWorkflowAction';
 
 /**
- * Comment Action. This action lets you explain how part of a shortcut works. When run, this action does nothing.
+ * @action Comment
+ * @section Actions > Scripting >
+ * @icon Text
+ *
+ * This action lets you explain how part of a shortcut works. When run, this action does nothing.
  *
  * ```js
  * // Create a comment
@@ -10,22 +14,19 @@ import WFWorkflowAction from '../interfaces/WF/WFWorkflowAction';
  * });
  * ```
  */
+
 const comment = (
-  options: {
+  {
+    text = '',
+  }: {
     /** The body of the comment */
     text?: string,
   },
-): WFWorkflowAction => {
-  const {
-    text = '',
-  } = options;
-
-  return {
-    WFWorkflowActionIdentifier: 'is.workflow.actions.comment',
-    WFWorkflowActionParameters: {
-      WFCommentActionText: text,
-    },
-  };
-};
+): WFWorkflowAction => ({
+  WFWorkflowActionIdentifier: 'is.workflow.actions.comment',
+  WFWorkflowActionParameters: {
+    WFCommentActionText: text,
+  },
+});
 
 export default comment;

@@ -1,7 +1,11 @@
 import WFWorkflowAction from '../interfaces/WF/WFWorkflowAction';
 
 /**
- * Add to Reading List Action. Adds URLs passed into the action to your reading list.
+ * @action Add to Reading List
+ * @section Content Types > Web > Safari
+ * @icon Safari
+ *
+ * Adds URLs passed into the action to your reading list.
  *
  * ```js
  * addToReadingList();

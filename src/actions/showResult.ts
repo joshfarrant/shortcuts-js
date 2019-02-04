@@ -3,7 +3,11 @@ import WFWorkflowAction from '../interfaces/WF/WFWorkflowAction';
 import WFSerialization from '../interfaces/WF/WFSerialization';
 
 /**
- * Show Result Action. Shows the specified text in Siri or in an alert.
+ * @action Show Result
+ * @section Actions > Scripting >
+ * @icon Scripting
+ *
+ * Shows the specified text in Siri or in an alert.
  *
  * ```js
  * showResult({
@@ -11,22 +15,19 @@ import WFSerialization from '../interfaces/WF/WFSerialization';
  * });
  * ```
  */
+
 const showResult = (
-  options: {
+  {
+    text = '',
+  }: {
     /** The text to show in the dialogue */
     text?: WFSerialization | string,
   },
-): WFWorkflowAction => {
-  const {
-    text = '',
-  } = options;
-
-  return {
-    WFWorkflowActionIdentifier: 'is.workflow.actions.showresult',
-    WFWorkflowActionParameters: {
-      Text: text,
-    },
-  };
-};
+): WFWorkflowAction => ({
+  WFWorkflowActionIdentifier: 'is.workflow.actions.showresult',
+  WFWorkflowActionParameters: {
+    Text: text,
+  },
+});
 
 export default showResult;

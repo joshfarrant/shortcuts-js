@@ -13,7 +13,7 @@ import WFWorkflowAction from '../interfaces/WF/WFWorkflowAction';
  * setDoNotDisturb({
  *   value: true,
  *   until: 'Time',
- *   title: '08:00',
+ *   time: '08:00',
  *   event: '',
  * });
  * ```

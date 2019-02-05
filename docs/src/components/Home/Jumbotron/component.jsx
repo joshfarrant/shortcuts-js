@@ -24,6 +24,10 @@ const badges = [{
   alt: 'PRs Welcome',
   href: 'https://github.com/joshfarrant/shortcuts-js/blob/master/CONTRIBUTING.md',
   src: 'https://img.shields.io/badge/PRs-welcome-blue.svg',
+}, {
+  alt: 'Discord',
+  href: 'https://discord.gg/pyvcYbB',
+  src: 'https://img.shields.io/discord/537267258922237954.svg?label=Discord&logo=discord&style=flat',
 }];
 
 export default () => (

@@ -12,10 +12,6 @@ import WFWorkflowAction from '../interfaces/WF/WFWorkflowAction';
  * ```js
  * airDrop();
  * ```
- *
- * @action AirDrop
- * @section Content Types > Sharing > System
- * @icon AirDrop
  */
 
 const airDrop = (): WFWorkflowAction => ({

@@ -1,17 +1,17 @@
-import { postToWordpress } from '../../src/actions';
+import { postToWordPress } from '../../src/actions';
 
-describe('postToWordpress function', () => {
+describe('postToWordPress function', () => {
 
   it('is a function', () => {
-    expect(typeof postToWordpress).toBe('function');
+    expect(typeof postToWordPress).toBe('function');
   });
 
-  it('builds a postToWordpress action', () => {
+  it('builds a postToWordPress action', () => {
     const expected = {
       WFWorkflowActionIdentifier: 'is.workflow.actions.wordpress.post',
       WFWorkflowActionParameters: {},
     };
-    const actual = postToWordpress({});
+    const actual = postToWordPress({});
 
     expect(actual).toEqual(expected);
   });

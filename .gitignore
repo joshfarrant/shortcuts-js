@@ -28,10 +28,11 @@ build/
 # Misc
 .DS_Store
 
-# Docs
-docs/
+# Documentation
+/docs/src/api/
+/documentation/
 
 # Dev
 shortcuts/
-playground.js
 playground/
+playground.js

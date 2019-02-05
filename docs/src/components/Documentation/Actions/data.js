@@ -36,14 +36,14 @@ const addToSections = (name, id, paths) => {
 };
 
 // TODO: WIP
-const parseType = (type) => {
+const printType = (type) => {
   switch (type.type) {
     case 'stringLiteral':
       return `'${type.value}'`;
     case 'union':
-      return type.types.map(parseType).join(' | ');
+      return type.types.map(printType).join(' | ');
     case 'array':
-      const element = parseType(type.elementType);
+      const element = printType(type.elementType);
       return `${type.elementType.type === 'union' ? `(${element})` : element}[]`;
     default:
       return type.name;
@@ -53,7 +53,7 @@ const parseType = (type) => {
 exported.children
   .filter((file) => (
     file.name.startsWith('"actions/') &&
-    file.name !== '"actions/index"'
+    !file.name.endsWith('/index"')
   ))
   .forEach((file) => file.children
     .filter((child) => (
@@ -63,6 +63,7 @@ exported.children
     ))
     .forEach((child) => {
       // comment parsing
+      // TODO: plugin to fetch comment
       const description = child.comment.shortText;
       const comment = child.comment.text;
       const tags = child.comment.tags.map(({ tag, text }) => ({
@@ -84,9 +85,10 @@ exported.children
       const parameters = signature.parameters && signature.parameters[0].type.declaration.children
         .map((parameter) => ({
           name: parameter.name,
-          type: parseType(parameter.type),
+          type: printType(parameter.type),
           default: parameter.defaultValue,
-          comment: parameter.comment.shortText,
+          // TODO: plugin to fetch comment
+          comment: parameter.comment && parameter.comment.shortText,
         }));
 
       const { fileName, line } = child.sources[0];
@@ -102,7 +104,7 @@ exported.children
           name: child.name,
           parameters: parameters,
           hasOutput: !child.flags.isExported,
-          type: parseType(signature.type),
+          type: printType(signature.type),
           source: source,
         },
       };

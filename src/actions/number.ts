@@ -3,7 +3,11 @@ import { withActionOutput } from '../utils';
 import WFWorkflowAction from '../interfaces/WF/WFWorkflowAction';
 
 /**
- * Number Action. Passes a number to the next action.
+ * @action Number
+ * @section Actions > Scripting > Maths
+ * @icon Calculator
+ *
+ * Passes a number to the next action.
  *
  * ```js
  * number({
@@ -11,22 +15,19 @@ import WFWorkflowAction from '../interfaces/WF/WFWorkflowAction';
  * });
  * ```
  */
+
 const number = (
-  options: {
+  {
+    number = 0,
+  }: {
     /** The number to set */
     number?: number;
   },
-): WFWorkflowAction => {
-  const {
-    number = 0,
-  } = options;
-
-  return {
-    WFWorkflowActionIdentifier: 'is.workflow.actions.number',
-    WFWorkflowActionParameters: {
-      WFNumberActionNumber: number,
-    },
-  };
-};
+): WFWorkflowAction => ({
+  WFWorkflowActionIdentifier: 'is.workflow.actions.number',
+  WFWorkflowActionParameters: {
+    WFNumberActionNumber: number,
+  },
+});
 
 export default withActionOutput(number);

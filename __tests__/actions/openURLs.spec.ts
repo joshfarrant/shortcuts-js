@@ -5,7 +5,7 @@ describe('openURLs function', () => {
     expect(typeof openURLs).toBe('function');
   });
 
-  it('builds a open URL action', () => {
+  it('builds a openURLs action', () => {
     const expected = {
       WFWorkflowActionIdentifier: 'is.workflow.actions.openurl',
       WFWorkflowActionParameters: {},

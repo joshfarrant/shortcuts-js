@@ -3,7 +3,11 @@ import WFSerialization from '../interfaces/WF/WFSerialization';
 import WFWorkflowAction from '../interfaces/WF/WFWorkflowAction';
 
 /**
- * Sets the device's Do Not Disturb to on or off.
+ * @action Set Do Not Disturb
+ * @section Actions > Scripting > Device
+ * @icon DoNotDisturb
+ *
+ * Sets the device’s Do Not Disturb to on or off
  *
  * ```js
  * setDoNotDisturb({
@@ -13,25 +17,22 @@ import WFWorkflowAction from '../interfaces/WF/WFWorkflowAction';
  *   event: '',
  * });
  * ```
- *
- * @action Set Do Not Disturb
- * @section Actions > Scripting > Device
- * @icon DoNotDisturb
  */
+
 const setDoNotDisturb = (
   {
-    /** Enable or disable Do Not Disturb */
     value = true,
-    /** Define when Do Not Disturb should be enabled until */
     until = 'Turned Off',
-    /** Define the time to be used by the "Time" assertion */
     time = '08:00',
-    /** Define the event to be used by the "Event" assertion */
     event = '',
   }: {
+    /** Enable or disable Do Not Disturb */
     value?: boolean,
+    /** Define when Do Not Disturb should be enabled until */
     until?: AssertionType,
+    /** Define the time to be used by the "Time" assertion */
     time?: string,
+    /** Define the event to be used by the "Event" assertion */
     event?: WFSerialization | string,
   },
 ): WFWorkflowAction => ({

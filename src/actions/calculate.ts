@@ -15,6 +15,10 @@ const operationsMap = new Map([
 ]);
 
 /**
+ * @action Calculate
+ * @section Actions > Scripting > Maths
+ * @icon Calculator
+ *
  * Performs a number operation on the input and returns the result.
  *
  * ```js
@@ -24,27 +28,24 @@ const operationsMap = new Map([
  *   operation: '/',
  * });
  * ```
- *
- * @action Calculate
- * @section Actions > Scripting > Maths
- * @icon Calculator
  */
+
 const calculate = (
   {
-    /** A second number to perform the operation on */
     operand,
-    /** The operation to apply to the number. Defaults to '+' */
     operation = '+',
-    /** The scientific operation to apply to the number */
     scientificOperation,
   }: {
+    /** A second number to perform the operation on */
     operand?: number;
+    /** The operation to apply to the number. Defaults to '+' */
     operation?: (
       WFMathOperation
       | '*'
       | 'x'
       | '/'
     );
+    /** The scientific operation to apply to the number */
     scientificOperation?: (
       WFScientificMathOperation
       | 'sqrt'

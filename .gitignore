@@ -7,7 +7,7 @@ npm-debug.log*
 node_modules/
 
 # Coverage
-coverage/
+coverage
 
 # Transpiled files
 build/
@@ -29,8 +29,9 @@ build/
 .DS_Store
 
 # Docs
-docs/src/api/
+docs/
 
 # Dev
 shortcuts/
 playground.js
+playground/

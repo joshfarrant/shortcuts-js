@@ -10,7 +10,7 @@ describe('showInMaps function', () => {
     const expected = {
       WFWorkflowActionIdentifier: 'is.workflow.actions.searchmaps',
       WFWorkflowActionParameters: {
-        WFSearchMapsActionApp: '',
+        WFSearchMapsActionApp: 'Maps',
       },
     };
     const actual = showInMaps({});

@@ -1,6 +1,10 @@
 import WFWorkflowAction from '../interfaces/WF/WFWorkflowAction';
 
 /**
+ * @action Comment
+ * @section Actions > Scripting >
+ * @icon Text
+ *
  * This action lets you explain how part of a shortcut works. When run, this action does nothing.
  *
  * ```js
@@ -9,16 +13,13 @@ import WFWorkflowAction from '../interfaces/WF/WFWorkflowAction';
  *   text: 'A very important comment',
  * });
  * ```
- *
- * @action Comment
- * @section Actions > Scripting >
- * @icon Text
  */
+
 const comment = (
   {
-    /** The body of the comment */
     text = '',
   }: {
+    /** The body of the comment */
     text?: string,
   },
 ): WFWorkflowAction => ({

@@ -1,12 +1,12 @@
-import { getContentsOfUrl } from '../../src/actions';
+import { getContentsOfURL } from '../../src/actions';
 
-describe('getContentsOfUrl function', () => {
+describe('getContentsOfURL function', () => {
 
   it('is a function', () => {
-    expect(typeof getContentsOfUrl).toBe('function');
+    expect(typeof getContentsOfURL).toBe('function');
   });
 
-  it('builds a getContentsOfUrl action when no options are passed', () => {
+  it('builds a getContentsOfURL action when no options are passed', () => {
     const expected = {
       WFWorkflowActionIdentifier: 'is.workflow.actions.downloadurl',
       WFWorkflowActionParameters: {
@@ -28,13 +28,13 @@ describe('getContentsOfUrl function', () => {
         WFHTTPBodyType: 'JSON',
       },
     };
-    const actual = getContentsOfUrl({});
+    const actual = getContentsOfURL({});
 
     expect(actual).toEqual(expected);
   });
 
-  it('builds a getContentsOfUrl action when multiple options are passed', () => {
-    const actual = getContentsOfUrl({
+  it('builds a getContentsOfURL action when multiple options are passed', () => {
+    const actual = getContentsOfURL({
       method: 'POST',
       headers: {
         testKey: 'testVal',
@@ -254,8 +254,8 @@ describe('getContentsOfUrl function', () => {
     expect(actual).toEqual(expected);
   });
 
-  it('builds a getContentsOfUrl action when multiple options are passed as form data', () => {
-    const actual = getContentsOfUrl({
+  it('builds a getContentsOfURL action when multiple options are passed as form data', () => {
+    const actual = getContentsOfURL({
       method: 'PUT',
       headers: {
         testKey: 'testVal',
@@ -475,8 +475,8 @@ describe('getContentsOfUrl function', () => {
     expect(actual).toEqual(expected);
   });
 
-  it('builds a getContentsOfUrl action when multiple options are passed as form data', () => {
-    const actual = getContentsOfUrl({
+  it('builds a getContentsOfURL action when multiple options are passed as form data', () => {
+    const actual = getContentsOfURL({
       method: 'PUT',
       requestBodyType: 'Form',
       requestBody: {
@@ -524,8 +524,8 @@ describe('getContentsOfUrl function', () => {
     expect(actual).toEqual(expected);
   });
 
-  it('builds a getContentsOfUrl action when just a method is passed', () => {
-    const actual = getContentsOfUrl({
+  it('builds a getContentsOfURL action when just a method is passed', () => {
+    const actual = getContentsOfURL({
       method: 'GET',
     });
 

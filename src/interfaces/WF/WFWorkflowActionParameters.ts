@@ -38,6 +38,7 @@ interface WFWorkflowActionParameters {
   GroupingIdentifier?: string;
   InstagramCaption?: string;
   OnValue?: boolean;
+  PythonistaScript?: WFSerialization | string;
   ShowHeaders?: boolean;
   Text?: WFSerialization | string;
   Time?: string;
@@ -45,6 +46,7 @@ interface WFWorkflowActionParameters {
   WFAlertActionCancelButtonShown?: boolean;
   WFAlertActionMessage?: WFSerialization | string;
   WFAlertActionTitle?: WFSerialization | string;
+  WFAppIdentifier?: string;
   WFArchiveFormat?: WFArchiveFormat;
   WFAskActionDateGranularity?: WFAskActionDateGranularity;
   WFAskActionDefaultAnswer?: WFSerialization | string;
@@ -79,6 +81,7 @@ interface WFWorkflowActionParameters {
   WFIPAddressSourceOption?: WFIPAddressSourceOption;
   WFIPAddressTypeOption?: WFIPAddressTypeOption;
   WFISO8601IncludeTime?: WFSerialization | boolean;
+  WFItems?: WFSerialization | string[];
   WFJavaScript?: WFSerialization | string;
   WFJSONValues?: WFSerialization;
   WFLabel?: WFSerialization | string;

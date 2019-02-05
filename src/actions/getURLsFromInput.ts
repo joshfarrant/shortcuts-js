@@ -3,7 +3,11 @@ import { withActionOutput } from '../utils';
 import WFWorkflowAction from '../interfaces/WF/WFWorkflowAction';
 
 /**
- * Get URLs from Input Action. Returns any links found in the output from the previous action.
+ * @action Get URLs from Input
+ * @section Content Types > Web > URLs
+ * @icon URL
+ *
+ * Returns any links found in the output from the previous action.
  *
  * ```js
  * getURLsFromInput();

@@ -3,7 +3,11 @@ import { withActionOutput } from '../utils';
 import WFWorkflowAction from '../interfaces/WF/WFWorkflowAction';
 
 /**
- * Detect Language with Microsoft Action. Detects the language of the text provided as input.
+ * @action Detect Language with Microsoft
+ * @section Content Types > Text >
+ * @icon Translate
+ *
+ * Detects the language of the text provided as input.
  *
  * ```js
  * detectLanguageWithMicrosoft();

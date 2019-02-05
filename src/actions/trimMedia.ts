@@ -1,7 +1,11 @@
 import WFWorkflowAction from '../interfaces/WF/WFWorkflowAction';
 
 /**
- * Trim Media Action. Presents a view allowing you to trim the media passed into the action.
+ * @action Trim Media
+ * @section Content Types > Photos & Video > Video
+ * @icon QuickTime
+ *
+ * Presents a view allowing you to trim the media passed into the action.
  *
  * ```js
  * trimMedia();

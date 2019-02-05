@@ -4,9 +4,15 @@ import Variable from '../interfaces/Variable';
 
 /**
  * Creates a Magic Variable to be used as action output.
- * @ignore
+ *
+ * ```js
+ * const magic = actionOutput('My Magic Variable');
+ * ```
  */
-export const actionOutput = (name?: string): Variable => new Variable({
+export const actionOutput = (
+  /** The custom name of the Magic Variable */
+  name?: string,
+): Variable => new Variable({
   ...(name && { OutputName: name }),
   OutputUUID: uuidv4(),
   Type: 'ActionOutput',

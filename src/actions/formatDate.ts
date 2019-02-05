@@ -7,11 +7,11 @@ import WFTimeFormatStyle from '../interfaces/WF/WFTimeFormatStyle';
 import WFWorkflowAction from '../interfaces/WF/WFWorkflowAction';
 
 /**
- * Formats a date and time into text.
+ * @action Format Date
+ * @section Content Types > Calendar > Dates
+ * @icon Date
  *
- * Custom format strings use the format patterns from Unicode Technical Standard #35
- * ([unicode.org/reports/tr35/tr35-31/tr35-dates.html#Date_Format_Patterns](
- * http://unicode.org/reports/tr35/tr35-31/tr35-dates.html#Date_Format_Patterns)).
+ * Formats a date and time into text.
  *
  * ```js
  * formatDate({
@@ -19,28 +19,25 @@ import WFWorkflowAction from '../interfaces/WF/WFWorkflowAction';
  *   formatString: 'HH:mm',
  * });
  * ```
- *
- * @action Format Date
- * @section Content Types > Calendar > Dates
- * @icon Date
  */
+
 const formatDate = (
   {
-    /** The date format to use */
     dateFormat = 'Short',
-    /** The time format to use */
     timeFormat = 'Short',
-    /** The alternative format to use for relative date format */
     alternativeFormat = 'Medium',
-    /** Whether to use ISO 8601 time */
     includeISO8601Time = false,
-    /** The custom format string to use */
     formatString = 'EEE, dd MMM yyyy HH:mm:ss Z',
   }: {
+    /** The date format to use */
     dateFormat?: WFSerialization | WFDateFormatStyle;
+    /** The time format to use */
     timeFormat?: WFSerialization | WFTimeFormatStyle;
+    /** The alternative format to use for relative date format */
     alternativeFormat?: WFSerialization | WFRelativeDateFormatStyle;
+    /** Whether to use ISO 8601 time */
     includeISO8601Time?: WFSerialization | boolean;
+    /** The custom format string to use */
     formatString?: WFSerialization | string;
   },
 ): WFWorkflowAction => ({

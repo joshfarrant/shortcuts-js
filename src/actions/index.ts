@@ -17,6 +17,7 @@ import createNote from './createNote';
 import date from './date';
 import deletePhotos from './deletePhotos';
 import detectLanguageWithMicrosoft from './detectLanguageWithMicrosoft';
+import dictionary from './dictionary';
 import exitShortcut from './exitShortcut';
 import expandURL from './expandURL';
 import extractArchive from './extractArchive';
@@ -26,9 +27,9 @@ import getAddressesFromInput from './getAddressesFromInput';
 import getBatteryLevel from './getBatteryLevel';
 import getClipboard from './getClipboard';
 import getContactsFromInput from './getContactsFromInput';
-import getContentsOfUrl from './getContentsOfUrl';
+import getContentsOfURL from './getContentsOfURL';
 import getContentsOfWebPage from './getContentsOfWebPage';
-import getCurrentIpAddress from './getCurrentIpAddress';
+import getCurrentIPAddress from './getCurrentIPAddress';
 import getCurrentSong from './getCurrentSong';
 import getDatesFromInput from './getDatesFromInput';
 import getDeviceDetails from './getDeviceDetails';
@@ -56,6 +57,7 @@ import getTimeBetweenDates from './getTimeBetweenDates';
 import getType from './getType';
 import getURLsFromInput from './getURLsFromInput';
 import getVariable from './getVariable';
+import list from './list';
 import makeArchive from './makeArchive';
 import makeMarkdownFromRichText from './makeMarkdownFromRichText';
 import makeRichTextFromHTML from './makeRichTextFromHTML';
@@ -64,8 +66,10 @@ import markup from './markup';
 import matchText from './matchText';
 import nothing from './nothing';
 import number from './number';
+import openApp from './openApp';
 import openInBooks from './openInBooks';
 import openURLs from './openURLs';
+import openURLsInChrome from './openURLsInChrome';
 import pauseMusic from './pauseMusic';
 import playSound from './playSound';
 import postOnFacebook from './postOnFacebook';
@@ -76,7 +80,7 @@ import print from './print';
 import quickLook from './quickLook';
 import randomNumber from './randomNumber';
 import removeReminders from './removeReminders';
-import runJavascriptOnWebPage from './runJavascriptOnWebPage';
+import runJavaScriptOnWebPage from './runJavaScriptOnWebPage';
 import runScriptOverSSH from './runScriptOverSSH';
 import runShortcut from './runShortcut';
 import scanQROrBarcode from './scanQROrBarcode';
@@ -99,7 +103,7 @@ import shareWithExtensions from './shareWithExtensions';
 import showAlert from './showAlert';
 import showDefinition from './showDefinition';
 import showInCalendar from './showInCalendar';
-import showInItunesStore from './showInItunesStore';
+import showInITunesStore from './showInITunesStore';
 import showInMaps from './showInMaps';
 import showNotification from './showNotification';
 import showResult from './showResult';
@@ -108,12 +112,15 @@ import skipForward from './skipForward';
 import text from './text';
 import trimMedia from './trimMedia';
 import tweet from './tweet';
-import url from './url';
-import urlEncode from './urlEncode';
+import URL from './URL';
+import URLEncode from './URLEncode';
 import vibrateDevice from './vibrateDevice';
 import viewContentGraph from './viewContentGraph';
 import wait from './wait';
 import waitToReturn from './waitToReturn';
+
+// 3rd-party app imports
+import * as pythonista from './pythonista';
 
 export {
   addToReadingList,
@@ -135,6 +142,7 @@ export {
   date,
   deletePhotos,
   detectLanguageWithMicrosoft,
+  dictionary,
   exitShortcut,
   expandURL,
   extractArchive,
@@ -144,9 +152,9 @@ export {
   getBatteryLevel,
   getClipboard,
   getContactsFromInput,
-  getContentsOfUrl,
+  getContentsOfURL,
   getContentsOfWebPage,
-  getCurrentIpAddress,
+  getCurrentIPAddress,
   getCurrentSong,
   getDatesFromInput,
   getDeviceDetails,
@@ -174,6 +182,7 @@ export {
   getType,
   getURLsFromInput,
   getVariable,
+  list,
   makeArchive,
   makeMarkdownFromRichText,
   makeRichTextFromHTML,
@@ -182,8 +191,10 @@ export {
   matchText,
   nothing,
   number,
+  openApp,
   openInBooks,
   openURLs,
+  openURLsInChrome,
   pauseMusic,
   postOnFacebook,
   postOnInstagram,
@@ -194,7 +205,7 @@ export {
   quickLook,
   randomNumber,
   removeReminders,
-  runJavascriptOnWebPage,
+  runJavaScriptOnWebPage,
   runScriptOverSSH,
   runShortcut,
   scanQROrBarcode,
@@ -218,7 +229,7 @@ export {
   showAlert,
   showDefinition,
   showInCalendar,
-  showInItunesStore,
+  showInITunesStore,
   showNotification,
   showResult,
   skipBack,
@@ -226,10 +237,13 @@ export {
   text,
   tweet,
   trimMedia,
-  url,
-  urlEncode,
+  URL,
+  URLEncode,
   vibrateDevice,
   viewContentGraph,
   wait,
   waitToReturn,
+
+  // 3rd-party app exports
+  pythonista,
 };

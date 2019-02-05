@@ -3,6 +3,10 @@ import WFSerialization from '../interfaces/WF/WFSerialization';
 import WFWorkflowAction from '../interfaces/WF/WFWorkflowAction';
 
 /**
+ * @action Create Alarm
+ * @section Content Types > Calendar > Clock
+ * @icon Clock
+ *
  * Creates an alarm in the Clock app.
  *
  * ```js
@@ -12,22 +16,19 @@ import WFWorkflowAction from '../interfaces/WF/WFWorkflowAction';
  *   repeat: ['Sunday', 'Saturday'],
  * });
  * ```
- *
- * @action Create Alarm
- * @section Content Types > Calendar > Clock
- * @icon Clock
  */
+
 const createAlarm = (
   {
-    /** The alarm label */
     label = '',
-    /** The alarm time */
     time = '',
-    /** Whether the alarm should repeat on certain days */
     repeat = [],
   }: {
+    /** The alarm label */
     label?: WFSerialization | string,
+    /** The alarm time */
     time?: WFSerialization | string,
+    /** Whether the alarm should repeat on certain days */
     repeat?: WFFrequency[],
   },
 ): WFWorkflowAction => ({

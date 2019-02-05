@@ -3,12 +3,17 @@ import { withActionOutput } from '../utils';
 import WFWorkflowAction from '../interfaces/WF/WFWorkflowAction';
 
 /**
- * Post to Tumblr Action. Posts the content passed into the action to Tumblr.
+ * @action Post to Tumblr
+ * @section Content Types > Sharing > Tumblr
+ * @icon Tumblr
+ *
+ * Posts the content passed into the action to Tumblr.
  *
  * ```js
  * postToTumblr();
  * ```
  */
+
 const postToTumblr = (): WFWorkflowAction => ({
   WFWorkflowActionIdentifier: 'is.workflow.actions.tumblr.post',
   WFWorkflowActionParameters: {},

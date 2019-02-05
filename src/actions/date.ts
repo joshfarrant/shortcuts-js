@@ -5,6 +5,10 @@ import WFSerialization from '../interfaces/WF/WFSerialization';
 import WFWorkflowAction from '../interfaces/WF/WFWorkflowAction';
 
 /**
+ * @action Date
+ * @section Content Types > Calendar > Dates
+ * @icon Date
+ *
  * Passes the specified date and time to the next action.
  *
  * ```js
@@ -13,19 +17,16 @@ import WFWorkflowAction from '../interfaces/WF/WFWorkflowAction';
  *   date: 'Tomorrow',
  * });
  * ```
- *
- * @action Date
- * @section Content Types > Calendar > Dates
- * @icon Date
  */
+
 const date = (
   {
-    /** The type of date to use */
     use = 'Current Date',
-    /** Custom date string to be parsed */
     date = '29 June 2007',
   }: {
+    /** The type of date to use */
     use?: WFSerialization | WFDateActionMode;
+    /** Custom date string to be parsed */
     date?: WFSerialization | string;
   },
 ): WFWorkflowAction => ({

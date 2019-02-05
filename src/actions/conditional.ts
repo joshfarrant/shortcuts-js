@@ -13,8 +13,11 @@ const conditionMap = new Map([
 ]);
 
 /**
- * Tests if any item passed as input matches the specified condition, and if so, runs the actions
- * inside. Otherwise, the actions under "Otherwise" are run.
+ * @action If
+ * @section Actions > Scripting > Control Flow
+ * @icon Scripting
+ *
+ * Tests if any item passed as input matches the specified condition, and if so, runs the actions inside. Otherwise, the actions under “Otherwise” are run.
  *
  * ```js
  * conditional({
@@ -32,24 +35,20 @@ const conditionMap = new Map([
  *   value: 27,
  * });
  * ```
- *
- * @action If
- * @section Actions > Scripting > Control Flow
- * @icon Scripting
  */
+
 const conditional = (
   {
-    /** An array of actions to perform if condition is true */
     ifTrue = [],
-    /** An array of actions to perform if condition is false */
     ifFalse = [],
-    /** The test to perform on the input */
     input,
-    /** The value to test the input against */
     value,
   }: {
+    /** An array of actions to perform if condition is true */
     ifTrue?: WFWorkflowAction[],
+    /** An array of actions to perform if condition is false */
     ifFalse?: WFWorkflowAction[],
+    /** The test to perform on the input */
     input?: (
       WFCondition
       | ''
@@ -58,6 +57,7 @@ const conditional = (
       | '<'
       | '>'
     ),
+    /** The value to test the input against */
     value?: string | number,
   },
 ): WFWorkflowAction[] => {

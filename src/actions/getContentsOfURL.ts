@@ -17,10 +17,14 @@ type Value = (
 );
 
 /**
- * Get Content of URL Action. Gets the contents of URLs passed into the action. Useful for downloading files and web content, or for making API requests.
+ * @action Get Contents of URL
+ * @section Content Types > Web > URLs
+ * @icon Downloads
+ *
+ * Gets the contents of URLs passed into the action. Useful for downloading files and web content, or for making API requests.
  *
  * ```js
- * getContentsOfUrl({
+ * getContentsOfURL({
  *   headers: {
  *     'Authorization': 'Pretty please',
  *     'X-Some-Header': 'Badger',
@@ -37,8 +41,14 @@ type Value = (
  * });
  * ```
  */
-const getContentsOfUrl = (
-  options: {
+
+const getContentsOfURL = (
+  {
+    headers = {},
+    method = 'GET',
+    requestBodyType = 'JSON',
+    requestBody = {},
+  }: {
     /** The headers to attach to the request */
     headers?: {
       [x: string]: Value,
@@ -53,13 +63,6 @@ const getContentsOfUrl = (
     };
   },
 ): WFWorkflowAction => {
-  const {
-    headers = {},
-    method = 'GET',
-    requestBodyType = 'JSON',
-    requestBody = {},
-  } = options;
-
   const action: WFWorkflowAction = {
     WFWorkflowActionIdentifier: 'is.workflow.actions.downloadurl',
     WFWorkflowActionParameters: {
@@ -84,4 +87,4 @@ const getContentsOfUrl = (
   return action;
 };
 
-export default withActionOutput(getContentsOfUrl);
+export default withActionOutput(getContentsOfURL);

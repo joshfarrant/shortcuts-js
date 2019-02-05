@@ -3,7 +3,11 @@ import { withActionOutput } from '../utils';
 import WFWorkflowAction from '../interfaces/WF/WFWorkflowAction';
 
 /**
- * Set Name Action. Sets the name of the item passed as input.
+ * @action Set Name
+ * @section Actions > Scripting > Content
+ * @icon Scripting
+ *
+ * Sets the name of the item passed as input.
  *
  * ```js
  * setName({
@@ -12,27 +16,24 @@ import WFWorkflowAction from '../interfaces/WF/WFWorkflowAction';
  * });
  * ```
  */
+
 const setName = (
-  options: {
+  {
+    name,
+    dontIncludeFileExtension = false,
+  }: {
     /** The name to set */
     name: string,
     /** Whether to include file extension */
     dontIncludeFileExtension?: boolean,
   },
-): WFWorkflowAction => {
-  const {
-    name,
-    dontIncludeFileExtension = false,
-  } = options;
-
-  return {
-    WFWorkflowActionIdentifier: 'is.workflow.actions.setitemname',
-    WFWorkflowActionParameters: {
-      WFName: name,
-      WFDontIncludeFileExtension: dontIncludeFileExtension,
-      Advanced: dontIncludeFileExtension,
-    },
-  };
-};
+): WFWorkflowAction => ({
+  WFWorkflowActionIdentifier: 'is.workflow.actions.setitemname',
+  WFWorkflowActionParameters: {
+    WFName: name,
+    WFDontIncludeFileExtension: dontIncludeFileExtension,
+    Advanced: dontIncludeFileExtension,
+  },
+});
 
 export default withActionOutput(setName);

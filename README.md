@@ -7,6 +7,7 @@
 [![Build Status](https://img.shields.io/travis/joshfarrant/shortcuts-js/master.svg)](https://travis-ci.org/joshfarrant/shortcuts-js)
 [![Coverage Status](https://coveralls.io/repos/github/joshfarrant/shortcuts-js/badge.svg?branch=master)](https://coveralls.io/github/joshfarrant/shortcuts-js?branch=master)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-blue.svg)](https://github.com/joshfarrant/shortcuts-js/blob/master/CONTRIBUTING.md)
+[![Discord](https://img.shields.io/discord/537267258922237954.svg?label=Discord&logo=discord&style=flat)](https://discord.gg/pyvcYbB)
 
 A Node.js iOS 12 Shortcuts creator.
 
@@ -14,9 +15,11 @@ Find out more at [Shortcuts.fun](https://shortcuts.fun).
 
 [@joshfarrant/shortcuts-js](https://www.npmjs.com/package/@joshfarrant/shortcuts-js) on npm.
 
-[NPM](https://www.npmjs.com/package/@joshfarrant/shortcuts-js) | [Documentation](https://docs.shortcuts.fun/globals.html) | [Contributing](https://github.com/joshfarrant/shortcuts-js/blob/master/CONTRIBUTING.md) | [Medium](https://medium.com/@JoshFarrant/creating-ios-12-shortcuts-with-javascript-and-shortcuts-js-942420ca9904)
+[NPM](https://www.npmjs.com/package/@joshfarrant/shortcuts-js) | [Documentation](https://docs.shortcuts.fun/globals.html) | [Contributing](https://github.com/joshfarrant/shortcuts-js/blob/master/CONTRIBUTING.md) | [Medium](https://medium.com/@JoshFarrant/creating-ios-12-shortcuts-with-javascript-and-shortcuts-js-942420ca9904) | [Discord](https://discord.gg/pyvcYbB)
 
 See [this issue](https://github.com/joshfarrant/shortcuts-js/issues/6) for a complete list of all Actions implemented so far.
+
+We have a Discord! If you need any help or have any questions, come and say hi! [Join the Discord](https://discord.gg/pyvcYbB)
 
 #### Is the Action you want not available?
 

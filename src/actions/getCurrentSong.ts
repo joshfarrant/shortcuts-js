@@ -1,7 +1,11 @@
 import WFWorkflowAction from '../interfaces/WF/WFWorkflowAction';
 
 /**
- * Get Current Song Action. Returns the song that is currently playing in the Music app, if any.
+ * @action Get Current Song
+ * @section Content Types > Music > Music
+ * @icon Music
+ *
+ * Returns the song that is currently playing in the Music app, if any.
  *
  * ```js
  * getCurrentSong();

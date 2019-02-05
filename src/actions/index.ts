@@ -66,6 +66,7 @@ import markup from './markup';
 import matchText from './matchText';
 import nothing from './nothing';
 import number from './number';
+import openApp from './openApp';
 import openInBooks from './openInBooks';
 import openURLs from './openURLs';
 import openURLsInChrome from './openURLsInChrome';
@@ -190,6 +191,7 @@ export {
   matchText,
   nothing,
   number,
+  openApp,
   openInBooks,
   openURLs,
   openURLsInChrome,

@@ -80,6 +80,7 @@ interface WFWorkflowActionParameters {
   WFIPAddressSourceOption?: WFIPAddressSourceOption;
   WFIPAddressTypeOption?: WFIPAddressTypeOption;
   WFISO8601IncludeTime?: WFSerialization | boolean;
+  WFItems?: WFSerialization | string[];
   WFJavaScript?: WFSerialization | string;
   WFJSONValues?: WFSerialization;
   WFLabel?: WFSerialization | string;

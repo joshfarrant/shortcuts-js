@@ -17,6 +17,7 @@ import createNote from './createNote';
 import date from './date';
 import deletePhotos from './deletePhotos';
 import detectLanguageWithMicrosoft from './detectLanguageWithMicrosoft';
+import dictionary from './dictionary';
 import exitShortcut from './exitShortcut';
 import expandURL from './expandURL';
 import extractArchive from './extractArchive';
@@ -56,6 +57,7 @@ import getTimeBetweenDates from './getTimeBetweenDates';
 import getType from './getType';
 import getURLsFromInput from './getURLsFromInput';
 import getVariable from './getVariable';
+import list from './list';
 import makeArchive from './makeArchive';
 import makeMarkdownFromRichText from './makeMarkdownFromRichText';
 import makeRichTextFromHTML from './makeRichTextFromHTML';
@@ -139,6 +141,7 @@ export {
   date,
   deletePhotos,
   detectLanguageWithMicrosoft,
+  dictionary,
   exitShortcut,
   expandURL,
   extractArchive,
@@ -178,6 +181,7 @@ export {
   getType,
   getURLsFromInput,
   getVariable,
+  list,
   makeArchive,
   makeMarkdownFromRichText,
   makeRichTextFromHTML,

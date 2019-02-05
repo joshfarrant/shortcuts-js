@@ -1,15 +1,12 @@
 import { getItemType } from './';
 
+import {
+  Value,
+  ValueArray,
+  ValueObject,
+} from '../interfaces/Value';
 import WFDictionaryFieldValueItem from '../interfaces/WF/WFDictionaryFieldValueItem';
 import WFSerialization from '../interfaces/WF/WFSerialization';
-
-type Value = string | number | boolean | ValueObject | ValueArray;
-
-interface ValueObject {
-  [x: string]: Value;
-}
-
-interface ValueArray extends Array<Value> {}
 
 /** @ignore */
 const valueMap = [{

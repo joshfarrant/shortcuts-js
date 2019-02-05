@@ -26,7 +26,7 @@ const addToVariable = (
 ): WFWorkflowAction => ({
   WFWorkflowActionIdentifier: 'is.workflow.actions.appendvariable',
   WFWorkflowActionParameters: {
-    WFVariableName: variable.Value.VariableName,
+    ...(variable ? { WFVariableName: variable.Value.VariableName } : {}),
   },
 });
 

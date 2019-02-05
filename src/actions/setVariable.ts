@@ -25,7 +25,7 @@ const setVariable = (
 ): WFWorkflowAction => ({
   WFWorkflowActionIdentifier: 'is.workflow.actions.setvariable',
   WFWorkflowActionParameters: {
-    WFVariableName: variable.Value.VariableName,
+    ...(variable ? { WFVariableName: variable.Value.VariableName } : {}),
   },
 });
 

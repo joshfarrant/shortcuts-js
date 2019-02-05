@@ -80,6 +80,7 @@ type WFWorkflowActionIdentifier = (
   | 'is.workflow.actions.number'
   | 'is.workflow.actions.number.random'
   | 'is.workflow.actions.openurl'
+  | 'is.workflow.actions.openapp'
   | 'is.workflow.actions.pausemusic'
   | 'is.workflow.actions.playsound'
   | 'is.workflow.actions.postonfacebook'

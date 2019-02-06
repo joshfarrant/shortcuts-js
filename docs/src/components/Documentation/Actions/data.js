@@ -63,13 +63,9 @@ exported.children
     ))
     .forEach((child) => {
       // comment parsing
-      // TODO: plugin to fetch comment
       const description = child.comment.shortText;
       const comment = child.comment.text;
-      const tags = child.comment.tags.map(({ tag, text }) => ({
-        tag,
-        text: text.trim(),
-      }));
+      const tags = child.comment.tags;
 
       const name = tags.find((tag) => tag.tag === 'action').text;
       const iconTag = tags.find((tag) => tag.tag === 'icon');
@@ -87,7 +83,6 @@ exported.children
           name: parameter.name,
           type: printType(parameter.type),
           default: parameter.defaultValue,
-          // TODO: plugin to fetch comment
           comment: parameter.comment && parameter.comment.shortText,
         }));
 

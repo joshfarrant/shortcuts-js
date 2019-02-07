@@ -98,6 +98,23 @@ const ActionList = ({ content, current, onClick }) => Object.entries(content)
     </div>
   ));
 
+const BackButton = ({ onClick }) => (
+  <button
+    className={styles.backButton}
+    onClick={onClick}
+  >
+    {/* (c) Fonticons Inc.: https://fontawesome.com/icons/chevron-left */}
+    <svg viewBox="0 0 320 512">
+      <path d="
+        M34.52 239.03L228.87 44.69c9.37-9.37 24.57-9.37 33.94 0l22.67 22.67c9.36 9.36
+        9.37 24.52.04 33.9L131.49 256l154.02 154.75c9.34 9.38 9.32 24.54-.04 33.9l-22.67
+        22.67c-9.37 9.37-24.57 9.37-33.94 0L34.52 272.97c-9.37-9.37-9.37-24.57 0-33.94z
+      " />
+    </svg>
+    Back
+  </button>
+);
+
 export default class Component extends React.Component {
   state = {
     search: '',
@@ -195,10 +212,8 @@ export default class Component extends React.Component {
           ) : (
             <React.Fragment>
               <div className={styles.titleBar}>
+                <BackButton onClick={this.setCategory()} />
                 <h3>{this.state.category}</h3>
-                <button onClick={this.setCategory()}>
-                  Back
-                </button>
               </div>
 
               <ActionList
@@ -216,81 +231,78 @@ export default class Component extends React.Component {
               Actions
             </h2>
 
-            {action && <React.Fragment>
-              <h3 className={styles.actionTitle}>
-                <Icon name={action.icon} />
-                {action.name}
-              </h3>
+            {action && (
+              <React.Fragment>
+                <BackButton onClick={this.setAction()} />
+                <h3 className={styles.actionTitle}>
+                  <Icon name={action.icon} />
+                  {action.name}
+                </h3>
 
-              <p>{action.description}</p>
-              <Markdown content={action.comment} />
+                <p>{action.description}</p>
+                <Markdown content={action.comment} />
 
-              <h4>Function</h4>
-              <p>
-                <code>
-                  <a
-                    href={`https://docs.shortcuts.fun/globals.html#${action.func.name.toLowerCase()}`}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    {action.func.name}()
-                  </a>
-                </code>
-              </p>
+                <h4>Function</h4>
+                <p>
+                  <code>
+                    <a
+                      href={`https://docs.shortcuts.fun/globals.html#${action.func.name.toLowerCase()}`}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      {action.func.name}()
+                    </a>
+                  </code>
+                </p>
 
-              <h4>Parameters</h4>
-              {action.func.parameters ? (
-                <table className={styles.parameters}>
-                  {action.func.parameters.map((parameter, i) => (
-                    <React.Fragment key={i}>
-                      <thead>
-                        <tr>
-                          <th colSpan="2">{parameter.name}</th>
-                        </tr>
-                      </thead>
-                      <tbody>
-                        <tr>
-                          <th>Description</th>
-                          <td>{parameter.comment}</td>
-                        </tr>
-                        <tr>
-                          <th>Type</th>
-                          <td><code>{parameter.type}</code></td>
-                        </tr>
-                        <tr>
-                          <th>Default</th>
-                          <td>{parameter.default && <code>{parameter.default}</code>}</td>
-                        </tr>
-                      </tbody>
-                    </React.Fragment>
-                  ))}
-                </table>
-              ) : (
-                <p>None</p>
-              )}
+                <h4>Parameters</h4>
+                {action.func.parameters ? (
+                  <table className={styles.parameters}>
+                    {action.func.parameters.map((parameter, i) => (
+                      <React.Fragment key={i}>
+                        <thead>
+                          <tr>
+                            <th colSpan="2">{parameter.name}</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <th>Description</th>
+                            <td>{parameter.comment}</td>
+                          </tr>
+                          <tr>
+                            <th>Type</th>
+                            <td><code>{parameter.type}</code></td>
+                          </tr>
+                          <tr>
+                            <th>Default</th>
+                            <td>{parameter.default && <code>{parameter.default}</code>}</td>
+                          </tr>
+                        </tbody>
+                      </React.Fragment>
+                    ))}
+                  </table>
+                ) : (
+                  <p>None</p>
+                )}
 
-              <h4>Has Action Output?</h4>
-              <p>{action.func.hasOutput ? 'Yes' : 'No'}</p>
+                <h4>Has Action Output?</h4>
+                <p>{action.func.hasOutput ? 'Yes' : 'No'}</p>
 
-              <h4>Source</h4>
-              <p>
-                <code>
-                  <a
-                    href={`https://github.com/joshfarrant/shortcuts-js/blob/master/src/${action.func.source}`}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    {action.func.source}
-                  </a>
-                </code>
-              </p>
-
-              {actionName && (
-                <button onClick={this.setAction()}>
-                  BACK
-                </button>
-              )}
-            </React.Fragment>}
+                <h4>Source</h4>
+                <p>
+                  <code>
+                    <a
+                      href={`https://github.com/joshfarrant/shortcuts-js/blob/master/src/${action.func.source}`}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      {action.func.source}
+                    </a>
+                  </code>
+                </p>
+              </React.Fragment>
+            )}
 
           </div>
         </div>

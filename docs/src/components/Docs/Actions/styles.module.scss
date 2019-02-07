@@ -63,22 +63,9 @@ $icon-number: 120;
   }
 
   .titleBar {
-    display: flex;
     margin: 0 1.7rem;
 
-    button {
-      cursor: pointer;
-      font-size: 16px;
-      padding: 0 20px;
-      margin: 0;
-      border: none;
-      border-radius: 6px;
-      color: var(--blue-color);
-      background: var(--white-color);
-    }
-
     h3 {
-      flex: 1;
       margin: 0;
       line-height: 44px;
     }
@@ -91,21 +78,25 @@ $icon-number: 120;
   overflow-x: hidden;
   overflow-y: scroll;
 
-  .title {
-    margin-bottom: 16px;
-    padding-bottom: 16px;
-    border-bottom: 1px solid var(--lighter-gray-color);
-  }
-
   .infoContent {
     width: 640px;
     max-width: 100%;
     overflow-x: hidden;
   }
 
+  .title {
+    margin-bottom: 16px;
+    padding-bottom: 16px;
+    border-bottom: 1px solid var(--lighter-gray-color);
+  }
+
   .icon {
     position: relative;
     bottom: 2px;
+  }
+
+  .actionTitle {
+    padding-top: 12px;
   }
 
   .parameters {
@@ -155,6 +146,28 @@ $icon-number: 120;
         border-right: none;
       }
     }
+  }
+}
+
+.backButton {
+  --color: var(--blue-color);
+
+  position: relative;
+  margin: -8px 0;
+  padding: 8px 8px 8px 16px;
+  border: none;
+  cursor: pointer;
+  color: var(--color);
+  font-weight: 500;
+  background: none;
+
+  svg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 12px;
+    height: 100%;
+    fill: var(--color);
   }
 }
 

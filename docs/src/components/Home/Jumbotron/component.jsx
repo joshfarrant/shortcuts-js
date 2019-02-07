@@ -77,7 +77,6 @@ export default () => (
       <span className={styles.github}>
         <GitHubButton
           type="stargazers"
-          side="default"
           namespace="joshfarrant"
           repo="shortcuts-js"
         />

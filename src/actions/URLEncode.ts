@@ -1,4 +1,4 @@
-import { withActionOutput } from '../utils';
+import { withActionOutput } from '../utils/withActionOutput';
 
 import WFEncodeMode from '../interfaces/WF/WFEncodeMode';
 import WFWorkflowAction from '../interfaces/WF/WFWorkflowAction';

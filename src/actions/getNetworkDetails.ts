@@ -1,4 +1,4 @@
-import { withActionOutput } from '../utils';
+import { withActionOutput } from '../utils/withActionOutput';
 
 import WFCellularDetail from '../interfaces/WF/WFCellularDetail';
 import WFNetworkDetailsNetwork from '../interfaces/WF/WFNetworkDetailsNetwork';

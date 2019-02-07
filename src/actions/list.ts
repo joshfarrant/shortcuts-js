@@ -1,6 +1,4 @@
-import {
-  withActionOutput,
-} from '../utils';
+import { withActionOutput } from '../utils/withActionOutput';
 
 import WFWorkflowAction from '../interfaces/WF/WFWorkflowAction';
 

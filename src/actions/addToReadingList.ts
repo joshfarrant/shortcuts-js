@@ -1,5 +1,7 @@
 import WFWorkflowAction from '../interfaces/WF/WFWorkflowAction';
 
+export const identifier = 'is.workflow.actions.readinglist';
+
 /**
  * @action Add to Reading List
  * @section Content Types > Web > Safari
@@ -11,9 +13,8 @@ import WFWorkflowAction from '../interfaces/WF/WFWorkflowAction';
  * addToReadingList();
  * ```
  */
-
 const addToReadingList = (): WFWorkflowAction => ({
-  WFWorkflowActionIdentifier: 'is.workflow.actions.readinglist',
+  WFWorkflowActionIdentifier: identifier,
   WFWorkflowActionParameters: {},
 });
 

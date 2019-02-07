@@ -1,5 +1,7 @@
 import WFWorkflowAction from '../interfaces/WF/WFWorkflowAction';
 
+export const identifier = 'is.workflow.actions.comment';
+
 /**
  * @action Comment
  * @section Actions > Scripting >
@@ -14,7 +16,6 @@ import WFWorkflowAction from '../interfaces/WF/WFWorkflowAction';
  * });
  * ```
  */
-
 const comment = (
   {
     text = '',
@@ -23,7 +24,7 @@ const comment = (
     text?: string,
   },
 ): WFWorkflowAction => ({
-  WFWorkflowActionIdentifier: 'is.workflow.actions.comment',
+  WFWorkflowActionIdentifier: identifier,
   WFWorkflowActionParameters: {
     WFCommentActionText: text,
   },

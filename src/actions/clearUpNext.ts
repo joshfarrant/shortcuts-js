@@ -1,5 +1,7 @@
 import WFWorkflowAction from '../interfaces/WF/WFWorkflowAction';
 
+export const identifier = 'is.workflow.actions.clearupnext';
+
 /**
  * @action Clear Up Next
  * @section Content Types > Music > Music
@@ -11,9 +13,8 @@ import WFWorkflowAction from '../interfaces/WF/WFWorkflowAction';
  * clearUpNext();
  * ```
  */
-
 const clearUpNext = (): WFWorkflowAction => ({
-  WFWorkflowActionIdentifier: 'is.workflow.actions.clearupnext',
+  WFWorkflowActionIdentifier: identifier,
   WFWorkflowActionParameters: {},
 });
 

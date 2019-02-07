@@ -2,6 +2,8 @@ import { withActionOutput } from '../utils/withActionOutput';
 
 import WFWorkflowAction from '../interfaces/WF/WFWorkflowAction';
 
+export const identifier = 'is.workflow.actions.airdropdocument';
+
 /**
  * @action AirDrop
  * @section Content Types > Sharing > System
@@ -13,9 +15,8 @@ import WFWorkflowAction from '../interfaces/WF/WFWorkflowAction';
  * airDrop();
  * ```
  */
-
 const airDrop = (): WFWorkflowAction => ({
-  WFWorkflowActionIdentifier: 'is.workflow.actions.airdropdocument',
+  WFWorkflowActionIdentifier: identifier,
   WFWorkflowActionParameters: {},
 });
 

@@ -1,7 +1,7 @@
 import React from 'react';
 import { Route } from 'react-router';
 
-import Documentation from '../Documentation';
+import Docs from '../Docs';
 import Home from '../Home';
 
 import styles from './styles.module.scss';
@@ -12,7 +12,7 @@ export default class Component extends React.Component {
       <div className={styles.container}>
 
         <Route path="/" exact component={Home} />
-        <Route path="/docs" component={Documentation} />
+        <Route path="/docs" component={Docs} />
 
       </div>
     );

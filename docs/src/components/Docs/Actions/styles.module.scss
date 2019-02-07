@@ -102,6 +102,60 @@ $icon-number: 120;
     max-width: 100%;
     overflow-x: hidden;
   }
+
+  .icon {
+    position: relative;
+    bottom: 2px;
+  }
+
+  .parameters {
+    $border: 1px solid var(--lighter-gray-color);
+
+    overflow: hidden;
+    border-collapse: separate;
+    border-radius: 5px;
+    border-spacing: 0;
+    border: $border;
+
+    thead {
+      background: var(--lightest-gray-color);
+      padding: 0;
+    }
+
+    tbody {
+      font-size: 15px;
+      line-height: 1.2;
+
+      &:last-child tr:last-child {
+        th,
+        td {
+          border-bottom: none;
+        }
+      }
+
+      th {
+        width: 92px;
+      }
+
+      code {
+        font-size: 12px;
+        line-height: initial;
+        padding: 6px 10px;
+        font-weight: 600;
+      }
+    }
+
+    th,
+    td {
+      padding: 16px 18px;
+      border-right: $border;
+      border-bottom: $border;
+
+      &:last-child {
+        border-right: none;
+      }
+    }
+  }
 }
 
 .icon {
@@ -114,7 +168,6 @@ $icon-number: 120;
 
   @for $i from 0 through $icon-number {
     &.i-#{$i} {
-      // FIXME: Missing: Clock@2x
       background-image: url('./icons@2x.png');
       background-size: 10 * $icon-size ceil($icon-number / 10) * $icon-size;
       background-position: ($i % 10) * -$icon-size floor($i / 10) * -$icon-size;

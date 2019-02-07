@@ -196,7 +196,9 @@ export default class Component extends React.Component {
             <React.Fragment>
               <div className={styles.titleBar}>
                 <h3>{this.state.category}</h3>
-                <button onClick={this.setCategory()}>Back</button>
+                <button onClick={this.setCategory()}>
+                  Back
+                </button>
               </div>
 
               <ActionList
@@ -214,37 +216,54 @@ export default class Component extends React.Component {
               Actions
             </h2>
 
-            {/* ----------------------- WIP ----------------------- */}
             {action && <React.Fragment>
-              <h3>{action.name} <code>{action.func.name}()</code></h3>
+              <h3 className={styles.actionTitle}>
+                <Icon name={action.icon} />
+                {action.name}
+              </h3>
 
               <p>{action.description}</p>
               <Markdown content={action.comment} />
 
+              <h4>Function</h4>
+              <p>
+                <code>
+                  <a
+                    href={`https://docs.shortcuts.fun/globals.html#${action.func.name.toLowerCase()}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    {action.func.name}()
+                  </a>
+                </code>
+              </p>
+
               <h4>Parameters</h4>
               {action.func.parameters ? (
-                <table>
-                  <thead>
-                    <tr>
-                      <th>Name</th>
-                      <th>Type</th>
-                      <th>Default</th>
-                      <th>Description</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    {action.func.parameters.map((parameter, i) => (
-                      <tr key={i}>
-                        <td>
-                          <b>{parameter.name}</b>
-                          {parameter.default && '?'}
-                        </td>
-                        <td>{parameter.type}</td>
-                        <td>{parameter.default && <code>{parameter.default}</code>}</td>
-                        <td>{parameter.comment}</td>
-                      </tr>
-                    ))}
-                  </tbody>
+                <table className={styles.parameters}>
+                  {action.func.parameters.map((parameter, i) => (
+                    <React.Fragment key={i}>
+                      <thead>
+                        <tr>
+                          <th colSpan="2">{parameter.name}</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <th>Description</th>
+                          <td>{parameter.comment}</td>
+                        </tr>
+                        <tr>
+                          <th>Type</th>
+                          <td><code>{parameter.type}</code></td>
+                        </tr>
+                        <tr>
+                          <th>Default</th>
+                          <td>{parameter.default && <code>{parameter.default}</code>}</td>
+                        </tr>
+                      </tbody>
+                    </React.Fragment>
+                  ))}
                 </table>
               ) : (
                 <p>None</p>
@@ -268,11 +287,10 @@ export default class Component extends React.Component {
 
               {actionName && (
                 <button onClick={this.setAction()}>
-                  GO BACK TO ACTION LIST
+                  BACK
                 </button>
               )}
             </React.Fragment>}
-            {/* --------------------- END WIP --------------------- */}
 
           </div>
         </div>

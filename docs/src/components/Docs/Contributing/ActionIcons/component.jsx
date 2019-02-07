@@ -12,7 +12,10 @@ const content = Raw('./content.md');
 
 export default () => (
   <div className={styles.content}>
-    <Markdown content={content} />
+    <Markdown
+      content={content}
+      source="Contributing/ActionIcons"
+    />
 
     <div className={styles.iconList}>
       {icons

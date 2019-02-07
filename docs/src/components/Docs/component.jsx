@@ -43,7 +43,9 @@ const menuItems = [
 ];
 
 class MenuItem extends React.Component {
-  isActive = (path) => (match, location) => path === `${location.pathname}${location.hash}`;
+  isActive = (path) => (match, location) => path === '/docs/actions' ?
+    location.pathname.startsWith('/docs/actions') :
+    path === `${location.pathname}${location.hash}`;
 
   render() {
     const { to: path, ...rest } = this.props;

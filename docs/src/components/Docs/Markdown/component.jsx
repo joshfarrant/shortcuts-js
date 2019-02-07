@@ -2,6 +2,9 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 
+import { Glyph } from '../Metadata/ShortcutIcon';
+import iconGlyphs from '../Metadata/ShortcutIcon/iconGlyphs.js';
+
 import Remarkable from 'remarkable';
 import RemarkableRenderer from 'remarkable-react';
 import CodeMirror from 'codemirror';
@@ -117,8 +120,9 @@ const Heading = ({ children, level }) => {
         className={styles.link}
         to={`#${anchor}`}
       >
-        {children}
+        #
       </Link>
+      {children}
     </Tag>
   );
 };
@@ -172,13 +176,31 @@ CodeBlock.defaultProps = {
   language: 'js',
 };
 
-const Component = ({ children, content }) => {
-  if (!children) return md.render(content);
+const Component = ({ children, content, source }) => {
+  const repo = 'joshfarrant/shortcuts-js/blob/master';
+  const path = `https://github.com/${repo}/docs/src/components/Docs/${source}/content.md`;
+  const button = source && (
+    <a
+      className={styles.editPage}
+      key="EDIT_PAGE"
+      href={path}
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      <Glyph
+        data={iconGlyphs[0xE996]}
+        className={styles.icon}
+      />
+      EDIT PAGE
+    </a>
+  );
+
+  if (!children) return [button, ...md.render(content)];
 
   const sections = content.split(/^---$/m);
-  return children.map((child) => {
-    return child.type === 'section' ? md.render(sections.shift()) : child;
-  });
+  return [button, ...children
+    .map((child) => child.type === 'section' ? md.render(sections.shift()) : child)
+  ];
 }
 
 Component.propTypes = {

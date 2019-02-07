@@ -1,7 +1,9 @@
 import React from 'react';
+import GitHubButton from 'react-github-button';
 
 import Button from '../Button';
 
+import 'react-github-button/assets/style.css';
 import styles from './styles.module.scss';
 
 const badges = [{
@@ -73,14 +75,12 @@ export default () => (
         </a>
       ))}
       <span className={styles.github}>
-        <a
-          className="github-button"
-          href="https://github.com/joshfarrant/shortcuts-js"
-          data-show-count="true"
-          aria-label="Star joshfarrant/shortcuts-js on GitHub"
-        >
-          Star
-        </a>
+        <GitHubButton
+          type="stargazers"
+          side="default"
+          namespace="joshfarrant"
+          repo="shortcuts-js"
+        />
       </span>
     </div>
   </div>

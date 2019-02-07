@@ -4,8 +4,8 @@ import Raw from 'raw.macro';
 
 import Markdown from '../../Markdown';
 
-import iconGlyphs from './iconGlyphs';
-import { colors, glyphs } from './iconOptions';
+import iconGlyphs from './iconGlyphs.js';
+import { colors, glyphs } from './iconOptions.js';
 
 import styles from './styles.module.scss';
 
@@ -92,7 +92,10 @@ export default class Component extends React.Component {
   render() {
     return (
       <div className={styles.content}>
-        <Markdown content={content} />
+        <Markdown
+          content={content}
+          source="Metadata/ShortcutIcon"
+        />
 
         <h4 id="colors">Icon Colors</h4>
 
@@ -170,3 +173,5 @@ export default class Component extends React.Component {
     );
   }
 };
+
+export { Glyph };

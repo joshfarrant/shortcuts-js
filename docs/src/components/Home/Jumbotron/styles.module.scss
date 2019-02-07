@@ -67,6 +67,15 @@
 
 .github {
   @extend .badge;
+
+  a:hover,
+  a:focus {
+    text-decoration: none;
+  }
+
+  a:focus {
+    color: inherit;
+  }
 }
 
 @media (max-width: 670px) {

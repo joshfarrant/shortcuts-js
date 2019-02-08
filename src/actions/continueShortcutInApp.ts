@@ -1,5 +1,7 @@
 import WFWorkflowAction from '../interfaces/WF/WFWorkflowAction';
 
+export const identifier = 'is.workflow.actions.handoff';
+
 /**
  * @action Continue Shortcut in App
  * @section Actions > Scripting > Control Flow
@@ -11,9 +13,8 @@ import WFWorkflowAction from '../interfaces/WF/WFWorkflowAction';
  * continueShortcutInApp();
  * ```
  */
-
 const continueShortcutInApp = (): WFWorkflowAction => ({
-  WFWorkflowActionIdentifier: 'is.workflow.actions.handoff',
+  WFWorkflowActionIdentifier: identifier,
   WFWorkflowActionParameters: {},
 });
 

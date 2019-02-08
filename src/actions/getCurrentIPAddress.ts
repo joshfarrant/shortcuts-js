@@ -1,4 +1,4 @@
-import { withActionOutput } from '../utils';
+import { withActionOutput } from '../utils/withActionOutput';
 
 import WFIPAddressSourceOption from '../interfaces/WF/WFIPAddressSourceOption';
 import WFIPAddressTypeOption from '../interfaces/WF/WFIPAddressTypeOption';

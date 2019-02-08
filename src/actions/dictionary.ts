@@ -1,7 +1,5 @@
-import {
-  buildSerialization,
-  withActionOutput,
-} from '../utils';
+import { buildSerialization } from '../utils/buildSerialization';
+import { withActionOutput } from '../utils/withActionOutput';
 
 import { ValueObject } from '../interfaces/Value';
 import WFWorkflowAction from '../interfaces/WF/WFWorkflowAction';

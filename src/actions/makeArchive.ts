@@ -1,4 +1,4 @@
-import { withActionOutput } from '../utils';
+import { withActionOutput } from '../utils/withActionOutput';
 
 import WFArchiveFormat from '../interfaces/WF/WFArchiveFormat';
 import WFSerialization from '../interfaces/WF/WFSerialization';

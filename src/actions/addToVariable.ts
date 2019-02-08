@@ -1,6 +1,13 @@
 import Variable from '../interfaces/Variable';
 import WFWorkflowAction from '../interfaces/WF/WFWorkflowAction';
 
+interface Options {
+  /** The variable to add to */
+  variable: Variable;
+}
+
+export const identifier = 'is.workflow.actions.appendvariable';
+
 /**
  * @action Add to Variable
  * @section Actions > Scripting > Variables
@@ -15,18 +22,14 @@ import WFWorkflowAction from '../interfaces/WF/WFWorkflowAction';
  * });
  * ```
  */
-
 const addToVariable = (
   {
     variable,
-  }: {
-    /** The variable to add to */
-    variable: Variable;
-  },
+  }: Options,
 ): WFWorkflowAction => ({
-  WFWorkflowActionIdentifier: 'is.workflow.actions.appendvariable',
+  WFWorkflowActionIdentifier: identifier,
   WFWorkflowActionParameters: {
-    WFVariableName: variable.Value.VariableName,
+    ...(variable ? { WFVariableName: variable.Value.VariableName } : {}),
   },
 });
 

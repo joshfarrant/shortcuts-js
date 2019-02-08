@@ -1,9 +1,11 @@
-import { withActionOutput } from '../utils';
+import { withActionOutput } from '../utils/withActionOutput';
 
 import Variable from '../interfaces/Variable';
 import WFBase64LineBreakMode from '../interfaces/WF/WFBase64LineBreakMode';
 import WFEncodeMode from '../interfaces/WF/WFEncodeMode';
 import WFWorkflowAction from '../interfaces/WF/WFWorkflowAction';
+
+export const identifier = 'is.workflow.actions.base64encode';
 
 /**
  * @action Base64 Encode
@@ -19,7 +21,6 @@ import WFWorkflowAction from '../interfaces/WF/WFWorkflowAction';
  * });
  * ```
  */
-
 const base64Encode = (
   {
     encodeMode = 'Encode',
@@ -31,7 +32,7 @@ const base64Encode = (
     lineBreakMode?: Variable | WFBase64LineBreakMode,
   },
 ): WFWorkflowAction => ({
-  WFWorkflowActionIdentifier: 'is.workflow.actions.base64encode',
+  WFWorkflowActionIdentifier: identifier,
   WFWorkflowActionParameters: {
     WFEncodeMode: encodeMode,
     WFBase64LineBreakMode: lineBreakMode,

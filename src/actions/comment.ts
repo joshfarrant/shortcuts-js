@@ -1,5 +1,12 @@
 import WFWorkflowAction from '../interfaces/WF/WFWorkflowAction';
 
+interface Options {
+  /** The body of the comment */
+  text?: string;
+}
+
+export const identifier = 'is.workflow.actions.comment';
+
 /**
  * @action Comment
  * @section Actions > Scripting >
@@ -14,19 +21,21 @@ import WFWorkflowAction from '../interfaces/WF/WFWorkflowAction';
  * });
  * ```
  */
-
 const comment = (
   {
     text = '',
-  }: {
-    /** The body of the comment */
-    text?: string,
-  },
+  }: Options,
 ): WFWorkflowAction => ({
-  WFWorkflowActionIdentifier: 'is.workflow.actions.comment',
+  WFWorkflowActionIdentifier: identifier,
   WFWorkflowActionParameters: {
     WFCommentActionText: text,
   },
+});
+
+export const invert = (
+  WFAction: WFWorkflowAction,
+): Options => ({
+  text: WFAction.WFWorkflowActionParameters.WFCommentActionText,
 });
 
 export default comment;

@@ -1,9 +1,26 @@
-import { withActionOutput } from '../utils';
+import { withActionOutput } from '../utils/withActionOutput';
 
 import WFMathOperation from '../interfaces/WF/WFMathOperation';
 import WFScientificMathOperation from '../interfaces/WF/WFScientificMathOperation';
 import WFWorkflowAction from '../interfaces/WF/WFWorkflowAction';
 import WFWorkflowActionParameters from '../interfaces/WF/WFWorkflowActionParameters';
+
+interface Options {
+  operand?: number;
+  operation?: (
+    WFMathOperation
+    | '*'
+    | 'x'
+    | '/'
+  );
+  scientificOperation?: (
+    WFScientificMathOperation
+    | 'sqrt'
+    | 'cbrt'
+  );
+}
+
+export const identifier = 'is.workflow.actions.math';
 
 /** @ignore */
 const operationsMap = new Map([
@@ -29,29 +46,15 @@ const operationsMap = new Map([
  * });
  * ```
  */
-
 const calculate = (
   {
-    operand,
-    operation = '+',
-    scientificOperation,
-  }: {
     /** A second number to perform the operation on */
-    operand?: number;
+    operand,
     /** The operation to apply to the number. Defaults to '+' */
-    operation?: (
-      WFMathOperation
-      | '*'
-      | 'x'
-      | '/'
-    );
+    operation = '+',
     /** The scientific operation to apply to the number */
-    scientificOperation?: (
-      WFScientificMathOperation
-      | 'sqrt'
-      | 'cbrt'
-    );
-  },
+    scientificOperation,
+  }: Options,
 ): WFWorkflowAction => {
   let parameters;
   if (scientificOperation) {
@@ -68,9 +71,31 @@ const calculate = (
   }
 
   return {
-    WFWorkflowActionIdentifier: 'is.workflow.actions.math',
+    WFWorkflowActionIdentifier: identifier,
     WFWorkflowActionParameters: parameters as WFWorkflowActionParameters,
   };
+};
+
+export const invert = (
+  WFAction: WFWorkflowAction,
+): Options => {
+  const parameters = WFAction.WFWorkflowActionParameters;
+  let options = {};
+
+  if (parameters.WFMathOperation === '…') {
+    // Scientific
+    options = {
+      scientificOperation: parameters.WFScientificMathOperation,
+      operand: parameters.WFScientificMathOperand,
+    };
+  } else {
+    // Non-scientific
+    options = {
+      operation: parameters.WFMathOperation,
+      operand: parameters.WFMathOperand,
+    };
+  }
+  return options;
 };
 
 export default withActionOutput(calculate);

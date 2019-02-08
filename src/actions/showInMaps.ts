@@ -1,4 +1,4 @@
-import { withActionOutput } from '../utils';
+import { withActionOutput } from '../utils/withActionOutput';
 
 import WFMapsApps from '../interfaces/WF/WFMapsApps';
 import WFWorkflowAction from '../interfaces/WF/WFWorkflowAction';

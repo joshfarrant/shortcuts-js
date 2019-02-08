@@ -1,4 +1,4 @@
-import { withActionOutput } from '../utils';
+import { withActionOutput } from '../utils/withActionOutput';
 
 import WFDateFormatStyle from '../interfaces/WF/WFDateFormatStyle';
 import WFRelativeDateFormatStyle from '../interfaces/WF/WFRelativeDateFormatStyle';

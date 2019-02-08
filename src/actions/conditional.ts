@@ -3,7 +3,26 @@ import * as uuidv4 from 'uuid/v4';
 import WFCondition from '../interfaces/WF/WFCondition';
 import WFWorkflowAction from '../interfaces/WF/WFWorkflowAction';
 
-/** @ignore */
+interface Options {
+  /** An array of actions to perform if condition is true */
+  ifTrue?: WFWorkflowAction[];
+  /** An array of actions to perform if condition is false */
+  ifFalse?: WFWorkflowAction[];
+  /** The test to perform on the input */
+  input?: (
+    WFCondition
+    | ''
+    | 'Contains'
+    | '='
+    | '<'
+    | '>'
+  );
+  /** The value to test the input against */
+  value?: string | number;
+}
+
+export const identifier = 'is.workflow.actions.conditional';
+
 const conditionMap = new Map([
   ['', undefined],
   ['Contains', undefined],
@@ -36,35 +55,18 @@ const conditionMap = new Map([
  * });
  * ```
  */
-
 const conditional = (
   {
     ifTrue = [],
     ifFalse = [],
     input,
     value,
-  }: {
-    /** An array of actions to perform if condition is true */
-    ifTrue?: WFWorkflowAction[],
-    /** An array of actions to perform if condition is false */
-    ifFalse?: WFWorkflowAction[],
-    /** The test to perform on the input */
-    input?: (
-      WFCondition
-      | ''
-      | 'Contains'
-      | '='
-      | '<'
-      | '>'
-    ),
-    /** The value to test the input against */
-    value?: string | number,
-  },
+  }: Options,
 ): WFWorkflowAction[] => {
   const groupingIdentifier = uuidv4();
 
   const ifAction: WFWorkflowAction = {
-    WFWorkflowActionIdentifier: 'is.workflow.actions.conditional',
+    WFWorkflowActionIdentifier: identifier,
     WFWorkflowActionParameters: {
       GroupingIdentifier: groupingIdentifier,
       WFControlFlowMode: 0, // Start If
@@ -104,7 +106,7 @@ const conditional = (
     actionArr = [
       ...actionArr,
       {
-        WFWorkflowActionIdentifier: 'is.workflow.actions.conditional',
+        WFWorkflowActionIdentifier: identifier,
         WFWorkflowActionParameters: {
           GroupingIdentifier: groupingIdentifier,
           WFControlFlowMode: 1, // Else
@@ -118,7 +120,7 @@ const conditional = (
   actionArr = [
     ...actionArr,
     {
-      WFWorkflowActionIdentifier: 'is.workflow.actions.conditional',
+      WFWorkflowActionIdentifier: identifier,
       WFWorkflowActionParameters: {
         GroupingIdentifier: groupingIdentifier,
         WFControlFlowMode: 2, // End If

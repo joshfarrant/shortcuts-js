@@ -1,8 +1,10 @@
-import { withActionOutput } from '../utils';
+import { withActionOutput } from '../utils/withActionOutput';
 
 import WFInputType from '../interfaces/WF/WFInputType';
 import WFSerialization from '../interfaces/WF/WFSerialization';
 import WFWorkflowAction from '../interfaces/WF/WFWorkflowAction';
+
+export const identifier = 'is.workflow.actions.ask';
 
 /**
  * @action Ask for Input
@@ -19,7 +21,6 @@ import WFWorkflowAction from '../interfaces/WF/WFWorkflowAction';
  * });
  * ```
  */
-
 const ask = (
   {
     inputType = 'Text',
@@ -34,7 +35,7 @@ const ask = (
     question?: WFSerialization | string;
   },
 ): WFWorkflowAction => ({
-  WFWorkflowActionIdentifier: 'is.workflow.actions.ask',
+  WFWorkflowActionIdentifier: identifier,
   WFWorkflowActionParameters: {
     WFInputType: inputType,
     WFAskActionDefaultAnswer: defaultAnswer,

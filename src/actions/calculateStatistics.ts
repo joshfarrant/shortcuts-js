@@ -1,8 +1,15 @@
-import { withActionOutput } from '../utils';
+import { withActionOutput } from '../utils/withActionOutput';
 
 import WFSerialization from '../interfaces/WF/WFSerialization';
 import WFStatisticsOperation from '../interfaces/WF/WFStatisticsOperation';
 import WFWorkflowAction from '../interfaces/WF/WFWorkflowAction';
+
+export const identifier = 'is.workflow.actions.statistics';
+
+interface Options {
+  /** The operation to perform */
+  operation?: WFSerialization | WFStatisticsOperation;
+}
 
 /**
  * @action Calculate Statistics
@@ -17,16 +24,12 @@ import WFWorkflowAction from '../interfaces/WF/WFWorkflowAction';
  * });
  * ```
  */
-
 const calculateStatistics = (
   {
     operation = 'Average',
-  }: {
-    /** The operation to perform */
-    operation?: WFSerialization | WFStatisticsOperation,
-  },
+  }: Options,
 ): WFWorkflowAction => ({
-  WFWorkflowActionIdentifier: 'is.workflow.actions.statistics',
+  WFWorkflowActionIdentifier: identifier,
   WFWorkflowActionParameters: {
     WFStatisticsOperation: operation,
   },

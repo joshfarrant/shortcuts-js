@@ -2,10 +2,19 @@ import * as uuidv4 from 'uuid/v4';
 
 import WFWorkflowAction from '../interfaces/WF/WFWorkflowAction';
 
-type ChooseFromMenuItem = {
+interface ChooseFromMenuItem {
   label: string;
   actions: WFWorkflowAction[];
-};
+}
+
+interface Options {
+  /** An array of menu items */
+  items?: ChooseFromMenuItem[];
+  /** The title of the menu */
+  prompt?: string;
+}
+
+export const identifier = 'is.workflow.actions.choosefrommenu';
 
 /**
  * @action Choose from Menu
@@ -29,23 +38,17 @@ type ChooseFromMenuItem = {
  * });
  * ```
  */
-
 const chooseFromMenu = (
   {
     items = [],
     prompt = '',
-  }: {
-    /** An array of menu items */
-    items?: ChooseFromMenuItem[],
-    /** The title of the menu */
-    prompt?: string,
-  },
+  }: Options,
 ): WFWorkflowAction[] => {
   const groupingIdentifier = uuidv4();
 
   return [
     {
-      WFWorkflowActionIdentifier: 'is.workflow.actions.choosefrommenu',
+      WFWorkflowActionIdentifier: identifier,
       WFWorkflowActionParameters: {
         WFMenuPrompt: prompt,
         WFControlFlowMode: 0,
@@ -60,7 +63,7 @@ const chooseFromMenu = (
       ) => ([
         ...a,
         {
-          WFWorkflowActionIdentifier: 'is.workflow.actions.choosefrommenu',
+          WFWorkflowActionIdentifier: identifier,
           WFWorkflowActionParameters: {
             WFMenuItemTitle: item.label,
             GroupingIdentifier: groupingIdentifier,
@@ -72,7 +75,7 @@ const chooseFromMenu = (
       [],
     ),
     {
-      WFWorkflowActionIdentifier: 'is.workflow.actions.choosefrommenu',
+      WFWorkflowActionIdentifier: identifier,
       WFWorkflowActionParameters: {
         GroupingIdentifier: groupingIdentifier,
         WFControlFlowMode: 2,

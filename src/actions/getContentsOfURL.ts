@@ -1,7 +1,5 @@
-import {
-  buildSerialization,
-  withActionOutput,
-} from '../utils';
+import { buildSerialization } from '../utils/buildSerialization';
+import { withActionOutput } from '../utils/withActionOutput';
 
 import WFHTTPBodyType from '../interfaces/WF/WFHTTPBodyType';
 import WFHTTPMethod from '../interfaces/WF/WFHTTPMethod';

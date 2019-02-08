@@ -1,6 +1,7 @@
 import Aggrandizement from './WF/Aggrandizement';
 import AggrandizementCoercionItemClass from './WF/AggrandizementCoercionItemClass';
 import AggrandizementPropertyName from './WF/AggrandizementPropertyName';
+import AggrandizementPropertyUserInfo from './WF/AggrandizementPropertyUserInfo';
 import Attachment from './WF/Attachment';
 import WFDateFormatStyle from './WF/WFDateFormatStyle';
 import WFSerialization from './WF/WFSerialization';
@@ -59,9 +60,78 @@ const coercionTypesMap = new Map<CoercionType, AggrandizementCoercionItemClass>(
   ['Place', 'WFMKMapItemContentItem'],
   ['Rich text', 'WFRichTextContentItem'],
   ['Safari web page', 'WFSafariWebPageContentItem'],
-  // ['Text',  null],
+  ['Text',  'WFStringContentItem'],
   ['URL', 'WFURLContentItem'],
   ['vCard', 'WFVCardContentItem'],
+]);
+
+/** @ignore */
+const propertiesMap = new Map<string, AggrandizementPropertyName>([
+  ['Album Track No.', 'Album Track #'],
+  ['County', 'State'],
+  ['Disc No.', 'Disc #'],
+  ['Is Favourite', 'Is Favorite'],
+  ['No. of Ratings (This Version)', '# of Ratings (This Version)'],
+  ['No. of Ratings', '# of Ratings'],
+  ['Postcode', 'ZIP Code'],
+  ['Town/City', 'City'],
+]);
+
+/** @ignore */
+const propertyUserInfosMap = new Map<AggrandizementPropertyName, AggrandizementPropertyUserInfo>([
+  ['Album Artist', 'albumArtist'],
+  ['Album Artwork', 'artwork'],
+  ['Album Track #', 'albumTrackNumber'],
+  ['Album', 'albumName'], // as Media
+  ['Album', 'albumTitle'], // as iTunes media
+  ['Artist', 'artist'],
+  ['Birthday', 17],
+  ['City', 'city'],
+  ['Comments', 'comments'],
+  ['Company', 10],
+  ['Composer', 'composer'],
+  ['Contact Photo', '18446744073709550616'],
+  ['Country', 'country'],
+  ['Creation Date', 'WFFileCreationDate'],
+  ['Date Added', 'dateAdded'],
+  ['Department', 11],
+  ['Disc #', 'discNumber'],
+  ['Duration', 'playbackDuration'],
+  ['Email Address', 4],
+  ['File Extension', 'WFFileExtensionProperty'],
+  ['File Size', 'WFFileSizeProperty'],
+  ['First Name', 0],
+  ['Genre', 'genre'],
+  ['Group', 'WFContactItemGroupProperty'],
+  ['Has Photo', '18446744073709550615'],
+  ['Is Cloud Item', 'isCloudItem'],
+  ['Is Explicit', 'isExplicit'],
+  ['Job Title', 18],
+  ['Last Modified Date', 'WFFileModificationDate'],
+  ['Last Name', 1],
+  ['Last Played Date', 'lastPlayedDate'],
+  ['Lyrics', 'lyrics'],
+  ['Media Kind', 'mediaType'],
+  ['Middle Name', 6],
+  ['Name', 'WFItemName'],
+  ['Nickname', 19],
+  ['Notes', 14],
+  ['Phone Number', 3],
+  ['Phonetic First Name', 7],
+  ['Phonetic Last Name', 9],
+  ['Phonetic Middle Name', 8],
+  ['Play Count', 'playCount'],
+  ['Prefix', 20],
+  ['Rating', 'rating'],
+  ['Release Date', 'releaseDate'],
+  ['Skip Count', 'skipCount'],
+  ['State', 'state'],
+  ['Street Address', 5],
+  ['Street', 'street'],
+  ['Suffix', 21],
+  ['Title', 'title'],
+  ['URL', 22],
+  ['ZIP Code', 'postalCode'],
 ]);
 
 export default class Variable implements WFSerialization {
@@ -74,7 +144,7 @@ export default class Variable implements WFSerialization {
   }
 
   /**
-   * Method that can be applied to variables, magic variables and global variables.
+   * Method that can be applied to variables, magic variables, global variables and local variables.
    * It creates an aggrandized copy of the variable, allowing for type coercion and
    * subproperty access.
    *
@@ -99,7 +169,7 @@ export default class Variable implements WFSerialization {
   ): Variable {
     const {
       type,
-      // get,
+      get,
       dateFormat,
       timeFormat,
       customFormat,
@@ -116,9 +186,18 @@ export default class Variable implements WFSerialization {
       });
     }
 
-    // if (options.get) {
-    //   // TODO
-    // }
+    if (get) {
+      const property = propertiesMap.get(get) || get;
+      // Album property name has different userInfo in iTunes media and Media types
+      let userInfo = property && propertyUserInfosMap.get(property);
+      if (type === 'Media' && property === 'Album') userInfo = 'albumName';
+
+      aggrandizements.push({
+        PropertyName: property,
+        ...(userInfo && { PropertyUserInfo: userInfo }),
+        Type: 'WFPropertyVariableAggrandizement',
+      });
+    }
 
     if (dateFormat) {
       aggrandizements.push({

@@ -21,6 +21,7 @@ type AggrandizementCoercionItemClass = (
   | 'WFPhotoMediaContentItem'
   | 'WFRichTextContentItem'
   | 'WFSafariWebPageContentItem'
+  | 'WFStringContentItem'
   | 'WFURLContentItem'
   | 'WFVCardContentItem'
 );

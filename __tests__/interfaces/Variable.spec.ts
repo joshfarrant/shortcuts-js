@@ -70,6 +70,86 @@ describe('Variable\'s .with() method', () => {
     expect(actual).toEqual(expected);
   });
 
+  it('adds property aggrandizement when get option is passed', () => {
+    const actual = variable.with({
+      type: 'Image',
+      get: 'Is a Screenshot',
+    });
+
+    const expected: WFSerialization = {
+      Value: {
+        OutputUUID: variable.Value.OutputUUID,
+        Type: 'ActionOutput',
+        Aggrandizements: [
+          {
+            CoercionItemClass: 'WFImageContentItem',
+            Type: 'WFCoercionVariableAggrandizement',
+          }, {
+            PropertyName: 'Is a Screenshot',
+            Type: 'WFPropertyVariableAggrandizement',
+          },
+        ],
+      },
+      WFSerializationType: 'WFTextTokenAttachment',
+    };
+
+    expect(actual).toEqual(expected);
+  });
+
+  it('adds property aggrandizement that needs PropertyUserInfo when get option is passed', () => {
+    const actual = variable.with({
+      type: 'Contact',
+      get: 'Contact Photo',
+    });
+
+    const expected: WFSerialization = {
+      Value: {
+        OutputUUID: variable.Value.OutputUUID,
+        Type: 'ActionOutput',
+        Aggrandizements: [
+          {
+            CoercionItemClass: 'WFContactContentItem',
+            Type: 'WFCoercionVariableAggrandizement',
+          }, {
+            PropertyName: 'Contact Photo',
+            PropertyUserInfo: '18446744073709550616',
+            Type: 'WFPropertyVariableAggrandizement',
+          },
+        ],
+      },
+      WFSerializationType: 'WFTextTokenAttachment',
+    };
+
+    expect(actual).toEqual(expected);
+  });
+
+  it('adds the right property aggrandizement for Album property in Media coercion type', () => {
+    const actual = variable.with({
+      type: 'Media',
+      get: 'Album',
+    });
+
+    const expected: WFSerialization = {
+      Value: {
+        OutputUUID: variable.Value.OutputUUID,
+        Type: 'ActionOutput',
+        Aggrandizements: [
+          {
+            CoercionItemClass: 'WFAVAssetContentItem',
+            Type: 'WFCoercionVariableAggrandizement',
+          }, {
+            PropertyName: 'Album',
+            PropertyUserInfo: 'albumName',
+            Type: 'WFPropertyVariableAggrandizement',
+          },
+        ],
+      },
+      WFSerializationType: 'WFTextTokenAttachment',
+    };
+
+    expect(actual).toEqual(expected);
+  });
+
   it('adds date format aggrandizement when dateFormat and timeFormat options are passed', () => {
     const actual = variable.with({
       type: 'Date',

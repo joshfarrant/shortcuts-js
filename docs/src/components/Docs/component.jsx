@@ -1,5 +1,5 @@
 import React from 'react';
-import { Route } from 'react-router';
+import { Route, Switch } from 'react-router';
 import { Link, NavLink } from 'react-router-dom';
 
 import Actions from './Actions';
@@ -158,13 +158,15 @@ export default class Component extends React.Component {
         </div>
 
         <div className={styles.content}>
-          <Route path="/" exact component={GettingStarted} />
-          <Route path="/variables" component={Variables} />
-          <Route path="/actions/:name?" component={Actions} />
-          <Route path="/metadata" exact component={Metadata} />
-          <Route path="/metadata/icon" component={Metadata_ShortcutIcon} />
-          <Route path="/contributing/action-icons" component={Contributing_ActionIcons} />
-          <Route component={NotFound} />
+          <Switch>
+            <Route path="/" exact component={GettingStarted} />
+            <Route path="/variables" component={Variables} />
+            <Route path="/actions/:name?" component={Actions} />
+            <Route path="/metadata" exact component={Metadata} />
+            <Route path="/metadata/icon" component={Metadata_ShortcutIcon} />
+            <Route path="/contributing/action-icons" component={Contributing_ActionIcons} />
+            <Route component={NotFound} />
+          </Switch>
         </div>
       </div>
     );

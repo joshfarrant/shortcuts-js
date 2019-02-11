@@ -1,5 +1,9 @@
 import WFWorkflowAction from '../interfaces/WF/WFWorkflowAction';
 
+interface Options {
+  text?: string;
+}
+
 export const identifier = 'is.workflow.actions.comment';
 
 /**
@@ -19,15 +23,18 @@ export const identifier = 'is.workflow.actions.comment';
 const comment = (
   {
     text = '',
-  }: {
-    /** The body of the comment */
-    text?: string,
-  },
+  }: Options,
 ): WFWorkflowAction => ({
   WFWorkflowActionIdentifier: identifier,
   WFWorkflowActionParameters: {
     WFCommentActionText: text,
   },
+});
+
+export const invert = (
+  WFAction: WFWorkflowAction,
+): Options => ({
+  text: WFAction.WFWorkflowActionParameters.WFCommentActionText,
 });
 
 export default comment;

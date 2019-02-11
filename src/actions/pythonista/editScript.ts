@@ -1,6 +1,13 @@
 import WFSerialization from '../../interfaces/WF/WFSerialization';
 import WFWorkflowAction from '../../interfaces/WF/WFWorkflowAction';
 
+interface Options {
+  /** The name of the script to edit */
+  script?: WFSerialization | string;
+}
+
+export const identifier = 'com.omz-software.Pythonista.editscript';
+
 /**
  * @action Edit Script
  * @section Actions > Scripting > Pythonista
@@ -14,16 +21,12 @@ import WFWorkflowAction from '../../interfaces/WF/WFWorkflowAction';
  * });
  * ```
  */
-
 const editScript = (
   {
     script = '',
-  }: {
-    /** The name of the script to edit */
-    script?: WFSerialization | string,
-  },
+  }: Options,
 ): WFWorkflowAction => ({
-  WFWorkflowActionIdentifier: 'com.omz-software.Pythonista.editscript',
+  WFWorkflowActionIdentifier: identifier,
   WFWorkflowActionParameters: {
     PythonistaScript: script,
   },

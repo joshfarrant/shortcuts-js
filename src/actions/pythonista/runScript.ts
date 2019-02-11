@@ -1,6 +1,13 @@
 import WFSerialization from '../../interfaces/WF/WFSerialization';
 import WFWorkflowAction from '../../interfaces/WF/WFWorkflowAction';
 
+interface Options {
+  /** The name of the script to run */
+  script?: WFSerialization | string;
+}
+
+export const identifier = 'com.omz-software.Pythonista.runscript';
+
 /**
  * @action Run Script
  * @section Actions > Scripting > Pythonista
@@ -18,12 +25,9 @@ import WFWorkflowAction from '../../interfaces/WF/WFWorkflowAction';
 const runScript = (
   {
     script = '',
-  }: {
-    /** The name of the script to run */
-    script?: WFSerialization | string,
-  },
+  }: Options,
 ): WFWorkflowAction => ({
-  WFWorkflowActionIdentifier: 'com.omz-software.Pythonista.runscript',
+  WFWorkflowActionIdentifier: identifier,
   WFWorkflowActionParameters: {
     PythonistaScript: script,
   },

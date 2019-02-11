@@ -1,7 +1,7 @@
 export interface Script {
   metadata: {
-    glyph?: number;
-    color?: number;
+    glyph?: string;
+    color?: string;
   };
   // variables: {
   //   name: string; // the variable name in the built .js file

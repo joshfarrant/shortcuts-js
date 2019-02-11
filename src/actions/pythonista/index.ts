@@ -1,5 +1,5 @@
-import editScript from './editScript';
-import runScript from './runScript';
+import * as editScript from './editScript';
+import * as runScript from './runScript';
 
 export {
   editScript,

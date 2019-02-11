@@ -18,6 +18,7 @@ const openApp = (
   {
     appId = '',
   }: {
+    /** The App identifier */
     appId?: string;
   },
 ): WFWorkflowAction => ({

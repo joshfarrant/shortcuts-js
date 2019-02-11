@@ -7,7 +7,7 @@ import WFWorkflowAction from '../interfaces/WF/WFWorkflowAction';
  * @section Content Types > Sharing > Facebook
  * @icon Facebook
  *
- * Post on Facebook Action. Shares the input on Facebook.
+ * Shares the input on Facebook.
  *
  * ```js
  * postOnFacebook();

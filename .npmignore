@@ -13,6 +13,8 @@ __tests__
 assets
 coverage
 docs
+documentation
+playground
 scripts
 shortcuts
 src
@@ -25,4 +27,3 @@ tsconfig.json
 tsconfig.release.json
 tslint.json
 playground.js
-playground/

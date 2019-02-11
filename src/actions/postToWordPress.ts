@@ -5,18 +5,18 @@ import WFWorkflowAction from '../interfaces/WF/WFWorkflowAction';
 /**
  * @action Post to WordPress
  * @section Content Types > Sharing > WordPress
- * @icon Wordpress
+ * @icon WordPress
  *
  * Posts the input to a WordPress blog as a new post or page.
  *
  * ```js
- * postToWordpress();
+ * postToWordPress();
  * ```
  */
 
-const postToWordpress = (): WFWorkflowAction => ({
+const postToWordPress = (): WFWorkflowAction => ({
   WFWorkflowActionIdentifier: 'is.workflow.actions.wordpress.post',
   WFWorkflowActionParameters: {},
 });
 
-export default withActionOutput(postToWordpress);
+export default withActionOutput(postToWordPress);

@@ -13,6 +13,10 @@ import WFWorkflowAction from '../interfaces/WF/WFWorkflowAction';
  *
  * Formats a date and time into text.
  *
+ * Custom format strings use the format patterns from Unicode Technical Standard #35
+ * ([unicode.org/reports/tr35/tr35-31/tr35-dates.html#Date_Format_Patterns](
+ * http://unicode.org/reports/tr35/tr35-31/tr35-dates.html#Date_Format_Patterns)).
+ *
  * ```js
  * formatDate({
  *   dateFormat: 'Custom',

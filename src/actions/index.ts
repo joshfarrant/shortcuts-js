@@ -75,7 +75,7 @@ import playSound from './playSound';
 import postOnFacebook from './postOnFacebook';
 import postOnInstagram from './postOnInstagram';
 import postToTumblr from './postToTumblr';
-import postToWordpress from './postToWordpress';
+import postToWordPress from './postToWordPress';
 import print from './print';
 import quickLook from './quickLook';
 import randomNumber from './randomNumber';
@@ -200,7 +200,7 @@ export {
   postOnInstagram,
   playSound,
   postToTumblr,
-  postToWordpress,
+  postToWordPress,
   print,
   quickLook,
   randomNumber,

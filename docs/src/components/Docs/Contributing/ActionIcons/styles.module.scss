@@ -1,0 +1,17 @@
+.content {
+  padding: 1.7rem;
+  max-width: 100%;
+  width: var(--max-content-width);
+}
+
+.iconList {
+  column-width: 200px;
+
+  .item {
+    margin-bottom: 4px;
+
+    code {
+      font-size: 14px;
+    }
+  }
+}

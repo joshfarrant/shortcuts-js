@@ -1,0 +1,27 @@
+.buttonContainer {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  width: 100%;
+
+  & > button {
+    margin: 0;
+  }
+}
+
+.error {
+  display: inline;
+  margin: 0 0 1.7rem;
+  padding: 0;
+  border: none;
+  outline: none;
+  color: var(--purple-color);
+  text-align: left;
+  font-weight: 700;
+  cursor: pointer;
+
+  &:hover,
+  &:focus {
+    text-decoration: underline;
+  }
+}

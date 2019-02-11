@@ -6,8 +6,6 @@ import { Script } from '../interfaces/Script';
 import WFWorkflow from '../interfaces/WF/WFWorkflow';
 import WFWorkflowAction from '../interfaces/WF/WFWorkflowAction';
 
-console.log('allActions: ', allActions);
-
 interface Import {
   identifier?: string;
   // tslint:disable-next-line no-any

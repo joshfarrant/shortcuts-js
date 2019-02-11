@@ -34,6 +34,7 @@
     "tslint-microsoft-contrib": "~6.0.0",
     "tsutils": "~3.8.0",
     "typedoc": "^0.14.0",
+    "typedoc-plugin-shortcuts-js": "^0.1.0",
     "typescript": "~3.3.1"
   },
   "main": "build/index.js",
@@ -46,7 +47,11 @@
     "lint": "tslint -t stylish --project \"tsconfig.json\"",
     "test": "npm run lint && jest --coverage",
     "test:watch": "jest --watch",
-    "docs": "typedoc src --out docs --mode file --target es6 --theme default",
+    "docs": "npm run docs:json && cd docs && npm run start",
+    "docs:build": "npm run docs:json && cd docs && npm run build",
+    "docs:json": "typedoc src --json docs/src/api/exported.json --target es6",
+    "docs:html": "typedoc src --out documentation --mode file --target es6 --theme default",
+    "postinstall": "cd docs && npm install",
     "preversion": "npm run clean && npm test",
     "version": "npm run build",
     "postversion": "git push && git push --tags"

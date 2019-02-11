@@ -7,7 +7,7 @@ import WFWorkflowAction from '../interfaces/WF/WFWorkflowAction';
  * @section Content Types > Documents > Books
  * @icon Books
  *
- * Open in Books Action. Opens the input as a PDF in Books.
+ * Opens the input as a PDF in Books.
  *
  * ```js
  * openInBooks();

@@ -5,7 +5,7 @@ import WFWorkflowAction from '../interfaces/WF/WFWorkflowAction';
  * @section Content Types > Sharing > Instagram
  * @icon Instagram
  *
- * Post on Instagram Action. Opens the photo passed into this action in the Instagram app and copies the caption to the clipboard.
+ * Opens the photo passed into this action in the Instagram app and copies the caption to the clipboard.
  *
  * ```js
  * postOnInstagram({

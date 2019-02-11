@@ -3,7 +3,11 @@ import { withActionOutput } from '../utils';
 import WFWorkflowAction from '../interfaces/WF/WFWorkflowAction';
 
 /**
- * Open URLs in Chrome Action. Opens the inputted URLs in Google Chrome.
+ * @action Open URLs in Chrome
+ * @section Content Types > Web > Chrome
+ * @icon Chrome
+ *
+ * Opens the inputted URLs in Google Chrome.
  *
  * ```js
  * openURLsInChrome();

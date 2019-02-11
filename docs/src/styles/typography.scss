@@ -1,0 +1,161 @@
+$baseFontSize: 18px;
+$baseLineHeight: 1.7;
+
+html {
+  font-size: 100% * $baseFontSize / 16px;
+  line-height: $baseLineHeight;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  color: hsla(0, 0%, 0%, .8);
+	word-wrap: break-word;
+	font-kerning: normal;
+	font-feature-settings: "kern", "liga", "clig", "calt";
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: inherit;
+  line-height: 1.1;
+  font-weight: bold;
+  margin: 0 0 #{$baseLineHeight}rem;
+  text-rendering: optimizeLegibility;
+}
+
+h1 {
+  font-size: 2rem;
+}
+
+h2 {
+  font-size: 1.51572rem;
+}
+
+h3 {
+  font-size: 1.31951rem;
+}
+
+h4 {
+  font-size: 1rem;
+}
+
+h5 {
+  font-size: 0.87055rem;
+}
+
+h6 {
+  font-size: 0.81225rem;
+}
+
+p {
+  padding: 0;
+  margin: 0 0 #{$baseLineHeight}rem;
+
+  *:last-child {
+  	margin-bottom: 0;
+  }
+}
+
+small {
+	font-size: 80%;
+}
+
+kbd,
+samp,
+code {
+  font-size: #{$baseLineHeight / 2}rem;
+	line-height: #{$baseLineHeight}rem;
+}
+
+pre {
+	padding: 0;
+	margin: 0 0 #{$baseLineHeight}rem;
+}
+
+button,
+input {
+	font: inherit;
+  outline: none;
+  -webkit-appearance: none;
+}
+
+hr {
+  margin: #{$baseLineHeight}rem auto;
+}
+
+ol,
+ul {
+	padding: 0;
+	margin: 0 0 #{$baseLineHeight}rem #{$baseLineHeight}rem;
+	list-style-position: outside;
+	list-style-image: none;
+
+  li {
+    padding-left: 0;
+  }
+}
+
+li {
+	margin-bottom: #{$baseLineHeight / 2}rem;
+
+  & > ol,
+  & > ul {
+  	margin-left: #{$baseLineHeight}rem;
+  	margin-bottom: #{$baseLineHeight / 2}rem;
+  	margin-top: #{$baseLineHeight / 2}rem;
+  }
+
+  & > p {
+  	margin-bottom: #{$baseLineHeight / 2}rem;
+  }
+
+  *:last-child {
+  	margin-bottom: 0;
+  }
+}
+
+table {
+	padding: 0;
+	margin: 0 0 #{$baseLineHeight}rem;
+	line-height: #{$baseLineHeight}rem;
+	border-collapse: collapse;
+	width: 100%;
+}
+
+thead {
+	text-align: left;
+}
+
+td,
+th {
+	text-align: left;
+	border-bottom: 1px solid hsla(0, 0%, 0%, 0.12);
+	font-feature-settings: "tnum";
+	padding-left: 1.13333rem;
+	padding-right: 1.13333rem;
+	padding-top: #{$baseLineHeight / 2}rem;
+	padding-bottom: calc(#{$baseLineHeight / 2}rem - 1px);
+}
+
+th:first-child,
+td:first-child {
+	padding-left: 0;
+}
+
+th:last-child,
+td:last-child {
+	padding-right: 0;
+}
+
+blockquote {
+	padding: 0;
+	margin: 0 0 #{$baseLineHeight}rem;
+}
+
+blockquote *:last-child {
+	margin-bottom: 0;
+}

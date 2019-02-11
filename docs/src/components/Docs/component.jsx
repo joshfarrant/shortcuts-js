@@ -7,35 +7,36 @@ import Contributing_ActionIcons from './Contributing/ActionIcons';
 import GettingStarted from './GettingStarted';
 import Metadata from './Metadata';
 import Metadata_ShortcutIcon from './Metadata/ShortcutIcon';
+import NotFound from './NotFound';
 import Variables from './Variables';
 
 import styles from './styles.module.scss';
 
-const classList = (classNames) => Object
+const classList = classNames => Object
   .entries(classNames)
   .map(([className, condition]) => condition && className)
   .filter(el => el)
   .join(' ');
 
 const menuItems = [
-  ['Getting Started', '/docs', [
+  ['Getting Started', '', [
     ['Installation', '#installation'],
     ['Usage', '#usage'],
   ]],
-  ['Examples', '/docs/examples', []],
-  ['Variables', '/docs/variables', [
+  ['Examples', '/examples', []],
+  ['Variables', '/variables', [
     ['Magic Variables', '#magic-variables'],
     ['Named Variables', '#named-variables'],
     ['Global Variables', '#global-variables'],
     ['Local Variables', '#local-variables'],
     ['Aggrandizements', '#aggrandizements'],
   ]],
-  ['Actions', '/docs/actions', []],
-  ['Metadata', '/docs/metadata', [
+  ['Actions', '/actions', []],
+  ['Metadata', '/metadata', [
     ['Build Options', '#build-options'],
     ['Shortcut Icon', '/icon'],
   ]],
-  ['Contributing', '/docs/contributing', [
+  ['Contributing', '/contributing', [
     ['Design Principles', '#design-principles'],
     ['Testing', '#testing'],
     ['Action Icons', '/action-icons'],
@@ -43,9 +44,9 @@ const menuItems = [
 ];
 
 class MenuItem extends React.Component {
-  isActive = (path) => (match, location) => path === '/docs/actions' ?
-    location.pathname.startsWith('/docs/actions') :
-    path === `${location.pathname}${location.hash}`;
+  isActive = path => (match, location) => (path === '/actions'
+    ? location.pathname.startsWith('/actions')
+    : path === `${location.pathname}${location.hash}`);
 
   render() {
     const { to: path, ...rest } = this.props;
@@ -59,7 +60,7 @@ class MenuItem extends React.Component {
       />
     );
   }
-};
+}
 
 class Menu extends React.Component {
   render() {
@@ -113,14 +114,14 @@ class Menu extends React.Component {
       </div>
     );
   }
-};
+}
 
 export default class Component extends React.Component {
   state = {
     menuShown: false,
   }
 
-  toggleMenu = (to) => () => {
+  toggleMenu = to => () => {
     this.setState({
       menuShown: to === undefined ? !this.state.menuShown : to,
     });
@@ -131,13 +132,14 @@ export default class Component extends React.Component {
       <div className={classList({
         [styles.container]: true,
         [styles.menuShown]: this.state.menuShown,
-      })}>
+      })}
+      >
         <div className={styles.aside}>
           <div className={styles.navbar}>
             <Link to="/" className={styles.logo}>
               Shortcuts JS
             </Link>
-            <Link to="/docs" className={styles.soft}>
+            <Link to="/" className={styles.soft}>
               Docs
             </Link>
 
@@ -156,14 +158,15 @@ export default class Component extends React.Component {
         </div>
 
         <div className={styles.content}>
-          <Route path="/docs" exact component={GettingStarted} />
-          <Route path="/docs/variables" component={Variables} />
-          <Route path="/docs/actions/:name?" component={Actions} />
-          <Route path="/docs/metadata" exact component={Metadata} />
-          <Route path="/docs/metadata/icon" component={Metadata_ShortcutIcon} />
-          <Route path="/docs/contributing/action-icons" component={Contributing_ActionIcons} />
+          <Route path="/" exact component={GettingStarted} />
+          <Route path="/variables" component={Variables} />
+          <Route path="/actions/:name?" component={Actions} />
+          <Route path="/metadata" exact component={Metadata} />
+          <Route path="/metadata/icon" component={Metadata_ShortcutIcon} />
+          <Route path="/contributing/action-icons" component={Contributing_ActionIcons} />
+          <Route component={NotFound} />
         </div>
       </div>
     );
   }
-};
+}

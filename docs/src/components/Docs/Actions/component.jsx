@@ -134,7 +134,7 @@ export default class Component extends React.Component {
 
   setAction = (name) => () => {
     const path = name ? `/${name.toLowerCase()}` : '';
-    this.props.history.push(`/docs/actions${path}`);
+    this.props.history.push(`/actions${path}`);
   }
 
   updateSearch = (event) => {

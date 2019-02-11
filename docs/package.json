@@ -2,6 +2,7 @@
   "name": "shortcuts-js-website",
   "version": "0.1.1",
   "private": true,
+  "homepage": "https://docs.shortcuts.fun",
   "dependencies": {
     "@joshfarrant/shortcuts-js": "latest",
     "codemirror": "^5.42.0",

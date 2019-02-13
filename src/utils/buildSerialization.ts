@@ -11,12 +11,14 @@ import WFSerialization from '../interfaces/WF/WFSerialization';
 /** @ignore */
 const valueMap = [{
   // String
-  builder: (val: string, key?: string): WFDictionaryFieldValueItem => {
+  builder: (val: Value, key?: string): WFDictionaryFieldValueItem => {
+    const typedVal = val as string;
+
     const item: WFDictionaryFieldValueItem = {
-      WFItemType: getItemType(val),
+      WFItemType: getItemType(typedVal),
       WFValue: {
         Value: {
-          string: val,
+          string: typedVal,
           attachmentsByRange: {},
         },
         WFSerializationType: 'WFTextTokenString',
@@ -40,11 +42,13 @@ const valueMap = [{
   ),
 }, {
   // Object
-  builder: (val: ValueObject, key?: string): WFDictionaryFieldValueItem => {
+  builder: (val: Value, key?: string): WFDictionaryFieldValueItem => {
+    const typedVal = val as ValueObject;
+
     const item: WFDictionaryFieldValueItem = {
-      WFItemType: getItemType(val),
+      WFItemType: getItemType(typedVal),
       WFValue: {
-        Value: buildSerialization(val),
+        Value: buildSerialization(typedVal),
         WFSerializationType: 'WFDictionaryFieldValue',
       },
     };
@@ -66,11 +70,13 @@ const valueMap = [{
   ),
 }, {
   // Array
-  builder: (val: ValueArray, key?: string): WFDictionaryFieldValueItem => {
+  builder: (val: Value, key?: string): WFDictionaryFieldValueItem => {
+    const typedVal = val as ValueArray;
+
     const item: WFDictionaryFieldValueItem = {
-      WFItemType: getItemType(val),
+      WFItemType: getItemType(typedVal),
       WFValue: {
-        Value: val.map((x: Value) => getMatch(x)),
+        Value: typedVal.map((x: Value) => getMatch(x)),
         WFSerializationType: 'WFArrayParameterState',
       },
     };
@@ -92,12 +98,14 @@ const valueMap = [{
   ),
 }, {
   // Number
-  builder: (val: number, key?: string): WFDictionaryFieldValueItem => {
+  builder: (val: Value, key?: string): WFDictionaryFieldValueItem => {
+    const typedVal = val as number;
+
     const item: WFDictionaryFieldValueItem = {
-      WFItemType: getItemType(val),
+      WFItemType: getItemType(typedVal),
       WFValue: {
         Value: {
-          string: `${val}`,
+          string: `${typedVal}`,
           attachmentsByRange: {},
         },
         WFSerializationType: 'WFTextTokenString',
@@ -121,11 +129,13 @@ const valueMap = [{
   ),
 }, {
   // Boolean
-  builder: (val: boolean, key?: string): WFDictionaryFieldValueItem => {
+  builder: (val: Value, key?: string): WFDictionaryFieldValueItem => {
+    const typedVal = val as boolean;
+
     const item: WFDictionaryFieldValueItem = {
-      WFItemType: getItemType(val),
+      WFItemType: getItemType(typedVal),
       WFValue: {
-        Value: val,
+        Value: typedVal,
         WFSerializationType: 'WFNumberSubstitutableState',
       },
     };
@@ -164,9 +174,7 @@ export const getMatch = (
   const {
     builder,
   }: {
-    // TODO Figure out how to avoid any here
-    // tslint:disable-next-line no-any
-    builder: (val: any, key?: string) => WFDictionaryFieldValueItem,
+    builder: (val: Value, key?: string) => WFDictionaryFieldValueItem,
   } = match;
 
   return builder(val, key);

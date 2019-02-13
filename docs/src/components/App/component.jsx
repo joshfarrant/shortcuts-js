@@ -2,7 +2,7 @@ import React from 'react';
 import { Route } from 'react-router';
 
 import Docs from '../Docs';
-import Home from '../Home';
+// import Home from '../Home';
 
 import styles from './styles.module.scss';
 
@@ -11,8 +11,8 @@ export default class Component extends React.Component {
     return (
       <div className={styles.container}>
 
-        <Route path="/" exact component={Home} />
-        <Route path="/docs" component={Docs} />
+        {/* <Route path="/" exact component={Home} /> */}
+        <Route path="/" component={Docs} />
 
       </div>
     );

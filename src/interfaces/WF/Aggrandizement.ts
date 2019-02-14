@@ -10,7 +10,7 @@ interface Aggrandizement {
   CoercionItemClass?: AggrandizementCoercionItemClass;
   DictionaryKey?: string;
   PropertyName?: AggrandizementPropertyName;
-  PropertyUserInfo?: AggrandizementPropertyUserInfo | number;
+  PropertyUserInfo?: AggrandizementPropertyUserInfo;
   Type: AggrandizementType;
   WFDateFormat?: string;
   WFDateFormatStyle?: WFDateFormatStyle;

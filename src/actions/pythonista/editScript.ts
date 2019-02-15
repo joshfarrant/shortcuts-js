@@ -6,7 +6,7 @@ interface Options {
   script?: WFSerialization | string;
 }
 
-export const identifier = 'com.omz-software.Pythonista.editscript';
+const identifier = 'com.omz-software.Pythonista.editscript';
 
 /**
  * @action Edit Script
@@ -31,5 +31,14 @@ const editScript = (
     PythonistaScript: script,
   },
 });
+
+const invert = (
+  WFAction: WFWorkflowAction,
+): Options => ({
+  script: WFAction.WFWorkflowActionParameters.PythonistaScript,
+});
+
+editScript.identifier = identifier;
+editScript.invert = invert;
 
 export default editScript;

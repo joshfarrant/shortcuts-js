@@ -5,7 +5,12 @@ import WFBase64LineBreakMode from '../interfaces/WF/WFBase64LineBreakMode';
 import WFEncodeMode from '../interfaces/WF/WFEncodeMode';
 import WFWorkflowAction from '../interfaces/WF/WFWorkflowAction';
 
-export const identifier = 'is.workflow.actions.base64encode';
+interface Options {
+  encodeMode?: WFEncodeMode;
+  lineBreakMode?: Variable | WFBase64LineBreakMode;
+}
+
+const identifier = 'is.workflow.actions.base64encode';
 
 /**
  * @action Base64 Encode
@@ -23,14 +28,11 @@ export const identifier = 'is.workflow.actions.base64encode';
  */
 const base64Encode = (
   {
-    encodeMode = 'Encode',
-    lineBreakMode = 'Every 76 Characters',
-  }: {
     /** The encoding mode to use */
-    encodeMode?: WFEncodeMode,
+    encodeMode = 'Encode',
     /** The line break mode to use */
-    lineBreakMode?: Variable | WFBase64LineBreakMode,
-  },
+    lineBreakMode = 'Every 76 Characters',
+  }: Options,
 ): WFWorkflowAction => ({
   WFWorkflowActionIdentifier: identifier,
   WFWorkflowActionParameters: {
@@ -38,5 +40,15 @@ const base64Encode = (
     WFBase64LineBreakMode: lineBreakMode,
   },
 });
+
+const invert = (
+  WFAction: WFWorkflowAction,
+): Options => ({
+  encodeMode: WFAction.WFWorkflowActionParameters.WFEncodeMode,
+  lineBreakMode: WFAction.WFWorkflowActionParameters.WFBase64LineBreakMode as WFBase64LineBreakMode,
+});
+
+base64Encode.identifier = identifier;
+base64Encode.invert = invert;
 
 export default withActionOutput(base64Encode);

@@ -23,7 +23,7 @@ interface Options {
   );
 }
 
-export const identifier = 'is.workflow.actions.math';
+const identifier = 'is.workflow.actions.math';
 
 /** @ignore */
 const operationsMap = new Map([
@@ -76,7 +76,7 @@ const calculate = (
   };
 };
 
-export const invert = (
+const invert = (
   WFAction: WFWorkflowAction,
 ): Options => {
   const parameters = WFAction.WFWorkflowActionParameters;
@@ -97,5 +97,8 @@ export const invert = (
   }
   return options;
 };
+
+calculate.identifier = identifier;
+calculate.invert = invert;
 
 export default withActionOutput(calculate);

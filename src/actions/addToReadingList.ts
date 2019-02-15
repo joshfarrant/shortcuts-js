@@ -1,6 +1,6 @@
 import WFWorkflowAction from '../interfaces/WF/WFWorkflowAction';
 
-export const identifier = 'is.workflow.actions.readinglist';
+const identifier = 'is.workflow.actions.readinglist';
 
 /**
  * @action Add to Reading List
@@ -17,5 +17,10 @@ const addToReadingList = (): WFWorkflowAction => ({
   WFWorkflowActionIdentifier: identifier,
   WFWorkflowActionParameters: {},
 });
+
+const invert = () => ({});
+
+addToReadingList.identifier = identifier;
+addToReadingList.invert = invert;
 
 export default addToReadingList;

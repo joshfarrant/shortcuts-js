@@ -21,7 +21,7 @@ interface Options {
   value?: string | number;
 }
 
-export const identifier = 'is.workflow.actions.conditional';
+const identifier = 'is.workflow.actions.conditional';
 
 const conditionMap = new Map([
   ['', undefined],
@@ -130,5 +130,8 @@ const conditional = (
 
   return actionArr;
 };
+
+conditional.identifier = identifier;
+// TODO Add invert function
 
 export default conditional;

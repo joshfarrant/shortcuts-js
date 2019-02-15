@@ -4,7 +4,7 @@ interface Options {
   text?: string;
 }
 
-export const identifier = 'is.workflow.actions.comment';
+const identifier = 'is.workflow.actions.comment';
 
 /**
  * @action Comment
@@ -22,6 +22,7 @@ export const identifier = 'is.workflow.actions.comment';
  */
 const comment = (
   {
+    /** The comment text */
     text = '',
   }: Options,
 ): WFWorkflowAction => ({
@@ -31,10 +32,13 @@ const comment = (
   },
 });
 
-export const invert = (
+const invert = (
   WFAction: WFWorkflowAction,
 ): Options => ({
   text: WFAction.WFWorkflowActionParameters.WFCommentActionText,
 });
+
+comment.identifier = identifier;
+comment.invert = invert;
 
 export default comment;

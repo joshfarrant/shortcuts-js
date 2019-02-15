@@ -1,6 +1,6 @@
 import WFWorkflowAction from '../interfaces/WF/WFWorkflowAction';
 
-export const identifier = 'is.workflow.actions.clearupnext';
+const identifier = 'is.workflow.actions.clearupnext';
 
 /**
  * @action Clear Up Next
@@ -17,5 +17,10 @@ const clearUpNext = (): WFWorkflowAction => ({
   WFWorkflowActionIdentifier: identifier,
   WFWorkflowActionParameters: {},
 });
+
+const invert = () => ({});
+
+clearUpNext.identifier = identifier;
+clearUpNext.invert = invert;
 
 export default clearUpNext;

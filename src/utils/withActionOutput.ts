@@ -1,11 +1,14 @@
 import Variable from '../interfaces/Variable';
 import WFWorkflowAction from '../interfaces/WF/WFWorkflowAction';
 
-/** @ignore */
 export const withActionOutput = <OptionsType>(
-  actionBuilder: (options: OptionsType) => WFWorkflowAction,
-) => (
-  (
+  actionBuilder: {
+    (options: OptionsType): WFWorkflowAction;
+    identifier?: string;
+    invert?: (WFAction: WFWorkflowAction) => OptionsType;
+  },
+) => {
+  const result = (
     options: OptionsType,
     output?: Variable,
   ): WFWorkflowAction => {
@@ -18,5 +21,10 @@ export const withActionOutput = <OptionsType>(
       }
     }
     return action;
-  }
-);
+  };
+
+  result.identifier = actionBuilder.identifier;
+  result.invert = actionBuilder.invert;
+
+  return result;
+};

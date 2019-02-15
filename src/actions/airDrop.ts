@@ -2,7 +2,7 @@ import { withActionOutput } from '../utils/withActionOutput';
 
 import WFWorkflowAction from '../interfaces/WF/WFWorkflowAction';
 
-export const identifier = 'is.workflow.actions.airdropdocument';
+const identifier = 'is.workflow.actions.airdropdocument';
 
 /**
  * @action AirDrop
@@ -19,5 +19,10 @@ const airDrop = (): WFWorkflowAction => ({
   WFWorkflowActionIdentifier: identifier,
   WFWorkflowActionParameters: {},
 });
+
+const invert = () => ({});
+
+airDrop.identifier = identifier;
+airDrop.invert = invert;
 
 export default withActionOutput(airDrop);

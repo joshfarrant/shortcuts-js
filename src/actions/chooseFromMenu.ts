@@ -14,7 +14,7 @@ interface Options {
   prompt?: string;
 }
 
-export const identifier = 'is.workflow.actions.choosefrommenu';
+const identifier = 'is.workflow.actions.choosefrommenu';
 
 /**
  * @action Choose from Menu
@@ -83,5 +83,82 @@ const chooseFromMenu = (
     },
   ];
 };
+
+const invert = (
+  WFAction: WFWorkflowAction[],
+): Options => {
+  const firstAction = WFAction[0];
+  const options = {
+    prompt: firstAction.WFWorkflowActionParameters.WFMenuPrompt,
+  };
+
+  const menuItems = firstAction.WFWorkflowActionParameters.WFMenuItems;
+
+  if (!menuItems || menuItems.length === 0) {
+    // If there are no items, no need to continue
+    return {
+      ...options,
+      items: [],
+    };
+  }
+
+  const groupingIdentifier = firstAction.WFWorkflowActionParameters.GroupingIdentifier;
+
+  if (!groupingIdentifier) {
+    // This _should_ never happen...
+    return {
+      ...options,
+      items: [],
+    };
+  }
+
+  const menuActions = WFAction
+    .slice(1, -1) // Remove first and last actions
+    .reduce(
+      (a: ChooseFromMenuItem[], c: WFWorkflowAction) => {
+        const params = c.WFWorkflowActionParameters;
+        if (params.GroupingIdentifier && params.GroupingIdentifier > groupingIdentifier) {
+          // New item
+          return [
+            ...a,
+            {
+              label: params.WFMenuItemTitle,
+              actions: [],
+            },
+          ] as ChooseFromMenuItem[];
+        }
+
+        // Continuation of previous item
+
+        // Remove and return last item in a
+        const lastItem = a.pop();
+
+        if (!lastItem) {
+          // This should never happen, but I want to keep TypeScript happy
+          return [];
+        }
+
+        return [
+          ...a,
+          {
+            ...lastItem,
+            actions: [
+              ...lastItem.actions,
+              c,
+            ],
+          },
+        ] as ChooseFromMenuItem[];
+      },
+      [],
+    );
+
+  return {
+    ...options,
+    items: menuActions,
+  };
+};
+
+chooseFromMenu.identifier = identifier;
+chooseFromMenu.invert = invert;
 
 export default chooseFromMenu;

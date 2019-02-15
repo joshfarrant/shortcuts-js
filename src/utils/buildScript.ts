@@ -6,12 +6,12 @@ import { Script } from '../interfaces/Script';
 import WFWorkflow from '../interfaces/WF/WFWorkflow';
 import WFWorkflowAction from '../interfaces/WF/WFWorkflowAction';
 
+// TODO Can the 'any' be removed from this?
 interface Import {
+  // tslint:disable-next-line no-any
+  (options: any): WFWorkflowAction | WFWorkflowAction[];
+  invert?: (action?: WFWorkflowAction | WFWorkflowAction[]) => {};
   identifier?: string;
-  // tslint:disable-next-line no-any
-  default?: (opts: any) => WFWorkflowAction | WFWorkflowAction[];
-  // tslint:disable-next-line no-any
-  invert?: (action: WFWorkflowAction) => any;
 }
 
 interface Imports {
@@ -20,8 +20,7 @@ interface Imports {
 
 interface FormattedAction {
   name: string;
-  // tslint:disable-next-line no-any
-  invert: (action: WFWorkflowAction) => any;
+  invert: (action: WFWorkflowAction) => {};
 }
 
 interface FormattedActions {
@@ -35,11 +34,8 @@ const buildActionObject = (
   Object
     .entries(obj)
     .reduce(
-    (
-      a: FormattedActions,
-      [name2, obj2]: [string, Import],
-    ): FormattedActions => {
-      if (!obj2.default) {
+    (a, [name2, obj2]): FormattedActions => {
+      if (typeof obj2 !== 'function') {
         // Is a nested import, just call this function with the new object
         return {
           ...a,
@@ -67,7 +63,7 @@ const getActions = (shortcut: WFWorkflow): Script['actions'] => {
   const actions = shortcut.WFWorkflowActions;
 
   const actionsMap: Map<string, FormattedAction> = new Map(
-    Object.entries(buildActionObject(allActions)),
+    Object.entries(buildActionObject(allActions as Imports)),
   );
 
   return actions.map((WFAction) => {

@@ -1,6 +1,6 @@
 import WFWorkflowAction from '../interfaces/WF/WFWorkflowAction';
 
-export const identifier = 'is.workflow.actions.handoff';
+const identifier = 'is.workflow.actions.handoff';
 
 /**
  * @action Continue Shortcut in App
@@ -17,5 +17,10 @@ const continueShortcutInApp = (): WFWorkflowAction => ({
   WFWorkflowActionIdentifier: identifier,
   WFWorkflowActionParameters: {},
 });
+
+const invert = () => ({});
+
+continueShortcutInApp.identifier = identifier;
+continueShortcutInApp.invert = invert;
 
 export default continueShortcutInApp;

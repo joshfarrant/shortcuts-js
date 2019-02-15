@@ -6,7 +6,7 @@ interface Options {
   variable: Variable;
 }
 
-export const identifier = 'is.workflow.actions.appendvariable';
+const identifier = 'is.workflow.actions.appendvariable';
 
 /**
  * @action Add to Variable
@@ -32,5 +32,8 @@ const addToVariable = (
     ...(variable ? { WFVariableName: variable.Value.VariableName } : {}),
   },
 });
+
+addToVariable.identifier = identifier;
+// TODO Add invert function
 
 export default addToVariable;

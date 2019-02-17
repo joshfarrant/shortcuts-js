@@ -1,5 +1,7 @@
 import WFWorkflowAction from '../interfaces/WF/WFWorkflowAction';
 
+const identifier = 'is.workflow.actions.getlatestphotoimport';
+
 /**
  * @action Get Last Import
  * @section Content Types > Photos & Video > Photos
@@ -11,10 +13,14 @@ import WFWorkflowAction from '../interfaces/WF/WFWorkflowAction';
  * getLastImport();
  * ```
  */
-
 const getLastImport = (): WFWorkflowAction => ({
-  WFWorkflowActionIdentifier: 'is.workflow.actions.getlatestphotoimport',
+  WFWorkflowActionIdentifier: identifier,
   WFWorkflowActionParameters: {},
 });
+
+const invert = () => ({});
+
+getLastImport.identifier = identifier;
+getLastImport.invert = invert;
 
 export default getLastImport;

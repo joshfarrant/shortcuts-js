@@ -1,5 +1,7 @@
 import WFWorkflowAction from '../interfaces/WF/WFWorkflowAction';
 
+const identifier = 'is.workflow.actions.correctspelling';
+
 /**
  * @action Correct Spelling
  * @section Content Types > Text > Text Editing
@@ -13,10 +15,14 @@ import WFWorkflowAction from '../interfaces/WF/WFWorkflowAction';
  * correctSpelling();
  * ```
  */
-
 const correctSpelling = (): WFWorkflowAction => ({
-  WFWorkflowActionIdentifier: 'is.workflow.actions.correctspelling',
+  WFWorkflowActionIdentifier: identifier,
   WFWorkflowActionParameters: {},
 });
+
+const invert = () => ({});
+
+correctSpelling.identifier = identifier;
+correctSpelling.invert = invert;
 
 export default correctSpelling;

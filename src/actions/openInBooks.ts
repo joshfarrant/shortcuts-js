@@ -2,6 +2,8 @@ import { withActionOutput } from '../utils/withActionOutput';
 
 import WFWorkflowAction from '../interfaces/WF/WFWorkflowAction';
 
+const identifier = 'com.apple.iBooks.openin';
+
 /**
  * @action Open in Books
  * @section Content Types > Documents > Books
@@ -13,10 +15,14 @@ import WFWorkflowAction from '../interfaces/WF/WFWorkflowAction';
  * openInBooks();
  * ```
  */
-
 const openInBooks = (): WFWorkflowAction => ({
-  WFWorkflowActionIdentifier: 'com.apple.iBooks.openin',
+  WFWorkflowActionIdentifier: identifier,
   WFWorkflowActionParameters: {},
 });
+
+const invert = () => ({});
+
+openInBooks.identifier = identifier;
+openInBooks.invert = invert;
 
 export default withActionOutput(openInBooks);

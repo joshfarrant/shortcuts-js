@@ -1,5 +1,7 @@
 import WFWorkflowAction from '../interfaces/WF/WFWorkflowAction';
 
+const identifier = 'is.workflow.actions.deletephotos';
+
 /**
  * @action Delete Photos
  * @section Content Types > Photos & Video > Photos
@@ -11,10 +13,14 @@ import WFWorkflowAction from '../interfaces/WF/WFWorkflowAction';
  * deletePhotos();
  * ```
  */
-
 const deletePhotos = (): WFWorkflowAction => ({
-  WFWorkflowActionIdentifier: 'is.workflow.actions.deletephotos',
+  WFWorkflowActionIdentifier: identifier,
   WFWorkflowActionParameters: {},
 });
+
+const invert = () => ({});
+
+deletePhotos.identifier = identifier;
+deletePhotos.invert = invert;
 
 export default deletePhotos;

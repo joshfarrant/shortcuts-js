@@ -2,6 +2,8 @@ import { withActionOutput } from '../utils/withActionOutput';
 
 import WFWorkflowAction from '../interfaces/WF/WFWorkflowAction';
 
+const identifier = 'is.workflow.actions.detect.phonenumber';
+
 /**
  * @action Get Phone Numbers from Input
  * @section Content Types > Contacts > Phone
@@ -13,10 +15,14 @@ import WFWorkflowAction from '../interfaces/WF/WFWorkflowAction';
  * getPhoneNumbersFromInput();
  * ```
  */
-
 const getPhoneNumbersFromInput = (): WFWorkflowAction => ({
-  WFWorkflowActionIdentifier: 'is.workflow.actions.detect.phonenumber',
+  WFWorkflowActionIdentifier: identifier,
   WFWorkflowActionParameters: {},
 });
+
+const invert = () => ({});
+
+getPhoneNumbersFromInput.identifier = identifier;
+getPhoneNumbersFromInput.invert = invert;
 
 export default withActionOutput(getPhoneNumbersFromInput);

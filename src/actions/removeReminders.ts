@@ -1,5 +1,7 @@
 import WFWorkflowAction from '../interfaces/WF/WFWorkflowAction';
 
+const identifier = 'is.workflow.actions.removereminders';
+
 /**
  * @action Remove Reminders
  * @section Content Types > Calendar > Reminders
@@ -11,10 +13,14 @@ import WFWorkflowAction from '../interfaces/WF/WFWorkflowAction';
  * removeReminders();
  * ```
  */
-
 const removeReminders = (): WFWorkflowAction => ({
-  WFWorkflowActionIdentifier: 'is.workflow.actions.removereminders',
+  WFWorkflowActionIdentifier: identifier,
   WFWorkflowActionParameters: {},
 });
+
+const invert = () => ({});
+
+removeReminders.identifier = identifier;
+removeReminders.invert = invert;
 
 export default removeReminders;

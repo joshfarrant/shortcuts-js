@@ -2,6 +2,8 @@ import { withActionOutput } from '../utils/withActionOutput';
 
 import WFWorkflowAction from '../interfaces/WF/WFWorkflowAction';
 
+const identifier = 'is.workflow.actions.tweet';
+
 /**
  * @action Tweet
  * @section Content Types > Sharing > Twitter
@@ -14,8 +16,13 @@ import WFWorkflowAction from '../interfaces/WF/WFWorkflowAction';
  * ```
  */
 const tweet = (): WFWorkflowAction => ({
-  WFWorkflowActionIdentifier: 'is.workflow.actions.tweet',
+  WFWorkflowActionIdentifier: identifier,
   WFWorkflowActionParameters: {},
 });
+
+const invert = () => ({});
+
+tweet.identifier = identifier;
+tweet.invert = invert;
 
 export default withActionOutput(tweet);

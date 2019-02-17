@@ -2,6 +2,8 @@ import { withActionOutput } from '../utils/withActionOutput';
 
 import WFWorkflowAction from '../interfaces/WF/WFWorkflowAction';
 
+const identifier = 'is.workflow.actions.tumblr.post';
+
 /**
  * @action Post to Tumblr
  * @section Content Types > Sharing > Tumblr
@@ -13,10 +15,14 @@ import WFWorkflowAction from '../interfaces/WF/WFWorkflowAction';
  * postToTumblr();
  * ```
  */
-
 const postToTumblr = (): WFWorkflowAction => ({
-  WFWorkflowActionIdentifier: 'is.workflow.actions.tumblr.post',
+  WFWorkflowActionIdentifier: identifier,
   WFWorkflowActionParameters: {},
 });
+
+const invert = () => ({});
+
+postToTumblr.identifier = identifier;
+postToTumblr.invert = invert;
 
 export default withActionOutput(postToTumblr);

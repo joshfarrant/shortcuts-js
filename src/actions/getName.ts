@@ -2,6 +2,8 @@ import { withActionOutput } from '../utils/withActionOutput';
 
 import WFWorkflowAction from '../interfaces/WF/WFWorkflowAction';
 
+const identifier = 'is.workflow.actions.getitemname';
+
 /**
  * @action Get Name
  * @section Actions > Scripting > Content
@@ -13,10 +15,14 @@ import WFWorkflowAction from '../interfaces/WF/WFWorkflowAction';
  * getName();
  * ```
  */
-
 const getName = (): WFWorkflowAction => ({
-  WFWorkflowActionIdentifier: 'is.workflow.actions.getitemname',
+  WFWorkflowActionIdentifier: identifier,
   WFWorkflowActionParameters: {},
 });
+
+const invert = () => ({});
+
+getName.identifier = identifier;
+getName.invert = invert;
 
 export default withActionOutput(getName);

@@ -1,5 +1,7 @@
 import WFWorkflowAction from '../interfaces/WF/WFWorkflowAction';
 
+const identifier = 'is.workflow.actions.getclipboard';
+
 /**
  * @action Get Clipboard
  * @section Content Types > Sharing > Clipboard
@@ -11,10 +13,14 @@ import WFWorkflowAction from '../interfaces/WF/WFWorkflowAction';
  * getClipboard();
  * ```
  */
-
 const getClipboard = (): WFWorkflowAction => ({
-  WFWorkflowActionIdentifier: 'is.workflow.actions.getclipboard',
+  WFWorkflowActionIdentifier: identifier,
   WFWorkflowActionParameters: {},
 });
+
+const invert = () => ({});
+
+getClipboard.identifier = identifier;
+getClipboard.invert = invert;
 
 export default getClipboard;

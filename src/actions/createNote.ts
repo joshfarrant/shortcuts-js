@@ -2,6 +2,8 @@ import { withActionOutput } from '../utils/withActionOutput';
 
 import WFWorkflowAction from '../interfaces/WF/WFWorkflowAction';
 
+const identifier = 'com.apple.mobilenotes.SharingExtension';
+
 /**
  * @action Create Note
  * @section Content Types > Sharing > Notes
@@ -13,10 +15,14 @@ import WFWorkflowAction from '../interfaces/WF/WFWorkflowAction';
  * createNote();
  * ```
  */
-
 const createNote = (): WFWorkflowAction => ({
-  WFWorkflowActionIdentifier: 'com.apple.mobilenotes.SharingExtension',
+  WFWorkflowActionIdentifier: identifier,
   WFWorkflowActionParameters: {},
 });
+
+const invert = () => ({});
+
+createNote.identifier = identifier;
+createNote.invert = invert;
 
 export default withActionOutput(createNote);

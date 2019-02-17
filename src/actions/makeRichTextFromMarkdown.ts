@@ -1,5 +1,7 @@
 import WFWorkflowAction from '../interfaces/WF/WFWorkflowAction';
 
+const identifier = 'is.workflow.actions.getrichtextfrommarkdown';
+
 /**
  * @action Make Rich Text from Markdown
  * @section Content Types > Text > Rich Text
@@ -11,10 +13,14 @@ import WFWorkflowAction from '../interfaces/WF/WFWorkflowAction';
  * makeRichTextFromMarkdown();
  * ```
  */
-
 const makeRichTextFromMarkdown = (): WFWorkflowAction => ({
-  WFWorkflowActionIdentifier: 'is.workflow.actions.getrichtextfrommarkdown',
+  WFWorkflowActionIdentifier: identifier,
   WFWorkflowActionParameters: {},
 });
+
+const invert = () => ({});
+
+makeRichTextFromMarkdown.identifier = identifier;
+makeRichTextFromMarkdown.invert = invert;
 
 export default makeRichTextFromMarkdown;

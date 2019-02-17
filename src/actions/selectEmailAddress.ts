@@ -2,6 +2,8 @@ import { withActionOutput } from '../utils/withActionOutput';
 
 import WFWorkflowAction from '../interfaces/WF/WFWorkflowAction';
 
+const identifier = 'is.workflow.actions.selectemail';
+
 /**
  * @action Select Email Address
  * @section Content Types > Contacts > Mail
@@ -13,10 +15,14 @@ import WFWorkflowAction from '../interfaces/WF/WFWorkflowAction';
  * selectEmailAddress();
  * ```
  */
-
 const selectEmailAddress = (): WFWorkflowAction => ({
-  WFWorkflowActionIdentifier: 'is.workflow.actions.selectemail',
+  WFWorkflowActionIdentifier: identifier,
   WFWorkflowActionParameters: {},
 });
+
+const invert = () => ({});
+
+selectEmailAddress.identifier = identifier;
+selectEmailAddress.invert = invert;
 
 export default withActionOutput(selectEmailAddress);

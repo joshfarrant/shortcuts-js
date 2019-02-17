@@ -1,5 +1,7 @@
 import WFWorkflowAction from '../interfaces/WF/WFWorkflowAction';
 
+const identifier = 'is.workflow.actions.playsound';
+
 /**
  * @action Play Sound
  * @section Actions > Scripting > Notification
@@ -11,10 +13,14 @@ import WFWorkflowAction from '../interfaces/WF/WFWorkflowAction';
  * playSound();
  * ```
  */
-
 const playSound = (): WFWorkflowAction => ({
-  WFWorkflowActionIdentifier: 'is.workflow.actions.playsound',
+  WFWorkflowActionIdentifier: identifier,
   WFWorkflowActionParameters: {},
 });
+
+const invert = () => ({});
+
+playSound.identifier = identifier;
+playSound.invert = invert;
 
 export default playSound;

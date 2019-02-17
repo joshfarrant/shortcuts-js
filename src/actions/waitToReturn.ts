@@ -1,5 +1,7 @@
 import WFWorkflowAction from '../interfaces/WF/WFWorkflowAction';
 
+const identifier = 'is.workflow.actions.waittoreturn';
+
 /**
  * @action Wait to Return
  * @section Actions > Scripting > Control Flow
@@ -11,10 +13,14 @@ import WFWorkflowAction from '../interfaces/WF/WFWorkflowAction';
  * waitToReturn();
  * ```
  */
-
 const waitToReturn = (): WFWorkflowAction => ({
-  WFWorkflowActionIdentifier: 'is.workflow.actions.waittoreturn',
+  WFWorkflowActionIdentifier: identifier,
   WFWorkflowActionParameters: {},
 });
+
+const invert = () => ({});
+
+waitToReturn.identifier = identifier;
+waitToReturn.invert = invert;
 
 export default waitToReturn;

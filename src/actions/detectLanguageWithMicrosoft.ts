@@ -2,6 +2,8 @@ import { withActionOutput } from '../utils/withActionOutput';
 
 import WFWorkflowAction from '../interfaces/WF/WFWorkflowAction';
 
+const identifier = 'is.workflow.actions.detectlanguage';
+
 /**
  * @action Detect Language with Microsoft
  * @section Content Types > Text >
@@ -13,10 +15,14 @@ import WFWorkflowAction from '../interfaces/WF/WFWorkflowAction';
  * detectLanguageWithMicrosoft();
  * ```
  */
-
 const detectLanguageWithMicrosoft = (): WFWorkflowAction => ({
-  WFWorkflowActionIdentifier: 'is.workflow.actions.detectlanguage',
+  WFWorkflowActionIdentifier: identifier,
   WFWorkflowActionParameters: {},
 });
+
+const invert = () => ({});
+
+detectLanguageWithMicrosoft.identifier = identifier;
+detectLanguageWithMicrosoft.invert = invert;
 
 export default withActionOutput(detectLanguageWithMicrosoft);

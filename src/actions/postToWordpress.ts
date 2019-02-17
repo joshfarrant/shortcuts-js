@@ -2,6 +2,8 @@ import { withActionOutput } from '../utils/withActionOutput';
 
 import WFWorkflowAction from '../interfaces/WF/WFWorkflowAction';
 
+const identifier = 'is.workflow.actions.wordpress.post';
+
 /**
  * @action Post to WordPress
  * @section Content Types > Sharing > WordPress
@@ -13,10 +15,14 @@ import WFWorkflowAction from '../interfaces/WF/WFWorkflowAction';
  * postToWordpress();
  * ```
  */
-
 const postToWordpress = (): WFWorkflowAction => ({
-  WFWorkflowActionIdentifier: 'is.workflow.actions.wordpress.post',
+  WFWorkflowActionIdentifier: identifier,
   WFWorkflowActionParameters: {},
 });
+
+const invert = () => ({});
+
+postToWordpress.identifier = identifier;
+postToWordpress.invert = invert;
 
 export default withActionOutput(postToWordpress);

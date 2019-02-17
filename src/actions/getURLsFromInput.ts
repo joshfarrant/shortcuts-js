@@ -2,6 +2,8 @@ import { withActionOutput } from '../utils/withActionOutput';
 
 import WFWorkflowAction from '../interfaces/WF/WFWorkflowAction';
 
+const identifier = 'is.workflow.actions.detect.link';
+
 /**
  * @action Get URLs from Input
  * @section Content Types > Web > URLs
@@ -13,10 +15,14 @@ import WFWorkflowAction from '../interfaces/WF/WFWorkflowAction';
  * getURLsFromInput();
  * ```
  */
-
 const getURLsFromInput = (): WFWorkflowAction => ({
-  WFWorkflowActionIdentifier: 'is.workflow.actions.detect.link',
+  WFWorkflowActionIdentifier: identifier,
   WFWorkflowActionParameters: {},
 });
+
+const invert = () => ({});
+
+getURLsFromInput.identifier = identifier;
+getURLsFromInput.invert = invert;
 
 export default withActionOutput(getURLsFromInput);

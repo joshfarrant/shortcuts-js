@@ -1,5 +1,7 @@
 import WFWorkflowAction from '../interfaces/WF/WFWorkflowAction';
 
+const identifier = 'is.workflow.actions.exit';
+
 /**
  * @action Exit Shortcut
  * @section Actions > Scripting > Control Flow
@@ -11,10 +13,14 @@ import WFWorkflowAction from '../interfaces/WF/WFWorkflowAction';
  * exitShortcut();
  * ```
  */
-
 const exitShortcut = (): WFWorkflowAction => ({
-  WFWorkflowActionIdentifier: 'is.workflow.actions.exit',
+  WFWorkflowActionIdentifier: identifier,
   WFWorkflowActionParameters: {},
 });
+
+const invert = () => ({});
+
+exitShortcut.identifier = identifier;
+exitShortcut.invert = invert;
 
 export default exitShortcut;

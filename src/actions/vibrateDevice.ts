@@ -1,5 +1,7 @@
 import WFWorkflowAction from '../interfaces/WF/WFWorkflowAction';
 
+const identifier = 'is.workflow.actions.vibrate';
+
 /**
  * @action Vibrate Device
  * @section Actions > Scripting > Notification
@@ -11,10 +13,14 @@ import WFWorkflowAction from '../interfaces/WF/WFWorkflowAction';
  * vibrateDevice();
  * ```
  */
-
 const vibrateDevice = (): WFWorkflowAction => ({
-  WFWorkflowActionIdentifier: 'is.workflow.actions.vibrate',
+  WFWorkflowActionIdentifier: identifier,
   WFWorkflowActionParameters: {},
 });
+
+const invert = () => ({});
+
+vibrateDevice.identifier = identifier;
+vibrateDevice.invert = invert;
 
 export default vibrateDevice;

@@ -2,6 +2,8 @@ import { withActionOutput } from '../utils/withActionOutput';
 
 import WFWorkflowAction from '../interfaces/WF/WFWorkflowAction';
 
+const identifier = 'is.workflow.actions.print';
+
 /**
  * @action Print
  * @section Content Types > Documents > Printing
@@ -13,10 +15,14 @@ import WFWorkflowAction from '../interfaces/WF/WFWorkflowAction';
  * print();
  * ```
  */
-
 const print = (): WFWorkflowAction => ({
-  WFWorkflowActionIdentifier: 'is.workflow.actions.print',
+  WFWorkflowActionIdentifier: identifier,
   WFWorkflowActionParameters: {},
 });
+
+const invert = () => ({});
+
+print.identifier = identifier;
+print.invert = invert;
 
 export default withActionOutput(print);

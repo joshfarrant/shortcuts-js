@@ -2,6 +2,8 @@ import { withActionOutput } from '../utils/withActionOutput';
 
 import WFWorkflowAction from '../interfaces/WF/WFWorkflowAction';
 
+const identifier = 'is.workflow.actions.avairyeditphoto';
+
 /**
  * @action Markup
  * @section Content Types > Photos & Video > Editing
@@ -13,10 +15,14 @@ import WFWorkflowAction from '../interfaces/WF/WFWorkflowAction';
  * markup();
  * ```
  */
-
 const markup = (): WFWorkflowAction => ({
-  WFWorkflowActionIdentifier: 'is.workflow.actions.avairyeditphoto',
+  WFWorkflowActionIdentifier: identifier,
   WFWorkflowActionParameters: {},
 });
+
+const invert = () => ({});
+
+markup.identifier = identifier;
+markup.invert = invert;
 
 export default withActionOutput(markup);

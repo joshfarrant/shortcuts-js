@@ -2,6 +2,8 @@ import { withActionOutput } from '../utils/withActionOutput';
 
 import WFWorkflowAction from '../interfaces/WF/WFWorkflowAction';
 
+const identifier = 'is.workflow.actions.url.getheaders';
+
 /**
  * @action Get Headers of URL
  * @section Content Types > Web > URLs
@@ -13,10 +15,14 @@ import WFWorkflowAction from '../interfaces/WF/WFWorkflowAction';
  * getHeadersOfURL();
  * ```
  */
-
 const getHeadersOfURL = (): WFWorkflowAction => ({
-  WFWorkflowActionIdentifier: 'is.workflow.actions.url.getheaders',
+  WFWorkflowActionIdentifier: identifier,
   WFWorkflowActionParameters: {},
 });
+
+const invert = () => ({});
+
+getHeadersOfURL.identifier = identifier;
+getHeadersOfURL.invert = invert;
 
 export default withActionOutput(getHeadersOfURL);

@@ -2,6 +2,8 @@ import { withActionOutput } from '../utils/withActionOutput';
 
 import WFWorkflowAction from '../interfaces/WF/WFWorkflowAction';
 
+const identifier = 'is.workflow.actions.scanbarcode';
+
 /**
  * @action Scan QR/BarCode
  * @section Content Types > Text >
@@ -13,10 +15,14 @@ import WFWorkflowAction from '../interfaces/WF/WFWorkflowAction';
  * scanQROrBarcode();
  * ```
  */
-
 const scanQROrBarcode = (): WFWorkflowAction => ({
-  WFWorkflowActionIdentifier: 'is.workflow.actions.scanbarcode',
+  WFWorkflowActionIdentifier: identifier,
   WFWorkflowActionParameters: {},
 });
+
+const invert = () => ({});
+
+scanQROrBarcode.identifier = identifier;
+scanQROrBarcode.invert = invert;
 
 export default withActionOutput(scanQROrBarcode);

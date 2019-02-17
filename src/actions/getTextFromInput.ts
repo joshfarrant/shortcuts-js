@@ -2,6 +2,8 @@ import { withActionOutput } from '../utils/withActionOutput';
 
 import WFWorkflowAction from '../interfaces/WF/WFWorkflowAction';
 
+const identifier = 'is.workflow.actions.detect.text';
+
 /**
  * @action Get Text from Input
  * @section Content Types > Text >
@@ -13,10 +15,14 @@ import WFWorkflowAction from '../interfaces/WF/WFWorkflowAction';
  * getTextFromInput();
  * ```
  */
-
 const getTextFromInput = (): WFWorkflowAction => ({
-  WFWorkflowActionIdentifier: 'is.workflow.actions.detect.text',
+  WFWorkflowActionIdentifier: identifier,
   WFWorkflowActionParameters: {},
 });
+
+const invert = () => ({});
+
+getTextFromInput.identifier = identifier;
+getTextFromInput.invert = invert;
 
 export default withActionOutput(getTextFromInput);

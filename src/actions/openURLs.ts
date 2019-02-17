@@ -1,5 +1,7 @@
 import WFWorkflowAction from '../interfaces/WF/WFWorkflowAction';
 
+const identifier = 'is.workflow.actions.openurl';
+
 /**
  * @action Open URLs
  * @section Content Types > Web > Safari
@@ -11,10 +13,14 @@ import WFWorkflowAction from '../interfaces/WF/WFWorkflowAction';
  * openURLs();
  * ```
  */
-
 const openURLs = (): WFWorkflowAction => ({
-  WFWorkflowActionIdentifier: 'is.workflow.actions.openurl',
+  WFWorkflowActionIdentifier: identifier,
   WFWorkflowActionParameters: {},
 });
+
+const invert = () => ({});
+
+openURLs.identifier = identifier;
+openURLs.invert = invert;
 
 export default openURLs;

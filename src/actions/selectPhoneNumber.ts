@@ -2,6 +2,8 @@ import { withActionOutput } from '../utils/withActionOutput';
 
 import WFWorkflowAction from '../interfaces/WF/WFWorkflowAction';
 
+const identifier = 'is.workflow.actions.selectphone';
+
 /**
  * @action Select Phone Number
  * @section Content Types > Contacts > Phone
@@ -13,10 +15,14 @@ import WFWorkflowAction from '../interfaces/WF/WFWorkflowAction';
  * selectPhoneNumber();
  * ```
  */
-
 const selectPhoneNumber = (): WFWorkflowAction => ({
-  WFWorkflowActionIdentifier: 'is.workflow.actions.selectphone',
+  WFWorkflowActionIdentifier: identifier,
   WFWorkflowActionParameters: {},
 });
+
+const invert = () => ({});
+
+selectPhoneNumber.identifier = identifier;
+selectPhoneNumber.invert = invert;
 
 export default withActionOutput(selectPhoneNumber);

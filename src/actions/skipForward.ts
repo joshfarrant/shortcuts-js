@@ -1,5 +1,7 @@
 import WFWorkflowAction from '../interfaces/WF/WFWorkflowAction';
 
+const identifier = 'is.workflow.actions.skipforward';
+
 /**
  * @action Skip Forward
  * @section Content Types > Music > Playback
@@ -11,10 +13,14 @@ import WFWorkflowAction from '../interfaces/WF/WFWorkflowAction';
  *  skipForward();
  * ```
  */
-
 const skipForward = (): WFWorkflowAction => ({
-  WFWorkflowActionIdentifier: 'is.workflow.actions.skipforward',
+  WFWorkflowActionIdentifier: identifier,
   WFWorkflowActionParameters: {},
 });
+
+const invert = () => ({});
+
+skipForward.identifier = identifier;
+skipForward.invert = invert;
 
 export default skipForward;

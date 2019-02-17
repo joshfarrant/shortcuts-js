@@ -2,6 +2,8 @@ import { withActionOutput } from '../utils/withActionOutput';
 
 import WFWorkflowAction from '../interfaces/WF/WFWorkflowAction';
 
+const identifier = 'is.workflow.actions.url.expand';
+
 /**
  * @action Expand URL
  * @section Content Types > Web > URLs
@@ -13,10 +15,14 @@ import WFWorkflowAction from '../interfaces/WF/WFWorkflowAction';
  * expandURL();
  * ```
  */
-
 const expandURL = (): WFWorkflowAction => ({
-  WFWorkflowActionIdentifier: 'is.workflow.actions.url.expand',
+  WFWorkflowActionIdentifier: identifier,
   WFWorkflowActionParameters: {},
 });
+
+const invert = () => ({});
+
+expandURL.identifier = identifier;
+expandURL.invert = invert;
 
 export default withActionOutput(expandURL);

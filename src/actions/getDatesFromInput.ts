@@ -1,5 +1,7 @@
 import WFWorkflowAction from '../interfaces/WF/WFWorkflowAction';
 
+const identifier = 'is.workflow.actions.detect.date';
+
 /**
  * @action Get Dates from Input
  * @section Content Types > Calendar > Dates
@@ -11,10 +13,14 @@ import WFWorkflowAction from '../interfaces/WF/WFWorkflowAction';
  * getDatesFromInput();
  * ```
  */
-
 const getDatesFromInput = (): WFWorkflowAction => ({
-  WFWorkflowActionIdentifier: 'is.workflow.actions.detect.date',
+  WFWorkflowActionIdentifier: identifier,
   WFWorkflowActionParameters: {},
 });
+
+const invert = () => ({});
+
+getDatesFromInput.identifier = identifier;
+getDatesFromInput.invert = invert;
 
 export default getDatesFromInput;

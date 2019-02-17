@@ -1,5 +1,7 @@
 import WFWorkflowAction from '../interfaces/WF/WFWorkflowAction';
 
+const identifier = 'is.workflow.actions.nothing';
+
 /**
  * @action Nothing
  * @section Actions > Scripting > Content
@@ -11,10 +13,14 @@ import WFWorkflowAction from '../interfaces/WF/WFWorkflowAction';
  * nothing();
  * ```
  */
-
 const nothing = (): WFWorkflowAction => ({
-  WFWorkflowActionIdentifier: 'is.workflow.actions.nothing',
+  WFWorkflowActionIdentifier: identifier,
   WFWorkflowActionParameters: {},
 });
+
+const invert = () => ({});
+
+nothing.identifier = identifier;
+nothing.invert = invert;
 
 export default nothing;

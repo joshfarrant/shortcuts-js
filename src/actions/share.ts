@@ -1,5 +1,7 @@
 import WFWorkflowAction from '../interfaces/WF/WFWorkflowAction';
 
+const identifier = 'is.workflow.actions.share';
+
 /**
  * @action Share
  * @section Content Types > Sharing > System
@@ -11,10 +13,14 @@ import WFWorkflowAction from '../interfaces/WF/WFWorkflowAction';
  * share();
  * ```
  */
-
 const share = (): WFWorkflowAction => ({
-  WFWorkflowActionIdentifier: 'is.workflow.actions.share',
+  WFWorkflowActionIdentifier: identifier,
   WFWorkflowActionParameters: {},
 });
+
+const invert = () => ({});
+
+share.identifier = identifier;
+share.invert = invert;
 
 export default share;

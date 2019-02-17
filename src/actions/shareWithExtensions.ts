@@ -1,5 +1,7 @@
 import WFWorkflowAction from '../interfaces/WF/WFWorkflowAction';
 
+const identifier = 'is.workflow.actions.runextension';
+
 /**
  * @action Share with Extensions
  * @section Content Types > Sharing > System
@@ -11,10 +13,14 @@ import WFWorkflowAction from '../interfaces/WF/WFWorkflowAction';
  * shareWithExtensions();
  * ```
  */
-
 const shareWithExtensions = (): WFWorkflowAction => ({
-  WFWorkflowActionIdentifier: 'is.workflow.actions.runextension',
+  WFWorkflowActionIdentifier: identifier,
   WFWorkflowActionParameters: {},
 });
+
+const invert = () => ({});
+
+shareWithExtensions.identifier = identifier;
+shareWithExtensions.invert = invert;
 
 export default shareWithExtensions;

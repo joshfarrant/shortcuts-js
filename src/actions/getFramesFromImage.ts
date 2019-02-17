@@ -1,5 +1,7 @@
 import WFWorkflowAction from '../interfaces/WF/WFWorkflowAction';
 
+const identifier = 'is.workflow.actions.getframesfromimage';
+
 /**
  * @action Get Frames from Image
  * @section Content Types > Photos & Video > GIFs
@@ -11,10 +13,14 @@ import WFWorkflowAction from '../interfaces/WF/WFWorkflowAction';
  * getFramesFromImage();
  * ```
  */
-
 const getFramesFromImage = (): WFWorkflowAction => ({
-  WFWorkflowActionIdentifier: 'is.workflow.actions.getframesfromimage',
+  WFWorkflowActionIdentifier: identifier,
   WFWorkflowActionParameters: {},
 });
+
+const invert = () => ({});
+
+getFramesFromImage.identifier = identifier;
+getFramesFromImage.invert = invert;
 
 export default getFramesFromImage;

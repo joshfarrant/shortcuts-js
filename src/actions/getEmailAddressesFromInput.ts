@@ -2,6 +2,8 @@ import { withActionOutput } from '../utils/withActionOutput';
 
 import WFWorkflowAction from '../interfaces/WF/WFWorkflowAction';
 
+const identifier = 'is.workflow.actions.detect.emailaddress';
+
 /**
  * @action Get Email Addresses from Input
  * @section Content Types > Contacts > Mail
@@ -13,10 +15,14 @@ import WFWorkflowAction from '../interfaces/WF/WFWorkflowAction';
  * getEmailAddressesFromInput();
  * ```
  */
-
 const getEmailAddressesFromInput = (): WFWorkflowAction => ({
-  WFWorkflowActionIdentifier: 'is.workflow.actions.detect.emailaddress',
+  WFWorkflowActionIdentifier: identifier,
   WFWorkflowActionParameters: {},
 });
+
+const invert = () => ({});
+
+getEmailAddressesFromInput.identifier = identifier;
+getEmailAddressesFromInput.invert = invert;
 
 export default withActionOutput(getEmailAddressesFromInput);

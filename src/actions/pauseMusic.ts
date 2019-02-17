@@ -1,5 +1,7 @@
 import WFWorkflowAction from '../interfaces/WF/WFWorkflowAction';
 
+const identifier = 'is.workflow.actions.pausemusic';
+
 /**
  * @action Pause Music
  * @section Content Types > Music > Playback
@@ -11,10 +13,14 @@ import WFWorkflowAction from '../interfaces/WF/WFWorkflowAction';
  * pauseMusic();
  * ```
  */
-
 const pauseMusic = (): WFWorkflowAction => ({
-  WFWorkflowActionIdentifier: 'is.workflow.actions.pausemusic',
+  WFWorkflowActionIdentifier: identifier,
   WFWorkflowActionParameters: {},
 });
+
+const invert = () => ({});
+
+pauseMusic.identifier = identifier;
+pauseMusic.invert = invert;
 
 export default pauseMusic;

@@ -1,5 +1,7 @@
 import WFWorkflowAction from '../interfaces/WF/WFWorkflowAction';
 
+const identifier = 'is.workflow.actions.detect.contacts';
+
 /**
  * @action Get Contacts from Input
  * @section Content Types > Contacts > Contacts
@@ -11,10 +13,14 @@ import WFWorkflowAction from '../interfaces/WF/WFWorkflowAction';
  * getContactsFromInput();
  * ```
  */
-
 const getContactsFromInput = (): WFWorkflowAction => ({
-  WFWorkflowActionIdentifier: 'is.workflow.actions.detect.contacts',
+  WFWorkflowActionIdentifier: identifier,
   WFWorkflowActionParameters: {},
 });
+
+const invert = () => ({});
+
+getContactsFromInput.identifier = identifier;
+getContactsFromInput.invert = invert;
 
 export default getContactsFromInput;

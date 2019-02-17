@@ -2,6 +2,8 @@ import { withActionOutput } from '../utils/withActionOutput';
 
 import WFWorkflowAction from '../interfaces/WF/WFWorkflowAction';
 
+const identifier = 'is.workflow.actions.previewdocument';
+
 /**
  * @action Quick Look
  * @section Content Types > Documents > Previewing
@@ -13,10 +15,14 @@ import WFWorkflowAction from '../interfaces/WF/WFWorkflowAction';
  * quickLook();
  * ```
  */
-
 const quickLook = (): WFWorkflowAction => ({
-  WFWorkflowActionIdentifier: 'is.workflow.actions.previewdocument',
+  WFWorkflowActionIdentifier: identifier,
   WFWorkflowActionParameters: {},
 });
+
+const invert = () => ({});
+
+quickLook.identifier = identifier;
+quickLook.invert = invert;
 
 export default withActionOutput(quickLook);

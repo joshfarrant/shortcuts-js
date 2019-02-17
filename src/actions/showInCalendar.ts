@@ -2,6 +2,8 @@ import { withActionOutput } from '../utils/withActionOutput';
 
 import WFWorkflowAction from '../interfaces/WF/WFWorkflowAction';
 
+const identifier = 'is.workflow.actions.showincalendar';
+
 /**
  * @action Show in Calendar
  * @section Content Types > Calendar > Calendar
@@ -13,10 +15,14 @@ import WFWorkflowAction from '../interfaces/WF/WFWorkflowAction';
  * showInCalendar();
  * ```
  */
-
 const showInCalendar = (): WFWorkflowAction => ({
-  WFWorkflowActionIdentifier: 'is.workflow.actions.showincalendar',
+  WFWorkflowActionIdentifier: identifier,
   WFWorkflowActionParameters: {},
 });
+
+const invert = () => ({});
+
+showInCalendar.identifier = identifier;
+showInCalendar.invert = invert;
 
 export default withActionOutput(showInCalendar);

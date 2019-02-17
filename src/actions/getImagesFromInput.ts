@@ -1,5 +1,7 @@
 import WFWorkflowAction from '../interfaces/WF/WFWorkflowAction';
 
+const identifier = 'is.workflow.actions.detect.images';
+
 /**
  * @action Get Images from Input
  * @section Content Types > Photos & Video > Images
@@ -11,10 +13,14 @@ import WFWorkflowAction from '../interfaces/WF/WFWorkflowAction';
  * getImagesFromInput();
  * ```
  */
-
 const getImagesFromInput = (): WFWorkflowAction => ({
-  WFWorkflowActionIdentifier: 'is.workflow.actions.detect.images',
+  WFWorkflowActionIdentifier: identifier,
   WFWorkflowActionParameters: {},
 });
+
+const invert = () => ({});
+
+getImagesFromInput.identifier = identifier;
+getImagesFromInput.invert = invert;
 
 export default getImagesFromInput;

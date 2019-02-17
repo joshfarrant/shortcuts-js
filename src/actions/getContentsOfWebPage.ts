@@ -2,6 +2,8 @@ import { withActionOutput } from '../utils/withActionOutput';
 
 import WFWorkflowAction from '../interfaces/WF/WFWorkflowAction';
 
+const identifier = 'is.workflow.actions.getwebpagecontents';
+
 /**
  * @action Get Contents of Web Page
  * @section Content Types > Web > Safari
@@ -13,10 +15,14 @@ import WFWorkflowAction from '../interfaces/WF/WFWorkflowAction';
  * getContentsOfWebPage();
  * ```
  */
-
 const getContentsOfWebPage = (): WFWorkflowAction => ({
-  WFWorkflowActionIdentifier: 'is.workflow.actions.getwebpagecontents',
+  WFWorkflowActionIdentifier: identifier,
   WFWorkflowActionParameters: {},
 });
+
+const invert = () => ({});
+
+getContentsOfWebPage.identifier = identifier;
+getContentsOfWebPage.invert = invert;
 
 export default withActionOutput(getContentsOfWebPage);

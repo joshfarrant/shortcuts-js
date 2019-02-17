@@ -2,6 +2,8 @@ import { withActionOutput } from '../utils/withActionOutput';
 
 import WFWorkflowAction from '../interfaces/WF/WFWorkflowAction';
 
+const identifier = 'is.workflow.actions.getmapslink';
+
 /**
  * @action Get Maps URL
  * @section Content Types > Location > Maps
@@ -13,10 +15,14 @@ import WFWorkflowAction from '../interfaces/WF/WFWorkflowAction';
  * getMapsURL();
  * ```
  */
-
 const getMapsURL = (): WFWorkflowAction => ({
-  WFWorkflowActionIdentifier: 'is.workflow.actions.getmapslink',
+  WFWorkflowActionIdentifier: identifier,
   WFWorkflowActionParameters: {},
 });
+
+const invert = () => ({});
+
+getMapsURL.identifier = identifier;
+getMapsURL.invert = invert;
 
 export default withActionOutput(getMapsURL);

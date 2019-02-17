@@ -2,6 +2,8 @@ import { withActionOutput } from '../utils/withActionOutput';
 
 import WFWorkflowAction from '../interfaces/WF/WFWorkflowAction';
 
+const identifier = 'is.workflow.actions.getarticle';
+
 /**
  * @action Get Diffbot Article from Web Page
  * @section Content Types > Web > Articles
@@ -13,10 +15,14 @@ import WFWorkflowAction from '../interfaces/WF/WFWorkflowAction';
  * getDiffbotArticleFromWebPage();
  * ```
  */
-
 const getDiffbotArticleFromWebPage = (): WFWorkflowAction => ({
-  WFWorkflowActionIdentifier: 'is.workflow.actions.getarticle',
+  WFWorkflowActionIdentifier: identifier,
   WFWorkflowActionParameters: {},
 });
+
+const invert = () => ({});
+
+getDiffbotArticleFromWebPage.identifier = identifier;
+getDiffbotArticleFromWebPage.invert = invert;
 
 export default withActionOutput(getDiffbotArticleFromWebPage);

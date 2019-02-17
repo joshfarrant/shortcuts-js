@@ -1,5 +1,7 @@
 import WFWorkflowAction from '../interfaces/WF/WFWorkflowAction';
 
+const identifier = 'is.workflow.actions.detect.address';
+
 /**
  * @action Get Addresses from Input
  * @section Content Types > Location > Maps
@@ -11,10 +13,14 @@ import WFWorkflowAction from '../interfaces/WF/WFWorkflowAction';
  * getAddressesFromInput();
  * ```
  */
-
 const getAddressesFromInput = (): WFWorkflowAction => ({
-  WFWorkflowActionIdentifier: 'is.workflow.actions.detect.address',
+  WFWorkflowActionIdentifier: identifier,
   WFWorkflowActionParameters: {},
 });
+
+const invert = () => ({});
+
+getAddressesFromInput.identifier = identifier;
+getAddressesFromInput.invert = invert;
 
 export default getAddressesFromInput;

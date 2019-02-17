@@ -1,5 +1,7 @@
 import WFWorkflowAction from '../interfaces/WF/WFWorkflowAction';
 
+const identifier = 'is.workflow.actions.showinstore';
+
 /**
  * @action Show in iTunes Store
  * @section Content Types > Music > iTunes Store
@@ -11,10 +13,14 @@ import WFWorkflowAction from '../interfaces/WF/WFWorkflowAction';
  * showInITunesStore();
  * ```
  */
-
 const showInITunesStore = (): WFWorkflowAction => ({
-  WFWorkflowActionIdentifier: 'is.workflow.actions.showinstore',
+  WFWorkflowActionIdentifier: identifier,
   WFWorkflowActionParameters: {},
 });
+
+const invert = () => ({});
+
+showInITunesStore.identifier = identifier;
+showInITunesStore.invert = invert;
 
 export default showInITunesStore;

@@ -2,6 +2,8 @@ import { withActionOutput } from '../utils/withActionOutput';
 
 import WFWorkflowAction from '../interfaces/WF/WFWorkflowAction';
 
+const identifier = 'is.workflow.actions.postonfacebook';
+
 /**
  * @action Post on Facebook
  * @section Content Types > Sharing > Facebook
@@ -13,10 +15,14 @@ import WFWorkflowAction from '../interfaces/WF/WFWorkflowAction';
  * postOnFacebook();
  * ```
  */
-
 const postOnFacebook = (): WFWorkflowAction => ({
-  WFWorkflowActionIdentifier: 'is.workflow.actions.postonfacebook',
+  WFWorkflowActionIdentifier: identifier,
   WFWorkflowActionParameters: {},
 });
+
+const invert = () => ({});
+
+postOnFacebook.identifier = identifier;
+postOnFacebook.invert = invert;
 
 export default withActionOutput(postOnFacebook);

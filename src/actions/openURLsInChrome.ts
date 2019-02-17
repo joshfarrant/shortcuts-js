@@ -2,6 +2,8 @@ import { withActionOutput } from '../utils/withActionOutput';
 
 import WFWorkflowAction from '../interfaces/WF/WFWorkflowAction';
 
+const identifier = 'com.google.chrome.ios.openurl';
+
 /**
  * Open URLs in Chrome Action. Opens the inputted URLs in Google Chrome.
  *
@@ -10,8 +12,13 @@ import WFWorkflowAction from '../interfaces/WF/WFWorkflowAction';
  * ```
  */
 const openURLsInChrome = (): WFWorkflowAction => ({
-  WFWorkflowActionIdentifier: 'com.google.chrome.ios.openurl',
+  WFWorkflowActionIdentifier: identifier,
   WFWorkflowActionParameters: {},
 });
+
+const invert = () => ({});
+
+openURLsInChrome.identifier = identifier;
+openURLsInChrome.invert = invert;
 
 export default withActionOutput(openURLsInChrome);

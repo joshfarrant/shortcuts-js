@@ -2,6 +2,8 @@ import { withActionOutput } from '../utils/withActionOutput';
 
 import WFWorkflowAction from '../interfaces/WF/WFWorkflowAction';
 
+const identifier = 'is.workflow.actions.viewresult';
+
 /**
  * @action View Content Graph
  * @section Actions > Scripting > Content
@@ -13,10 +15,14 @@ import WFWorkflowAction from '../interfaces/WF/WFWorkflowAction';
  * viewContentGraph();
  * ```
  */
-
 const viewContentGraph = (): WFWorkflowAction => ({
-  WFWorkflowActionIdentifier: 'is.workflow.actions.viewresult',
+  WFWorkflowActionIdentifier: identifier,
   WFWorkflowActionParameters: {},
 });
+
+const invert = () => ({});
+
+viewContentGraph.identifier = identifier;
+viewContentGraph.invert = invert;
 
 export default withActionOutput(viewContentGraph);

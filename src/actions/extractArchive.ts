@@ -1,5 +1,7 @@
 import WFWorkflowAction from '../interfaces/WF/WFWorkflowAction';
 
+const identifier = 'is.workflow.actions.unzip';
+
 /**
  * @action Extract Archive
  * @section Content Types > Documents > Archives
@@ -11,10 +13,14 @@ import WFWorkflowAction from '../interfaces/WF/WFWorkflowAction';
  * extractArchive();
  * ```
  */
-
 const extractArchive = (): WFWorkflowAction => ({
-  WFWorkflowActionIdentifier: 'is.workflow.actions.unzip',
+  WFWorkflowActionIdentifier: identifier,
   WFWorkflowActionParameters: {},
 });
+
+const invert = () => ({});
+
+extractArchive.identifier = identifier;
+extractArchive.invert = invert;
 
 export default extractArchive;

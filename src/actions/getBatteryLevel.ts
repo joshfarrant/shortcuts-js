@@ -1,5 +1,7 @@
 import WFWorkflowAction from '../interfaces/WF/WFWorkflowAction';
 
+const identifier = 'is.workflow.actions.getbatterylevel';
+
 import { withActionOutput } from '../utils/withActionOutput';
 
 /**
@@ -13,10 +15,14 @@ import { withActionOutput } from '../utils/withActionOutput';
  * getBatteryLevel();
  * ```
  */
-
 const getBatteryLevel = (): WFWorkflowAction => ({
-  WFWorkflowActionIdentifier: 'is.workflow.actions.getbatterylevel',
+  WFWorkflowActionIdentifier: identifier,
   WFWorkflowActionParameters: {},
 });
+
+const invert = () => ({});
+
+getBatteryLevel.identifier = identifier;
+getBatteryLevel.invert = invert;
 
 export default withActionOutput(getBatteryLevel);

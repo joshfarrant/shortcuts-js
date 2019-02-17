@@ -2,6 +2,8 @@ import { withActionOutput } from '../utils/withActionOutput';
 
 import WFWorkflowAction from '../interfaces/WF/WFWorkflowAction';
 
+const identifier = 'is.workflow.actions.getmyworkflows';
+
 /**
  * @action Get My Shortcuts
  * @section Actions > Scripting > Shortcuts
@@ -13,10 +15,14 @@ import WFWorkflowAction from '../interfaces/WF/WFWorkflowAction';
  * getMyShortcuts();
  * ```
  */
-
 const getMyShortcuts = (): WFWorkflowAction => ({
-  WFWorkflowActionIdentifier: 'is.workflow.actions.getmyworkflows',
+  WFWorkflowActionIdentifier: identifier,
   WFWorkflowActionParameters: {},
 });
+
+const invert = () => ({});
+
+getMyShortcuts.identifier = identifier;
+getMyShortcuts.invert = invert;
 
 export default withActionOutput(getMyShortcuts);

@@ -1,5 +1,7 @@
 import WFWorkflowAction from '../interfaces/WF/WFWorkflowAction';
 
+const identifier = 'is.workflow.actions.showdefinition';
+
 /**
  * @action Show Definition
  * @section Content Types > Text >
@@ -11,10 +13,14 @@ import WFWorkflowAction from '../interfaces/WF/WFWorkflowAction';
  * showDefinition();
  * ```
  */
-
 const showDefinition = (): WFWorkflowAction => ({
-  WFWorkflowActionIdentifier: 'is.workflow.actions.showdefinition',
+  WFWorkflowActionIdentifier: identifier,
   WFWorkflowActionParameters: {},
 });
+
+const invert = () => ({});
+
+showDefinition.identifier = identifier;
+showDefinition.invert = invert;
 
 export default showDefinition;

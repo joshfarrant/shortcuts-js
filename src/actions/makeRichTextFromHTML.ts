@@ -1,5 +1,7 @@
 import WFWorkflowAction from '../interfaces/WF/WFWorkflowAction';
 
+const identifier = 'is.workflow.actions.getrichtextfromhtml';
+
 /**
  * @action Make Rich Text from HTML
  * @section Content Types > Text > Rich Text
@@ -11,10 +13,14 @@ import WFWorkflowAction from '../interfaces/WF/WFWorkflowAction';
  * makeRichTextFromHTML();
  * ```
  */
-
 const makeRichTextFromHTML = (): WFWorkflowAction => ({
-  WFWorkflowActionIdentifier: 'is.workflow.actions.getrichtextfromhtml',
+  WFWorkflowActionIdentifier: identifier,
   WFWorkflowActionParameters: {},
 });
+
+const invert = () => ({});
+
+makeRichTextFromHTML.identifier = identifier;
+makeRichTextFromHTML.invert = invert;
 
 export default makeRichTextFromHTML;

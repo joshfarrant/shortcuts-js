@@ -1,5 +1,7 @@
 import WFWorkflowAction from '../interfaces/WF/WFWorkflowAction';
 
+const identifier = 'is.workflow.actions.getcurrentsong';
+
 /**
  * @action Get Current Song
  * @section Content Types > Music > Music
@@ -11,10 +13,14 @@ import WFWorkflowAction from '../interfaces/WF/WFWorkflowAction';
  * getCurrentSong();
  * ```
  */
-
 const getCurrentSong = (): WFWorkflowAction => ({
-  WFWorkflowActionIdentifier: 'is.workflow.actions.getcurrentsong',
+  WFWorkflowActionIdentifier: identifier,
   WFWorkflowActionParameters: {},
 });
+
+const invert = () => ({});
+
+getCurrentSong.identifier = identifier;
+getCurrentSong.invert = invert;
 
 export default getCurrentSong;

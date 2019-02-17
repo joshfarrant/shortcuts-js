@@ -51,7 +51,6 @@
     "docs:build": "npm run docs:json && cd docs && npm run build",
     "docs:json": "typedoc src --json docs/src/api/exported.json --target es6",
     "docs:html": "typedoc src --out documentation --mode file --target es6 --theme default",
-    "postinstall": "cd docs && npm install",
     "preversion": "npm run clean && npm test",
     "version": "npm run build",
     "postversion": "git push && git push --tags"

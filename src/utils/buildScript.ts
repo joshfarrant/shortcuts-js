@@ -7,10 +7,10 @@ import WFWorkflow from '../interfaces/WF/WFWorkflow';
 import WFWorkflowAction from '../interfaces/WF/WFWorkflowAction';
 
 // TODO Can the 'any' be removed from this?
-interface Import {
-  // tslint:disable-next-line no-any
-  (options: any): WFWorkflowAction | WFWorkflowAction[];
-  invert?: (action?: WFWorkflowAction | WFWorkflowAction[]) => {};
+// tslint:disable-next-line no-any
+interface Import<OptionsType = any> {
+  (options: OptionsType): WFWorkflowAction | WFWorkflowAction[];
+  invert?: (action?: WFWorkflowAction | WFWorkflowAction[]) => OptionsType;
   identifier?: string;
 }
 
@@ -18,9 +18,10 @@ interface Imports {
   [name: string]: Import | Imports;
 }
 
-interface FormattedAction {
+// tslint:disable-next-line no-any
+interface FormattedAction<OptionsType = any> {
   name: string;
-  invert: (action: WFWorkflowAction) => {};
+  invert: (action: WFWorkflowAction) => OptionsType;
 }
 
 interface FormattedActions {

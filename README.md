@@ -1,5 +1,3 @@
-# Shortcuts JS
-
 ![Shortcuts JS Logo](./assets/logo.png)
 
 [![GitHub license](https://img.shields.io/badge/license-GPL-blue.svg)](https://github.com/joshfarrant/shortcuts-js/blob/master/LICENSE)

@@ -3,6 +3,12 @@ import { withActionOutput } from '../utils/withActionOutput';
 import WFEncodeMode from '../interfaces/WF/WFEncodeMode';
 import WFWorkflowAction from '../interfaces/WF/WFWorkflowAction';
 
+interface Options {
+  encodeMode?: WFEncodeMode;
+}
+
+const identifier = 'is.workflow.actions.urlencode';
+
 /**
  * @action URL Encode
  * @section Actions > Scripting > X-Callback
@@ -16,19 +22,25 @@ import WFWorkflowAction from '../interfaces/WF/WFWorkflowAction';
  * });
  * ```
  */
-
 const URLEncode = (
   {
-    encodeMode = 'Encode',
-  }: {
     /** The encoding mode to use */
-    encodeMode?: WFEncodeMode,
-  },
+    encodeMode = 'Encode',
+  }: Options,
 ): WFWorkflowAction => ({
-  WFWorkflowActionIdentifier: 'is.workflow.actions.urlencode',
+  WFWorkflowActionIdentifier: identifier,
   WFWorkflowActionParameters: {
     WFEncodeMode: encodeMode,
   },
 });
+
+const invert = (
+  WFAction: WFWorkflowAction,
+): Options => ({
+  encodeMode: WFAction.WFWorkflowActionParameters.WFEncodeMode,
+});
+
+URLEncode.identifier = identifier;
+URLEncode.invert = invert;
 
 export default withActionOutput(URLEncode);

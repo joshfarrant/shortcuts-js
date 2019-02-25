@@ -4,6 +4,12 @@ import WFHashType from '../interfaces/WF/WFHashType';
 import WFSerialization from '../interfaces/WF/WFSerialization';
 import WFWorkflowAction from '../interfaces/WF/WFWorkflowAction';
 
+interface Options {
+  type?: WFSerialization | WFHashType;
+}
+
+const identifier = 'is.workflow.actions.hash';
+
 /**
  * @action Generate Hash
  * @section Actions > Scripting > Files
@@ -17,19 +23,25 @@ import WFWorkflowAction from '../interfaces/WF/WFWorkflowAction';
  * });
  * ```
  */
-
 const generateHash = (
   {
-    type = 'MD5',
-  }: {
     /** The type of hash to use */
-    type?: WFSerialization | WFHashType,
-  },
+    type = 'MD5',
+  }: Options,
 ): WFWorkflowAction => ({
-  WFWorkflowActionIdentifier: 'is.workflow.actions.hash',
+  WFWorkflowActionIdentifier: identifier,
   WFWorkflowActionParameters: {
     WFHashType: type,
   },
 });
+
+const invert = (
+  WFAction: WFWorkflowAction,
+): Options => ({
+  type: WFAction.WFWorkflowActionParameters.WFHashType,
+});
+
+generateHash.identifier = identifier;
+generateHash.invert = invert;
 
 export default withActionOutput(generateHash);

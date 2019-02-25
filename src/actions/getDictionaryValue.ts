@@ -1,6 +1,13 @@
 import WFGetDictionaryValueType from '../interfaces/WF/WFGetDictionaryValueType';
 import WFWorkflowAction from '../interfaces/WF/WFWorkflowAction';
 
+interface Options {
+  key?: string;
+  get?: WFGetDictionaryValueType;
+}
+
+const identifier = 'is.workflow.actions.getvalueforkey';
+
 /**
  * @action Get Dictionary Value
  * @section Actions > Scripting > Dictionaries
@@ -15,23 +22,29 @@ import WFWorkflowAction from '../interfaces/WF/WFWorkflowAction';
  * });
  * ```
  */
-
 const getDictionaryValue = (
   {
-    key = '',
-    get = 'Value',
-  }: {
     /** The key of the dictionary to get */
-    key?: string,
+    key = '',
     /** The thing to get */
-    get?: WFGetDictionaryValueType,
-  },
+    get = 'Value',
+  }: Options,
 ): WFWorkflowAction => ({
-  WFWorkflowActionIdentifier: 'is.workflow.actions.getvalueforkey',
+  WFWorkflowActionIdentifier: identifier,
   WFWorkflowActionParameters: {
     WFDictionaryKey: key,
     WFGetDictionaryValueType: get,
   },
 });
+
+const invert = (
+  WFAction: WFWorkflowAction,
+): Options => ({
+  key: WFAction.WFWorkflowActionParameters.WFDictionaryKey,
+  get: WFAction.WFWorkflowActionParameters.WFGetDictionaryValueType,
+});
+
+getDictionaryValue.identifier = identifier;
+getDictionaryValue.invert = invert;
 
 export default getDictionaryValue;

@@ -1,6 +1,11 @@
+import WFSerialization from '../interfaces/WF/WFSerialization';
 import WFWorkflowAction from '../interfaces/WF/WFWorkflowAction';
 
-import WFSerialization from '../interfaces/WF/WFSerialization';
+interface Options {
+  text?: WFSerialization | string;
+}
+
+const identifier = 'is.workflow.actions.showresult';
 
 /**
  * @action Show Result
@@ -15,19 +20,25 @@ import WFSerialization from '../interfaces/WF/WFSerialization';
  * });
  * ```
  */
-
 const showResult = (
   {
-    text = '',
-  }: {
     /** The text to show in the dialogue */
-    text?: WFSerialization | string,
-  },
+    text = '',
+  }: Options,
 ): WFWorkflowAction => ({
-  WFWorkflowActionIdentifier: 'is.workflow.actions.showresult',
+  WFWorkflowActionIdentifier: identifier,
   WFWorkflowActionParameters: {
     Text: text,
   },
 });
+
+const invert = (
+  WFAction: WFWorkflowAction,
+): Options => ({
+  text: WFAction.WFWorkflowActionParameters.Text,
+});
+
+showResult.identifier = identifier;
+showResult.invert = invert;
 
 export default showResult;

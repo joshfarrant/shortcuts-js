@@ -4,6 +4,13 @@ import WFDateActionMode from '../interfaces/WF/WFDateActionMode';
 import WFSerialization from '../interfaces/WF/WFSerialization';
 import WFWorkflowAction from '../interfaces/WF/WFWorkflowAction';
 
+interface Options {
+  use?: WFSerialization | WFDateActionMode;
+  date?: WFSerialization | string;
+}
+
+const identifier = 'is.workflow.actions.date';
+
 /**
  * @action Date
  * @section Content Types > Calendar > Dates
@@ -18,23 +25,31 @@ import WFWorkflowAction from '../interfaces/WF/WFWorkflowAction';
  * });
  * ```
  */
-
 const date = (
   {
-    use = 'Current Date',
-    date = '29 June 2007',
-  }: {
     /** The type of date to use */
-    use?: WFSerialization | WFDateActionMode;
+    use = 'Current Date',
     /** Custom date string to be parsed */
-    date?: WFSerialization | string;
-  },
+    date = '29 June 2007',
+  }: Options,
 ): WFWorkflowAction => ({
-  WFWorkflowActionIdentifier: 'is.workflow.actions.date',
+  WFWorkflowActionIdentifier: identifier,
   WFWorkflowActionParameters: {
     WFDateActionMode: use,
     ...(use === 'Specified Date' && { WFDateActionDate: date }),
   },
 });
+
+const invert = (
+  WFAction: WFWorkflowAction,
+): Options => ({
+  use: WFAction.WFWorkflowActionParameters.WFDateActionMode,
+  ...(WFAction.WFWorkflowActionParameters.WFDateActionMode === 'Specified Date' && {
+    date: WFAction.WFWorkflowActionParameters.WFDateActionDate,
+  }),
+});
+
+date.identifier = identifier;
+date.invert = invert;
 
 export default withActionOutput(date);

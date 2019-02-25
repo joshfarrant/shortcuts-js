@@ -1,5 +1,11 @@
 import WFWorkflowAction from '../interfaces/WF/WFWorkflowAction';
 
+interface Options {
+  brightness?: number;
+}
+
+const identifier = 'is.workflow.actions.setbrightness';
+
 /**
  * @action Set Brightness
  * @section Actions > Scripting > Device
@@ -16,16 +22,23 @@ import WFWorkflowAction from '../interfaces/WF/WFWorkflowAction';
 
 const setBrightness = (
   {
-    brightness = 100,
-  }: {
     /** The brightness percentage value from 0 to 100 */
-    brightness?: number,
-  },
+    brightness = 100,
+  }: Options,
 ): WFWorkflowAction => ({
-  WFWorkflowActionIdentifier: 'is.workflow.actions.setbrightness',
+  WFWorkflowActionIdentifier: identifier,
   WFWorkflowActionParameters: {
     WFBrightness: brightness / 100,
   },
 });
+
+const invert = (
+  WFAction: WFWorkflowAction,
+): Options => ({
+  brightness: (WFAction.WFWorkflowActionParameters.WFBrightness as number) * 100,
+});
+
+setBrightness.identifier = identifier;
+setBrightness.invert = invert;
 
 export default setBrightness;

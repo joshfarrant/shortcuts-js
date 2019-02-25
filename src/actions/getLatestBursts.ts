@@ -2,6 +2,12 @@ import { withActionOutput } from '../utils/withActionOutput';
 
 import WFWorkflowAction from '../interfaces/WF/WFWorkflowAction';
 
+interface Options {
+  count?: number;
+}
+
+const identifier = 'is.workflow.actions.getlatestbursts';
+
 /**
  * @action Get Latest Bursts
  * @section Content Types > Photos & Video > Photos
@@ -18,16 +24,23 @@ import WFWorkflowAction from '../interfaces/WF/WFWorkflowAction';
 
 const getLatestBursts = (
   {
-    count = 1,
-  }: {
     /** The number of burst photos to get */
-    count?: number,
-  },
+    count = 1,
+  }: Options,
 ): WFWorkflowAction => ({
-  WFWorkflowActionIdentifier: 'is.workflow.actions.getlatestbursts',
+  WFWorkflowActionIdentifier: identifier,
   WFWorkflowActionParameters: {
     WFGetLatestPhotoCount: count,
   },
 });
+
+const invert = (
+  WFAction: WFWorkflowAction,
+): Options => ({
+  count: WFAction.WFWorkflowActionParameters.WFGetLatestPhotoCount,
+});
+
+getLatestBursts.identifier = identifier;
+getLatestBursts.invert = invert;
 
 export default withActionOutput(getLatestBursts);

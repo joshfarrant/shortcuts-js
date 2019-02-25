@@ -1,6 +1,12 @@
 import WFFlashlightSetting from '../interfaces/WF/WFFlashlightSetting';
 import WFWorkflowAction from '../interfaces/WF/WFWorkflowAction';
 
+interface Options {
+  setting?: WFFlashlightSetting;
+}
+
+const identifier = 'is.workflow.actions.flashlight';
+
 /**
  * @action Set Flashlight
  * @section Actions > Scripting > Device
@@ -14,19 +20,25 @@ import WFWorkflowAction from '../interfaces/WF/WFWorkflowAction';
  * });
  * ```
  */
-
 const setTorch = (
   {
-    setting = 'On',
-  }: {
     /** The state to set for the torch */
-    setting?: WFFlashlightSetting,
-  },
+    setting = 'On',
+  }: Options,
 ): WFWorkflowAction => ({
-  WFWorkflowActionIdentifier: 'is.workflow.actions.flashlight',
+  WFWorkflowActionIdentifier: identifier,
   WFWorkflowActionParameters: {
     WFFlashlightSetting: setting,
   },
 });
+
+const invert = (
+  WFAction: WFWorkflowAction,
+): Options => ({
+  setting: WFAction.WFWorkflowActionParameters.WFFlashlightSetting,
+});
+
+setTorch.identifier = identifier;
+setTorch.invert = invert;
 
 export default setTorch;

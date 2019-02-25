@@ -3,6 +3,12 @@ import { withActionOutput } from '../utils/withActionOutput';
 import WFSerialization from '../interfaces/WF/WFSerialization';
 import WFWorkflowAction from '../interfaces/WF/WFWorkflowAction';
 
+interface Options {
+  text?: WFSerialization | string;
+}
+
+const identifier = 'is.workflow.actions.gettext';
+
 /**
  * @action Text
  * @section Content Types > Text >
@@ -16,19 +22,25 @@ import WFWorkflowAction from '../interfaces/WF/WFWorkflowAction';
  * });
  * ```
  */
-
 const text = (
   {
-    text = '',
-  }: {
     /** The text to set */
-    text?: WFSerialization | string,
-  },
+    text = '',
+  }: Options,
 ): WFWorkflowAction => ({
-  WFWorkflowActionIdentifier: 'is.workflow.actions.gettext',
+  WFWorkflowActionIdentifier: identifier,
   WFWorkflowActionParameters: {
     WFTextActionText: text,
   },
 });
+
+const invert = (
+  WFAction: WFWorkflowAction,
+): Options => ({
+  text: WFAction.WFWorkflowActionParameters.WFTextActionText,
+});
+
+text.identifier = identifier;
+text.invert = invert;
 
 export default withActionOutput(text);

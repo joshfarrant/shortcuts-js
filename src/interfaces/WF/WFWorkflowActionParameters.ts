@@ -28,6 +28,7 @@ import WFStatisticsOperation from './WFStatisticsOperation';
 import WFTimeFormatStyle from './WFTimeFormatStyle';
 import WFTimeUntilReferenceDate from './WFTimeUntilReferenceDate';
 import WFTimeUntilUnit from './WFTimeUntilUnit';
+import WFWiFiDetail from './WFWiFiDetail';
 
 interface WFWorkflowActionParameters {
   Advanced?: boolean;
@@ -53,6 +54,7 @@ interface WFWorkflowActionParameters {
   WFAskActionPrompt?: WFSerialization | string;
   WFBase64LineBreakMode?: WFSerialization | WFBase64LineBreakMode;
   WFBrightness?: number;
+  WFCellularDetail?: WFNetworkDetailsNetwork;
   WFCommentActionText?: string;
   WFCondition?: WFCondition;
   WFConditionalActionString?: string;
@@ -123,6 +125,7 @@ interface WFWorkflowActionParameters {
   WFVariable?: WFSerialization | string;
   WFVariableName?: string;
   WFVolume?: number;
+  WFWiFiDetail?: WFWiFiDetail;
   WFWorkflowName?: string;
   WFZIPName?: WFSerialization | string;
 }

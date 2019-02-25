@@ -6,6 +6,13 @@ import WFSerialization from '../interfaces/WF/WFSerialization';
 import WFWiFiDetail from '../interfaces/WF/WFWiFiDetail';
 import WFWorkflowAction from '../interfaces/WF/WFWorkflowAction';
 
+interface Options {
+  network?: WFNetworkDetailsNetwork;
+  attribute?: WFSerialization | WFWiFiDetail | WFCellularDetail;
+}
+
+const identifier = 'is.workflow.actions.getwifi';
+
 /**
  * @action Get Network Details
  * @section Actions > Scripting > Device
@@ -25,17 +32,13 @@ import WFWorkflowAction from '../interfaces/WF/WFWorkflowAction';
  * });
  * ```
  */
-
 const getNetworkDetails = (
   {
-    network = 'Wi-Fi',
-    attribute = 'Network Name',
-  }: {
     /** The type of network to look at */
-    network?: WFNetworkDetailsNetwork,
+    network = 'Wi-Fi',
     /** The particular network detail to retrieve */
-    attribute?: WFSerialization | WFWiFiDetail | WFCellularDetail,
-  },
+    attribute = 'Network Name',
+  }: Options,
 ): WFWorkflowAction => {
   let detailKey = 'WFWiFiDetail';
   if (network === 'Cellular') {
@@ -43,12 +46,32 @@ const getNetworkDetails = (
   }
 
   return {
-    WFWorkflowActionIdentifier: 'is.workflow.actions.getwifi',
+    WFWorkflowActionIdentifier: identifier,
     WFWorkflowActionParameters: {
       WFNetworkDetailsNetwork: network,
       [detailKey]: attribute,
     },
   };
 };
+
+const invert = (
+  WFAction: WFWorkflowAction,
+): Options => {
+  let network: Options['network'] = 'Wi-Fi';
+  let attribute: Options['attribute'] = WFAction.WFWorkflowActionParameters.WFWiFiDetail;
+
+  if (WFAction.WFWorkflowActionParameters.WFCellularDetail) {
+    network = 'Cellular';
+    attribute = WFAction.WFWorkflowActionParameters.WFCellularDetail as Options['attribute'];
+  }
+
+  return {
+    network,
+    attribute,
+  };
+};
+
+getNetworkDetails.identifier = identifier;
+getNetworkDetails.invert = invert;
 
 export default withActionOutput(getNetworkDetails);

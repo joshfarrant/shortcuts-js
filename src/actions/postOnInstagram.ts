@@ -1,5 +1,11 @@
 import WFWorkflowAction from '../interfaces/WF/WFWorkflowAction';
 
+interface Options {
+  caption?: string;
+}
+
+const identifier = 'com.burbn.instagram.openin';
+
 /**
  * @action Post on Instagram
  * @section Content Types > Sharing > Instagram
@@ -13,19 +19,25 @@ import WFWorkflowAction from '../interfaces/WF/WFWorkflowAction';
  * });
  * ```
  */
-
 const postOnInstagram = (
   {
-    caption = '',
-  }: {
     /** Photo caption */
-    caption?: string,
-  },
+    caption = '',
+  }: Options,
 ): WFWorkflowAction => ({
-  WFWorkflowActionIdentifier: 'com.burbn.instagram.openin',
+  WFWorkflowActionIdentifier: identifier,
   WFWorkflowActionParameters: {
     InstagramCaption: caption,
   },
 });
+
+const invert = (
+  WFAction: WFWorkflowAction,
+): Options => ({
+  caption: WFAction.WFWorkflowActionParameters.InstagramCaption,
+});
+
+postOnInstagram.identifier = identifier;
+postOnInstagram.invert = invert;
 
 export default postOnInstagram;

@@ -1,5 +1,11 @@
 import WFWorkflowAction from '../interfaces/WF/WFWorkflowAction';
 
+interface Options {
+  volume?: number;
+}
+
+const identifier = 'is.workflow.actions.setvolume';
+
 /**
  * @action Set Volume
  * @section Content Types > Music > Playback
@@ -13,19 +19,25 @@ import WFWorkflowAction from '../interfaces/WF/WFWorkflowAction';
  * });
  * ```
  */
-
 const setVolume = (
   {
+    /** Number between 0 and 100 to set the volume to */
     volume = 50,
-  }: {
-    /** Number between 0 & 100 to set the volume to */
-    volume ?: number,
-  },
+  }: Options,
 ): WFWorkflowAction => ({
-  WFWorkflowActionIdentifier: 'is.workflow.actions.setvolume',
+  WFWorkflowActionIdentifier: identifier,
   WFWorkflowActionParameters: {
     WFVolume: volume / 100,
   },
 });
+
+const invert = (
+  WFAction: WFWorkflowAction,
+): Options => ({
+  volume: (WFAction.WFWorkflowActionParameters.WFVolume as number) * 100,
+});
+
+setVolume.identifier = identifier;
+setVolume.invert = invert;
 
 export default setVolume;

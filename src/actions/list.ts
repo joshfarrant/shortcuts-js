@@ -2,6 +2,12 @@ import { withActionOutput } from '../utils/withActionOutput';
 
 import WFWorkflowAction from '../interfaces/WF/WFWorkflowAction';
 
+interface Options {
+  value?: string[];
+}
+
+const identifier = 'is.workflow.actions.list';
+
 /**
  * @action List
  * @section Actions > Scripting > Lists
@@ -21,19 +27,25 @@ import WFWorkflowAction from '../interfaces/WF/WFWorkflowAction';
  * });
  * ```
  */
-
 const list = (
   {
-    value = [],
-  }: {
     /** The list array */
-    value?: string[],
-  },
+    value = [],
+  }: Options,
 ): WFWorkflowAction => ({
-  WFWorkflowActionIdentifier: 'is.workflow.actions.list',
+  WFWorkflowActionIdentifier: identifier,
   WFWorkflowActionParameters: {
     WFItems: [...value],
   },
 });
+
+const invert = (
+  WFAction: WFWorkflowAction,
+): Options => ({
+  value: WFAction.WFWorkflowActionParameters.WFItems as Options['value'],
+});
+
+list.identifier = identifier;
+list.invert = invert;
 
 export default withActionOutput(list);

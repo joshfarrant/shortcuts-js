@@ -3,6 +3,12 @@ import { withActionOutput } from '../utils/withActionOutput';
 import WFMapsApps from '../interfaces/WF/WFMapsApps';
 import WFWorkflowAction from '../interfaces/WF/WFWorkflowAction';
 
+interface Options {
+  app?: WFMapsApps;
+}
+
+const identifier = 'is.workflow.actions.searchmaps';
+
 /**
  * @action Show in Maps
  * @section Content Types > Location > Maps
@@ -16,19 +22,25 @@ import WFWorkflowAction from '../interfaces/WF/WFWorkflowAction';
  * });
  * ```
  */
-
 const showInMaps = (
   {
-    app = 'Maps',
-  }: {
     /** The maps app to use */
-    app?: WFMapsApps,
-  },
+    app = 'Maps',
+  }: Options,
 ): WFWorkflowAction => ({
-  WFWorkflowActionIdentifier: 'is.workflow.actions.searchmaps',
+  WFWorkflowActionIdentifier: identifier,
   WFWorkflowActionParameters: {
     WFSearchMapsActionApp: app,
   },
 });
+
+const invert = (
+  WFAction: WFWorkflowAction,
+): Options => ({
+  app: WFAction.WFWorkflowActionParameters.WFSearchMapsActionApp as WFMapsApps,
+});
+
+showInMaps.identifier = identifier;
+showInMaps.invert = invert;
 
 export default withActionOutput(showInMaps);

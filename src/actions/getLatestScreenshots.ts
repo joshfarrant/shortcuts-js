@@ -2,6 +2,12 @@ import { withActionOutput } from '../utils/withActionOutput';
 
 import WFWorkflowAction from '../interfaces/WF/WFWorkflowAction';
 
+interface Options {
+  count?: number;
+}
+
+const identifier = 'is.workflow.actions.getlastscreenshot';
+
 /**
  * @action Get Latest Screenshots
  * @section Content Types > Photos & Video > Photos
@@ -15,19 +21,25 @@ import WFWorkflowAction from '../interfaces/WF/WFWorkflowAction';
  * });
  * ```
  */
-
 const getLatestScreenshots = (
   {
-    count = 1,
-  }: {
     /** The number of screenshots to get */
-    count?: number,
-  },
+    count = 1,
+  }: Options,
 ): WFWorkflowAction => ({
-  WFWorkflowActionIdentifier: 'is.workflow.actions.getlastscreenshot',
+  WFWorkflowActionIdentifier: identifier,
   WFWorkflowActionParameters: {
     WFGetLatestPhotoCount: count,
   },
 });
+
+const invert = (
+  WFAction: WFWorkflowAction,
+): Options => ({
+  count: WFAction.WFWorkflowActionParameters.WFGetLatestPhotoCount,
+});
+
+getLatestScreenshots.identifier = identifier;
+getLatestScreenshots.invert = invert;
 
 export default withActionOutput(getLatestScreenshots);

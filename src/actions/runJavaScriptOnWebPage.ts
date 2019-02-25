@@ -3,6 +3,12 @@ import { withActionOutput } from '../utils/withActionOutput';
 import WFSerialization from '../interfaces/WF/WFSerialization';
 import WFWorkflowAction from '../interfaces/WF/WFWorkflowAction';
 
+interface Options {
+  text?: WFSerialization | string;
+}
+
+const identifier = 'is.workflow.actions.runjavascriptonwebpage';
+
 /**
  * @action Run JavaScript on Web Page
  * @section Content Types > Web > Safari
@@ -29,19 +35,25 @@ import WFWorkflowAction from '../interfaces/WF/WFWorkflowAction';
  * });
  * ```
  */
-
 const runJavaScriptOnWebPage = (
   {
-    text = '',
-  }: {
     /** The JavaScript to run */
-    text?: WFSerialization | string,
-  },
+    text = '',
+  }: Options,
 ): WFWorkflowAction => ({
-  WFWorkflowActionIdentifier: 'is.workflow.actions.runjavascriptonwebpage',
+  WFWorkflowActionIdentifier: identifier,
   WFWorkflowActionParameters: {
     WFJavaScript: text,
   },
 });
+
+const invert = (
+  WFAction: WFWorkflowAction,
+): Options => ({
+  text: WFAction.WFWorkflowActionParameters.WFJavaScript,
+});
+
+runJavaScriptOnWebPage.identifier = identifier;
+runJavaScriptOnWebPage.invert = invert;
 
 export default withActionOutput(runJavaScriptOnWebPage);

@@ -2,6 +2,12 @@ import { withActionOutput } from '../utils/withActionOutput';
 
 import WFWorkflowAction from '../interfaces/WF/WFWorkflowAction';
 
+interface Options {
+  number?: number;
+}
+
+const identifier = 'is.workflow.actions.number';
+
 /**
  * @action Number
  * @section Actions > Scripting > Maths
@@ -15,19 +21,25 @@ import WFWorkflowAction from '../interfaces/WF/WFWorkflowAction';
  * });
  * ```
  */
-
 const number = (
   {
-    number = 0,
-  }: {
     /** The number to set */
-    number?: number;
-  },
+    number = 0,
+  }: Options,
 ): WFWorkflowAction => ({
-  WFWorkflowActionIdentifier: 'is.workflow.actions.number',
+  WFWorkflowActionIdentifier: identifier,
   WFWorkflowActionParameters: {
     WFNumberActionNumber: number,
   },
 });
+
+const invert = (
+  WFAction: WFWorkflowAction,
+): Options => ({
+  number: WFAction.WFWorkflowActionParameters.WFNumberActionNumber,
+});
+
+number.identifier = identifier;
+number.invert = invert;
 
 export default withActionOutput(number);

@@ -2,6 +2,12 @@ import { withActionOutput } from '../utils/withActionOutput';
 
 import WFWorkflowAction from '../interfaces/WF/WFWorkflowAction';
 
+interface Options {
+  count?: number;
+}
+
+const identifier = 'is.workflow.actions.getlastvideo';
+
 /**
  * @action Get Latest Videos
  * @section Content Types > Photos & Video > Photos
@@ -15,19 +21,25 @@ import WFWorkflowAction from '../interfaces/WF/WFWorkflowAction';
  * });
  * ```
  */
-
 const getLatestVideos = (
   {
-    count = 1,
-  }: {
     /** The number of videos to get */
-    count?: number,
-  },
+    count = 1,
+  }: Options,
 ): WFWorkflowAction => ({
-  WFWorkflowActionIdentifier: 'is.workflow.actions.getlastvideo',
+  WFWorkflowActionIdentifier: identifier,
   WFWorkflowActionParameters: {
     WFGetLatestPhotoCount: count,
   },
 });
+
+const invert = (
+  WFAction: WFWorkflowAction,
+): Options => ({
+  count: WFAction.WFWorkflowActionParameters.WFGetLatestPhotoCount,
+});
+
+getLatestVideos.identifier = identifier;
+getLatestVideos.invert = invert;
 
 export default withActionOutput(getLatestVideos);

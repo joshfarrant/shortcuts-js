@@ -3,6 +3,12 @@ import { withActionOutput } from '../utils/withActionOutput';
 import WFCountType from '../interfaces/WF/WFCountType';
 import WFWorkflowAction from '../interfaces/WF/WFWorkflowAction';
 
+interface Options {
+  type?: WFCountType;
+}
+
+const identifier = 'is.workflow.actions.count';
+
 /**
  * @action Count
  * @section Actions > Scripting > Content
@@ -20,16 +26,23 @@ import WFWorkflowAction from '../interfaces/WF/WFWorkflowAction';
 
 const count = (
   {
-    type = 'Items',
-  }: {
     /** The thing to count */
-    type?: WFCountType;
-  },
+    type = 'Items',
+  }: Options,
 ): WFWorkflowAction => ({
-  WFWorkflowActionIdentifier: 'is.workflow.actions.count',
+  WFWorkflowActionIdentifier: identifier,
   WFWorkflowActionParameters: {
     WFCountType: type,
   },
 });
+
+const invert = (
+  WFAction: WFWorkflowAction,
+): Options => ({
+  type: WFAction.WFWorkflowActionParameters.WFCountType,
+});
+
+count.identifier = identifier;
+count.invert = invert;
 
 export default withActionOutput(count);

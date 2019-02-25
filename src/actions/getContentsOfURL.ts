@@ -5,7 +5,17 @@ import WFHTTPBodyType from '../interfaces/WF/WFHTTPBodyType';
 import WFHTTPMethod from '../interfaces/WF/WFHTTPMethod';
 import WFWorkflowAction from '../interfaces/WF/WFWorkflowAction';
 
-/** @ignore */
+interface Options {
+  headers?: {
+    [x: string]: Value,
+  };
+  method?: WFHTTPMethod;
+  requestBodyType?: WFHTTPBodyType;
+  requestBody?: {
+    [x: string]: Value,
+  };
+}
+
 type Value = (
   string
   | number
@@ -13,6 +23,8 @@ type Value = (
   | []
   | {}
 );
+
+const identifier = 'is.workflow.actions.downloadurl';
 
 /**
  * @action Get Contents of URL
@@ -39,30 +51,20 @@ type Value = (
  * });
  * ```
  */
-
 const getContentsOfURL = (
   {
-    headers = {},
-    method = 'GET',
-    requestBodyType = 'JSON',
-    requestBody = {},
-  }: {
     /** The headers to attach to the request */
-    headers?: {
-      [x: string]: Value,
-    };
+    headers = {},
     /** The HTTP method to use */
-    method?: WFHTTPMethod;
+    method = 'GET',
     /** The request body type */
-    requestBodyType?: WFHTTPBodyType;
+    requestBodyType = 'JSON',
     /** The request body */
-    requestBody?: {
-      [x: string]: Value,
-    };
-  },
+    requestBody = {},
+  }: Options,
 ): WFWorkflowAction => {
   const action: WFWorkflowAction = {
-    WFWorkflowActionIdentifier: 'is.workflow.actions.downloadurl',
+    WFWorkflowActionIdentifier: identifier,
     WFWorkflowActionParameters: {
       WFHTTPHeaders: buildSerialization(headers),
       ShowHeaders: Object.entries(headers).length > 0,

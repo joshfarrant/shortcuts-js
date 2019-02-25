@@ -1,6 +1,14 @@
 import WFSerialization from '../interfaces/WF/WFSerialization';
 import WFWorkflowAction from '../interfaces/WF/WFWorkflowAction';
 
+interface Options {
+  title?: WFSerialization | string;
+  message?: WFSerialization | string;
+  showCancelButton?: boolean;
+}
+
+const identifier = 'is.workflow.actions.alert';
+
 /**
  * @action Show Alert
  * @section Actions > Scripting > Notification
@@ -16,27 +24,33 @@ import WFWorkflowAction from '../interfaces/WF/WFWorkflowAction';
  * });
  * ```
  */
-
 const showAlert = (
   {
-    title = 'Alert',
-    message = 'Do you want to continue?',
-    showCancelButton = true,
-  }: {
     /** The title of the alert */
-    title?: WFSerialization | string,
+    title = 'Alert',
     /** The message of the alert */
-    message?: WFSerialization | string,
+    message = 'Do you want to continue?',
     /** Whether a cancel button should be shown */
-    showCancelButton?: boolean,
-  },
+    showCancelButton = true,
+  }: Options,
 ): WFWorkflowAction => ({
-  WFWorkflowActionIdentifier: 'is.workflow.actions.alert',
+  WFWorkflowActionIdentifier: identifier,
   WFWorkflowActionParameters: {
     WFAlertActionTitle: title,
     WFAlertActionMessage: message,
     WFAlertActionCancelButtonShown: showCancelButton,
   },
 });
+
+const invert = (
+  WFAction: WFWorkflowAction,
+): Options => ({
+  title: WFAction.WFWorkflowActionParameters.WFAlertActionTitle,
+  message: WFAction.WFWorkflowActionParameters.WFAlertActionMessage,
+  showCancelButton: WFAction.WFWorkflowActionParameters.WFAlertActionCancelButtonShown,
+});
+
+showAlert.identifier = identifier;
+showAlert.invert = invert;
 
 export default showAlert;

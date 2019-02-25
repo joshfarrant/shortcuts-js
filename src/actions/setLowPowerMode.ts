@@ -1,5 +1,11 @@
 import WFWorkflowAction from '../interfaces/WF/WFWorkflowAction';
 
+interface Options {
+  value?: boolean;
+}
+
+const identifier = 'is.workflow.actions.lowpowermode.set';
+
 /**
  * @action Set Low Power Mode
  * @section Actions > Scripting > Device
@@ -13,19 +19,25 @@ import WFWorkflowAction from '../interfaces/WF/WFWorkflowAction';
  * });
  * ```
  */
-
 const setLowPowerMode = (
   {
-    value = true,
-  }: {
     /** Enable or disable low power mode */
-    value?: boolean,
-  },
+    value = true,
+  }: Options,
 ): WFWorkflowAction => ({
-  WFWorkflowActionIdentifier: 'is.workflow.actions.lowpowermode.set',
+  WFWorkflowActionIdentifier: identifier,
   WFWorkflowActionParameters: {
     OnValue: value,
   },
 });
+
+const invert = (
+  WFAction: WFWorkflowAction,
+): Options => ({
+  value: WFAction.WFWorkflowActionParameters.OnValue,
+});
+
+setLowPowerMode.identifier = identifier;
+setLowPowerMode.invert = invert;
 
 export default setLowPowerMode;

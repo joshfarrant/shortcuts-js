@@ -2,6 +2,13 @@ import { withActionOutput } from '../utils/withActionOutput';
 
 import WFWorkflowAction from '../interfaces/WF/WFWorkflowAction';
 
+interface Options {
+  name: string;
+  show?: boolean;
+}
+
+const identifier = 'is.workflow.actions.runworkflow';
+
 /**
  * @action Run Shortcut
  * @section Actions > Scripting > Shortcuts
@@ -16,23 +23,29 @@ import WFWorkflowAction from '../interfaces/WF/WFWorkflowAction';
  * });
  * ```
  */
-
 const runShortcut = (
   {
-    name,
-    show = false,
-  }: {
     /** The name of the shortcut to run */
-    name: string,
+    name,
     /** Whether to show the shortcut while it runs */
-    show?: boolean,
-  },
+    show = false,
+  }: Options,
 ): WFWorkflowAction => ({
-  WFWorkflowActionIdentifier: 'is.workflow.actions.runworkflow',
+  WFWorkflowActionIdentifier: identifier,
   WFWorkflowActionParameters: {
     WFWorkflowName: name,
     WFShowWorkflow: show,
   },
 });
+
+const invert = (
+  WFAction: WFWorkflowAction,
+): Options => ({
+  name: WFAction.WFWorkflowActionParameters.WFWorkflowName as string,
+  show: WFAction.WFWorkflowActionParameters.WFShowWorkflow,
+});
+
+runShortcut.identifier = identifier;
+runShortcut.invert = invert;
 
 export default withActionOutput(runShortcut);

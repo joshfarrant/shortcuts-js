@@ -1,5 +1,11 @@
 import WFWorkflowAction from '../interfaces/WF/WFWorkflowAction';
 
+interface Options {
+  value?: boolean;
+}
+
+const identifier = 'is.workflow.actions.bluetooth.set';
+
 /**
  * @action Set Bluetooth
  * @section Actions > Scripting > Device
@@ -13,19 +19,25 @@ import WFWorkflowAction from '../interfaces/WF/WFWorkflowAction';
  * });
  * ```
  */
-
 const setBluetooth = (
   {
-    value = true,
-  }: {
     /** Enable or disable Bluetooth */
-    value?: boolean,
-  },
+    value = true,
+  }: Options,
 ): WFWorkflowAction => ({
-  WFWorkflowActionIdentifier: 'is.workflow.actions.bluetooth.set',
+  WFWorkflowActionIdentifier: identifier,
   WFWorkflowActionParameters: {
     OnValue: value,
   },
 });
+
+const invert = (
+  WFAction: WFWorkflowAction,
+): Options => ({
+  value: WFAction.WFWorkflowActionParameters.OnValue,
+});
+
+setBluetooth.identifier = identifier;
+setBluetooth.invert = invert;
 
 export default setBluetooth;

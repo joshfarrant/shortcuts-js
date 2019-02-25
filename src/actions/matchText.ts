@@ -3,6 +3,13 @@ import { withActionOutput } from '../utils/withActionOutput';
 import WFSerialization from '../interfaces/WF/WFSerialization';
 import WFWorkflowAction from '../interfaces/WF/WFWorkflowAction';
 
+interface Options  {
+  pattern?: WFSerialization | string;
+  caseSensitive?: boolean;
+}
+
+const identifier = 'is.workflow.actions.text.match';
+
 /**
  * @action Match Text
  * @section Content Types > Text > Text Editing
@@ -17,23 +24,29 @@ import WFWorkflowAction from '../interfaces/WF/WFWorkflowAction';
  * });
  * ```
  */
-
 const matchText = (
   {
-    pattern = '',
-    caseSensitive = false,
-  }: {
     /** The pattern to match */
-    pattern?: WFSerialization | string,
+    pattern = '',
     /** Whether to be case sensitive **/
-    caseSensitive?: boolean,
-  },
+    caseSensitive = false,
+  }: Options,
 ): WFWorkflowAction => ({
-  WFWorkflowActionIdentifier: 'is.workflow.actions.text.match',
+  WFWorkflowActionIdentifier: identifier,
   WFWorkflowActionParameters: {
     WFMatchTextPattern: pattern,
     WFMatchTextCaseSensitive: caseSensitive,
   },
 });
+
+const invert = (
+  WFAction: WFWorkflowAction,
+): Options => ({
+  pattern: WFAction.WFWorkflowActionParameters.WFMatchTextPattern,
+  caseSensitive: WFAction.WFWorkflowActionParameters.WFMatchTextCaseSensitive,
+});
+
+matchText.identifier = identifier;
+matchText.invert = invert;
 
 export default withActionOutput(matchText);

@@ -1,5 +1,11 @@
 import WFWorkflowAction from '../interfaces/WF/WFWorkflowAction';
 
+interface Options {
+  value?: boolean;
+}
+
+const identifier = 'is.workflow.actions.airplanemode.set';
+
 /**
  * @action Set Airplane Mode
  * @section Actions > Scripting > Device
@@ -13,19 +19,25 @@ import WFWorkflowAction from '../interfaces/WF/WFWorkflowAction';
  * });
  * ```
  */
-
 const setAirplaneMode = (
   {
-    value = true,
-  }: {
     /** Enable or disable airplane mode */
-    value?: boolean,
-  },
+    value = true,
+  }: Options,
 ): WFWorkflowAction => ({
-  WFWorkflowActionIdentifier: 'is.workflow.actions.airplanemode.set',
+  WFWorkflowActionIdentifier: identifier,
   WFWorkflowActionParameters: {
     OnValue: value,
   },
 });
+
+const invert = (
+  WFAction: WFWorkflowAction,
+): Options => ({
+  value: WFAction.WFWorkflowActionParameters.OnValue,
+});
+
+setAirplaneMode.identifier = identifier;
+setAirplaneMode.invert = invert;
 
 export default setAirplaneMode;

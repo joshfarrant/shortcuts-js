@@ -4,6 +4,13 @@ import WFArchiveFormat from '../interfaces/WF/WFArchiveFormat';
 import WFSerialization from '../interfaces/WF/WFSerialization';
 import WFWorkflowAction from '../interfaces/WF/WFWorkflowAction';
 
+interface Options {
+  format?: WFArchiveFormat;
+  name?: WFSerialization | string;
+}
+
+const identifier = 'is.workflow.actions.makezip';
+
 /**
  * @action Make Archive
  * @section Content Types > Documents > Archives
@@ -18,23 +25,29 @@ import WFWorkflowAction from '../interfaces/WF/WFWorkflowAction';
  * });
  * ```
  */
-
 const makeArchive = (
   {
-    format = 'zip',
-    name = '',
-  }: {
     /** The operation to perform */
-    format?: WFArchiveFormat,
+    format = 'zip',
     /** Set the name of the Archive */
-    name?: WFSerialization | string,
-  },
+    name = '',
+  }: Options,
 ): WFWorkflowAction => ({
-  WFWorkflowActionIdentifier: 'is.workflow.actions.makezip',
+  WFWorkflowActionIdentifier: identifier,
   WFWorkflowActionParameters: {
     WFArchiveFormat: format,
     WFZIPName: name,
   },
 });
+
+const invert = (
+  WFAction: WFWorkflowAction,
+): Options => ({
+  format: WFAction.WFWorkflowActionParameters.WFArchiveFormat,
+  name: WFAction.WFWorkflowActionParameters.WFZIPName,
+});
+
+makeArchive.identifier = identifier;
+makeArchive.invert = invert;
 
 export default withActionOutput(makeArchive);

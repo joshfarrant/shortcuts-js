@@ -3,6 +3,13 @@ import { withActionOutput } from '../utils/withActionOutput';
 import WFSerialization from '../interfaces/WF/WFSerialization';
 import WFWorkflowAction from '../interfaces/WF/WFWorkflowAction';
 
+interface Options {
+  minimum?: WFSerialization | number;
+  maximum?: WFSerialization | number;
+}
+
+const identifier = 'is.workflow.actions.number.random';
+
 /**
  * @action Random Number
  * @section Actions > Scripting > Maths
@@ -17,23 +24,29 @@ import WFWorkflowAction from '../interfaces/WF/WFWorkflowAction';
  * });
  * ```
  */
-
 const randomNumber = (
   {
-    minimum = 0,
-    maximum = 100,
-  }: {
     /** The minimum */
-    minimum?: WFSerialization | number,
+    minimum = 0,
     /** The maximum */
-    maximum?: WFSerialization | number,
-  },
+    maximum = 100,
+  }: Options,
 ): WFWorkflowAction => ({
-  WFWorkflowActionIdentifier: 'is.workflow.actions.number.random',
+  WFWorkflowActionIdentifier: identifier,
   WFWorkflowActionParameters: {
     WFRandomNumberMinimum: minimum,
     WFRandomNumberMaximum: maximum,
   },
 });
+
+const invert = (
+  WFAction: WFWorkflowAction,
+): Options => ({
+  minimum: WFAction.WFWorkflowActionParameters.WFRandomNumberMinimum,
+  maximum: WFAction.WFWorkflowActionParameters.WFRandomNumberMaximum,
+});
+
+randomNumber.identifier = identifier;
+randomNumber.invert = invert;
 
 export default withActionOutput(randomNumber);

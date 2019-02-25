@@ -33,7 +33,4 @@ const addToVariable = (
   },
 });
 
-addToVariable.identifier = identifier;
-// TODO Add invert function
-
 export default addToVariable;

@@ -4,6 +4,13 @@ import WFSerialization from '../interfaces/WF/WFSerialization';
 import WFTimeUntilUnit from '../interfaces/WF/WFTimeUntilUnit';
 import WFWorkflowAction from '../interfaces/WF/WFWorkflowAction';
 
+interface Options {
+  unit?: WFSerialization | WFTimeUntilUnit;
+  date?: WFSerialization | string;
+}
+
+const identifier = 'is.workflow.actions.gettimebetweendates';
+
 /**
  * @action Get Time Between Dates
  * @section Content Types > Calendar > Dates
@@ -18,23 +25,31 @@ import WFWorkflowAction from '../interfaces/WF/WFWorkflowAction';
  * });
  * ```
  */
-
 const getTimeBetweenDates = (
   {
-    unit = 'Minutes',
-    date = '',
-  }: {
     /** The unit of time for the result. Defaults to 'Minutes' */
-    unit?: WFSerialization | WFTimeUntilUnit,
+    unit = 'Minutes',
     /** The date/time to calculate the difference from. Defaults to empty string */
-    date?: WFSerialization | string,
-  },
+    date = '',
+  }: Options,
 ): WFWorkflowAction => ({
-  WFWorkflowActionIdentifier: 'is.workflow.actions.gettimebetweendates',
+  WFWorkflowActionIdentifier: identifier,
   WFWorkflowActionParameters: {
-    ...(unit !== 'Minutes' && { WFTimeUntilUnit: unit }),
+    WFTimeUntilUnit: unit,
     ...(date !== '' && { WFTimeUntilReferenceDate: 'Other', WFTimeUntilCustomDate: date }),
   },
 });
+
+const invert = (
+  WFAction: WFWorkflowAction,
+): Options => ({
+  unit: WFAction.WFWorkflowActionParameters.WFTimeUntilUnit,
+  ...(WFAction.WFWorkflowActionParameters.WFTimeUntilCustomDate && {
+    date: WFAction.WFWorkflowActionParameters.WFTimeUntilCustomDate,
+  }),
+});
+
+getTimeBetweenDates.identifier = identifier;
+getTimeBetweenDates.invert = invert;
 
 export default withActionOutput(getTimeBetweenDates);

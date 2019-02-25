@@ -1,5 +1,11 @@
 import WFWorkflowAction from '../interfaces/WF/WFWorkflowAction';
 
+interface Options {
+  time?: number;
+}
+
+const identifier = 'is.workflow.actions.delay';
+
 /**
  * @action Wait
  * @section Actions > Scripting > Control Flow
@@ -13,19 +19,25 @@ import WFWorkflowAction from '../interfaces/WF/WFWorkflowAction';
  * });
  * ```
  */
-
 const wait = (
   {
-    time = 1,
-  }: {
     /** The number of seconds to wait */
-    time?: number,
-  },
+    time = 1,
+  }: Options,
 ): WFWorkflowAction => ({
-  WFWorkflowActionIdentifier: 'is.workflow.actions.delay',
+  WFWorkflowActionIdentifier: identifier,
   WFWorkflowActionParameters: {
     WFDelayTime: time,
   },
 });
+
+const invert = (
+  WFAction: WFWorkflowAction,
+): Options => ({
+  time: WFAction.WFWorkflowActionParameters.WFDelayTime,
+});
+
+wait.identifier = identifier;
+wait.invert = invert;
 
 export default wait;

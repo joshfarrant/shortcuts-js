@@ -2,6 +2,12 @@ import { withActionOutput } from '../utils/withActionOutput';
 
 import WFWorkflowAction from '../interfaces/WF/WFWorkflowAction';
 
+interface Options {
+  count?: number;
+}
+
+const identifier = 'is.workflow.actions.getlatestlivephotos';
+
 /**
  * @action Get Latest Live Photos
  * @section Content Types > Photos & Video > Photos
@@ -15,19 +21,25 @@ import WFWorkflowAction from '../interfaces/WF/WFWorkflowAction';
  * });
  * ```
  */
-
 const getLatestLivePhotos = (
   {
-    count = 1,
-  }: {
     /** The number of live photos to get */
-    count?: number,
-  },
+    count = 1,
+  }: Options,
 ): WFWorkflowAction => ({
-  WFWorkflowActionIdentifier: 'is.workflow.actions.getlatestlivephotos',
+  WFWorkflowActionIdentifier: identifier,
   WFWorkflowActionParameters: {
     WFGetLatestPhotoCount: count,
   },
 });
+
+const invert = (
+  WFAction: WFWorkflowAction,
+): Options => ({
+  count: WFAction.WFWorkflowActionParameters.WFGetLatestPhotoCount,
+});
+
+getLatestLivePhotos.identifier = identifier;
+getLatestLivePhotos.invert = invert;
 
 export default withActionOutput(getLatestLivePhotos);

@@ -2,6 +2,15 @@ import AssertionType from '../interfaces/WF/AssertionType';
 import WFSerialization from '../interfaces/WF/WFSerialization';
 import WFWorkflowAction from '../interfaces/WF/WFWorkflowAction';
 
+interface Options {
+  value?: boolean;
+  until?: AssertionType;
+  time?: string;
+  event?: WFSerialization | string;
+}
+
+const identifier = 'is.workflow.actions.dnd.set';
+
 /**
  * @action Set Do Not Disturb
  * @section Actions > Scripting > Device
@@ -18,25 +27,19 @@ import WFWorkflowAction from '../interfaces/WF/WFWorkflowAction';
  * });
  * ```
  */
-
 const setDoNotDisturb = (
   {
-    value = true,
-    until = 'Turned Off',
-    time = '08:00',
-    event = '',
-  }: {
     /** Enable or disable Do Not Disturb */
-    value?: boolean,
+    value = true,
     /** Define when Do Not Disturb should be enabled until */
-    until?: AssertionType,
+    until = 'Turned Off',
     /** Define the time to be used by the "Time" assertion */
-    time?: string,
+    time = '08:00',
     /** Define the event to be used by the "Event" assertion */
-    event?: WFSerialization | string,
-  },
+    event = '',
+  }: Options,
 ): WFWorkflowAction => ({
-  WFWorkflowActionIdentifier: 'is.workflow.actions.dnd.set',
+  WFWorkflowActionIdentifier: identifier,
   WFWorkflowActionParameters: {
     Enabled: value,
     AssertionType: until,
@@ -44,5 +47,17 @@ const setDoNotDisturb = (
     Event: event,
   },
 });
+
+const invert = (
+  WFAction: WFWorkflowAction,
+): Options => ({
+  value: WFAction.WFWorkflowActionParameters.Enabled,
+  until: WFAction.WFWorkflowActionParameters.AssertionType,
+  time: WFAction.WFWorkflowActionParameters.Time,
+  event: WFAction.WFWorkflowActionParameters.Event,
+});
+
+setDoNotDisturb.identifier = identifier;
+setDoNotDisturb.invert = invert;
 
 export default setDoNotDisturb;

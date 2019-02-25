@@ -2,6 +2,13 @@ import { withActionOutput } from '../utils/withActionOutput';
 
 import WFWorkflowAction from '../interfaces/WF/WFWorkflowAction';
 
+interface Options {
+  name: string;
+  dontIncludeFileExtension?: boolean;
+}
+
+const identifier = 'is.workflow.actions.setitemname';
+
 /**
  * @action Set Name
  * @section Actions > Scripting > Content
@@ -16,24 +23,30 @@ import WFWorkflowAction from '../interfaces/WF/WFWorkflowAction';
  * });
  * ```
  */
-
 const setName = (
   {
-    name,
-    dontIncludeFileExtension = false,
-  }: {
     /** The name to set */
-    name: string,
+    name,
     /** Whether to include file extension */
-    dontIncludeFileExtension?: boolean,
-  },
+    dontIncludeFileExtension = false,
+  }: Options,
 ): WFWorkflowAction => ({
-  WFWorkflowActionIdentifier: 'is.workflow.actions.setitemname',
+  WFWorkflowActionIdentifier: identifier,
   WFWorkflowActionParameters: {
     WFName: name,
     WFDontIncludeFileExtension: dontIncludeFileExtension,
     Advanced: dontIncludeFileExtension,
   },
 });
+
+const invert = (
+  WFAction: WFWorkflowAction,
+): Options => ({
+  name: WFAction.WFWorkflowActionParameters.WFName || '',
+  dontIncludeFileExtension: WFAction.WFWorkflowActionParameters.WFDontIncludeFileExtension,
+});
+
+setName.identifier = identifier;
+setName.invert = invert;
 
 export default withActionOutput(setName);

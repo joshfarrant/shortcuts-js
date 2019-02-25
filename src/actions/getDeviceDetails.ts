@@ -4,6 +4,12 @@ import WFDeviceDetail from '../interfaces/WF/WFDeviceDetail';
 import WFSerialization from '../interfaces/WF/WFSerialization';
 import WFWorkflowAction from '../interfaces/WF/WFWorkflowAction';
 
+interface Options {
+  detail?: WFSerialization | WFDeviceDetail;
+}
+
+const identifier = 'is.workflow.actions.getdevicedetails';
+
 /**
  * @action Get Device Details
  * @section Actions > Scripting > Device
@@ -17,19 +23,25 @@ import WFWorkflowAction from '../interfaces/WF/WFWorkflowAction';
  * });
  * ```
  */
-
 const getDeviceDetails = (
   {
-    detail = 'Device Name',
-  }: {
     /** The particular detail to retrieve */
-    detail?: WFSerialization | WFDeviceDetail,
-  },
+    detail = 'Device Name',
+  }: Options,
 ): WFWorkflowAction => ({
-  WFWorkflowActionIdentifier: 'is.workflow.actions.getdevicedetails',
+  WFWorkflowActionIdentifier: identifier,
   WFWorkflowActionParameters: {
     WFDeviceDetail: detail,
   },
 });
+
+const invert = (
+  WFAction: WFWorkflowAction,
+): Options => ({
+  detail: WFAction.WFWorkflowActionParameters.WFDeviceDetail,
+});
+
+getDeviceDetails.identifier = identifier;
+getDeviceDetails.invert = invert;
 
 export default withActionOutput(getDeviceDetails);

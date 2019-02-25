@@ -1,5 +1,11 @@
 import WFWorkflowAction from '../interfaces/WF/WFWorkflowAction';
 
+interface Options {
+  value?: boolean;
+}
+
+const identifier = 'is.workflow.actions.wifi.set';
+
 /**
  * @action Set Wi-Fi
  * @section Actions > Scripting > Device
@@ -13,19 +19,25 @@ import WFWorkflowAction from '../interfaces/WF/WFWorkflowAction';
  * });
  * ```
  */
-
 const setWiFi = (
   {
-    value = true,
-  }: {
     /** Enable or disable Wi-Fi */
-    value?: boolean,
-  },
+    value = true,
+  }: Options,
 ): WFWorkflowAction => ({
-  WFWorkflowActionIdentifier: 'is.workflow.actions.wifi.set',
+  WFWorkflowActionIdentifier: identifier,
   WFWorkflowActionParameters: {
     OnValue: value,
   },
 });
+
+const invert = (
+  WFAction: WFWorkflowAction,
+): Options => ({
+  value: WFAction.WFWorkflowActionParameters.OnValue,
+});
+
+setWiFi.identifier = identifier;
+setWiFi.invert = invert;
 
 export default setWiFi;

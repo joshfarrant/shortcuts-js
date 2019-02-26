@@ -6,7 +6,6 @@ import { withActionOutput } from '../utils';
 
 /** @ignore */
 const conditionMap = new Map([
-  ['', undefined],
   ['Contains', undefined],
   ['=', 'Equals'],
   ['<', 'Is Less Than'],
@@ -37,13 +36,12 @@ const conditionMap = new Map([
  * });
  * ```
  */
-
 const conditional = (
   {
     ifTrue = [],
     ifFalse = [],
-    input,
-    value,
+    input = 'Contains',
+    value = 'example',
   }: {
     /** An array of actions to perform if condition is true */
     ifTrue?: WFWorkflowAction[],
@@ -52,7 +50,6 @@ const conditional = (
     /** The test to perform on the input */
     input?: (
       WFCondition
-      | ''
       | 'Contains'
       | '='
       | '<'

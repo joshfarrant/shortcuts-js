@@ -1,0 +1,245 @@
+$icon-size: 29px;
+$icon-number: 120;
+
+.content {
+  display: flex;
+  height: 100%;
+  min-height: calc(100vh - var(--navbar-height));
+}
+
+.listPanel {
+  width: 360px;
+  padding: 1.7rem 0;
+  overflow-y: scroll;
+  background: var(--lightest-gray-color);
+
+  b {
+    line-height: 32px;
+    padding-top: 20px;
+    margin-left: 1.7rem;
+    display: block;
+  }
+
+  .item {
+    position: relative;
+    padding: 0 1.7rem;
+    cursor: pointer;
+
+    &::after {
+      content: '';
+      display: block;
+      position: absolute;
+      height: 1px;
+      bottom: 0;
+      right: 1.7rem;
+      left: calc(1.7rem + #{$icon-size} + 10px);
+      background: var(--lighter-gray-color);
+    }
+
+    &.selected {
+      background: var(--lighter-gray-color);
+    }
+
+    span {
+      line-height: 44px;
+      display: inline-block;
+      vertical-align: middle;
+    }
+  }
+
+  .search {
+    box-sizing: border-box;
+    font-size: 16px;
+    border: none;
+    border-radius: 6px;
+    padding: 8px 12px;
+    margin: 0 1.7rem;
+    width: calc(100% - 2 * 1.7rem);
+    background: var(--white-color);
+
+    &:focus {
+      box-shadow: 0 1px 5px 1px var(--lighter-gray-color);
+    }
+  }
+
+  .titleBar {
+    margin: 0 1.7rem;
+
+    h3 {
+      margin: 0;
+      line-height: 44px;
+    }
+  }
+}
+
+.infoPanel {
+  flex: 1;
+  padding: 1.7rem;
+  overflow-x: hidden;
+  overflow-y: scroll;
+
+  .infoContent {
+    width: 640px;
+    max-width: 100%;
+    overflow-x: hidden;
+  }
+
+  .title {
+    margin-bottom: 16px;
+    padding-bottom: 16px;
+    border-bottom: 1px solid var(--lighter-gray-color);
+  }
+
+  .icon {
+    position: relative;
+    bottom: 2px;
+  }
+
+  .actionTitle {
+    padding-top: 12px;
+  }
+
+  .parameters {
+    $border: 1px solid var(--lighter-gray-color);
+
+    overflow: hidden;
+    border-collapse: separate;
+    border-radius: 5px;
+    border-spacing: 0;
+    border: $border;
+
+    thead {
+      background: var(--lightest-gray-color);
+      padding: 0;
+    }
+
+    tbody {
+      font-size: 15px;
+      line-height: 1.2;
+
+      &:last-child tr:last-child {
+        th,
+        td {
+          border-bottom: none;
+        }
+      }
+
+      th {
+        width: 92px;
+      }
+
+      code {
+        font-size: 12px;
+        line-height: initial;
+        padding: 6px 10px;
+        font-weight: 600;
+      }
+    }
+
+    th,
+    td {
+      padding: 16px 18px;
+      border-right: $border;
+      border-bottom: $border;
+
+      &:last-child {
+        border-right: none;
+      }
+    }
+  }
+}
+
+.backButton {
+  --color: var(--blue-color);
+
+  position: relative;
+  margin: -8px 0;
+  padding: 8px 8px 8px 16px;
+  border: none;
+  cursor: pointer;
+  color: var(--color);
+  font-weight: 500;
+  background: none;
+
+  svg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 12px;
+    height: 100%;
+    fill: var(--color);
+  }
+}
+
+.icon {
+  width: $icon-size;
+  height: $icon-size;
+
+  display: inline-block;
+  vertical-align: middle;
+  margin-right: 10px;
+
+  @for $i from 0 through $icon-number {
+    &.i-#{$i} {
+      background-image: url('./icons@2x.png');
+      background-size: 10 * $icon-size ceil($icon-number / 10) * $icon-size;
+      background-position: ($i % 10) * -$icon-size floor($i / 10) * -$icon-size;
+    }
+  }
+
+  &.i-calendar {
+    background: #ffffff;
+    border-radius: 6.5px;
+    padding: 4px 0;
+
+    span {
+      display: block;
+      width: 100%;
+      text-align: center;
+    }
+
+    span:first-child {
+      height: 5px;
+      line-height: 5px;
+      font-size: 5px;
+      color: red;
+      overflow: hidden;
+    }
+
+    span:last-child {
+      line-height: 16px;
+      font-weight: 100;
+      font-size: 18px;
+      color: black;
+    }
+  }
+}
+
+@media (max-width: 1000px) {
+  .listPanel {
+    flex: 1;
+    width: 1000px;
+  }
+
+  .infoPanel {
+    display: none;
+    width: 1000px;
+  }
+
+  .collapsed {
+    .listPanel {
+      display: none;
+    }
+
+    .infoPanel {
+      display: block;
+    }
+  }
+}
+
+@media (pointer: coarse) {
+  .listPanel,
+  .infoPanel {
+    overflow-y: initial;
+  }
+}

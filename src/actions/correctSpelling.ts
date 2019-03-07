@@ -7,8 +7,6 @@ import WFWorkflowAction from '../interfaces/WF/WFWorkflowAction';
  *
  * Autocorrects the spelling of text passed into the action.
  *
- * Correct Spelling Action. Autocorrects the spelling of text passed into the action.
- *
  * ```js
  * correctSpelling();
  * ```

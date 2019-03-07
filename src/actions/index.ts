@@ -17,6 +17,7 @@ import createNote from './createNote';
 import date from './date';
 import deletePhotos from './deletePhotos';
 import detectLanguageWithMicrosoft from './detectLanguageWithMicrosoft';
+import dictionary from './dictionary';
 import exitShortcut from './exitShortcut';
 import expandURL from './expandURL';
 import extractArchive from './extractArchive';
@@ -29,6 +30,7 @@ import getContactsFromInput from './getContactsFromInput';
 import getContentsOfURL from './getContentsOfURL';
 import getContentsOfWebPage from './getContentsOfWebPage';
 import getCurrentIPAddress from './getCurrentIPAddress';
+import getCurrentLocation from './getCurrentLocation';
 import getCurrentSong from './getCurrentSong';
 import getDatesFromInput from './getDatesFromInput';
 import getDeviceDetails from './getDeviceDetails';
@@ -56,6 +58,7 @@ import getTimeBetweenDates from './getTimeBetweenDates';
 import getType from './getType';
 import getURLsFromInput from './getURLsFromInput';
 import getVariable from './getVariable';
+import list from './list';
 import makeArchive from './makeArchive';
 import makeMarkdownFromRichText from './makeMarkdownFromRichText';
 import makeRichTextFromHTML from './makeRichTextFromHTML';
@@ -64,6 +67,7 @@ import markup from './markup';
 import matchText from './matchText';
 import nothing from './nothing';
 import number from './number';
+import openApp from './openApp';
 import openInBooks from './openInBooks';
 import openURLs from './openURLs';
 import openURLsInChrome from './openURLsInChrome';
@@ -72,7 +76,7 @@ import playSound from './playSound';
 import postOnFacebook from './postOnFacebook';
 import postOnInstagram from './postOnInstagram';
 import postToTumblr from './postToTumblr';
-import postToWordpress from './postToWordpress';
+import postToWordPress from './postToWordPress';
 import print from './print';
 import quickLook from './quickLook';
 import randomNumber from './randomNumber';
@@ -140,6 +144,7 @@ export {
   date,
   deletePhotos,
   detectLanguageWithMicrosoft,
+  dictionary,
   exitShortcut,
   expandURL,
   extractArchive,
@@ -152,6 +157,7 @@ export {
   getContentsOfURL,
   getContentsOfWebPage,
   getCurrentIPAddress,
+  getCurrentLocation,
   getCurrentSong,
   getDatesFromInput,
   getDeviceDetails,
@@ -179,6 +185,7 @@ export {
   getType,
   getURLsFromInput,
   getVariable,
+  list,
   makeArchive,
   makeMarkdownFromRichText,
   makeRichTextFromHTML,
@@ -187,6 +194,7 @@ export {
   matchText,
   nothing,
   number,
+  openApp,
   openInBooks,
   openURLs,
   openURLsInChrome,
@@ -195,7 +203,7 @@ export {
   postOnInstagram,
   playSound,
   postToTumblr,
-  postToWordpress,
+  postToWordPress,
   print,
   quickLook,
   randomNumber,

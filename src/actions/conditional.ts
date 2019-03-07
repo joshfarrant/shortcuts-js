@@ -36,6 +36,7 @@ const conditionMap = new Map([
  * });
  * ```
  */
+
 const conditional = (
   {
     ifTrue = [],

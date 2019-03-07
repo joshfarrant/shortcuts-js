@@ -32,7 +32,6 @@ docs/static/
 # Misc
 .DS_Store
 
-# Dev
 shortcuts/
 playground.js
 playground/

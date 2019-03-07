@@ -55,15 +55,17 @@ const calculate = (
 ): WFWorkflowAction => {
   let parameters;
   if (scientificOperation) {
+    const WFScientificMathOperation = operationsMap.get(scientificOperation) || scientificOperation;
     parameters = {
       WFMathOperation: '…',
       ...(operand !== undefined && { WFScientificMathOperand: operand }),
-      WFScientificMathOperation: (operationsMap.get(scientificOperation) || scientificOperation),
+      WFScientificMathOperation: WFScientificMathOperation as WFScientificMathOperation,
     };
   } else {
+    const WFMathOperation = (operationsMap.get(operation) || operation);
     parameters = {
       WFMathOperand: operand || 42,
-      WFMathOperation: (operationsMap.get(operation) || operation),
+      WFMathOperation: WFMathOperation as WFMathOperation,
     };
   }
 

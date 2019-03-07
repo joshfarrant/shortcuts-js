@@ -1,0 +1,86 @@
+h2.heading {
+  margin-bottom: 16px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid var(--lighter-gray-color);
+}
+
+.heading {
+  position: relative;
+
+  .link {
+    position: absolute;
+    right: 100%;
+    padding: 0 8px;
+    font-weight: 700;
+    opacity: 0;
+    transition: opacity 0.2s ease;
+
+    &:hover,
+    &:focus {
+      text-decoration: none;
+    }
+  }
+
+  &:hover .link {
+    opacity: 1;
+  }
+}
+
+.codeBlock {
+  color: #f8f8f2;
+  background: #282a36;
+  padding: 16px 24px;
+  border-radius: 5px;
+  overflow-x: scroll;
+  word-wrap: normal;
+  -webkit-overflow-scrolling: touch;
+}
+
+.table {
+  overflow-x: scroll;
+  -webkit-overflow-scrolling: touch;
+}
+
+.editPage {
+  --color: var(--light-gray-color);
+
+  position: relative;
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 30px;
+  color: var(--color);
+  border: 1px solid var(--color);
+  border-radius: 4px;
+  padding-right: 8px;
+  padding-left: 2px;
+  float: right;
+  z-index: 1;
+  cursor: pointer;
+
+  &:focus,
+  &:hover {
+    text-decoration: none;
+  }
+
+  &:hover {
+    --color: var(--lighter-gray-color);
+  }
+
+  .icon {
+    margin: 0;
+    width: 28px;
+    height: 28px;
+    vertical-align: middle;
+
+    svg {
+      padding: 4px;
+      fill: var(--color);
+    }
+
+    @media (pointer: fine) {
+      &:hover:not(.selected) {
+        box-shadow: none;
+      }
+    }
+  }
+}

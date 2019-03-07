@@ -6,7 +6,6 @@ import { withActionOutput } from '../utils';
 
 /** @ignore */
 const conditionMap = new Map([
-  ['Contains', undefined],
   ['=', 'Equals'],
   ['<', 'Is Less Than'],
   ['>', 'Is Greater Than'],
@@ -70,8 +69,7 @@ const conditional = (
     },
   };
 
-  // Add WFCondition if we've got input
-  if (input) {
+  if (input && input !== 'Contains') {
     const condition = (conditionMap.get(input) || input) as WFCondition;
     ifAction.WFWorkflowActionParameters.WFCondition = condition;
   }

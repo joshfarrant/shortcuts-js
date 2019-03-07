@@ -22,6 +22,7 @@ describe('conditional function', () => {
       {
         WFWorkflowActionIdentifier: 'is.workflow.actions.conditional',
         WFWorkflowActionParameters: {
+          WFConditionalActionString: 'example',
           WFControlFlowMode: 0,
         },
       },
@@ -47,6 +48,7 @@ describe('conditional function', () => {
       {
         WFWorkflowActionIdentifier: 'is.workflow.actions.conditional',
         WFWorkflowActionParameters: {
+          WFConditionalActionString: 'example',
           WFControlFlowMode: 0,
         },
       },
@@ -73,6 +75,7 @@ describe('conditional function', () => {
       {
         WFWorkflowActionIdentifier: 'is.workflow.actions.conditional',
         WFWorkflowActionParameters: {
+          WFConditionalActionString: 'example',
           WFControlFlowMode: 0,
         },
       },
@@ -108,6 +111,7 @@ describe('conditional function', () => {
       {
         WFWorkflowActionIdentifier: 'is.workflow.actions.conditional',
         WFWorkflowActionParameters: {
+          WFConditionalActionString: 'example',
           WFControlFlowMode: 0,
         },
       },

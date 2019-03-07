@@ -30,6 +30,7 @@ import getContactsFromInput from './getContactsFromInput';
 import getContentsOfURL from './getContentsOfURL';
 import getContentsOfWebPage from './getContentsOfWebPage';
 import getCurrentIPAddress from './getCurrentIPAddress';
+import getCurrentLocation from './getCurrentLocation';
 import getCurrentSong from './getCurrentSong';
 import getDatesFromInput from './getDatesFromInput';
 import getDeviceDetails from './getDeviceDetails';
@@ -155,6 +156,7 @@ export {
   getContentsOfURL,
   getContentsOfWebPage,
   getCurrentIPAddress,
+  getCurrentLocation,
   getCurrentSong,
   getDatesFromInput,
   getDeviceDetails,

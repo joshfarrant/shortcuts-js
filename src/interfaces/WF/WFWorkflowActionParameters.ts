@@ -53,6 +53,7 @@ interface WFWorkflowActionParameters {
   WFAskActionPrompt?: WFSerialization | string;
   WFBase64LineBreakMode?: WFSerialization | WFBase64LineBreakMode;
   WFBrightness?: number;
+  WFCaseType?: WFSerialization | string;
   WFCommentActionText?: string;
   WFCondition?: WFCondition;
   WFConditionalActionString?: string;

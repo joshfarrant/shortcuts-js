@@ -110,6 +110,7 @@ type WFWorkflowActionIdentifier = (
   | 'is.workflow.actions.skipback'
   | 'is.workflow.actions.skipforward'
   | 'is.workflow.actions.statistics'
+  | 'is.workflow.actions.text.changecase'
   | 'is.workflow.actions.text.match'
   | 'is.workflow.actions.trimvideo'
   | 'is.workflow.actions.tumblr.post'

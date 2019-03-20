@@ -1,7 +1,6 @@
 import { URL } from '../../src/actions';
 
 import WFWorkflowActionIdentifier from '../../src/interfaces/WF/WFWorkflowActionIdentifier';
-import WFWorkflowActionParameters from '../../src/interfaces/WF/WFWorkflowActionParameters';
 
 describe('URL function', () => {
 
@@ -47,7 +46,7 @@ describe('URL function', () => {
       const action = {
         WFWorkflowActionIdentifier: 'is.workflow.actions.url' as WFWorkflowActionIdentifier,
         WFWorkflowActionParameters: {
-          WFURLActionURL: '' as WFWorkflowActionParameters['WFURLActionURL'],
+          WFURLActionURL: '',
         },
       };
       const actual = URL.invert(action);

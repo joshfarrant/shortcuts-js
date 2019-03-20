@@ -1,7 +1,7 @@
 import { URLEncode } from '../../src/actions';
 
+import WFEncodeMode from '../../src/interfaces/WF/WFEncodeMode';
 import WFWorkflowActionIdentifier from '../../src/interfaces/WF/WFWorkflowActionIdentifier';
-import WFWorkflowActionParameters from '../../src/interfaces/WF/WFWorkflowActionParameters';
 
 describe('URLEncode function', () => {
 
@@ -48,7 +48,7 @@ describe('URLEncode function', () => {
       const action = {
         WFWorkflowActionIdentifier: 'is.workflow.actions.urlencode' as WFWorkflowActionIdentifier,
         WFWorkflowActionParameters: {
-          WFEncodeMode: '' as WFWorkflowActionParameters['WFEncodeMode'],
+          WFEncodeMode: '' as WFEncodeMode,
         },
       };
       const actual = URLEncode.invert(action);

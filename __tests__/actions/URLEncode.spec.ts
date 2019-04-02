@@ -1,9 +1,20 @@
 import { URLEncode } from '../../src/actions';
 
+import WFEncodeMode from '../../src/interfaces/WF/WFEncodeMode';
+import WFWorkflowActionIdentifier from '../../src/interfaces/WF/WFWorkflowActionIdentifier';
+
 describe('URLEncode function', () => {
 
   it('is a function', () => {
     expect(typeof URLEncode).toBe('function');
+  });
+
+  it('has an identifier property, which is a string', () => {
+    expect(typeof URLEncode.identifier).toBe('string');
+  });
+
+  it('has an invert property, which is a function', () => {
+    expect(typeof URLEncode.invert).toBe('function');
   });
 
   it('builds a URLEncode action (encode)', () => {
@@ -32,4 +43,20 @@ describe('URLEncode function', () => {
     expect(actual).toEqual(expected);
   });
 
+  it('inverts a URLEncode action', () => {
+    if (URLEncode.invert) {
+      const action = {
+        WFWorkflowActionIdentifier: 'is.workflow.actions.urlencode' as WFWorkflowActionIdentifier,
+        WFWorkflowActionParameters: {
+          WFEncodeMode: '' as WFEncodeMode,
+        },
+      };
+      const actual = URLEncode.invert(action);
+      const expected = {
+        encodeMode: 'Decode',
+      };
+
+      expect(actual).toEqual(expected);
+    }
+  });
 });

@@ -62,7 +62,7 @@
   },
   "license": "GPL-3.0",
   "dependencies": {
-    "bplist-creator": "0.0.7",
+    "bplist-creator": "0.0.8",
     "bplist-parser": "^0.1.1",
     "tslib": "~1.9.3",
     "uuid": "^3.3.2"

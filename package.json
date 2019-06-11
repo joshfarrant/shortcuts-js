@@ -64,7 +64,7 @@
   "dependencies": {
     "bplist-creator": "0.0.8",
     "bplist-parser": "^0.1.1",
-    "tslib": "~1.9.3",
+    "tslib": "~1.10.0",
     "uuid": "^3.3.2"
   },
   "husky": {

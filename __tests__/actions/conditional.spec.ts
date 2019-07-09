@@ -235,4 +235,27 @@ describe('conditional function', () => {
     compareObjectsWithGroupingIdentifier(actual, expected);
   });
 
+  it('builds a if action when value is falsey', () => {
+    const actual = conditional({
+      value: '',
+    });
+
+    const expected: WFWorkflowAction[] = [
+      {
+        WFWorkflowActionIdentifier: 'is.workflow.actions.conditional',
+        WFWorkflowActionParameters: {
+          WFControlFlowMode: 0,
+        },
+      },
+      {
+        WFWorkflowActionIdentifier: 'is.workflow.actions.conditional',
+        WFWorkflowActionParameters: {
+          WFControlFlowMode: 2,
+        },
+      },
+    ];
+
+    compareObjectsWithGroupingIdentifier(actual, expected);
+  });
+
 });

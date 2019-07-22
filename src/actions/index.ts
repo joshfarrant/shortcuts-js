@@ -23,6 +23,7 @@ import dictionary from './dictionary';
 import exitShortcut from './exitShortcut';
 import expandURL from './expandURL';
 import extractArchive from './extractArchive';
+import facetime from './facetime';
 import formatDate from './formatDate';
 import generateHash from './generateHash';
 import getAddressesFromInput from './getAddressesFromInput';
@@ -152,6 +153,7 @@ export {
   exitShortcut,
   expandURL,
   extractArchive,
+  facetime,
   formatDate,
   generateHash,
   getAddressesFromInput,

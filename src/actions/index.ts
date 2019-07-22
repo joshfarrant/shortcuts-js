@@ -5,6 +5,7 @@ import ask from './ask';
 import base64Encode from './base64Encode';
 import calculate from './calculate';
 import calculateStatistics from './calculateStatistics';
+import call from './call';
 import changeCase from './changeCase';
 import chooseFromMenu from './chooseFromMenu';
 import clearUpNext from './clearUpNext';
@@ -133,6 +134,7 @@ export {
   base64Encode,
   calculate,
   calculateStatistics,
+  call,
   changeCase,
   chooseFromMenu,
   clearUpNext,

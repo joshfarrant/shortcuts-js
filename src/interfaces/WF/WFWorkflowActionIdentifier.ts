@@ -1,5 +1,7 @@
 type WFWorkflowActionIdentifier = (
-  'com.apple.iBooks.openin'
+  'com.apple.facetime.facetime'
+  | 'com.apple.iBooks.openin'
+  | 'com.apple.mobilephone.call'
   | 'com.apple.mobilenotes.SharingExtension'
   | 'com.burbn.instagram.openin'
   | 'com.google.chrome.ios.openurl'

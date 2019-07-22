@@ -5,6 +5,7 @@ import ask from './ask';
 import base64Encode from './base64Encode';
 import calculate from './calculate';
 import calculateStatistics from './calculateStatistics';
+import call from './call';
 import changeCase from './changeCase';
 import chooseFromMenu from './chooseFromMenu';
 import clearUpNext from './clearUpNext';
@@ -22,6 +23,7 @@ import dictionary from './dictionary';
 import exitShortcut from './exitShortcut';
 import expandURL from './expandURL';
 import extractArchive from './extractArchive';
+import facetime from './facetime';
 import formatDate from './formatDate';
 import generateHash from './generateHash';
 import getAddressesFromInput from './getAddressesFromInput';
@@ -133,6 +135,7 @@ export {
   base64Encode,
   calculate,
   calculateStatistics,
+  call,
   changeCase,
   chooseFromMenu,
   clearUpNext,
@@ -150,6 +153,7 @@ export {
   exitShortcut,
   expandURL,
   extractArchive,
+  facetime,
   formatDate,
   generateHash,
   getAddressesFromInput,

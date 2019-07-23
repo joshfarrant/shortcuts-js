@@ -77,6 +77,8 @@ interface WFWorkflowActionParameters {
   WFGetDictionaryValueType?: WFGetDictionaryValueType;
   WFGetLatestPhotoCount?: number;
   WFHashType?: WFSerialization | WFHashType;
+  WFHomeName?: WFSerialization | string;
+  WFHomeSceneName?: WFSerialization | string;
   WFHTTPBodyType?: WFHTTPBodyType;
   WFHTTPHeaders?: WFSerialization;
   WFHTTPMethod?: WFHTTPMethod;

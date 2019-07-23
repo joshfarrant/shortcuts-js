@@ -1,4 +1,5 @@
 import AssertionType from './AssertionType';
+import FaceTimeType from './FaceTimeType';
 import WFArchiveFormat from './WFArchiveFormat';
 import WFAskActionDateGranularity from './WFAskActionDateGranularity';
 import WFBase64LineBreakMode from './WFBase64LineBreakMode';
@@ -8,7 +9,6 @@ import WFDateActionMode from './WFDateActionMode';
 import WFDateFormatStyle from './WFDateFormatStyle';
 import WFDeviceDetail from './WFDeviceDetail';
 import WFEncodeMode from './WFEncodeMode';
-import WFFaceTimeType from './WFFaceTimeType';
 import WFFlashlightSetting from './WFFlashlightSetting';
 import WFFrequency from './WFFrequency';
 import WFGetDictionaryValueType from './WFGetDictionaryValueType';
@@ -70,7 +70,7 @@ interface WFWorkflowActionParameters {
   WFDictionaryValue?: string;
   WFDontIncludeFileExtension?: boolean;
   WFEncodeMode?: WFEncodeMode;
-  WFFaceTimeType?: WFFaceTimeType;
+  WFFaceTimeType?: WFSerialization | FaceTimeType;
   WFFlashlightSetting?: WFFlashlightSetting;
   WFFrequency?: WFFrequency[];
   WFFormValues?: WFSerialization;

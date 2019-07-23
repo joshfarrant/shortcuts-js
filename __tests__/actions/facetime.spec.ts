@@ -1,4 +1,5 @@
 import { facetime } from '../../src/actions';
+import { askWhenRun } from '../../src/variables';
 
 describe('facetime function', () => {
   it('is a function', () => {
@@ -9,12 +10,7 @@ describe('facetime function', () => {
     const expected = {
       WFWorkflowActionIdentifier: 'com.apple.facetime.facetime',
       WFWorkflowActionParameters: {
-        WFFaceTimeType: {
-          Value: {
-            Type: 'Video',
-          },
-          WFSerializationType: 'WFTextTokenAttachment',
-        },
+        WFFaceTimeType: 'Video',
       },
     };
     const actual = facetime({});
@@ -34,7 +30,7 @@ describe('facetime function', () => {
         },
       },
     };
-    const actual = facetime({ type: 'Ask' });
+    const actual = facetime({ type: askWhenRun });
 
     expect(actual).toEqual(expected);
   });

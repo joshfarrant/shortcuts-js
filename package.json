@@ -35,7 +35,7 @@
     "tsutils": "~3.17.0",
     "typedoc": "^0.14.0",
     "typedoc-plugin-shortcuts-js": "^0.1.0",
-    "typescript": "~3.5.1"
+    "typescript": "~3.6.2"
   },
   "main": "build/index.js",
   "types": "build/index.d.ts",

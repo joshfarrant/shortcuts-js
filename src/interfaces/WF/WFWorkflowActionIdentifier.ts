@@ -111,6 +111,7 @@ type WFWorkflowActionIdentifier = (
   | 'is.workflow.actions.showresult'
   | 'is.workflow.actions.skipback'
   | 'is.workflow.actions.skipforward'
+  | 'is.workflow.actions.speaktext'
   | 'is.workflow.actions.statistics'
   | 'is.workflow.actions.text.changecase'
   | 'is.workflow.actions.text.match'

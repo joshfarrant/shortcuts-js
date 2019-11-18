@@ -114,6 +114,7 @@ import showNotification from './showNotification';
 import showResult from './showResult';
 import skipBack from './skipBack';
 import skipForward from './skipForward';
+import speakText from './speakText';
 import text from './text';
 import trimMedia from './trimMedia';
 import tweet from './tweet';
@@ -244,6 +245,7 @@ export {
   showResult,
   skipBack,
   skipForward,
+  speakText,
   text,
   tweet,
   trimMedia,

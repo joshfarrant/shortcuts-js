@@ -9,7 +9,6 @@ import WFWorkflowAction from '../interfaces/WF/WFWorkflowAction';
  *
  * ```js
  * speakText({
- *   text: 'Well hello there!',
  *   language: 'Default',
  *   pitch: 1.0,
  *   rate: 0,

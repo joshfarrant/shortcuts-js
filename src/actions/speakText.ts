@@ -1,4 +1,3 @@
-import WFSerialization from '../interfaces/WF/WFSerialization';
 import WFWorkflowAction from '../interfaces/WF/WFWorkflowAction';
 
 /**
@@ -10,7 +9,12 @@ import WFWorkflowAction from '../interfaces/WF/WFWorkflowAction';
  *
  * ```js
  * speakText({
- *   text: 'Some lovely text!',
+ *   text: 'Well hello there!',
+ *   language: 'Default',
+ *   pitch: 1.0,
+ *   rate: 0,
+ *   voice: 'Default',
+ *   waitUntilFinished: true,
  * });
  * ```
  */
@@ -19,21 +23,18 @@ const speakText = (
   {
     language = 'Default',
     pitch = 1.0,
-    rate = 1.0,
-    text = '',
+    rate = 0.5,
     voice = 'Default',
     waitUntilFinished = true,
   }: {
     /** The language to use when speaking text */
-    language?: string, // TODO: --------verify type is correct.----------
+    language?: string,
     /** The pitch to use when speaking text */
     pitch?: number
     /** The rate to use when speaking text */
     rate?: number
-    /** The text to speak */
-    text?: WFSerialization | string,
     /** The voice to use when speaking text */
-    voice?: string, // TODO: --------verify type is correct.----------
+    voice?: string,
     /** Should we wait until the speaking is finished to run the next action */
     waitUntilFinished?: boolean,
   },
@@ -43,7 +44,6 @@ const speakText = (
     WFSpeakTextLanguage: language,
     WFSpeakTextPitch: pitch,
     WFSpeakTextRate: rate,
-    WFText: text,
     WFSpeakTextVoice: voice,
     WFSpeakTextWait: waitUntilFinished,
   },

@@ -11,8 +11,7 @@ describe('speakText function', () => {
       WFWorkflowActionParameters: {
         WFSpeakTextLanguage: 'Default',
         WFSpeakTextPitch: 1.0,
-        WFSpeakTextRate: 1.0,
-        WFText: '',
+        WFSpeakTextRate: 0.5,
         WFSpeakTextVoice: 'Default',
         WFSpeakTextWait: true,
       },
@@ -26,7 +25,6 @@ describe('speakText function', () => {
     const testLanguage = 'English';
     const testPitch = 0.75;
     const testRate = 0.5;
-    const testText = 'Hello World';
     const testVoice = 'Irish';
     const testWaitUntilFinished = false;
 
@@ -36,7 +34,6 @@ describe('speakText function', () => {
         WFSpeakTextLanguage: testLanguage,
         WFSpeakTextPitch: testPitch,
         WFSpeakTextRate: testRate,
-        WFText: testText,
         WFSpeakTextVoice: testVoice,
         WFSpeakTextWait: testWaitUntilFinished,
       },
@@ -45,7 +42,6 @@ describe('speakText function', () => {
       language: 'English',
       pitch: 0.75,
       rate: 0.5,
-      text: 'Hello World',
       voice: 'Irish',
       waitUntilFinished: false,
     });

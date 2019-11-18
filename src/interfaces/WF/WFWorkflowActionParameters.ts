@@ -116,10 +116,10 @@ interface WFWorkflowActionParameters {
   WFSSHScript?: WFSerialization | string;
   WFSSHUser?: WFSerialization | string;
   WFSkipBackBehavior?: WFSkipBackBehavior;
-  WFSpeakTextLanguage?: string; // TODO: Make a type?
+  WFSpeakTextLanguage?: string;
   WFSpeakTextPitch?: number;
   WFSpeakTextRate?: number;
-  WFSpeakTextVoice?: string; // TODO: Make a type?
+  WFSpeakTextVoice?: string;
   WFSpeakTextWait?: boolean;
   WFStatisticsOperation?: WFSerialization | WFStatisticsOperation;
   WFText?: WFSerialization | string;

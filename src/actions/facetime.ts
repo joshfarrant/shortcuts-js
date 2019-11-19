@@ -1,4 +1,5 @@
 import FaceTimeType from '../interfaces/WF/FaceTimeType';
+import WFSerialization from '../interfaces/WF/WFSerialization';
 import WFWorkflowAction from '../interfaces/WF/WFWorkflowAction';
 
 /**
@@ -10,7 +11,7 @@ import WFWorkflowAction from '../interfaces/WF/WFWorkflowAction';
  *
  * ```js
  * facetime({}); // Default type is Video
- * facetime({ type: 'Ask' }); // type could be 'Audio' or 'Video' also
+ * facetime({ type: askWhenRun }); // type could be 'Audio' or 'Video'
  * ```
  */
 
@@ -18,19 +19,12 @@ const facetime = ({
   type = 'Video',
 }: {
   /** Define the type to use for the FaceTime. Default to 'Video' */
-  type?: FaceTimeType,
-}): WFWorkflowAction => {
-  return {
-    WFWorkflowActionIdentifier: 'com.apple.facetime.facetime',
-    WFWorkflowActionParameters: {
-      WFFaceTimeType: {
-        Value: {
-          Type: type,
-        },
-        WFSerializationType: 'WFTextTokenAttachment',
-      },
-    },
-  };
-};
+  type?: WFSerialization | FaceTimeType,
+}): WFWorkflowAction => ({
+  WFWorkflowActionIdentifier: 'com.apple.facetime.facetime',
+  WFWorkflowActionParameters: {
+    WFFaceTimeType: type,
+  },
+});
 
 export default facetime;

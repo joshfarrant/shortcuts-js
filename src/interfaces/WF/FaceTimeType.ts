@@ -1,6 +1,5 @@
 type FaceTimeType = (
-    'Ask'
-    | 'Audio'
+    'Audio'
     | 'Video'
   );
 

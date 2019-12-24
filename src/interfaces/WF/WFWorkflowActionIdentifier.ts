@@ -4,6 +4,7 @@ type WFWorkflowActionIdentifier = (
   | 'com.apple.mobilenotes.SharingExtension'
   | 'com.apple.mobilephone.call'
   | 'com.burbn.instagram.openin'
+  | 'com.culturedcode.ThingsiPhone.TINAddTodoIntent'
   | 'com.google.chrome.ios.openurl'
   | 'com.omz-software.Pythonista.editscript'
   | 'com.omz-software.Pythonista.runscript'

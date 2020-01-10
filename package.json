@@ -24,7 +24,7 @@
     "@types/uuid": "^3.4.4",
     "command-line-args": "^5.0.2",
     "coveralls": "^3.0.2",
-    "husky": "^3.0.0",
+    "husky": "^4.0.5",
     "inquirer": "^7.0.0",
     "jest": "^24.3.0",
     "rimraf": "~3.0.0",

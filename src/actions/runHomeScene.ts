@@ -3,7 +3,7 @@ import WFWorkflowAction from '../interfaces/WF/WFWorkflowAction';
 
 /**
  * @action Run Home Scene
- * @section Home > Home >
+ * @section Content Types > Home >
  * @icon Home
  *
  * Runs a specific or user selected Home scene

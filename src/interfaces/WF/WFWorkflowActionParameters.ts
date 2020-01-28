@@ -58,6 +58,11 @@ interface WFWorkflowActionParameters {
   WFCommentActionText?: string;
   WFCondition?: WFCondition;
   WFConditionalActionString?: string;
+  WFContentItemInputParameter?: WFSerialization;
+  WFContentItemLimitEnabled?: boolean;
+  WFContentItemLimitNumber?: number;
+  WFContentItemFilter?: object;
+  WFContentItemSortProperty?: string;
   WFControlFlowMode?: number;
   WFCountType?: WFCountType;
   WFDateActionDate?: WFSerialization | string;

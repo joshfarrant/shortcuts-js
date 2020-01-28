@@ -42,6 +42,7 @@ type WFWorkflowActionIdentifier = (
   | 'is.workflow.actions.downloadurl'
   | 'is.workflow.actions.exit'
   | 'is.workflow.actions.file.getlink'
+  | 'is.workflow.actions.filter.files'
   | 'is.workflow.actions.flashlight'
   | 'is.workflow.actions.format.date'
   | 'is.workflow.actions.getarticle'

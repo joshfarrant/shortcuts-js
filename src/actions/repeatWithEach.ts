@@ -9,18 +9,12 @@ import WFSerialization from '../interfaces/WF/WFSerialization';
  * @section Actions > Scripting > Control Flow
  * @icon Scripting
  *
- * Repeats the contained actions, running them the specified number of times,
- * but, user should use the variable `Repeat Item` to get the current item.
+ * Takes a list of items as input, and runs the contained actions once for each item in the list.
  *
  * ```js
- * const reference = actionOutput();
- * const actions = [
- *   list({ value: ["1", "2"] }, reference),
- *   repeatWithEach({
- *     items: reference,
- *     actions: [showResult({ text: withVariables`${repeatItem()}` })]
- *   })
- * ];
+ *  repeatWithEach({
+ *    actions: [showResult({})]
+ *  })
  * ```
  */
 const repeatWithEach = ({

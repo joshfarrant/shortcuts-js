@@ -1,10 +1,11 @@
 // import * as uuidv4 from 'uuid/v4';
 import { FilterTemplate } from '../interfaces/WF/WFContentItemFilter';
+import WFContentItemSortOrder from '../interfaces/WF/WFContentItemSortOrder';
+import WFContentItemSortProperty from '../interfaces/WF/WFContentItemSortProperty';
 import WFSerialization from '../interfaces/WF/WFSerialization';
 import WFWorkflowAction from '../interfaces/WF/WFWorkflowAction';
 import { withActionOutput } from '../utils';
 
-// Currently implement `Name` property
 type Operator =
   | 'is'
   | 'is not'
@@ -28,7 +29,7 @@ const operatorTable: operatorTable = {
   'begins with': 8,
   'ends with': 9,
 };
-const filterFactory: (filter: Filter) => FilterTemplate = ({
+const filterTemplateFactory: (filter: Filter) => FilterTemplate = ({
   Property,
   Where,
   Values,
@@ -44,41 +45,32 @@ const filterFactory: (filter: Filter) => FilterTemplate = ({
 
 const filterFiles = ({
   input,
-  limitEnabled = false,
-  limitNumber = 1,
+  limitNumber = 0,
   sortBy,
   sortOrder,
   filters = [],
   matchAll = false,
 }: {
   input?: WFSerialization;
-  sortBy?:
-    | 'Random'
-    | 'Name'
-    | 'File Size'
-    | 'File Extension'
-    | 'Creation Date'
-    | 'Last Modified Date';
-  sortOrder?: 'A to Z' | 'Z to A' | 'Oldest First' | 'Latest First';
-  limitEnabled?: boolean;
   limitNumber?: number;
+  sortBy?: WFContentItemSortProperty;
+  sortOrder?: WFContentItemSortOrder;
   filters?: Filter[];
   matchAll?: boolean;
 }): WFWorkflowAction => {
-  const filterTemplates = filters.map(filterFactory);
   return {
     WFWorkflowActionIdentifier: 'is.workflow.actions.filter.files',
     WFWorkflowActionParameters: {
       ...(input && { WFContentItemInputParameter: input }),
       ...(sortBy && sortOrder && { WFContentItemSortProperty: sortBy }),
       ...(sortBy && sortOrder && { WFContentItemSortOrder: sortOrder }),
-      ...(limitEnabled && { WFContentItemLimitEnabled: limitEnabled }),
-      ...(limitEnabled && { WFContentItemLimitNumber: limitNumber }),
+      ...(limitNumber > 0 && { WFContentItemLimitEnabled: true }),
+      ...(limitNumber > 0 && { WFContentItemLimitNumber: limitNumber }),
       WFContentItemFilter: {
         Value: {
           WFActionParameterFilterPrefix: matchAll ? 1 : 0,
           WFContentPredicateBoundedDate: false,
-          WFActionParameterFilterTemplates: filterTemplates,
+          WFActionParameterFilterTemplates: filters.map(filterTemplateFactory),
         },
         WFSerializationType: 'WFContentPredicateTableTemplate',
       },

@@ -3,6 +3,7 @@ import {
   askWhenRun,
   clipboard,
   currentDate,
+  repeatItem,
   shortcutInput,
 } from '../src/variables';
 
@@ -61,6 +62,22 @@ describe('shortcutInput global variable', () => {
     const expected: WFSerialization = {
       Value: {
         Type: 'ExtensionInput',
+      },
+      WFSerializationType: 'WFTextTokenAttachment',
+    };
+
+    expect(actual).toEqual(expected);
+  });
+
+});
+
+describe('repeatItem local variable', () => {
+  it('has Repeat Item VariableName', () => {
+    const actual = repeatItem();
+    const expected: WFSerialization = {
+      Value: {
+        VariableName: 'Repeat Item',
+        Type: 'Variable',
       },
       WFSerializationType: 'WFTextTokenAttachment',
     };

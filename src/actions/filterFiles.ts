@@ -11,12 +11,12 @@ import { withActionOutput } from '../utils';
  * @section Content Types > Documents > Content Types
  * @icon Documents
  *
- * (Currently support Name property filter)
- * Gets a public link to the file passed into the action.
+ * Given a list of files, this action returns the files that match the given criteria.
+ * Currently support Property Name filter.
  *
  * ```js
  * filterFiles({
- *  limitNumber: "4",
+ *  limitNumber: 4,
  *  sortBy: "Random",
  *  matchAll: false,
  *  filters:[{
@@ -51,20 +51,6 @@ const operatorTable: { [key in Operator]: number } = {
   'ends with': 9,
 };
 
-const filterTemplateFactory: (filter: Filter) => FilterTemplate = ({
-  Property = 'Name',
-  Where = 'is',
-  Values = '',
-}) => ({
-  Property,
-  Operator: operatorTable[Where],
-  Values: {
-    Unit: 4,
-    ...(Values && { String: Values }),
-  },
-  Removeable: true,
-});
-
 const filterFiles = ({
   input,
   limitNumber = 0,
@@ -80,6 +66,20 @@ const filterFiles = ({
   filters?: Filter[];
   matchAll?: boolean;
 }): WFWorkflowAction => {
+  const filterTemplateFactory: (filter: Filter) => FilterTemplate = ({
+    Property = 'Name',
+    Where = 'is',
+    Values = '',
+  }) => ({
+    Property,
+    Operator: operatorTable[Where],
+    Values: {
+      Unit: 4,
+      ...(Values && { String: Values }),
+    },
+    Removeable: true,
+  });
+
   return {
     WFWorkflowActionIdentifier: 'is.workflow.actions.filter.files',
     WFWorkflowActionParameters: {

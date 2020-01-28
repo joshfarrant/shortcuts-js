@@ -28,7 +28,7 @@ const repeatWithEach = ({
   actions = [],
 }: {
   /** The workflow actions inside the repeat block */
-  items: WFSerialization;
+  items?: WFSerialization;
   actions?: WFWorkflowAction[];
 }): WFWorkflowAction[] => {
   const groupingIdentifier = uuidv4();

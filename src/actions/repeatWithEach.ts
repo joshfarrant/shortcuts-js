@@ -38,7 +38,7 @@ const repeatWithEach = ({
       WFWorkflowActionParameters: {
         WFControlFlowMode: 0,
         GroupingIdentifier: groupingIdentifier,
-        WFInput: items,
+        ...(items && { WFInput: items }),
       },
     },
     ...actions,

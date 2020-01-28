@@ -6,6 +6,28 @@ import WFSerialization from '../interfaces/WF/WFSerialization';
 import WFWorkflowAction from '../interfaces/WF/WFWorkflowAction';
 import { withActionOutput } from '../utils';
 
+/**
+ * @action Filter Files
+ * @section Content Types > Documents > Content Types
+ * @icon Documents
+ *
+ * (Currently support Name property filter)
+ * Gets a public link to the file passed into the action.
+ *
+ * ```js
+ * filterFiles({
+ *  limitNumber: "4",
+ *  sortBy: "Random",
+ *  matchAll: false,
+ *  filters:[{
+ *    Property: 'Name',
+ *    Where: 'contains',
+ *    Values: 'somewords'
+ *  }]
+ * });
+ * ```
+ */
+
 type Operator =
   | 'is'
   | 'is not'
@@ -15,7 +37,7 @@ type Operator =
   | 'ends with';
 
 interface Filter {
-  Property: 'Name'; // Currently support Name
+  Property: 'Name';
   Where: Operator;
   Values?: string;
 }

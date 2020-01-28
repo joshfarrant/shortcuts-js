@@ -17,7 +17,7 @@ import { withActionOutput } from '../utils';
  * ```js
  * filterFiles({
  *  limitNumber: 4,
- *  sortBy: "Random",
+ *  sortBy: 'Random',
  *  matchAll: false,
  *  filters:[{
  *    Property: 'Name',
@@ -88,14 +88,16 @@ const filterFiles = ({
       ...(sortBy && sortOrder && { WFContentItemSortOrder: sortOrder }),
       ...(limitNumber > 0 && { WFContentItemLimitEnabled: true }),
       ...(limitNumber > 0 && { WFContentItemLimitNumber: limitNumber }),
-      WFContentItemFilter: {
-        Value: {
-          WFActionParameterFilterPrefix: matchAll ? 1 : 0,
-          WFContentPredicateBoundedDate: false,
-          WFActionParameterFilterTemplates: filters.map(filterTemplateFactory),
+      ...(filters.length > 0 && {
+        WFContentItemFilter: {
+          Value: {
+            WFActionParameterFilterPrefix: matchAll ? 1 : 0,
+            WFContentPredicateBoundedDate: false,
+            WFActionParameterFilterTemplates: filters.map(filterTemplateFactory),
+          },
+          WFSerializationType: 'WFContentPredicateTableTemplate',
         },
-        WFSerializationType: 'WFContentPredicateTableTemplate',
-      },
+      }),
     },
   };
 };

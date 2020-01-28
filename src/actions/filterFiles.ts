@@ -13,15 +13,14 @@ type Operator =
   | 'does not contains'
   | 'begins with'
   | 'ends with';
-type operatorTable = {
-  [key in Operator]: number;
-};
+
 interface Filter {
   Property: 'Name'; // Currently support Name
   Where: Operator;
   Values?: string;
 }
-const operatorTable: operatorTable = {
+
+const operatorTable: { [key in Operator]: number } = {
   is: 4,
   'is not': 5,
   contains: 99,
@@ -29,10 +28,11 @@ const operatorTable: operatorTable = {
   'begins with': 8,
   'ends with': 9,
 };
+
 const filterTemplateFactory: (filter: Filter) => FilterTemplate = ({
-  Property,
-  Where,
-  Values,
+  Property = 'Name',
+  Where = 'is',
+  Values = '',
 }) => ({
   Property,
   Operator: operatorTable[Where],

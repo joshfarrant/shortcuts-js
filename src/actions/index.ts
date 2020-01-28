@@ -24,6 +24,7 @@ import exitShortcut from './exitShortcut';
 import expandURL from './expandURL';
 import extractArchive from './extractArchive';
 import facetime from './facetime';
+import filterFiles from './filterFiles';
 import formatDate from './formatDate';
 import generateHash from './generateHash';
 import getAddressesFromInput from './getAddressesFromInput';
@@ -156,6 +157,7 @@ export {
   expandURL,
   extractArchive,
   facetime,
+  filterFiles,
   formatDate,
   generateHash,
   getAddressesFromInput,

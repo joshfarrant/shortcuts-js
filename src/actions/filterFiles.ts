@@ -67,8 +67,8 @@ const filterFiles = ({
   matchAll?: boolean;
 }): WFWorkflowAction => {
   const filterTemplateFactory: (filter: Filter) => FilterTemplate = ({
-    Property = 'Name',
-    Where = 'is',
+    Property,
+    Where,
     Values = '',
   }) => ({
     Property,

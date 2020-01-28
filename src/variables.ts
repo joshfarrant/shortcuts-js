@@ -23,10 +23,17 @@ const repeatIndex = (
   Type: 'Variable',
 });
 
+const repeatItem = () =>
+  new Variable({
+    VariableName: 'Repeat Item',
+    Type: 'Variable',
+  });
+
 export {
   askWhenRun,
   clipboard,
   currentDate,
   repeatIndex,
+  repeatItem,
   shortcutInput,
 };

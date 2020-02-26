@@ -21,7 +21,7 @@
     "@types/jest": "~25.1.1",
     "@types/mkdirp": "^0.5.2",
     "@types/node": "^13.1.8",
-    "@types/uuid": "^3.4.4",
+    "@types/uuid": "^7.0.0",
     "command-line-args": "^5.0.2",
     "coveralls": "^3.0.2",
     "husky": "^4.2.0",

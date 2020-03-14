@@ -116,6 +116,7 @@ type WFWorkflowActionIdentifier = (
   | 'is.workflow.actions.statistics'
   | 'is.workflow.actions.text.changecase'
   | 'is.workflow.actions.text.match'
+  | 'is.workflow.actions.text.replace'
   | 'is.workflow.actions.trimvideo'
   | 'is.workflow.actions.tumblr.post'
   | 'is.workflow.actions.tweet'

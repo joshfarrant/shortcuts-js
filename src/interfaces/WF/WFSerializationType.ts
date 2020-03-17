@@ -5,6 +5,7 @@ type WFSerializationType = (
   | 'WFNumberSubstitutableState'
   | 'WFArrayParameterState'
   | 'WFDictionaryFieldValue'
+  | 'WFContentPredicateTableTemplate'
 );
 
 export default WFSerializationType;

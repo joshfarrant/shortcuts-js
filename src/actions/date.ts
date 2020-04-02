@@ -19,7 +19,7 @@ import WFWorkflowAction from '../interfaces/WF/WFWorkflowAction';
  * ```
  */
 
-const date = (
+const dateAction = (
   {
     use = 'Current Date',
     date = '29 June 2007',
@@ -37,4 +37,4 @@ const date = (
   },
 });
 
-export default withActionOutput(date);
+export default withActionOutput(dateAction);

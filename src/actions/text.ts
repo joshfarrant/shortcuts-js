@@ -17,7 +17,7 @@ import WFWorkflowAction from '../interfaces/WF/WFWorkflowAction';
  * ```
  */
 
-const text = (
+const textAction = (
   {
     text = '',
   }: {
@@ -31,4 +31,4 @@ const text = (
   },
 });
 
-export default withActionOutput(text);
+export default withActionOutput(textAction);

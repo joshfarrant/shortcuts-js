@@ -1,10 +1,9 @@
 type WFSerializationType = (
-  'WFTextTokenString'
-  | 'WFTextTokenAttachment'
+  'WFArrayParameterState'
   | 'WFDictionaryFieldValue'
   | 'WFNumberSubstitutableState'
-  | 'WFArrayParameterState'
-  | 'WFDictionaryFieldValue'
+  | 'WFTextTokenAttachment'
+  | 'WFTextTokenString'
 );
 
 export default WFSerializationType;

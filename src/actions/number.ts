@@ -16,7 +16,7 @@ import WFWorkflowAction from '../interfaces/WF/WFWorkflowAction';
  * ```
  */
 
-const number = (
+const numberAction = (
   {
     number = 0,
   }: {
@@ -30,4 +30,4 @@ const number = (
   },
 });
 
-export default withActionOutput(number);
+export default withActionOutput(numberAction);

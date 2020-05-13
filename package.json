@@ -65,7 +65,7 @@
     "bplist-creator": "0.0.8",
     "bplist-parser": "^0.2.0",
     "tslib": "~1.12.0",
-    "uuid": "^3.3.2"
+    "uuid": "^8.0.0"
   },
   "husky": {
     "hooks": {

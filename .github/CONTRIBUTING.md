@@ -7,7 +7,9 @@ When contributing to this repository, please first discuss the change you wish t
 Adding a new Shortcut action is relatively straightforward.
 
 1. Create a test Shortcut on your iOS device containing the new action.
-2. Airdrop the Shortcut to your development machine.
+2. Download this Shortcuts exporting shortcut into your IOS device and run it. 
+https://www.icloud.com/shortcuts/f779cc6b5367419c9acddb43221e313a
+It exports the choosen shortcut as a file in iCloud. It will mail this shortcuts file to yourself. 
 3. Move it into a `/shortcuts` directory in the root of this project.
 4. Run `node scripts/parse.js` and select your Shortcut and action. This will log out the parsed Shortcut data.
 5. Copy this data into a new file in `src/actions`, optionally using an existing action as a template. The file (and action) you're creating should be the name of the action as it appears in the Shortcuts app, camelCased. For example, if you were adding the 'Run Home Scene' action, the file would be named `runHomeScene.ts` and it would export a function named `runHomeScene`. If in any doubt, use the already implemented actions as guides.

@@ -2,10 +2,13 @@ const fs = require('fs').promises;
 const util = require('util');
 
 const bplist = require('bplist-parser');
+const plist = require('plist');
 const commandLineArgs = require('command-line-args')
 const inquirer = require('inquirer');
 
-const parseBplist = util.promisify(bplist.parseFile);
+const parseBplist = bplist.parseBuffer;
+
+const BPLIST_HEADER = 'bplist';
 
 const optionDefinitions = [
   {
@@ -37,11 +40,16 @@ const run = async () => {
     file = `./shortcuts/${fileName}`;
   }
 
-  const data = await parseBplist(file);
-
-
-  // If data is an array, use the first element
-  let shortcut = Array.isArray(data) ? data[0] : data;
+  let shortcut;
+  const buffer = await fs.readFile(file);
+  const header = buffer.slice(0, BPLIST_HEADER.length);
+  if (BPLIST_HEADER === header.toString('utf-8')) {
+    const data = parseBplist(buffer);
+    // If data is an array, use the first element
+    shortcut = Array.isArray(data) ? data[0] : data;
+  } else {
+    shortcut = plist.parse(buffer.toString('utf-8'));
+  }
 
   const actions = shortcut.WFWorkflowActions;
 

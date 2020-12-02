@@ -18,7 +18,7 @@
     "Apple Shortcuts"
   ],
   "devDependencies": {
-    "@types/jest": "~25.2.1",
+    "@types/jest": "~26.0.16",
     "@types/mkdirp": "^0.5.2",
     "@types/node": "^13.1.8",
     "@types/uuid": "^3.4.4",

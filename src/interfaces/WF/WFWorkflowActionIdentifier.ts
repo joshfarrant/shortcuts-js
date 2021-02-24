@@ -38,6 +38,7 @@ type WFWorkflowActionIdentifier = (
   | 'is.workflow.actions.detectlanguage'
   | 'is.workflow.actions.dictionary'
   | 'is.workflow.actions.dnd.set'
+  | 'is.workflow.actions.documentpicker.open'
   | 'is.workflow.actions.downloadurl'
   | 'is.workflow.actions.exit'
   | 'is.workflow.actions.file.getlink'

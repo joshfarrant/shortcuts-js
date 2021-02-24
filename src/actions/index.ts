@@ -41,6 +41,7 @@ import getDictionaryFromInput from './getDictionaryFromInput';
 import getDictionaryValue from './getDictionaryValue';
 import getDiffbotArticleFromWebPage from './getDiffbotArticleFromWebPage';
 import getEmailAddressesFromInput from './getEmailAddressesFromInput';
+import getFile from './getFile';
 import getFramesFromImage from './getFramesFromImage';
 import getHeadersOfURL from './getHeadersOfURL';
 import getImagesFromInput from './getImagesFromInput';
@@ -173,6 +174,7 @@ export {
   getDictionaryValue,
   getDiffbotArticleFromWebPage,
   getEmailAddressesFromInput,
+  getFile,
   getFramesFromImage,
   getHeadersOfURL,
   getImagesFromInput,

@@ -40,6 +40,7 @@ interface WFWorkflowActionParameters {
   InstagramCaption?: string;
   OnValue?: boolean;
   PythonistaScript?: WFSerialization | string;
+  SelectMultiple?: boolean;
   ShowHeaders?: boolean;
   Text?: WFSerialization | string;
   Time?: string;
@@ -70,7 +71,10 @@ interface WFWorkflowActionParameters {
   WFDictionaryValue?: string;
   WFDontIncludeFileExtension?: boolean;
   WFEncodeMode?: WFEncodeMode;
+  WFGetFileInitialDirectoryPath?: string;
+  WFGetFilePath?: string;
   WFFaceTimeType?: WFSerialization | FaceTimeType;
+  WFFileStorageService?: string;
   WFFlashlightSetting?: WFFlashlightSetting;
   WFFrequency?: WFFrequency[];
   WFFormValues?: WFSerialization;
@@ -111,6 +115,7 @@ interface WFWorkflowActionParameters {
   WFScientificMathOperand?: number;
   WFScientificMathOperation?: WFScientificMathOperation;
   WFSearchMapsActionApp?: WFMapsApps | string;
+  WFShowFilePicker?: boolean;
   WFShowWorkflow?: boolean;
   WFSSHHost?: WFSerialization | string;
   WFSSHPassword?: WFSerialization | string;

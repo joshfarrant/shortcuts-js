@@ -82,6 +82,7 @@ interface WFWorkflowActionParameters {
   WFHTTPBodyType?: WFHTTPBodyType;
   WFHTTPHeaders?: WFSerialization;
   WFHTTPMethod?: WFHTTPMethod;
+  WFInput?: WFSerialization;
   WFInputType?: WFInputType;
   WFIPAddressSourceOption?: WFIPAddressSourceOption;
   WFIPAddressTypeOption?: WFIPAddressTypeOption;

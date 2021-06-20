@@ -85,6 +85,7 @@ import quickLook from './quickLook';
 import randomNumber from './randomNumber';
 import removeReminders from './removeReminders';
 import repeat from './repeat';
+import repeatWithEach from './repeatWithEach';
 import runHomeScene from './runHomeScene';
 import runJavaScriptOnWebPage from './runJavaScriptOnWebPage';
 import runScriptOverSSH from './runScriptOverSSH';
@@ -217,6 +218,7 @@ export {
   randomNumber,
   removeReminders,
   repeat,
+  repeatWithEach,
   runHomeScene,
   runJavaScriptOnWebPage,
   runScriptOverSSH,

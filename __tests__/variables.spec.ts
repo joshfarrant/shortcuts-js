@@ -3,6 +3,8 @@ import {
   askWhenRun,
   clipboard,
   currentDate,
+  repeatIndex,
+  repeatItem,
   shortcutInput,
 } from '../src/variables';
 
@@ -61,6 +63,52 @@ describe('shortcutInput global variable', () => {
     const expected: WFSerialization = {
       Value: {
         Type: 'ExtensionInput',
+      },
+      WFSerializationType: 'WFTextTokenAttachment',
+    };
+
+    expect(actual).toEqual(expected);
+  });
+
+});
+
+describe('repeatIndex local variable', () => {
+  it('has Repeat Index VariableName', () => {
+    const actual = repeatIndex();
+    const expected: WFSerialization = {
+      Value: {
+        VariableName: 'Repeat Index',
+        Type: 'Variable',
+      },
+      WFSerializationType: 'WFTextTokenAttachment',
+    };
+
+    expect(actual).toEqual(expected);
+  });
+
+  it('has Repeat Index level VariableName', () => {
+    const level = 5;
+    const actual = repeatIndex(level);
+    const expected: WFSerialization = {
+      Value: {
+        VariableName: `Repeat Index ${level}`,
+        Type: 'Variable',
+      },
+      WFSerializationType: 'WFTextTokenAttachment',
+    };
+
+    expect(actual).toEqual(expected);
+  });
+
+});
+
+describe('repeatItem local variable', () => {
+  it('has Repeat Item VariableName', () => {
+    const actual = repeatItem();
+    const expected: WFSerialization = {
+      Value: {
+        VariableName: 'Repeat Item',
+        Type: 'Variable',
       },
       WFSerializationType: 'WFTextTokenAttachment',
     };

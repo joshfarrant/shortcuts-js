@@ -89,6 +89,7 @@ type WFWorkflowActionIdentifier = (
   | 'is.workflow.actions.print'
   | 'is.workflow.actions.readinglist'
   | 'is.workflow.actions.repeat.count'
+  | 'is.workflow.actions.repeat.each'
   | 'is.workflow.actions.removereminders'
   | 'is.workflow.actions.runextension'
   | 'is.workflow.actions.runjavascriptonwebpage'

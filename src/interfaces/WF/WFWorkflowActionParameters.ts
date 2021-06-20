@@ -108,6 +108,10 @@ interface WFWorkflowActionParameters {
   WFRandomNumberMinimum?: WFSerialization | number;
   WFRepeatCount?: WFSerialization | number;
   WFRelativeDateFormatStyle?: WFSerialization | WFRelativeDateFormatStyle;
+  WFReplaceTextFind?: WFSerialization | string;
+  WFReplaceTextReplace?: WFSerialization | string;
+  WFReplaceTextCaseSensitive?: boolean;
+  WFReplaceTextRegularExpression?: boolean;
   WFScientificMathOperand?: number;
   WFScientificMathOperation?: WFScientificMathOperation;
   WFSearchMapsActionApp?: WFMapsApps | string;

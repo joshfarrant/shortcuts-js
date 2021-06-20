@@ -55,6 +55,8 @@ interface WFWorkflowActionParameters {
   WFBase64LineBreakMode?: WFSerialization | WFBase64LineBreakMode;
   WFBrightness?: number;
   WFCaseType?: WFSerialization | string;
+  WFEvening?: boolean;
+  WFEditInThings?: boolean;
   WFCommentActionText?: string;
   WFCondition?: WFCondition;
   WFConditionalActionString?: string;

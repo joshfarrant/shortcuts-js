@@ -1,3 +1,4 @@
+import addToDo from './addToDo';
 import addToReadingList from './addToReadingList';
 import addToVariable from './addToVariable';
 import airDrop from './airDrop';
@@ -130,6 +131,7 @@ import waitToReturn from './waitToReturn';
 import * as pythonista from './pythonista';
 
 export {
+  addToDo,
   addToReadingList,
   addToVariable,
   airDrop,

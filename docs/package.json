@@ -8,7 +8,7 @@
     "codemirror": "^5.42.0",
     "downloadjs": "^1.4.7",
     "isomorphic-fetch": "^2.2.1",
-    "node-sass": "^4.10.0",
+    "node-sass": "^7.0.0",
     "prop-types": "^15.6.2",
     "raw.macro": "^0.2.0",
     "react": "^16.6.3",
